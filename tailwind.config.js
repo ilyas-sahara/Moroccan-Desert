@@ -1,0 +1,97 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        sand: {
+          50: '#FBF7F0',
+          100: '#F6EFE1',
+          200: '#EAD9B8',
+          300: '#DDBF8A',
+          400: '#CFA25C',
+          500: '#C08940',
+          600: '#A66F33',
+          700: '#855529',
+          800: '#634022',
+          900: '#422C19',
+          950: '#2A1B0F',
+        },
+        oasis: {
+          50: '#F0F9F4',
+          100: '#DCF0E3',
+          200: '#BBE0C9',
+          300: '#8AC9A5',
+          400: '#54A87D',
+          500: '#348862',
+          600: '#256C4E',
+          700: '#1D5640',
+          800: '#194534',
+          900: '#16392B',
+          950: '#0C2018',
+        },
+        clay: {
+          50: '#FBF6F2',
+          100: '#F5E8DF',
+          200: '#E8CBB9',
+          300: '#D7A488',
+          400: '#C57A5C',
+          500: '#B85F44',
+          600: '#A04E38',
+          700: '#823E2F',
+          800: '#673226',
+          900: '#4D271E',
+          950: '#2E1711',
+        },
+        ink: {
+          50: '#F6F6F4',
+          100: '#E7E7E2',
+          200: '#CFCFC7',
+          300: '#ADADA0',
+          400: '#878778',
+          500: '#6B6B5C',
+          600: '#545449',
+          700: '#44443B',
+          800: '#2C2C25',
+          900: '#1A1A15',
+          950: '#0E0E0A',
+        },
+      },
+      fontFamily: {
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+      },
+      keyframes: {
+        'fade-up': {
+          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        'slow-zoom': {
+          '0%': { transform: 'scale(1.05)' },
+          '100%': { transform: 'scale(1.18)' },
+        },
+        'ken-burns': {
+          '0%': { transform: 'scale(1) translate(0,0)' },
+          '50%': { transform: 'scale(1.12) translate(-1.5%, -1%)' },
+          '100%': { transform: 'scale(1) translate(0,0)' },
+        },
+        'marquee': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        'fade-up': 'fade-up 0.9s ease-out forwards',
+        'fade-in': 'fade-in 1.2s ease-out forwards',
+        'slow-zoom': 'slow-zoom 18s ease-out forwards',
+        'ken-burns': 'ken-burns 24s ease-in-out infinite',
+        'marquee': 'marquee 40s linear infinite',
+      },
+    },
+  },
+  plugins: [],
+};
