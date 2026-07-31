@@ -43,6 +43,7 @@ export default function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-sand-200/85">
               <li><Link to="/tours" className="link-underline hover:text-sand-50">All Tours</Link></li>
               <li><Link to="/experiences" className="link-underline hover:text-sand-50">Experiences</Link></li>
+              <li><Link to="/blog" className="link-underline hover:text-sand-50">Blog</Link></li>
               <li><Link to="/about" className="link-underline hover:text-sand-50">About Us</Link></li>
               <li><Link to="/contact" className="link-underline hover:text-sand-50">Contact</Link></li>
             </ul>

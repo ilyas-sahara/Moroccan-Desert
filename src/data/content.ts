@@ -20,6 +20,18 @@ export type Tour = {
   bestSeason: string;
 };
 
+export type BlogPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  publishedAt: string;
+  category: string;
+  image: string;
+  readTime: string;
+};
+
 export const PLACEHOLDER = '/assets/images/sample1.jpg';
 
 export const IMAGES = {
@@ -244,6 +256,42 @@ export const TOURS: Tour[] = [
     included: ['Private guide', 'Private camp', 'All meals', 'Bespoke routing', 'Concierge support'],
     notIncluded: ['International flights', 'Travel insurance', 'Tips'],
     bestSeason: 'Year-round (tailored)',
+  },
+];
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: 'how-to-plan-a-first-sahara-night',
+    title: 'How to plan a first Sahara night under the stars',
+    excerpt: 'A practical guide to choosing the right desert camp, arrival timing, and small comforts that make your first night unforgettable.',
+    content: 'The first trip into the desert is less about perfection and more about rhythm. Arrive in the late afternoon so the sky opens slowly, settle into a camp with a simple lantern-lit dinner, and leave a little time to walk quietly before the stars begin to dominate the sky. A good first desert night pairs warm mint tea, a local guide, and a clear plan for sunrise so nothing feels rushed.',
+    author: 'Walk the Sahara Team',
+    publishedAt: '2026-04-20',
+    category: 'Planning',
+    image: IMAGES.stars,
+    readTime: '4 min read',
+  },
+  {
+    slug: 'what-makes-a-desert-camp-luxury',
+    title: 'What makes a desert camp feel truly luxurious?',
+    excerpt: 'Luxury in the Sahara is rarely about marble. It is the soft details, warm hospitality, and the silence of a private camp at golden hour.',
+    content: 'A luxury desert camp feels special when every touch point has intention. The tents are comfortable, the welcome is generous, and the experience is paced so guests can move from camel trek to tea ceremony to stargazing without ever feeling rushed. The best camps are built around stillness, with warm blankets, local food, and a view that says everything without a word.',
+    author: 'Amina Berrada',
+    publishedAt: '2026-03-09',
+    category: 'Culture',
+    image: IMAGES.campBerber,
+    readTime: '6 min read',
+  },
+  {
+    slug: 'three-ways-to-see-the-sahara-beyond-the-dunes',
+    title: 'Three ways to see the Sahara beyond the dunes',
+    excerpt: 'The desert is more than sand and sun. It is villages, music, families, and landscapes that unfold in layers over a single journey.',
+    content: 'Travelers often arrive expecting a single horizon and leave with a deeper understanding of the oasis towns, caravan routes, and nomadic families who still shape desert life. You can explore this through a stargazing camp, a village music evening, or a four-day nomad immersion that unfolds at the pace of local stories.',
+    author: 'Walid El Azzouzi',
+    publishedAt: '2026-02-14',
+    category: 'Editor’s pick',
+    image: IMAGES.camelCaravan,
+    readTime: '5 min read',
   },
 ];
 

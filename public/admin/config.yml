@@ -1,0 +1,73 @@
+backend:
+  name: github
+  repo: akimweb-bit/Moroccan-Desert-Journeys
+  branch: main
+  base_url: https://api.github.com
+  auth_endpoint: /login/oauth/authorize
+
+media_folder: "public/assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "home"
+    label: "Home"
+    folder: "content/home"
+    create: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "text" }
+      - { label: "Hero image", name: "hero_image", widget: "image" }
+
+  - name: "tours"
+    label: "Tours"
+    folder: "content/tours"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string" }
+      - { label: "Region", name: "region", widget: "string" }
+      - { label: "Duration", name: "duration", widget: "string" }
+      - { label: "Days", name: "days", widget: "number" }
+      - { label: "Difficulty", name: "difficulty", widget: "select", options: ["Gentle", "Moderate", "Adventurous"] }
+      - { label: "Group size", name: "groupSize", widget: "string" }
+      - { label: "Price from", name: "priceFrom", widget: "number" }
+      - { label: "Rating", name: "rating", widget: "number" }
+      - { label: "Reviews", name: "reviews", widget: "number" }
+      - { label: "Highlights", name: "highlights", widget: "list" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Gallery", name: "gallery", widget: "list" }
+      - { label: "Overview", name: "overview", widget: "text" }
+      - { label: "Itinerary", name: "itinerary", widget: "list", fields: [
+          { label: "Day", name: "day", widget: "number" },
+          { label: "Title", name: "title", widget: "string" },
+          { label: "Description", name: "description", widget: "text" },
+        ] }
+      - { label: "Included", name: "included", widget: "list" }
+      - { label: "Not included", name: "notIncluded", widget: "list" }
+      - { label: "Best season", name: "bestSeason", widget: "string" }
+
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Content", name: "content", widget: "markdown" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish date", name: "publishedAt", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Read time", name: "readTime", widget: "string" }
+
+  - name: "experiences"
+    label: "Experiences"
+    folder: "content/experiences"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Icon", name: "icon", widget: "string" }
