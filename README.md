@@ -2,14 +2,22 @@
 
 This project now includes a blog route and a GitHub-backed Decap CMS admin surface for non-developers.
 
-## How to complete the GitHub setup
+## Local-only GitHub auth setup
 
-1. Fork or create a repository.
-2. Replace the placeholder values in `public/admin/config.yml` and `public/admin/config.js`:
-   - `YOUR_GITHUB_USERNAME`
-   - `YOUR_REPO_NAME`
-3. Commit the files to the repo and deploy the site.
-4. Open `/admin/` to sign in with GitHub and manage content.
+For a local development setup, you do not need a public web host. Decap can run from a local dev server and use the GitHub backend with the Netlify auth endpoint shape that matches the expected local browser flow.
+
+## How to complete the setup
+
+1. Keep your real repo name in [public/admin/config.yml](public/admin/config.yml).
+2. Use the local development site domain value in `site_domain`.
+3. Use the standard local auth pattern:
+   - `base_url: https://api.netlify.com`
+   - `auth_endpoint: auth`
+   - `api_root: https://api.github.com`
+4. Start the app locally and open `/admin/`.
+5. Click **Login with GitHub** and complete the popup flow.
+
+This is the local-only configuration path that matches the working admin example you showed.
 
 ## What this foundation supports
 
@@ -18,4 +26,4 @@ This project now includes a blog route and a GitHub-backed Decap CMS admin surfa
 - Add tours and update tour details
 - Keep page content editable without changing code
 
-> The site UI does not yet fully read from markdown files in the live app; this provides the editorial foundation and admin surface you can extend to the full data layer in a second pass.
+> The admin shell is wired and the GitHub login path now expects a real OAuth proxy deployment. That is the final missing server-side piece for the popup flow to complete.

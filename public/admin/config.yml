@@ -2,8 +2,10 @@ backend:
   name: github
   repo: akimweb-bit/Moroccan-Desert-Journeys
   branch: main
-  base_url: https://api.github.com
-  auth_endpoint: /login/oauth/authorize
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+  api_root: https://api.github.com
+  site_domain: localhost:5173
 
 media_folder: "public/assets/images"
 public_folder: "/assets/images"
