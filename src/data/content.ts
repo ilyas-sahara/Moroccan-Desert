@@ -18,6 +18,7 @@ export type Tour = {
   included: string[];
   notIncluded: string[];
   bestSeason: string;
+  experiences?: string[];
 };
 
 export type BlogPost = {
@@ -296,12 +297,14 @@ export const BLOG_POSTS: BlogPost[] = [
 ];
 
 export const EXPERIENCES = [
-  { title: 'Camel Treks', description: 'Follow ancient caravan routes across the dunes at sunrise or sunset.', image: IMAGES.camelCaravan, icon: 'Compass' },
-  { title: 'Luxury Berber Camps', description: 'Sleep under the stars in a private tented camp with full service.', image: IMAGES.campBerber, icon: 'Tent' },
-  { title: 'Stargazing', description: 'The Sahara sky is one of the darkest on earth. Telescopes included.', image: IMAGES.stars, icon: 'Star' },
-  { title: 'Mint Tea Ceremony', description: 'The ritual that opens every encounter in the desert.', image: IMAGES.mintTea, icon: 'Coffee' },
-  { title: 'Nomad Encounters', description: 'Spend a day with a family who still moves with the seasons.', image: IMAGES.campNomad, icon: 'Users' },
-  { title: 'Sandboarding', description: 'Climb the dunes and ride down. Boards and instruction provided.', image: IMAGES.duneRipples, icon: 'Mountain' },
+  { slug: 'camel-trekking', title: 'Camel Treks', description: 'Follow ancient caravan routes across the dunes at sunrise or sunset.', image: IMAGES.camelCaravan, icon: 'Compass' },
+  { slug: 'desert-camping', title: 'Luxury Berber Camps', description: 'Sleep under the stars in a private tented camp with full service.', image: IMAGES.campBerber, icon: 'Tent' },
+  { slug: 'stargazing', title: 'Stargazing', description: 'The Sahara sky is one of the darkest on earth. Telescopes included.', image: IMAGES.stars, icon: 'Star' },
+  { slug: 'mint-tea', title: 'Mint Tea Ceremony', description: 'The ritual that opens every encounter in the desert.', image: IMAGES.mintTea, icon: 'Coffee' },
+  { slug: 'nomadic-culture', title: 'Nomad Encounters', description: 'Spend a day with a family who still moves with the seasons.', image: IMAGES.campNomad, icon: 'Users' },
+  { slug: 'sandboarding', title: 'Sandboarding', description: 'Climb the dunes and ride down. Boards and instruction provided.', image: IMAGES.duneRipples, icon: 'Mountain' },
+  { slug: '4x4-desert-routes', title: '4x4 Desert Routes', description: 'Travel beyond the paved road across valleys, hammada, and remote dunes.', image: IMAGES.heroAerial, icon: 'Mountain' },
+  { slug: 'kasbahs-and-oases', title: 'Kasbahs & Oases', description: 'Combine the Sahara with palm valleys, ancient kasbahs, and southern Moroccan villages.', image: IMAGES.aitBenHaddou, icon: 'Users' },
 ];
 
 export const TESTIMONIALS = [

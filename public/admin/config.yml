@@ -115,6 +115,7 @@ collections:
               - { label: Included, name: included, widget: list }
               - { label: Not included, name: notIncluded, widget: list }
               - { label: Best season, name: bestSeason, widget: string }
+              - { label: Experiences, name: experiences, widget: list, required: false, field: { label: Experience ID, name: experience, widget: select, options: [camel-trekking, desert-camping, stargazing, mint-tea, nomadic-culture, sandboarding, 4x4-desert-routes, kasbahs-and-oases] } }
   - name: sahara_vibe_desert_tours
     label: Sahara Vibe Desert Tours
     files:
@@ -153,6 +154,7 @@ collections:
               - { label: Included, name: included, widget: list }
               - { label: Not included, name: notIncluded, widget: list }
               - { label: Best season, name: bestSeason, widget: string }
+              - { label: Experiences, name: experiences, widget: list, required: false, field: { label: Experience ID, name: experience, widget: select, options: [camel-trekking, desert-camping, stargazing, mint-tea, nomadic-culture, sandboarding, 4x4-desert-routes, kasbahs-and-oases] } }
   - name: experiences
     label: Experiences
     files:
@@ -167,6 +169,7 @@ collections:
             summary: '{{fields.title}}'
             fields:
               - { label: Title, name: title, widget: string }
+              - { label: Experience ID, name: slug, widget: string, hint: 'Use a lowercase hyphenated ID, e.g. camel-trekking.' }
               - { label: Description, name: description, widget: text }
               - { label: Image, name: image, widget: image }
               - { label: Icon, name: icon, widget: select, options: [Compass, Tent, Star, Coffee, Users, Mountain] }

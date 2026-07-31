@@ -58,7 +58,7 @@ export default function Experiences() {
                   <div className="flex flex-1 flex-col p-6">
                     <h3 className="font-display text-xl font-medium text-ink-900">{exp.title}</h3>
                     <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-600">{exp.description}</p>
-                    <Link to="/tours" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-sand-700 hover:text-sand-800">
+                    <Link to={`/tours?experience=${encodeURIComponent(exp.slug)}`} className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-sand-700 hover:text-sand-800">
                       Find tours with this <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
                     </Link>
                   </div>

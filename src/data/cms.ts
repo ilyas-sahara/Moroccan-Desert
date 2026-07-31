@@ -124,10 +124,26 @@ export async function getCmsTours(): Promise<Tour[]> {
     loadCollection('/content/tours.json', TOURS),
     loadCollection<Tour>('/content/sahara-vibe-desert-tours.json', []),
   ]);
-  return [...primaryTours, ...importedTours.filter((tour) => !primaryTours.some((existing) => existing.slug === tour.slug))];
+  return [...primaryTours, ...importedTours.filter((tour) => !primaryTours.some((existing) => existing.slug === tour.slug))]
+    .map((tour) => ({ ...tour, experiences: tour.experiences?.length ? tour.experiences : inferTourExperiences(tour) }));
 }
 
-export async function getCmsExperiences(): Promise<Array<{ title: string; description: string; image: string; icon: string }>> {
+function inferTourExperiences(tour: Tour): string[] {
+  const text = [tour.title, tour.subtitle, tour.region, tour.overview, ...tour.highlights, ...tour.included].join(' ').toLowerCase();
+  const experiences: string[] = [];
+  const add = (id: string, match: RegExp) => { if (match.test(text)) experiences.push(id); };
+  add('camel-trekking', /camel|trek/);
+  add('desert-camping', /camp|bivouac|tent|overnight|stars/);
+  add('stargazing', /star|stargaz|telescope/);
+  add('mint-tea', /tea/);
+  add('nomadic-culture', /nomad|berber|gnawa|weav/);
+  add('sandboarding', /sandboard/);
+  add('4x4-desert-routes', /4x4|landcruiser|drive|transfer/);
+  add('kasbahs-and-oases', /kasbah|oasis|atlas|aït ben haddou|ait ben haddou|drâa|draa/);
+  return experiences;
+}
+
+export async function getCmsExperiences(): Promise<Array<{ slug: string; title: string; description: string; image: string; icon: string }>> {
   return loadCollection('/content/experiences.json', EXPERIENCES);
 }
 

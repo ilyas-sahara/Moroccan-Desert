@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { SlidersHorizontal, Search } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 import TourCard from '@/components/TourCard';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
@@ -19,6 +20,8 @@ export default function Tours() {
   const [sort, setSort] = useState<(typeof SORTS)[number]['id']>('recommended');
   const [query, setQuery] = useState('');
   const [tours, setTours] = useState<Tour[]>(TOURS);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const selectedExperience = searchParams.get('experience');
 
   useEffect(() => {
     void (async () => {
@@ -28,7 +31,10 @@ export default function Tours() {
   }, []);
 
   const filtered = useMemo(() => {
-    let list = tours.filter((t) => (difficulty === 'All' ? true : t.difficulty === difficulty));
+    let list = tours.filter((t) =>
+      (difficulty === 'All' ? true : t.difficulty === difficulty) &&
+      (!selectedExperience || t.experiences?.includes(selectedExperience)),
+    );
     if (query.trim()) {
       const q = query.toLowerCase();
       list = list.filter(
@@ -50,7 +56,7 @@ export default function Tours() {
         break;
     }
     return list;
-  }, [difficulty, sort, query, tours]);
+  }, [difficulty, sort, query, tours, selectedExperience]);
   const gridRef = useReveal<HTMLDivElement>(filtered);
 
   return (
@@ -125,12 +131,13 @@ export default function Tours() {
         <div className="container-x">
           <p className="mb-8 text-sm text-sand-600">
             Showing <span className="font-semibold text-ink-800">{filtered.length}</span> of {tours.length} journeys
+            {selectedExperience && <button onClick={() => setSearchParams({})} className="ml-3 font-semibold text-sand-700 underline">Clear experience filter</button>}
           </p>
           {filtered.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-sand-300 py-24 text-center">
               <p className="font-display text-2xl text-ink-700">No journeys match your search.</p>
               <button
-                onClick={() => { setDifficulty('All'); setQuery(''); }}
+                onClick={() => { setDifficulty('All'); setQuery(''); setSearchParams({}); }}
                 className="btn-ghost mt-6"
               >
                 Reset filters
