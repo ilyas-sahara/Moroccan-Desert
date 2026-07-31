@@ -115,6 +115,44 @@ collections:
               - { label: Included, name: included, widget: list }
               - { label: Not included, name: notIncluded, widget: list }
               - { label: Best season, name: bestSeason, widget: string }
+  - name: sahara_vibe_desert_tours
+    label: Sahara Vibe Desert Tours
+    files:
+      - file: public/content/sahara-vibe-desert-tours.json
+        format: json
+        label: Sahara Vibe Desert Tours
+        name: sahara_vibe_desert_tours
+        fields:
+          - label: Tours
+            name: items
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: Slug, name: slug, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Region, name: region, widget: string }
+              - { label: Duration, name: duration, widget: string }
+              - { label: Days, name: days, widget: number }
+              - { label: Difficulty, name: difficulty, widget: select, options: [Gentle, Moderate, Adventurous] }
+              - { label: Group size, name: groupSize, widget: string }
+              - { label: Price from, name: priceFrom, widget: number }
+              - { label: Rating, name: rating, widget: number, value_type: float }
+              - { label: Reviews, name: reviews, widget: number }
+              - { label: Highlights, name: highlights, widget: list }
+              - { label: Image, name: image, widget: image }
+              - { label: Gallery, name: gallery, widget: list, field: { label: Image, name: image, widget: image } }
+              - { label: Overview, name: overview, widget: text }
+              - label: Itinerary
+                name: itinerary
+                widget: list
+                fields:
+                  - { label: Day, name: day, widget: number }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - { label: Included, name: included, widget: list }
+              - { label: Not included, name: notIncluded, widget: list }
+              - { label: Best season, name: bestSeason, widget: string }
   - name: experiences
     label: Experiences
     files:

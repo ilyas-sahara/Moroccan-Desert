@@ -120,7 +120,11 @@ export async function getContactPageContent(): Promise<ContactPageContent> {
 }
 
 export async function getCmsTours(): Promise<Tour[]> {
-  return loadCollection('/content/tours.json', TOURS);
+  const [primaryTours, importedTours] = await Promise.all([
+    loadCollection('/content/tours.json', TOURS),
+    loadCollection<Tour>('/content/sahara-vibe-desert-tours.json', []),
+  ]);
+  return [...primaryTours, ...importedTours.filter((tour) => !primaryTours.some((existing) => existing.slug === tour.slug))];
 }
 
 export async function getCmsExperiences(): Promise<Array<{ title: string; description: string; image: string; icon: string }>> {
