@@ -1,4 +1,5 @@
-[
+{
+  "items": [
   {
     "slug": "how-to-plan-a-first-sahara-night",
     "title": "How to plan a first Sahara night under the stars",
@@ -32,4 +33,5 @@
     "image": "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "readTime": "5 min read"
   }
-]
+  ]
+}

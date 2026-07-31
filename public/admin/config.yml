@@ -7,149 +7,183 @@ backend:
   api_root: https://api.github.com
   site_domain: localhost:5173
 
-media_folder: "public/assets/images"
-public_folder: "/assets/images"
+media_folder: public/assets/images
+public_folder: /assets/images
 
 collections:
-  - name: "settings"
-    label: "Site Settings"
+  - name: settings
+    label: Site Settings
     files:
-      - file: "public/content/site/settings.json"
-        label: "Site Settings"
-        name: "settings"
-        format: "json"
+      - file: public/content/site/settings.json
+        format: json
+        label: Site Settings
+        name: settings
         fields:
-          - { label: "Brand name", name: "brand_name", widget: "string" }
-          - { label: "Tagline", name: "tagline", widget: "string" }
-          - { label: "Phone", name: "phone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Address", name: "address", widget: "text" }
-          - { label: "Instagram URL", name: "instagram_url", widget: "string" }
-          - { label: "Facebook URL", name: "facebook_url", widget: "string" }
-
-  - name: "homepage"
-    label: "Homepage"
+          - { label: Brand name, name: brand_name, widget: string }
+          - { label: Tagline, name: tagline, widget: string }
+          - { label: Phone, name: phone, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: Address, name: address, widget: text }
+          - { label: Instagram URL, name: instagram_url, widget: string }
+          - { label: Facebook URL, name: facebook_url, widget: string }
+  - name: homepage
+    label: Homepage
     files:
-      - file: "public/content/site/home.json"
-        label: "Homepage"
-        name: "homepage"
-        format: "json"
+      - file: public/content/site/home.json
+        format: json
+        label: Homepage
+        name: homepage
         fields:
-          - { label: "Hero eyebrow", name: "hero_eyebrow", widget: "string" }
-          - { label: "Hero title", name: "hero_title", widget: "string" }
-          - { label: "Hero subtitle", name: "hero_subtitle", widget: "text" }
-          - { label: "Intro title", name: "intro_title", widget: "string" }
-          - { label: "Intro subtitle", name: "intro_subtitle", widget: "text" }
-          - { label: "Story title", name: "story_title", widget: "string" }
-          - { label: "Story description", name: "story_description", widget: "text" }
-          - { label: "CTA label", name: "cta_label", widget: "string" }
-          - { label: "CTA link", name: "cta_link", widget: "string" }
-
-  - name: "about"
-    label: "About Page"
+          - { label: Hero eyebrow, name: hero_eyebrow, widget: string }
+          - { label: Hero title, name: hero_title, widget: string }
+          - { label: Hero subtitle, name: hero_subtitle, widget: text }
+          - { label: Intro title, name: intro_title, widget: string }
+          - { label: Intro subtitle, name: intro_subtitle, widget: text }
+          - { label: Story title, name: story_title, widget: string }
+          - { label: Story description, name: story_description, widget: text }
+          - { label: CTA label, name: cta_label, widget: string }
+          - { label: CTA link, name: cta_link, widget: string }
+  - name: about
+    label: About Page
     files:
-      - file: "public/content/site/about.json"
-        label: "About Page"
-        name: "about"
-        format: "json"
+      - file: public/content/site/about.json
+        format: json
+        label: About Page
+        name: about
         fields:
-          - { label: "Hero eyebrow", name: "hero_eyebrow", widget: "string" }
-          - { label: "Hero title", name: "hero_title", widget: "string" }
-          - { label: "Hero subtitle", name: "hero_subtitle", widget: "text" }
-          - { label: "Intro title", name: "intro_title", widget: "string" }
-          - { label: "Intro description", name: "intro_description", widget: "text" }
-          - { label: "Values", name: "values", widget: "list", fields: [
-              { label: "Title", name: "title", widget: "string" },
-              { label: "Text", name: "text", widget: "text" },
-            ] }
-
-  - name: "contact"
-    label: "Contact Page"
+          - { label: Hero eyebrow, name: hero_eyebrow, widget: string }
+          - { label: Hero title, name: hero_title, widget: string }
+          - { label: Hero subtitle, name: hero_subtitle, widget: text }
+          - { label: Intro title, name: intro_title, widget: string }
+          - { label: Intro description, name: intro_description, widget: text }
+          - label: Values
+            name: values
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Icon, name: icon, widget: select, required: false, options: [Users, Leaf, Heart, Compass] }
+  - name: contact
+    label: Contact Page
     files:
-      - file: "public/content/site/contact.json"
-        label: "Contact Page"
-        name: "contact"
-        format: "json"
+      - file: public/content/site/contact.json
+        format: json
+        label: Contact Page
+        name: contact
         fields:
-          - { label: "Hero eyebrow", name: "hero_eyebrow", widget: "string" }
-          - { label: "Hero title", name: "hero_title", widget: "string" }
-          - { label: "Hero subtitle", name: "hero_subtitle", widget: "text" }
-          - { label: "Office text", name: "office_text", widget: "text" }
-          - { label: "Phone", name: "phone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
-      - { label: "Content", name: "content", widget: "markdown" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Published date", name: "publishedAt", widget: "datetime" }
-      - { label: "Category", name: "category", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Read time", name: "readTime", widget: "string" }
-
-  - name: "tours"
-    label: "Tours"
-    folder: "content/tours"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Subtitle", name: "subtitle", widget: "string" }
-      - { label: "Region", name: "region", widget: "string" }
-      - { label: "Duration", name: "duration", widget: "string" }
-      - { label: "Days", name: "days", widget: "number" }
-      - { label: "Difficulty", name: "difficulty", widget: "select", options: ["Gentle", "Moderate", "Adventurous"] }
-      - { label: "Group size", name: "groupSize", widget: "string" }
-      - { label: "Price from", name: "priceFrom", widget: "number" }
-      - { label: "Rating", name: "rating", widget: "number" }
-      - { label: "Reviews", name: "reviews", widget: "number" }
-      - { label: "Highlights", name: "highlights", widget: "list" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Gallery", name: "gallery", widget: "list" }
-      - { label: "Overview", name: "overview", widget: "text" }
-      - { label: "Itinerary", name: "itinerary", widget: "list", fields: [
-          { label: "Day", name: "day", widget: "number" },
-          { label: "Title", name: "title", widget: "string" },
-          { label: "Description", name: "description", widget: "text" },
-        ] }
-      - { label: "Included", name: "included", widget: "list" }
-      - { label: "Not included", name: "notIncluded", widget: "list" }
-      - { label: "Best season", name: "bestSeason", widget: "string" }
-
-  - name: "experiences"
-    label: "Experiences"
-    folder: "content/experiences"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Icon", name: "icon", widget: "select", options: ["Compass", "Tent", "Star", "Coffee", "Users", "Mountain"] }
-
-  - name: "testimonials"
-    label: "Testimonials"
-    folder: "content/testimonials"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Country", name: "country", widget: "string" }
-      - { label: "Text", name: "text", widget: "text" }
-      - { label: "Tour", name: "tour", widget: "string" }
-      - { label: "Rating", name: "rating", widget: "number" }
-
-  - name: "faqs"
-    label: "FAQs"
-    folder: "content/faqs"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Question", name: "q", widget: "string" }
-      - { label: "Answer", name: "a", widget: "text" }
+          - { label: Hero eyebrow, name: hero_eyebrow, widget: string }
+          - { label: Hero title, name: hero_title, widget: string }
+          - { label: Hero subtitle, name: hero_subtitle, widget: text }
+          - { label: Office text, name: office_text, widget: text }
+          - { label: Phone, name: phone, widget: string }
+          - { label: Email, name: email, widget: string }
+  - name: tours
+    label: Tours
+    files:
+      - file: public/content/tours.json
+        format: json
+        label: Tours
+        name: tours
+        fields:
+          - label: Tours
+            name: items
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: Slug, name: slug, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Region, name: region, widget: string }
+              - { label: Duration, name: duration, widget: string }
+              - { label: Days, name: days, widget: number }
+              - { label: Difficulty, name: difficulty, widget: select, options: [Gentle, Moderate, Adventurous] }
+              - { label: Group size, name: groupSize, widget: string }
+              - { label: Price from, name: priceFrom, widget: number }
+              - { label: Rating, name: rating, widget: number, value_type: float }
+              - { label: Reviews, name: reviews, widget: number }
+              - { label: Highlights, name: highlights, widget: list }
+              - { label: Image, name: image, widget: image }
+              - { label: Gallery, name: gallery, widget: list, field: { label: Image, name: image, widget: image } }
+              - { label: Overview, name: overview, widget: text }
+              - label: Itinerary
+                name: itinerary
+                widget: list
+                fields:
+                  - { label: Day, name: day, widget: number }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - { label: Included, name: included, widget: list }
+              - { label: Not included, name: notIncluded, widget: list }
+              - { label: Best season, name: bestSeason, widget: string }
+  - name: experiences
+    label: Experiences
+    files:
+      - file: public/content/experiences.json
+        format: json
+        label: Experiences
+        name: experiences
+        fields:
+          - label: Experiences
+            name: items
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Image, name: image, widget: image }
+              - { label: Icon, name: icon, widget: select, options: [Compass, Tent, Star, Coffee, Users, Mountain] }
+  - name: blog
+    label: Blog
+    files:
+      - file: public/content/blog.json
+        format: json
+        label: Blog posts
+        name: blog
+        fields:
+          - label: Posts
+            name: items
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: Slug, name: slug, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Excerpt, name: excerpt, widget: text }
+              - { label: Content, name: content, widget: markdown }
+              - { label: Author, name: author, widget: string }
+              - { label: Published date, name: publishedAt, widget: datetime, format: YYYY-MM-DD, date_format: YYYY-MM-DD, time_format: false }
+              - { label: Category, name: category, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Read time, name: readTime, widget: string }
+  - name: testimonials
+    label: Testimonials
+    files:
+      - file: public/content/testimonials.json
+        format: json
+        label: Testimonials
+        name: testimonials
+        fields:
+          - label: Testimonials
+            name: items
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Country, name: country, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Tour, name: tour, widget: string }
+              - { label: Rating, name: rating, widget: number }
+  - name: faqs
+    label: FAQs
+    files:
+      - file: public/content/faqs.json
+        format: json
+        label: FAQs
+        name: faqs
+        fields:
+          - label: FAQs
+            name: items
+            widget: list
+            summary: '{{fields.q}}'
+            fields:
+              - { label: Question, name: q, widget: string }
+              - { label: Answer, name: a, widget: text }

@@ -28,7 +28,7 @@ export type AboutPageContent = {
   hero_subtitle: string;
   intro_title: string;
   intro_description: string;
-  values: Array<{ title: string; text: string }>;
+  values: Array<{ title: string; text: string; icon?: string }>;
 };
 
 export type ContactPageContent = {
@@ -97,6 +97,12 @@ async function loadJson<T>(path: string, fallback: T): Promise<T> {
   }
 }
 
+async function loadCollection<T>(path: string, fallback: T[]): Promise<T[]> {
+  const content = await loadJson<T[] | { items?: T[] }>(path, fallback);
+  if (Array.isArray(content)) return content.length ? content : fallback;
+  return Array.isArray(content.items) && content.items.length ? content.items : fallback;
+}
+
 export async function getSiteSettings(): Promise<SiteSettings> {
   return loadJson('/content/site/settings.json', defaultSettings);
 }
@@ -114,48 +120,23 @@ export async function getContactPageContent(): Promise<ContactPageContent> {
 }
 
 export async function getCmsTours(): Promise<Tour[]> {
-  try {
-    const tours = await loadJson<Tour[]>('/content/tours.json', TOURS);
-    return tours.length ? tours : TOURS;
-  } catch {
-    return TOURS;
-  }
+  return loadCollection('/content/tours.json', TOURS);
 }
 
 export async function getCmsExperiences(): Promise<Array<{ title: string; description: string; image: string; icon: string }>> {
-  try {
-    const experiences = await loadJson<Array<{ title: string; description: string; image: string; icon: string }>>('/content/experiences.json', EXPERIENCES);
-    return experiences.length ? experiences : EXPERIENCES;
-  } catch {
-    return EXPERIENCES;
-  }
+  return loadCollection('/content/experiences.json', EXPERIENCES);
 }
 
 export async function getCmsBlogPosts(): Promise<BlogPost[]> {
-  try {
-    const posts = await loadJson<BlogPost[]>('/content/blog.json', BLOG_POSTS);
-    return posts.length ? posts : BLOG_POSTS;
-  } catch {
-    return BLOG_POSTS;
-  }
+  return loadCollection('/content/blog.json', BLOG_POSTS);
 }
 
 export async function getCmsTestimonials(): Promise<Array<{ name: string; country: string; text: string; tour: string; rating: number }>> {
-  try {
-    const testimonials = await loadJson<Array<{ name: string; country: string; text: string; tour: string; rating: number }>>('/content/testimonials.json', TESTIMONIALS);
-    return testimonials.length ? testimonials : TESTIMONIALS;
-  } catch {
-    return TESTIMONIALS;
-  }
+  return loadCollection('/content/testimonials.json', TESTIMONIALS);
 }
 
 export async function getCmsFaqs(): Promise<Array<{ q: string; a: string }>> {
-  try {
-    const faqs = await loadJson<Array<{ q: string; a: string }>>('/content/faqs.json', FAQS);
-    return faqs.length ? faqs : FAQS;
-  } catch {
-    return FAQS;
-  }
+  return loadCollection('/content/faqs.json', FAQS);
 }
 
 export const CMS_IMAGES = IMAGES;

@@ -18,7 +18,7 @@ export default function Contact() {
     email: 'hello@walkthesahara.com',
   });
   const [tourOptions, setTourOptions] = useState(TOURS.map((t) => t.title));
-  const [faqs, setFaqs] = useState(FAQs);
+  const [faqs, setFaqs] = useState(FAQS);
 
   useEffect(() => {
     void (async () => {

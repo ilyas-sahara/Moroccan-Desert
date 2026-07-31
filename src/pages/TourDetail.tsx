@@ -15,7 +15,7 @@ export default function TourDetail() {
   const [tours, setTours] = useState<Tour[]>(TOURS);
   const tour = tours.find((t) => t.slug === slug) as Tour | undefined;
   const [activeImg, setActiveImg] = useState(0);
-  const ref = useReveal<HTMLDivElement>();
+  const ref = useReveal<HTMLOListElement>();
 
   useEffect(() => {
     void (async () => {

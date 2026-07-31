@@ -1,4 +1,5 @@
-[
+{
+  "items": [
   {
     "name": "Eleanor M.",
     "country": "United Kingdom",
@@ -19,5 +20,20 @@
     "text": "As a solo traveler I was nervous, but the team made me feel completely safe and included. The stargazing night was unforgettable.",
     "tour": "Stargazing Night Camp",
     "rating": 5
+  },
+  {
+    "name": "The Alvarez Family",
+    "country": "Spain",
+    "text": "Our kids still talk about the camel ride and the bread baked in the sand. A real adventure, but so well organized.",
+    "tour": "Nomad & Berber Immersion",
+    "rating": 5
+  },
+  {
+    "name": "David R.",
+    "country": "United States",
+    "text": "From Marrakech to the dunes and back, every transfer was seamless. Aït Ben Haddou at sunset was a highlight of our whole trip to Morocco.",
+    "tour": "Atlas to Sahara",
+    "rating": 5
   }
-]
+  ]
+}

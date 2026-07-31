@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type DependencyList } from 'react';
 
 /**
  * Reveal-on-scroll hook. Adds `is-visible` to elements with the `reveal`
  * class once they enter the viewport. Returns a ref to attach to a
  * container; observes all `.reveal` descendants.
  */
-export function useReveal<T extends HTMLElement = HTMLDivElement>() {
+export function useReveal<T extends HTMLElement = HTMLDivElement>(dependencies: DependencyList = []) {
   const ref = useRef<T | null>(null);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>() {
 
     nodes.forEach((n) => io.observe(n));
     return () => io.disconnect();
-  }, []);
+  }, [dependencies]);
 
   return ref;
 }

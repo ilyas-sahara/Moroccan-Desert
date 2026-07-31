@@ -1,4 +1,5 @@
-[
+{
+  "items": [
   {
     "slug": "merzouga-golden-escape",
     "title": "Merzouga Golden Escape",
@@ -87,10 +88,214 @@
         "day": 3,
         "title": "The Silent Dunes",
         "description": "A long, slow trek across rolling dunes with no other humans in sight. Lunch in the shade of a tamarisk. Camp near a dry riverbed."
+      },
+      {
+        "day": 4,
+        "title": "Nomad Encampment",
+        "description": "Meet a nomad family, share tea, and learn how they move with the seasons. Afternoon climb to a 150m dune for sunset."
+      },
+      {
+        "day": 5,
+        "title": "Return to Merzouga",
+        "description": "Final sunrise, breakfast, and a 4x4 transfer back to Merzouga."
       }
     ],
     "included": ["Camel trek with guide", "4x4 support vehicle", "4 nights camp", "All meals", "Gnawa village visit", "Local nomad encounter"],
     "notIncluded": ["Transport to Merzouga", "Sleeping bag liner", "Travel insurance", "Tips"],
     "bestSeason": "October — March"
+  },
+  {
+    "slug": "atlas-to-sahara",
+    "title": "Atlas to Sahara",
+    "subtitle": "From the High Atlas passes to the dunes of Erg Chebbi",
+    "region": "Marrakech · Aït Ben Haddou · Merzouga",
+    "duration": "4 days · 3 nights",
+    "days": 4,
+    "difficulty": "Moderate",
+    "groupSize": "Up to 10 guests",
+    "priceFrom": 640,
+    "rating": 4.9,
+    "reviews": 158,
+    "highlights": [
+      "Cross the Tizi n'Tichka pass",
+      "Sunset at Aït Ben Haddou kasbah",
+      "Overnight in the dunes of Erg Chebbi",
+      "Private 4x4 with local driver-guide"
+    ],
+    "image": "https://images.pexels.com/photos/29976840/pexels-photo-29976840.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "gallery": [
+      "https://images.pexels.com/photos/29976840/pexels-photo-29976840.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/14145449/pexels-photo-14145449.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/30906049/pexels-photo-30906049.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "overview": "A four-day private journey linking two of Morocco's great landscapes: the mud-brick kasbahs of the High Atlas and the golden dunes of the Sahara. Travel by 4x4 with a local driver-guide, ending with a night in a luxury desert camp.",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Marrakech to Aït Ben Haddou",
+        "description": "Cross the Tizi n'Tichka pass through the High Atlas. Arrive at Aït Ben Haddou for a guided sunset tour of the UNESCO-listed kasbah. Overnight in a kasbah guesthouse."
+      },
+      {
+        "day": 2,
+        "title": "The Road to the Dades",
+        "description": "Drive through the Valley of a Thousand Kasbahs and the Dades Gorge. Lunch in a local family home. Afternoon drive to Merzouga."
+      },
+      {
+        "day": 3,
+        "title": "Into the Sahara",
+        "description": "Swap the 4x4 for camels and trek into Erg Chebbi. Sunset, mint tea, and a night in a luxury Berber camp with stargazing."
+      },
+      {
+        "day": 4,
+        "title": "Sunrise & Return",
+        "description": "Sunrise over the dunes, breakfast, and the camel ride back to Merzouga. 4x4 transfer back to Marrakech."
+      }
+    ],
+    "included": ["Private 4x4 with driver-guide", "3 nights accommodation", "Camel trek", "Camp dinner & breakfast", "Aït Ben Haddou guided tour"],
+    "notIncluded": ["Lunches", "Drinks", "Travel insurance", "Tips"],
+    "bestSeason": "September — May"
+  },
+  {
+    "slug": "stargazing-night-camp",
+    "title": "Stargazing Night Camp",
+    "subtitle": "One night, one camp, the whole sky",
+    "region": "Erg Chebbi · Merzouga",
+    "duration": "2 days · 1 night",
+    "days": 2,
+    "difficulty": "Gentle",
+    "groupSize": "Up to 12 guests",
+    "priceFrom": 180,
+    "rating": 4.7,
+    "reviews": 302,
+    "highlights": [
+      "Guided night-sky tour with telescope",
+      "Campfire music with Berber drummers",
+      "Sunrise dune hike",
+      "Ideal for first-time desert visitors"
+    ],
+    "image": "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "gallery": [
+      "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/14809603/pexels-photo-14809603.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/8369874/pexels-photo-8369874.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/12128953/pexels-photo-12128953.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "overview": "A single unforgettable night in the desert. Arrive in Merzouga in the afternoon, camel-trek to a luxury camp, and spend the evening with a local astronomer, Berber drummers, and the clearest sky you'll ever see.",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Sunset & Stars",
+        "description": "Afternoon camel trek into the dunes. Arrive at camp for sunset, mint tea, and dinner. After dinner, a guided telescope session and Berber drumming around the fire."
+      },
+      {
+        "day": 2,
+        "title": "Sunrise & Departure",
+        "description": "Early hike to a nearby dune for sunrise. Breakfast at camp, then camel ride back to Merzouga."
+      }
+    ],
+    "included": ["Camel trek", "1 night luxury camp", "Dinner & breakfast", "Telescope session", "Berber music"],
+    "notIncluded": ["Transport to Merzouga", "Lunch", "Drinks", "Tips"],
+    "bestSeason": "October — April"
+  },
+  {
+    "slug": "nomad-berber-immersion",
+    "title": "Nomad & Berber Immersion",
+    "subtitle": "Live with the people of the desert for four days",
+    "region": "Erg Chebbi · Nomad Territory",
+    "duration": "4 days · 3 nights",
+    "days": 4,
+    "difficulty": "Moderate",
+    "groupSize": "Up to 6 guests",
+    "priceFrom": 720,
+    "rating": 4.9,
+    "reviews": 64,
+    "highlights": [
+      "Stay with a nomad family",
+      "Learn to bake bread in the sand",
+      "Weaving & carpet workshop",
+      "Off-grid wild camping"
+    ],
+    "image": "https://images.pexels.com/photos/35901297/pexels-photo-35901297.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "gallery": [
+      "https://images.pexels.com/photos/35901297/pexels-photo-35901297.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/35901289/pexels-photo-35901289.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/30906051/pexels-photo-30906051.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/9029494/pexels-photo-9029494.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "overview": "A cultural deep-dive. Spend four days with the people of the Sahara — nomad families, Berber weavers, and the guides who grew up between these dunes. You'll eat, sleep, and travel as they do.",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Meet the Nomads",
+        "description": "Camel trek from Merzouga to a nomad family's seasonal encampment. Share tea, learn how they move with the seasons, and sleep in a traditional tent."
+      },
+      {
+        "day": 2,
+        "title": "Bread in the Sand",
+        "description": "Spend the day with the family. Learn to bake sand-baked bread, milk the goats, and prepare a tagine. Afternoon walk to a nearby fossil bed."
+      },
+      {
+        "day": 3,
+        "title": "Weaving Workshop",
+        "description": "Travel to a Berber weaving cooperative. Spend the day learning the patterns and stories woven into each carpet. Overnight in a wild camp."
+      },
+      {
+        "day": 4,
+        "title": "Return to Merzouga",
+        "description": "Sunrise, breakfast, and camel ride back to Merzouga."
+      }
+    ],
+    "included": ["Camel trek", "3 nights accommodation", "All meals", "Nomad family stay", "Weaving workshop"],
+    "notIncluded": ["Transport to Merzouga", "Drinks", "Travel insurance", "Tips"],
+    "bestSeason": "November — March"
+  },
+  {
+    "slug": "private-bespoke-desert",
+    "title": "Private Bespoke Desert",
+    "subtitle": "Your own route, your own pace, your own Sahara",
+    "region": "Tailored to you",
+    "duration": "Flexible",
+    "days": 0,
+    "difficulty": "Gentle",
+    "groupSize": "Private",
+    "priceFrom": 1200,
+    "rating": 5.0,
+    "reviews": 41,
+    "highlights": [
+      "Fully private guide & camp",
+      "Flexible duration and route",
+      "Photography-focused options",
+      "Helicopter or 4x4 transfers available"
+    ],
+    "image": "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "gallery": [
+      "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/37441710/pexels-photo-37441710.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/10434667/pexels-photo-10434667.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/998635/pexels-photo-998635.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "overview": "For travelers who want something truly their own. Tell us what you dream of — a helicopter drop into a remote dune field, a private camp for two, a photography expedition — and we'll build it.",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Consultation",
+        "description": "A call with our team to understand your group, your dates, and what kind of desert experience you're after."
+      },
+      {
+        "day": 2,
+        "title": "Tailored Proposal",
+        "description": "We send a bespoke itinerary with route, camp, and guide options within 48 hours."
+      },
+      {
+        "day": 3,
+        "title": "Your Journey",
+        "description": "Everything is arranged. You arrive and the desert does the rest."
+      }
+    ],
+    "included": ["Private guide", "Private camp", "All meals", "Bespoke routing", "Concierge support"],
+    "notIncluded": ["International flights", "Travel insurance", "Tips"],
+    "bestSeason": "Year-round (tailored)"
   }
-]
+  ]
+}

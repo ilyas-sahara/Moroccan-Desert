@@ -1,4 +1,5 @@
-[
+{
+  "items": [
   {
     "title": "Camel Treks",
     "description": "Follow ancient caravan routes across the dunes at sunrise or sunset.",
@@ -22,5 +23,18 @@
     "description": "The ritual that opens every encounter in the desert.",
     "image": "https://images.pexels.com/photos/31497982/pexels-photo-31497982.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "icon": "Coffee"
+  },
+  {
+    "title": "Nomad Encounters",
+    "description": "Spend a day with a family who still moves with the seasons.",
+    "image": "https://images.pexels.com/photos/35901289/pexels-photo-35901289.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Users"
+  },
+  {
+    "title": "Sandboarding",
+    "description": "Climb the dunes and ride down. Boards and instruction provided.",
+    "image": "https://images.pexels.com/photos/28829638/pexels-photo-28829638.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Mountain"
   }
-]
+  ]
+}

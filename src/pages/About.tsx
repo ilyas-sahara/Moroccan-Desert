@@ -4,18 +4,22 @@ import { Leaf, Heart, Users, Compass, ArrowRight } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
 import { IMAGES } from '@/data/content';
-import { getAboutPageContent } from '@/data/cms';
+import { getAboutPageContent, type AboutPageContent } from '@/data/cms';
 
+const VALUE_ICONS: Record<string, typeof Compass> = { Users, Leaf, Heart, Compass };
 const VALUES = [
   { icon: Users, title: 'Local First', text: 'Every guide is Berber, born and raised at the edge of the dunes. The money you spend stays in the desert.' },
   { icon: Leaf, title: 'Leave No Trace', text: 'Our camps are fully removable. We pack out every trace and protect the fragile dune ecology.' },
   { icon: Heart, title: 'Small Groups', text: 'We cap every departure at a handful of guests. The desert is for silence, not crowds.' },
   { icon: Compass, title: 'Genuine Craft', text: 'We weave real encounters with nomad families, weavers, and musicians — never staged shows.' },
 ];
+const VALUE_ICON_BY_TITLE = Object.fromEntries(
+  VALUES.map(({ icon, title }) => [title, icon]),
+) as Record<string, typeof Compass>;
 
 export default function About() {
   const ref = useReveal<HTMLDivElement>();
-  const [aboutContent, setAboutContent] = useState({
+  const [aboutContent, setAboutContent] = useState<AboutPageContent>({
     hero_eyebrow: 'Our Story',
     hero_title: 'Born at the edge of the dunes',
     hero_subtitle: 'Walk the Sahara began with a single Berber family in Merzouga and a belief that the desert should be shared with care.',
@@ -88,18 +92,21 @@ export default function About() {
         <div className="container-x">
           <SectionHeading align="center" eyebrow="What We Believe" title="The principles behind every journey" />
           <div ref={ref} className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {aboutContent.values.map((v, i) => (
+            {aboutContent.values.map((v, i) => {
+              const Icon = VALUE_ICONS[v.icon ?? ''] ?? VALUE_ICON_BY_TITLE[v.title] ?? Compass;
+              return (
               <div
                 key={v.title}
                 className={`reveal reveal-delay-${(i % 4) + 1} rounded-2xl bg-white p-7 shadow-sm ring-1 ring-sand-200/50 card-lift`}
               >
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-sand-100 text-sand-700">
-                  <v.icon className="h-6 w-6" strokeWidth={1.5} />
+                  <Icon className="h-6 w-6" strokeWidth={1.5} />
                 </span>
                 <h3 className="mt-5 font-display text-xl font-medium text-ink-900">{v.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-600">{v.text}</p>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

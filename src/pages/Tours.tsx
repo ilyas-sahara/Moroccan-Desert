@@ -19,7 +19,6 @@ export default function Tours() {
   const [sort, setSort] = useState<(typeof SORTS)[number]['id']>('recommended');
   const [query, setQuery] = useState('');
   const [tours, setTours] = useState<Tour[]>(TOURS);
-  const gridRef = useReveal<HTMLDivElement>();
 
   useEffect(() => {
     void (async () => {
@@ -52,6 +51,7 @@ export default function Tours() {
     }
     return list;
   }, [difficulty, sort, query, tours]);
+  const gridRef = useReveal<HTMLDivElement>(filtered);
 
   return (
     <main className="pt-20">

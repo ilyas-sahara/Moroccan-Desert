@@ -1,4 +1,5 @@
-[
+{
+  "items": [
   {
     "q": "When is the best time to visit the Sahara?",
     "a": "October through April, when daytime temperatures are comfortable and nights are cool. Summer months (June–August) can be extremely hot during the day."
@@ -10,5 +11,18 @@
   {
     "q": "Do I need to be fit for the camel trek?",
     "a": "Our standard treks are gentle and suitable for most travelers. For the multi-day crossings a basic level of fitness helps — you'll be walking alongside the camels for a few hours each day."
+  },
+  {
+    "q": "What should I pack?",
+    "a": "Layers are essential — warm clothes for the evening, sun protection for the day, and a small daypack. We send a full packing list after booking."
+  },
+  {
+    "q": "Is the camp suitable for children?",
+    "a": "Yes. Many of our experiences welcome children, and the family-focused departures are designed with kids in mind. Let us know your group and we'll recommend the right trip."
+  },
+  {
+    "q": "Can I book a private departure?",
+    "a": "Absolutely. Most of our tours can be run as private departures, and we also build fully bespoke itineraries. Get in touch and we'll tailor everything to your group."
   }
-]
+  ]
+}
