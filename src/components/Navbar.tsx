@@ -10,6 +10,7 @@ const LINKS = [
   { to: '/blog', label: 'Blog' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
+  { to: '/custom-journey', label: 'Custom Journey' },
 ];
 
 const DROPDOWNS = [
@@ -104,7 +105,7 @@ export default function Navbar() {
               to={l.to}
               end={l.to === '/'}
               className={({ isActive }) =>
-                `link-underline ${l.to === '/' ? 'order-0' : l.to === '/about' ? 'order-4' : 'order-5'} text-sm font-medium tracking-wide transition-colors duration-300 ${
+                `link-underline ${l.to === '/' ? 'order-0' : l.to === '/about' ? 'order-4' : l.to === '/contact' ? 'order-5' : 'order-6'} text-sm font-medium tracking-wide transition-colors duration-300 ${
                   solid ? 'text-ink-700 hover:text-sand-700' : 'text-white/90 hover:text-white'
                 } ${isActive ? (solid ? 'text-sand-700' : 'text-white') : ''}`
               }
@@ -150,7 +151,7 @@ export default function Navbar() {
               </div>
             );
           })}
-          <Link to="/custom-journey" className="btn-primary order-6 !px-5 !py-2.5 !text-xs">
+          <Link to="/custom-journey" className="btn-primary order-7 !px-5 !py-2.5 !text-xs">
             Book a Journey
           </Link>
         </nav>

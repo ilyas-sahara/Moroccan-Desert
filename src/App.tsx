@@ -11,6 +11,7 @@ import BlogDetail from '@/pages/BlogDetail';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import CustomJourney from '@/pages/CustomJourney';
+import NotFound from '@/pages/NotFound';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,6 +38,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/custom-journey" element={<CustomJourney />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />
