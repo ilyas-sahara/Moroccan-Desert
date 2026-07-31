@@ -8,6 +8,7 @@ import { TOURS, type Tour } from '@/data/content';
 import { getCmsTours } from '@/data/cms';
 import { useReveal } from '@/hooks/useReveal';
 import TourCard from '@/components/TourCard';
+import TourMap from '@/components/TourMap';
 import SectionHeading from '@/components/SectionHeading';
 
 export default function TourDetail() {
@@ -202,6 +203,7 @@ export default function TourDetail() {
           {/* Booking sidebar */}
           <aside className="lg:col-span-4">
             <div className="sticky top-28 rounded-2xl bg-white p-7 shadow-lg ring-1 ring-sand-200/60">
+              <TourMap tour={tour} className="mb-6" />
               <p className="text-[11px] uppercase tracking-[0.18em] text-sand-500">From</p>
               <p className="font-display text-4xl font-semibold text-ink-900">
                 €{tour.priceFrom}

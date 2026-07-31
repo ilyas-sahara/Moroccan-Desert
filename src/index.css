@@ -97,3 +97,13 @@
   transform-origin: center;
   animation: pin-halo 2.4s ease-out infinite;
 }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.95; }
+}
+.star {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: twinkle 2.8s ease-in-out infinite;
+}
