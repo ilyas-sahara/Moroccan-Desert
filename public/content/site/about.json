@@ -1,0 +1,13 @@
+{
+  "hero_eyebrow": "Our Story",
+  "hero_title": "Born at the edge of the dunes",
+  "hero_subtitle": "Walk the Sahara began with a single Berber family in Merzouga and a belief that the desert should be shared with care.",
+  "intro_title": "A family of guides, not a company.",
+  "intro_description": "We are a small collective of Berber guides and camp hosts from the Erg Chebbi region. We grew up walking these dunes, and we started Walk the Sahara to share them with travelers who want more than a photo stop.",
+  "values": [
+    { "title": "Local First", "text": "Every guide is Berber, born and raised at the edge of the dunes. The money you spend stays in the desert." },
+    { "title": "Leave No Trace", "text": "Our camps are fully removable. We pack out every trace and protect the fragile dune ecology." },
+    { "title": "Small Groups", "text": "We cap every departure at a handful of guests. The desert is for silence, not crowds." },
+    { "title": "Genuine Craft", "text": "We weave real encounters with nomad families, weavers, and musicians — never staged shows." }
+  ]
+}

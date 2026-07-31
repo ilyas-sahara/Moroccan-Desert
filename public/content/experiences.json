@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Camel Treks",
+    "description": "Follow ancient caravan routes across the dunes at sunrise or sunset.",
+    "image": "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Compass"
+  },
+  {
+    "title": "Luxury Berber Camps",
+    "description": "Sleep under the stars in a private tented camp with full service.",
+    "image": "https://images.pexels.com/photos/12536402/pexels-photo-12536402.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Tent"
+  },
+  {
+    "title": "Stargazing",
+    "description": "The Sahara sky is one of the darkest on earth. Telescopes included.",
+    "image": "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Star"
+  },
+  {
+    "title": "Mint Tea Ceremony",
+    "description": "The ritual that opens every encounter in the desert.",
+    "image": "https://images.pexels.com/photos/31497982/pexels-photo-31497982.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Coffee"
+  }
+]

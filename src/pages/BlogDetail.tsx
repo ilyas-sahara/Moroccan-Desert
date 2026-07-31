@@ -1,10 +1,20 @@
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, CalendarDays, Clock3, UserRound } from 'lucide-react';
-import { BLOG_POSTS } from '@/data/content';
+import { BLOG_POSTS, type BlogPost } from '@/data/content';
+import { getCmsBlogPosts } from '@/data/cms';
 
 export default function BlogDetail() {
   const { slug } = useParams();
-  const post = BLOG_POSTS.find((item) => item.slug === slug);
+  const [posts, setPosts] = useState<BlogPost[]>(BLOG_POSTS);
+  const post = posts.find((item) => item.slug === slug);
+
+  useEffect(() => {
+    void (async () => {
+      const cmsPosts = await getCmsBlogPosts();
+      setPosts(cmsPosts);
+    })();
+  }, []);
 
   if (!post) {
     return (

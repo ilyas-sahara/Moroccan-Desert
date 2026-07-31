@@ -1,8 +1,10 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Compass, Tent, Star, Coffee, Users, Mountain, ArrowRight } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
 import { EXPERIENCES, IMAGES } from '@/data/content';
+import { getCmsExperiences } from '@/data/cms';
 
 const ICONS: Record<string, typeof Compass> = {
   Compass, Tent, Star, Coffee, Users, Mountain,
@@ -10,6 +12,15 @@ const ICONS: Record<string, typeof Compass> = {
 
 export default function Experiences() {
   const ref = useReveal<HTMLDivElement>();
+  const [experiences, setExperiences] = useState(EXPERIENCES);
+
+  useEffect(() => {
+    void (async () => {
+      const cmsExperiences = await getCmsExperiences();
+      setExperiences(cmsExperiences);
+    })();
+  }, []);
+
   return (
     <main className="pt-20">
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
@@ -30,7 +41,7 @@ export default function Experiences() {
       <section className="bg-sand-50 py-20 lg:py-28">
         <div className="container-x">
           <div ref={ref} className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {EXPERIENCES.map((exp, i) => {
+            {experiences.map((exp, i) => {
               const Icon = ICONS[exp.icon] ?? Compass;
               return (
                 <article

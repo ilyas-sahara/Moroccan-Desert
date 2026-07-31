@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: akimweb-bit/Moroccan-Desert-Journeys
-  branch: main
+  branch: master
   base_url: https://api.netlify.com
   auth_endpoint: auth
   api_root: https://api.github.com
@@ -11,14 +11,87 @@ media_folder: "public/assets/images"
 public_folder: "/assets/images"
 
 collections:
-  - name: "home"
-    label: "Home"
-    folder: "content/home"
-    create: false
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "public/content/site/settings.json"
+        label: "Site Settings"
+        name: "settings"
+        format: "json"
+        fields:
+          - { label: "Brand name", name: "brand_name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Address", name: "address", widget: "text" }
+          - { label: "Instagram URL", name: "instagram_url", widget: "string" }
+          - { label: "Facebook URL", name: "facebook_url", widget: "string" }
+
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - file: "public/content/site/home.json"
+        label: "Homepage"
+        name: "homepage"
+        format: "json"
+        fields:
+          - { label: "Hero eyebrow", name: "hero_eyebrow", widget: "string" }
+          - { label: "Hero title", name: "hero_title", widget: "string" }
+          - { label: "Hero subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "Intro title", name: "intro_title", widget: "string" }
+          - { label: "Intro subtitle", name: "intro_subtitle", widget: "text" }
+          - { label: "Story title", name: "story_title", widget: "string" }
+          - { label: "Story description", name: "story_description", widget: "text" }
+          - { label: "CTA label", name: "cta_label", widget: "string" }
+          - { label: "CTA link", name: "cta_link", widget: "string" }
+
+  - name: "about"
+    label: "About Page"
+    files:
+      - file: "public/content/site/about.json"
+        label: "About Page"
+        name: "about"
+        format: "json"
+        fields:
+          - { label: "Hero eyebrow", name: "hero_eyebrow", widget: "string" }
+          - { label: "Hero title", name: "hero_title", widget: "string" }
+          - { label: "Hero subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "Intro title", name: "intro_title", widget: "string" }
+          - { label: "Intro description", name: "intro_description", widget: "text" }
+          - { label: "Values", name: "values", widget: "list", fields: [
+              { label: "Title", name: "title", widget: "string" },
+              { label: "Text", name: "text", widget: "text" },
+            ] }
+
+  - name: "contact"
+    label: "Contact Page"
+    files:
+      - file: "public/content/site/contact.json"
+        label: "Contact Page"
+        name: "contact"
+        format: "json"
+        fields:
+          - { label: "Hero eyebrow", name: "hero_eyebrow", widget: "string" }
+          - { label: "Hero title", name: "hero_title", widget: "string" }
+          - { label: "Hero subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "Office text", name: "office_text", widget: "text" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Subtitle", name: "subtitle", widget: "text" }
-      - { label: "Hero image", name: "hero_image", widget: "image" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Content", name: "content", widget: "markdown" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Published date", name: "publishedAt", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Read time", name: "readTime", widget: "string" }
 
   - name: "tours"
     label: "Tours"
@@ -49,27 +122,34 @@ collections:
       - { label: "Not included", name: "notIncluded", widget: "list" }
       - { label: "Best season", name: "bestSeason", widget: "string" }
 
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
-      - { label: "Content", name: "content", widget: "markdown" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Publish date", name: "publishedAt", widget: "datetime" }
-      - { label: "Category", name: "category", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Read time", name: "readTime", widget: "string" }
-
   - name: "experiences"
     label: "Experiences"
     folder: "content/experiences"
     create: true
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Image", name: "image", widget: "image" }
-      - { label: "Icon", name: "icon", widget: "string" }
+      - { label: "Icon", name: "icon", widget: "select", options: ["Compass", "Tent", "Star", "Coffee", "Users", "Mountain"] }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Country", name: "country", widget: "string" }
+      - { label: "Text", name: "text", widget: "text" }
+      - { label: "Tour", name: "tour", widget: "string" }
+      - { label: "Rating", name: "rating", widget: "number" }
+
+  - name: "faqs"
+    label: "FAQs"
+    folder: "content/faqs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Question", name: "q", widget: "string" }
+      - { label: "Answer", name: "a", widget: "text" }

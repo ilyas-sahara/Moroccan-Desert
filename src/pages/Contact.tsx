@@ -1,13 +1,37 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Mail, Phone, MapPin, Send, Check, ChevronDown } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
 import { TOURS, FAQS, IMAGES } from '@/data/content';
+import { getContactPageContent, getCmsFaqs, getCmsTours } from '@/data/cms';
 
 export default function Contact() {
   const ref = useReveal<HTMLDivElement>();
   const [sent, setSent] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [contactContent, setContactContent] = useState({
+    hero_eyebrow: 'Contact',
+    hero_title: "Let's plan your Sahara",
+    hero_subtitle: "Tell us your dates, your group, and your dream — we'll reply within 24 hours with a tailored proposal.",
+    office_text: "Prefer to talk it through? Reach us directly — we're based in Merzouga, on the edge of the dunes.",
+    phone: '+212 5 35 00 00 00',
+    email: 'hello@walkthesahara.com',
+  });
+  const [tourOptions, setTourOptions] = useState(TOURS.map((t) => t.title));
+  const [faqs, setFaqs] = useState(FAQs);
+
+  useEffect(() => {
+    void (async () => {
+      const [pageContent, cmsTours, cmsFaqs] = await Promise.all([
+        getContactPageContent(),
+        getCmsTours(),
+        getCmsFaqs(),
+      ]);
+      setContactContent(pageContent);
+      setTourOptions(cmsTours.map((t) => t.title));
+      setFaqs(cmsFaqs);
+    })();
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,9 +48,9 @@ export default function Contact() {
         <div className="container-x relative z-10">
           <SectionHeading
             light
-            eyebrow="Contact"
-            title="Let's plan your Sahara"
-            subtitle="Tell us your dates, your group, and your dream — we'll reply within 24 hours with a tailored proposal."
+            eyebrow={contactContent.hero_eyebrow}
+            title={contactContent.hero_title}
+            subtitle={contactContent.hero_subtitle}
           />
         </div>
       </section>
@@ -59,7 +83,7 @@ export default function Contact() {
                     <Field label="Phone (optional)" name="phone" type="tel" />
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <SelectField label="Interested in" name="tour" options={TOURS.map((t) => t.title)} />
+                    <SelectField label="Interested in" name="tour" options={tourOptions} />
                     <SelectField label="Group size" name="group" options={['1 — 2', '3 — 4', '5 — 6', '7+']} />
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
@@ -88,7 +112,7 @@ export default function Contact() {
             <div className="rounded-2xl bg-ink-950 p-7 text-sand-100 shadow-lg sm:p-9">
               <h3 className="font-display text-2xl font-medium text-white">Talk to a human</h3>
               <p className="mt-3 text-sm leading-relaxed text-sand-200/85">
-                Prefer to talk it through? Reach us directly — we're based in Merzouga, on the edge of the dunes.
+                {contactContent.office_text}
               </p>
               <ul className="mt-7 space-y-5 text-sm">
                 <li className="flex items-start gap-4">
@@ -106,7 +130,7 @@ export default function Contact() {
                   </span>
                   <div>
                     <p className="text-[11px] uppercase tracking-[0.18em] text-sand-400">Phone / WhatsApp</p>
-                    <p className="mt-0.5 text-sand-100">+212 5 35 00 00 00</p>
+                    <p className="mt-0.5 text-sand-100">{contactContent.phone}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -115,7 +139,7 @@ export default function Contact() {
                   </span>
                   <div>
                     <p className="text-[11px] uppercase tracking-[0.18em] text-sand-400">Email</p>
-                    <p className="mt-0.5 text-sand-100">hello@walkthesahara.com</p>
+                    <p className="mt-0.5 text-sand-100">{contactContent.email}</p>
                   </div>
                 </li>
               </ul>
@@ -129,7 +153,7 @@ export default function Contact() {
         <div className="container-x">
           <SectionHeading align="center" eyebrow="Good to Know" title="Frequently asked questions" />
           <div ref={ref} className="mx-auto mt-12 max-w-3xl space-y-3">
-            {FAQS.map((f, i) => {
+            {faqs.map((f, i) => {
               const open = openFaq === i;
               return (
                 <div key={i} className={`reveal overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-sand-200/50`}>

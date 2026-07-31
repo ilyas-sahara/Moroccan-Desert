@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { SlidersHorizontal, Search } from 'lucide-react';
 import TourCard from '@/components/TourCard';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
-import { TOURS } from '@/data/content';
+import { TOURS, type Tour } from '@/data/content';
+import { getCmsTours } from '@/data/cms';
 
 const DIFFICULTIES = ['All', 'Gentle', 'Moderate', 'Adventurous'] as const;
 const SORTS = [
@@ -17,10 +18,18 @@ export default function Tours() {
   const [difficulty, setDifficulty] = useState<(typeof DIFFICULTIES)[number]>('All');
   const [sort, setSort] = useState<(typeof SORTS)[number]['id']>('recommended');
   const [query, setQuery] = useState('');
+  const [tours, setTours] = useState<Tour[]>(TOURS);
   const gridRef = useReveal<HTMLDivElement>();
 
+  useEffect(() => {
+    void (async () => {
+      const cmsTours = await getCmsTours();
+      setTours(cmsTours);
+    })();
+  }, []);
+
   const filtered = useMemo(() => {
-    let list = TOURS.filter((t) => (difficulty === 'All' ? true : t.difficulty === difficulty));
+    let list = tours.filter((t) => (difficulty === 'All' ? true : t.difficulty === difficulty));
     if (query.trim()) {
       const q = query.toLowerCase();
       list = list.filter(
@@ -42,7 +51,7 @@ export default function Tours() {
         break;
     }
     return list;
-  }, [difficulty, sort, query]);
+  }, [difficulty, sort, query, tours]);
 
   return (
     <main className="pt-20">
@@ -115,7 +124,7 @@ export default function Tours() {
       <section className="bg-sand-50 py-16 lg:py-24">
         <div className="container-x">
           <p className="mb-8 text-sm text-sand-600">
-            Showing <span className="font-semibold text-ink-800">{filtered.length}</span> of {TOURS.length} journeys
+            Showing <span className="font-semibold text-ink-800">{filtered.length}</span> of {tours.length} journeys
           </p>
           {filtered.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-sand-300 py-24 text-center">

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Eleanor M.",
+    "country": "United Kingdom",
+    "text": "The most beautiful sky I have ever seen. Our guide knew every dune by name and the camp was genuinely luxurious. We didn't want to leave.",
+    "tour": "Merzouga Golden Escape",
+    "rating": 5
+  },
+  {
+    "name": "Thomas & Léa",
+    "country": "France",
+    "text": "We did the Grand Crossing and it felt like stepping off the edge of the world. Five days of absolute silence and gold.",
+    "tour": "Sahara Grand Crossing",
+    "rating": 5
+  },
+  {
+    "name": "Yuki T.",
+    "country": "Japan",
+    "text": "As a solo traveler I was nervous, but the team made me feel completely safe and included. The stargazing night was unforgettable.",
+    "tour": "Stargazing Night Camp",
+    "rating": 5
+  }
+]

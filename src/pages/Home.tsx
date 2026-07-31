@@ -1,10 +1,12 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Compass, Tent, Star, Coffee, Users, Mountain } from 'lucide-react';
 import Hero from '@/components/Hero';
 import SectionHeading from '@/components/SectionHeading';
 import TourCard from '@/components/TourCard';
 import { useReveal } from '@/hooks/useReveal';
-import { TOURS, EXPERIENCES, TESTIMONIALS, IMAGES } from '@/data/content';
+import { TOURS, EXPERIENCES, TESTIMONIALS, IMAGES, type Tour } from '@/data/content';
+import { getCmsTours, getCmsExperiences, getCmsTestimonials, getHomePageContent } from '@/data/cms';
 
 const ICONS: Record<string, typeof Compass> = {
   Compass, Tent, Star, Coffee, Users, Mountain,
@@ -17,6 +19,35 @@ export default function Home() {
   const galleryRef = useReveal<HTMLDivElement>();
   const testimonialsRef = useReveal<HTMLDivElement>();
   const ctaRef = useReveal<HTMLDivElement>();
+  const [homeContent, setHomeContent] = useState({
+    hero_eyebrow: 'The Journey',
+    hero_title: 'The desert changes everyone who walks into it.',
+    hero_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace.',
+    intro_title: 'The Sahara changes everyone who walks into it.',
+    intro_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace. This is the Sahara as it has always been — vast, silent, and impossibly beautiful.',
+    story_title: 'The Sahara has one of the darkest skies on earth.',
+    story_description: 'Far from any city light, the dunes of Erg Chebbi become an observatory. Our guides will point out the Milky Way, the planets, and the stories the Berber people have told the stars for centuries.',
+    cta_label: 'Plan Your Journey',
+    cta_link: '/contact',
+  });
+  const [tours, setTours] = useState<Tour[]>(TOURS);
+  const [experiences, setExperiences] = useState(EXPERIENCES);
+  const [testimonials, setTestimonials] = useState(TESTIMONIALS);
+
+  useEffect(() => {
+    void (async () => {
+      const [pageContent, cmsTours, cmsExperiences, cmsTestimonials] = await Promise.all([
+        getHomePageContent(),
+        getCmsTours(),
+        getCmsExperiences(),
+        getCmsTestimonials(),
+      ]);
+      setHomeContent(pageContent);
+      setTours(cmsTours);
+      setExperiences(cmsExperiences);
+      setTestimonials(cmsTestimonials);
+    })();
+  }, []);
 
   return (
     <main>
@@ -28,9 +59,9 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-6">
               <SectionHeading
-                eyebrow="The Journey"
-                title="The desert changes everyone who walks into it."
-                subtitle="For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace. This is the Sahara as it has always been — vast, silent, and impossibly beautiful."
+                eyebrow={homeContent.hero_eyebrow}
+                title={homeContent.hero_title}
+                subtitle={homeContent.intro_subtitle}
               />
               <div className="mt-8 flex flex-wrap items-center gap-5">
                 <Link to="/about" className="btn-primary">
@@ -66,7 +97,7 @@ export default function Home() {
           </div>
 
           <div ref={featuredRef} className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {TOURS.slice(0, 3).map((tour, i) => (
+            {tours.slice(0, 3).map((tour, i) => (
               <TourCard key={tour.slug} tour={tour} index={i} />
             ))}
           </div>
@@ -83,7 +114,7 @@ export default function Home() {
             subtitle="Every journey is woven from small moments — the call of a camel driver, the first sip of mint tea, the silence of a sky full of stars."
           />
           <div ref={expRef} className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {EXPERIENCES.map((exp, i) => {
+            {experiences.map((exp, i) => {
               const Icon = ICONS[exp.icon] ?? Compass;
               return (
                 <div
@@ -118,16 +149,14 @@ export default function Home() {
           <div className="max-w-xl">
             <span className="eyebrow text-sand-300"><span className="hairline" /> A Night Like No Other</span>
             <h2 className="reveal mt-4 font-display text-3xl font-medium leading-tight text-white sm:text-4xl lg:text-[2.75rem] text-balance">
-              The Sahara has one of the darkest skies on earth.
+              {homeContent.story_title}
             </h2>
             <p className="reveal reveal-delay-1 mt-5 text-base leading-relaxed text-sand-200/85 sm:text-lg">
-              Far from any city light, the dunes of Erg Chebbi become an observatory.
-              Our guides will point out the Milky Way, the planets, and the stories the
-              Berber people have told the stars for centuries.
+              {homeContent.story_description}
             </p>
             <div className="reveal reveal-delay-2 mt-9 flex flex-wrap gap-4">
-              <Link to="/tours/stargazing-night-camp" className="btn-light">
-                Book the Stargazing Camp
+              <Link to={homeContent.cta_link} className="btn-light">
+                {homeContent.cta_label}
               </Link>
               <Link to="/experiences" className="inline-flex items-center gap-2 rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:bg-white/10">
                 See All Experiences
@@ -170,7 +199,7 @@ export default function Home() {
             title="What our guests carry home"
           />
           <div ref={testimonialsRef} className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {TESTIMONIALS.map((t, i) => (
+            {testimonials.map((t, i) => (
               <figure
                 key={t.name}
                 className={`reveal reveal-delay-${(i % 3) + 1} flex flex-col rounded-2xl bg-white p-7 shadow-sm ring-1 ring-sand-200/50`}

@@ -1,8 +1,10 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Leaf, Heart, Users, Compass, ArrowRight } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
 import { IMAGES } from '@/data/content';
+import { getAboutPageContent } from '@/data/cms';
 
 const VALUES = [
   { icon: Users, title: 'Local First', text: 'Every guide is Berber, born and raised at the edge of the dunes. The money you spend stays in the desert.' },
@@ -13,6 +15,27 @@ const VALUES = [
 
 export default function About() {
   const ref = useReveal<HTMLDivElement>();
+  const [aboutContent, setAboutContent] = useState({
+    hero_eyebrow: 'Our Story',
+    hero_title: 'Born at the edge of the dunes',
+    hero_subtitle: 'Walk the Sahara began with a single Berber family in Merzouga and a belief that the desert should be shared with care.',
+    intro_title: 'A family of guides, not a company.',
+    intro_description: 'We are a small collective of Berber guides and camp hosts from the Erg Chebbi region. We grew up walking these dunes, and we started Walk the Sahara to share them with travelers who want more than a photo stop.',
+    values: [
+      { title: 'Local First', text: 'Every guide is Berber, born and raised at the edge of the dunes. The money you spend stays in the desert.' },
+      { title: 'Leave No Trace', text: 'Our camps are fully removable. We pack out every trace and protect the fragile dune ecology.' },
+      { title: 'Small Groups', text: 'We cap every departure at a handful of guests. The desert is for silence, not crowds.' },
+      { title: 'Genuine Craft', text: 'We weave real encounters with nomad families, weavers, and musicians — never staged shows.' },
+    ],
+  });
+
+  useEffect(() => {
+    void (async () => {
+      const pageContent = await getAboutPageContent();
+      setAboutContent(pageContent);
+    })();
+  }, []);
+
   return (
     <main className="pt-20">
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
@@ -23,9 +46,9 @@ export default function About() {
         <div className="container-x relative z-10">
           <SectionHeading
             light
-            eyebrow="Our Story"
-            title="Born at the edge of the dunes"
-            subtitle="Walk the Sahara began with a single Berber family in Merzouga and a belief that the desert should be shared with care."
+            eyebrow={aboutContent.hero_eyebrow}
+            title={aboutContent.hero_title}
+            subtitle={aboutContent.hero_subtitle}
           />
         </div>
       </section>
@@ -38,8 +61,8 @@ export default function About() {
           <div className="lg:col-span-6">
             <SectionHeading
               eyebrow="Who We Are"
-              title="A family of guides, not a company."
-              subtitle="We are a small collective of Berber guides and camp hosts from the Erg Chebbi region. We grew up walking these dunes, and we started Walk the Sahara to share them with travelers who want more than a photo stop."
+              title={aboutContent.intro_title}
+              subtitle={aboutContent.intro_description}
             />
             <p className="mt-5 text-base leading-relaxed text-ink-600">
               Fifteen years later we still lead every trip ourselves. No subcontractors, no scripted
@@ -65,7 +88,7 @@ export default function About() {
         <div className="container-x">
           <SectionHeading align="center" eyebrow="What We Believe" title="The principles behind every journey" />
           <div ref={ref} className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {VALUES.map((v, i) => (
+            {aboutContent.values.map((v, i) => (
               <div
                 key={v.title}
                 className={`reveal reveal-delay-${(i % 4) + 1} rounded-2xl bg-white p-7 shadow-sm ring-1 ring-sand-200/50 card-lift`}

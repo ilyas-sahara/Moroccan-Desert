@@ -1,0 +1,96 @@
+[
+  {
+    "slug": "merzouga-golden-escape",
+    "title": "Merzouga Golden Escape",
+    "subtitle": "A two-night immersion into the dunes of Erg Chebbi",
+    "region": "Erg Chebbi · Merzouga",
+    "duration": "3 days · 2 nights",
+    "days": 3,
+    "difficulty": "Gentle",
+    "groupSize": "Up to 8 guests",
+    "priceFrom": 390,
+    "rating": 4.9,
+    "reviews": 214,
+    "highlights": [
+      "Sunrise camel trek to the highest dune",
+      "Overnight in a luxury Berber tented camp",
+      "Traditional mint tea ceremony at sunset",
+      "Stargazing with a local astronomer"
+    ],
+    "image": "https://images.pexels.com/photos/30906049/pexels-photo-30906049.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "gallery": [
+      "https://images.pexels.com/photos/30906049/pexels-photo-30906049.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/30906051/pexels-photo-30906051.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/31497982/pexels-photo-31497982.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/12536402/pexels-photo-12536402.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "overview": "A gentle introduction to the Sahara. Leave the paved road behind in Merzouga and ride a camel caravan into the golden dunes of Erg Chebbi. Spend two nights in a luxury Berber camp, wake to sunrise over the dunes, and end each day with mint tea around the fire.",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival in Merzouga",
+        "description": "Meet your guide in Merzouga, leave your vehicle, and begin the camel trek into Erg Chebbi. Arrive at camp for sunset, mint tea, and a traditional Berber dinner under the stars."
+      },
+      {
+        "day": 2,
+        "title": "Dunes & Desert Life",
+        "description": "Sunrise camel ride to the highest dune for panoramic views. Return for breakfast, then a relaxed day exploring nomad families, an underground fossil quarry, and the rhythms of desert life."
+      },
+      {
+        "day": 3,
+        "title": "Sunrise & Departure",
+        "description": "A final sunrise from the dunes, breakfast at camp, and a camel ride back to Merzouga. Depart with a memory card full of gold."
+      }
+    ],
+    "included": ["Camel trek with guide", "2 nights luxury camp", "All meals at camp", "Mint tea & campfire", "Bottled water"],
+    "notIncluded": ["Transport to Merzouga", "Travel insurance", "Alcoholic drinks", "Tips for guides"],
+    "bestSeason": "October — April"
+  },
+  {
+    "slug": "sahara-grand-crossing",
+    "title": "Sahara Grand Crossing",
+    "subtitle": "Five days deep into the dunes, from oasis to oasis",
+    "region": "Erg Chebbi · Erg Znigui",
+    "duration": "5 days · 4 nights",
+    "days": 5,
+    "difficulty": "Adventurous",
+    "groupSize": "Up to 6 guests",
+    "priceFrom": 890,
+    "rating": 4.8,
+    "reviews": 96,
+    "highlights": [
+      "Multi-day camel caravan across the dunes",
+      "Two distinct wild camps",
+      "Visit to a Gnawa music village",
+      "Sunset from a 150m dune summit"
+    ],
+    "image": "https://images.pexels.com/photos/33566021/pexels-photo-33566021.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "gallery": [
+      "https://images.pexels.com/photos/33566021/pexels-photo-33566021.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/8357638/pexels-photo-8357638.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/37441710/pexels-photo-37441710.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "overview": "For travelers who want to truly disappear into the desert. A five-day camel-supported crossing from Merzouga through the silent dunes of Erg Znigui, sleeping in two different wild camps and meeting the people who call this landscape home.",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Into Erg Chebbi",
+        "description": "Begin in Merzouga. Load the camels and trek into the dunes. First night at a fixed luxury camp with full dinner and stargazing."
+      },
+      {
+        "day": 2,
+        "title": "Khamlia & Gnawa Rhythms",
+        "description": "Visit the village of Khamlia, home to a Gnawa music community. After lunch, trek to a wild camp among the smaller dunes of Erg Znigui."
+      },
+      {
+        "day": 3,
+        "title": "The Silent Dunes",
+        "description": "A long, slow trek across rolling dunes with no other humans in sight. Lunch in the shade of a tamarisk. Camp near a dry riverbed."
+      }
+    ],
+    "included": ["Camel trek with guide", "4x4 support vehicle", "4 nights camp", "All meals", "Gnawa village visit", "Local nomad encounter"],
+    "notIncluded": ["Transport to Merzouga", "Sleeping bag liner", "Travel insurance", "Tips"],
+    "bestSeason": "October — March"
+  }
+]

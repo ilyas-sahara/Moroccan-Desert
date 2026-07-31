@@ -1,8 +1,19 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SectionHeading from '@/components/SectionHeading';
-import { BLOG_POSTS } from '@/data/content';
+import { BLOG_POSTS, type BlogPost } from '@/data/content';
+import { getCmsBlogPosts } from '@/data/cms';
 
 export default function Blog() {
+  const [posts, setPosts] = useState<BlogPost[]>(BLOG_POSTS);
+
+  useEffect(() => {
+    void (async () => {
+      const cmsPosts = await getCmsBlogPosts();
+      setPosts(cmsPosts);
+    })();
+  }, []);
+
   return (
     <main className="pt-20">
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
@@ -26,7 +37,7 @@ export default function Blog() {
 
       <section className="bg-sand-50 py-16 lg:py-24">
         <div className="container-x grid gap-7 md:grid-cols-2 xl:grid-cols-3">
-          {BLOG_POSTS.map((post) => (
+          {posts.map((post) => (
             <article key={post.slug} className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-sand-200/60">
               <img src={post.image} alt={post.title} className="h-56 w-full object-cover" />
               <div className="p-6">
