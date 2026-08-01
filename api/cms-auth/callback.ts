@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Buffer } from 'node:buffer';
 
@@ -38,30 +37,6 @@ const sendError = (res: VercelResponse, status: number, message: string) => {
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method === 'OPTIONS') {
-    res.setHeader('access-control-allow-origin', ALLOWED_ORIGIN);
-    res.setHeader('access-control-allow-methods', 'GET, OPTIONS');
-    res.setHeader('access-control-allow-headers', 'content-type');
-    res.status(204).end();
-    return;
-  }
-
-  const callbackMatch = req.url?.match(/\/callback(?:\?|$)/);
-  const action = callbackMatch ? 'callback' : 'auth';
-
-  if (action === 'auth') {
-    const scope = (req.query.scope as string) || 'repo';
-    const siteId = (req.query.site_id as string) || ALLOWED_ORIGIN;
-    const host = req.headers.host ?? new URL(ALLOWED_ORIGIN).host;
-    const origin = req.headers['x-forwarded-proto'] ? `${req.headers['x-forwarded-proto']}://${host}` : ALLOWED_ORIGIN;
-    const redirectUri = `${origin}/api/cms-auth/callback`;
-    const state = Buffer.from(JSON.stringify({ site_id: siteId, origin })).toString('base64url');
-    const authorize = `https://github.com/login/oauth/authorize?client_id=${encodeURIComponent(CLIENT_ID)}&scope=${encodeURIComponent(scope)}&redirect_uri=${encodeURIComponent(redirectUri)}&state=${encodeURIComponent(state)}`;
-    res.setHeader('cache-control', 'no-store');
-    res.redirect(302, authorize);
-    return;
-  }
-
   const code = req.query.code as string | undefined;
   const stateRaw = req.query.state as string | undefined;
   let stateOrigin = ALLOWED_ORIGIN;
@@ -100,7 +75,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return;
     }
     sendScript(res, tokenJson.access_token, 'github');
-  } catch (err: any) {
-    sendError(res, 500, err?.message ?? 'unknown error');
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'unknown error';
+    sendError(res, 500, message);
   }
 }
