@@ -124,6 +124,13 @@ export default function About() {
           </Link>
         </div>
       </section>
+
+      <Link
+        to="/admin"
+        aria-hidden="true"
+        tabIndex={-1}
+        className="fixed bottom-0 left-0 z-50 h-6 w-6 cursor-pointer opacity-0"
+      />
     </main>
   );
 }
