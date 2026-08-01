@@ -54,8 +54,7 @@ export default function CustomJourney() {
       `Email: ${data.get('email')}`,
       `Phone: ${data.get('phone') || 'Not provided'}`,
       `Preferred start date: ${data.get('date') || 'Flexible'}`,
-      `Travelers: ${data.get('travelers')}`,
-      `Duration: ${data.get('duration')}`,
+      `Travelers: ${data.get('travelers') || 'Not specified'}`,
       `Comfort: ${data.get('comfort')}`,
       `Pickup / meet-up: ${data.get('pickupType')} — ${data.get('pickupLocation') || 'To be confirmed'}`,
       'Day-by-day outline:',
@@ -92,7 +91,7 @@ export default function CustomJourney() {
                   <div className="grid gap-5 sm:grid-cols-2">
                     <Input label="Your name" name="name" required /><Input label="Email" name="email" type="email" required />
                     <Input label="Phone / WhatsApp" name="phone" type="tel" /><Input label="Preferred start date" name="date" type="date" />
-                    <Select label="Travelers" name="travelers" options={['1–2 travelers', '3–4 travelers', '5–8 travelers', '9+ travelers']} /><Select label="Duration" name="duration" options={['2–3 days', '4–5 days', '6–8 days', '9+ days']} />
+                    <Input label="Travelers" name="travelers" type="number" required min={1} max={50} placeholder="e.g. 2" />
                   </div>
                   <div className="rounded-2xl bg-sand-100/60 p-5">
                     <h3 className="font-display text-xl text-ink-900">Pickup or meet-up point</h3>
@@ -257,8 +256,8 @@ function JourneyMap({ dayPlans, dayCount, interests }: { dayPlans: string[]; day
   );
 }
 
-function Input({ label, name, type = 'text', required = false, placeholder }: { label: string; name: string; type?: string; required?: boolean; placeholder?: string }) {
-  return <div><label className="mb-1.5 block text-sm font-medium text-ink-700">{label}</label><input name={name} type={type} required={required} placeholder={placeholder} className="w-full rounded-xl border border-sand-200 bg-sand-50/40 px-4 py-3 text-sm text-ink-800 placeholder:text-sand-500 focus:border-sand-400 focus:outline-none focus:ring-2 focus:ring-sand-200" /></div>;
+function Input({ label, name, type = 'text', required = false, placeholder, min, max }: { label: string; name: string; type?: string; required?: boolean; placeholder?: string; min?: number; max?: number }) {
+  return <div><label className="mb-1.5 block text-sm font-medium text-ink-700">{label}</label><input name={name} type={type} required={required} placeholder={placeholder} min={min} max={max} className="w-full rounded-xl border border-sand-200 bg-sand-50/40 px-4 py-3 text-sm text-ink-800 placeholder:text-sand-500 focus:border-sand-400 focus:outline-none focus:ring-2 focus:ring-sand-200" /></div>;
 }
 
 function Select({ label, name, options }: { label: string; name: string; options: string[] }) {
