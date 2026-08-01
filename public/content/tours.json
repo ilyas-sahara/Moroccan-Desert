@@ -307,54 +307,6 @@
         "Photography-focused options",
         "Helicopter or 4x4 transfers available"
       ]
-    },
-    {
-      "groupSize": "7",
-      "bestSeason": "SUMMER",
-      "experiences": [
-        "camel-trekking",
-        "stargazing",
-        "mint-tea"
-      ],
-      "itinerary": [
-        {
-          "day": 1,
-          "title": "111",
-          "description": "11111111"
-        },
-        {
-          "day": 2,
-          "title": "222222",
-          "description": "2222222222222222222"
-        },
-        {
-          "day": 3,
-          "title": "333333333",
-          "description": "33333333333333333333333333"
-        }
-      ],
-      "slug": "link",
-      "notIncluded": [
-        "SDFVBSDF"
-      ],
-      "gallery": [
-        "/assets/images/capture-d’écran-2026-03-02-154239.jpg"
-      ],
-      "priceFrom": 123,
-      "duration": "5 Days",
-      "region": "ssssssss",
-      "days": 2,
-      "subtitle": "sssss",
-      "title": "sssss",
-      "overview": "sfddddddddddddddvb",
-      "image": "/assets/images/capture-d’écran-2026-02-28-140145.jpg",
-      "difficulty": "Gentle",
-      "included": [
-        "DDFGVSEF"
-      ],
-      "highlights": [
-        "-rfgrsgfsr-ergzergzerg-srtgsreg"
-      ]
     }
   ]
 }
