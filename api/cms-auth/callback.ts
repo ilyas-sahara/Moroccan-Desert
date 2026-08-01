@@ -13,18 +13,25 @@ const sendScript = (res: VercelResponse, token: string, provider: string) => {
 (function () {
   var provider = ${JSON.stringify(provider)};
   var payload = ${JSON.stringify(payload)};
+  var handshakeMessage = 'authorizing:' + provider;
   var successMessage = 'authorization:' + provider + ':success:' + payload;
   function post(msg) {
     try { if (window.opener && window.opener !== window) window.opener.postMessage(msg, '*'); } catch (e) {}
     try { if (window.parent && window.parent !== window) window.parent.postMessage(msg, '*'); } catch (e) {}
   }
+  // Step 1: popup initiates the handshake (Decap 3.4.0's opener waits for it).
+  post(handshakeMessage);
+  // Step 2: when the opener echoes the handshake back, post the success token.
   window.addEventListener('message', function (event) {
-    if (event.data === 'authorizing:' + provider) {
-      post('authorizing:' + provider);
+    if (event.data === handshakeMessage) {
       setTimeout(function () { post(successMessage); window.close(); }, 50);
     }
   });
-  setTimeout(function () { document.body.innerText = 'Authenticated. You can close this window.'; }, 1500);
+  // Fallback: if no handshake echo arrives within ~1.5s, still send the token.
+  setTimeout(function () {
+    post(successMessage);
+    document.body.innerText = 'Authenticated. You can close this window.';
+  }, 1500);
 })();
 </script>
 </body></html>`);
