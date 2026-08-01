@@ -5,7 +5,7 @@ backend:
   base_url: https://api.netlify.com
   auth_endpoint: auth
   api_root: https://api.github.com
-  site_domain: localhost:5173
+  site_domain: https://moroccan-desert.vercel.app
 
 media_folder: public/assets/images
 public_folder: /assets/images
