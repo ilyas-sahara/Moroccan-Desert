@@ -2,8 +2,8 @@ backend:
   name: github
   repo: akimweb-bit/Moroccan-Desert
   branch: master
-  base_url: https://moroccan-desert.vercel.app/api/cms-auth
-  auth_endpoint: auth
+  base_url: https://moroccan-desert.vercel.app
+  auth_endpoint: api/cms-auth/auth
   api_root: https://api.github.com
 
 media_folder: public/assets/images

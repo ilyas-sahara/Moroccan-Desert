@@ -66,4 +66,5 @@ vars from step 2 are missing or the project hasn't been redeployed after adding 
 
 If you later point a custom domain at this Vercel project, update both the
 **Homepage URL** and **Authorization callback URL** in the GitHub OAuth App settings,
-and update `base_url` in `public/admin/config.yml` to match the new origin.
+and update `base_url` (the origin only) and `auth_endpoint` (path on that origin) in
+`public/admin/config.yml` to match the new origin.

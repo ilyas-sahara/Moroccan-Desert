@@ -7,23 +7,24 @@ const ALLOWED_ORIGIN = process.env.CMS_ALLOWED_ORIGIN ?? 'https://moroccan-deser
 
 const sendScript = (res: VercelResponse, token: string, provider: string) => {
   res.setHeader('content-type', 'text/html; charset=utf-8');
+  const payload = JSON.stringify({ token, provider });
   res.status(200).send(`<!doctype html><html><head><meta charset="utf-8"><title>Authenticating…</title></head><body>
 <script>
 (function () {
-  var payload = { type: 'authorization', token: ${JSON.stringify(token)}, provider: ${JSON.stringify(provider)} };
-  try {
-    if (window.opener && window.opener !== window) {
-      window.opener.postMessage(payload, '*');
-    } else if (window.parent && window.parent !== window) {
-      window.parent.postMessage(payload, '*');
-    } else {
-      localStorage.setItem('decap-cms-auth', JSON.stringify(payload));
-    }
-  } catch (err) {
-    localStorage.setItem('decap-cms-auth', JSON.stringify(payload));
+  var provider = ${JSON.stringify(provider)};
+  var payload = ${JSON.stringify(payload)};
+  var successMessage = 'authorization:' + provider + ':success:' + payload;
+  function post(msg) {
+    try { if (window.opener && window.opener !== window) window.opener.postMessage(msg, '*'); } catch (e) {}
+    try { if (window.parent && window.parent !== window) window.parent.postMessage(msg, '*'); } catch (e) {}
   }
-  window.close();
-  setTimeout(function () { document.body.innerText = 'Authenticated. You can close this window.'; }, 200);
+  window.addEventListener('message', function (event) {
+    if (event.data === 'authorizing:' + provider) {
+      post('authorizing:' + provider);
+      setTimeout(function () { post(successMessage); window.close(); }, 50);
+    }
+  });
+  setTimeout(function () { document.body.innerText = 'Authenticated. You can close this window.'; }, 1500);
 })();
 </script>
 </body></html>`);
