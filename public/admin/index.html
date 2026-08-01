@@ -6,6 +6,24 @@
     <title>Decap CMS</title>
   </head>
   <body>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
     <script src="https://unpkg.com/decap-cms@^3.4.0/dist/decap-cms.js"></script>
+    <script>
+      (function () {
+        function init() {
+          if (!window.initCMS) return;
+          window.initCMS({
+            config: { load_config_file: '/admin/config.yml' },
+          });
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init);
+        } else {
+          init();
+        }
+      })();
+    </script>
   </body>
 </html>
