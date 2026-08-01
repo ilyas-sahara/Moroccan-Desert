@@ -4,26 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Decap CMS</title>
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
   </head>
   <body>
-    <script>
-      window.CMS_MANUAL_INIT = true;
-    </script>
     <script src="https://unpkg.com/decap-cms@^3.4.0/dist/decap-cms.js"></script>
-    <script>
-      (function () {
-        function init() {
-          if (!window.initCMS) return;
-          window.initCMS({
-            config: { load_config_file: '/admin/config.yml' },
-          });
-        }
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', init);
-        } else {
-          init();
-        }
-      })();
-    </script>
   </body>
 </html>
