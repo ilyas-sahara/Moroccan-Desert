@@ -1,11 +1,10 @@
 backend:
   name: github
-  repo: akimweb-bit/Moroccan-Desert-Journeys
+  repo: akimweb-bit/Moroccan-Desert
   branch: master
-  base_url: https://api.netlify.com
+  base_url: https://moroccan-desert.vercel.app/api/cms-auth
   auth_endpoint: auth
   api_root: https://api.github.com
-  site_domain: localhost:5173
 
 media_folder: public/assets/images
 public_folder: /assets/images
