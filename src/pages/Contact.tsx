@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Mail, Phone, MapPin, Send, Check, ChevronDown } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
 import { TOURS, FAQS, IMAGES } from '@/data/content';
@@ -19,6 +20,13 @@ export default function Contact() {
   });
   const [tourOptions, setTourOptions] = useState(TOURS.map((t) => t.title));
   const [faqs, setFaqs] = useState(FAQS);
+  const [searchParams] = useSearchParams();
+  const [interestedIn, setInterestedIn] = useState('');
+
+  useEffect(() => {
+    const fromUrl = searchParams.get('tour');
+    if (fromUrl) setInterestedIn(fromUrl);
+  }, [searchParams]);
 
   useEffect(() => {
     void (async () => {
@@ -83,12 +91,11 @@ export default function Contact() {
                     <Field label="Phone (optional)" name="phone" type="tel" />
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <SelectField label="Interested in" name="tour" options={tourOptions} />
-                    <SelectField label="Group size" name="group" options={['1 — 2', '3 — 4', '5 — 6', '7+']} />
+                    <SelectField label="Interested in" name="tour" options={tourOptions} value={interestedIn} onChange={setInterestedIn} />
+                    <NumberField label="Group size" name="group" min={1} max={50} required />
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
                     <Field label="Preferred date" name="date" type="date" />
-                    <SelectField label="Budget per person" name="budget" options={['Up to €400', '€400 — €800', '€800 — €1,200', '€1,200+']} />
                   </div>
                   <div>
                     <label className="mb-1.5 block text-sm font-medium text-ink-700">Your message</label>
@@ -200,12 +207,22 @@ function Field({
   );
 }
 
-function SelectField({ label, name, options }: { label: string; name: string; options: string[] }) {
+function SelectField({
+  label, name, options, value, onChange,
+}: {
+  label: string;
+  name: string;
+  options: string[];
+  value?: string;
+  onChange?: (value: string) => void;
+}) {
   return (
     <div>
       <label className="mb-1.5 block text-sm font-medium text-ink-700">{label}</label>
       <select
         name={name}
+        value={value ?? ''}
+        onChange={(e) => onChange?.(e.target.value)}
         className="w-full rounded-xl border border-sand-200 bg-sand-50/40 px-4 py-3 text-sm text-ink-800 focus:border-sand-400 focus:outline-none focus:ring-2 focus:ring-sand-200"
       >
         <option value="">Select...</option>
@@ -213,6 +230,32 @@ function SelectField({ label, name, options }: { label: string; name: string; op
           <option key={o} value={o}>{o}</option>
         ))}
       </select>
+    </div>
+  );
+}
+
+function NumberField({
+  label, name, min, max, required = false,
+}: {
+  label: string;
+  name: string;
+  min?: number;
+  max?: number;
+  required?: boolean;
+}) {
+  return (
+    <div>
+      <label className="mb-1.5 block text-sm font-medium text-ink-700">
+        {label}{required && <span className="text-clay-500"> *</span>}
+      </label>
+      <input
+        name={name}
+        type="number"
+        min={min}
+        max={max}
+        required={required}
+        className="w-full rounded-xl border border-sand-200 bg-sand-50/40 px-4 py-3 text-sm text-ink-800 placeholder:text-sand-500 focus:border-sand-400 focus:outline-none focus:ring-2 focus:ring-sand-200"
+      />
     </div>
   );
 }

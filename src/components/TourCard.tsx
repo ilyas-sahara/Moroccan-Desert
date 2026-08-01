@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Clock, Users, ArrowUpRight, Star, MapPin } from 'lucide-react';
+import { Clock, Users, ArrowUpRight, MapPin } from 'lucide-react';
 import type { Tour } from '@/data/content';
 
 export default function TourCard({ tour, index = 0 }: { tour: Tour; index?: number }) {
@@ -19,11 +19,6 @@ export default function TourCard({ tour, index = 0 }: { tour: Tour; index?: numb
         <div className="absolute inset-0 bg-gradient-to-t from-ink-950/45 via-transparent to-transparent" />
         <div className="absolute left-4 top-4 rounded-full bg-sand-50/95 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-sand-800">
           {tour.region.split('·')[0].trim()}
-        </div>
-        <div className="absolute bottom-4 right-4 flex items-center gap-1 rounded-full bg-ink-950/55 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
-          <Star className="h-3.5 w-3.5 fill-sand-300 text-sand-300" />
-          {tour.rating}
-          <span className="text-white/60">({tour.reviews})</span>
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import {
-  ArrowLeft, Clock, Users, Mountain, Calendar, Check, X, Star,
+  ArrowLeft, Clock, Users, Mountain, Calendar, Check, X,
   MapPin, Compass, ChevronRight,
 } from 'lucide-react';
 import { TOURS, type Tour } from '@/data/content';
@@ -97,10 +97,6 @@ export default function TourDetail() {
           <div className="lg:col-span-8">
             <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-sand-600">
               <span className="flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" strokeWidth={1.5} />{tour.region}</span>
-              <span className="h-3 w-px bg-sand-200" />
-              <span className="flex items-center gap-1.5">
-                <Star className="h-3.5 w-3.5 fill-sand-400 text-sand-400" />{tour.rating} ({tour.reviews} reviews)
-              </span>
             </div>
             <h1 className="mt-4 font-display text-4xl font-medium leading-tight text-ink-900 sm:text-5xl text-balance">
               {tour.title}
@@ -209,12 +205,6 @@ export default function TourDetail() {
                 €{tour.priceFrom}
                 {tour.days > 0 && <span className="ml-1 text-sm font-normal text-ink-400">/ person</span>}
               </p>
-              <div className="mt-4 flex items-center gap-1.5 text-sand-500">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-sand-400 text-sand-400" />
-                ))}
-                <span className="ml-1 text-sm text-ink-600">{tour.rating} · {tour.reviews} reviews</span>
-              </div>
 
               <div className="mt-6 space-y-3 border-y border-sand-100 py-5 text-sm">
                 <div className="flex items-center justify-between">
@@ -231,10 +221,10 @@ export default function TourDetail() {
                 </div>
               </div>
 
-              <Link to="/contact" className="btn-primary mt-6 w-full">
+              <Link to={`/contact?tour=${encodeURIComponent(tour.title)}`} className="btn-primary mt-6 w-full">
                 Book this Journey
               </Link>
-              <Link to="/contact" className="btn-ghost mt-3 w-full">
+              <Link to={`/contact?tour=${encodeURIComponent(tour.title)}`} className="btn-ghost mt-3 w-full">
                 Ask a Question
               </Link>
               <p className="mt-5 text-center text-xs text-sand-500">

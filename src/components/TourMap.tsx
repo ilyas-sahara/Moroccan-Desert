@@ -199,8 +199,6 @@ export default function TourMap({ tour, className = '' }: { tour: Tour; classNam
             );
           })}
         </svg>
-
-        <p className="mt-2 px-1 text-[10px] leading-tight text-sand-400">Map outline: Eric Gaba (Wikimedia Commons), CC BY-SA 3.0 · Simplified and recoloured.</p>
       </div>
     </div>
   );

@@ -220,7 +220,6 @@ function JourneyMap({ dayPlans, dayCount, interests }: { dayPlans: string[]; day
         <span className="absolute -top-4 -right-4 flex h-12 w-12 animate-float items-center justify-center rounded-full bg-sand-800 text-sand-50 shadow-lg">
           <Compass className="h-6 w-6" strokeWidth={1.5} />
         </span>
-        <p className="mt-2 px-1 text-[10px] leading-tight text-sand-400">Map outline: Eric Gaba (Wikimedia Commons), CC BY-SA 3.0 · Simplified and recoloured.</p>
       </div>
 
       <div className="mt-6">
