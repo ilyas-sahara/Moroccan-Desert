@@ -193,12 +193,17 @@ collections:
               - label: Highlights
                 name: highlights
                 widget: list
+                required: false
+                default: []
               - label: Image
                 name: image
                 widget: image
+                required: false
               - label: Gallery
                 name: gallery
                 widget: list
+                required: false
+                default: []
                 field:
                   label: Image
                   name: image
@@ -209,6 +214,8 @@ collections:
               - label: Itinerary
                 name: itinerary
                 widget: list
+                required: false
+                default: []
                 fields:
                   - label: Day
                     name: day
@@ -222,9 +229,13 @@ collections:
               - label: Included
                 name: included
                 widget: list
+                required: false
+                default: []
               - label: Not included
                 name: notIncluded
                 widget: list
+                required: false
+                default: []
               - label: Best season
                 name: bestSeason
                 widget: string
@@ -232,6 +243,7 @@ collections:
                 name: experiences
                 widget: list
                 required: false
+                default: []
                 field:
                   label: Experience ID
                   name: experience
@@ -293,12 +305,17 @@ collections:
               - label: Highlights
                 name: highlights
                 widget: list
+                required: false
+                default: []
               - label: Image
                 name: image
                 widget: image
+                required: false
               - label: Gallery
                 name: gallery
                 widget: list
+                required: false
+                default: []
                 field:
                   label: Image
                   name: image
@@ -309,6 +326,8 @@ collections:
               - label: Itinerary
                 name: itinerary
                 widget: list
+                required: false
+                default: []
                 fields:
                   - label: Day
                     name: day
@@ -322,9 +341,13 @@ collections:
               - label: Included
                 name: included
                 widget: list
+                required: false
+                default: []
               - label: Not included
                 name: notIncluded
                 widget: list
+                required: false
+                default: []
               - label: Best season
                 name: bestSeason
                 widget: string
@@ -332,6 +355,7 @@ collections:
                 name: experiences
                 widget: list
                 required: false
+                default: []
                 field:
                   label: Experience ID
                   name: experience
