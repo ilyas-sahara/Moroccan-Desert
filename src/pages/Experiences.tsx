@@ -18,7 +18,7 @@ const DEFAULT_PAGE: ExperiencesPageContent = {
   cta_title: 'Want all of these in one journey?',
   cta_subtitle: 'We build bespoke itineraries that combine any of these experiences into a single, seamless trip.',
   cta_label: 'Plan a Bespoke Journey',
-  cta_link: '/contact',
+  cta_link: '/custom-journey',
   cta_image: '',
 };
 
