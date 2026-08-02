@@ -13,4 +13,14 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: (info) => {
+          const name = (info.names && info.names[0]) || info.name || '';
+          return name.endsWith('.css') ? 'assets/site.css' : 'assets/[name]-[hash][extname]';
+        },
+      },
+    },
+  },
 });
