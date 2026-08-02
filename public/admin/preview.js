@@ -93,6 +93,51 @@
     return wrap(html);
   });
 
+  /* ---------- Footer ---------- */
+  window.CMS.registerPreviewTemplate('footer', function (props) {
+    var d = getData(props.entry);
+    var explore = (d.explore_links || []).map(function (l) {
+      return '<li class="text-sm text-sand-200/85"><span class="link-underline">' + esc(l.label) + '</span></li>';
+    }).join('');
+    var legal = (d.legal_links || []).map(function (l) {
+      return '<span class="hover:text-sand-100">' + esc(l.label) + '</span>';
+    }).join('<span class="h-3 w-px bg-sand-300/20"></span>');
+    var html =
+      '<footer class="relative overflow-hidden bg-ink-950 text-sand-100">' +
+      '<div class="container-x relative z-10 py-16 lg:py-20">' +
+      '<div class="grid gap-12 lg:grid-cols-12">' +
+      '<div class="lg:col-span-5">' +
+      '<span class="flex items-center gap-2.5">' +
+      '<span class="flex h-10 w-10 items-center justify-center rounded-full border border-sand-300/40 text-sand-300">' +
+      '<span class="h-5 w-5 rounded-full border-2 border-sand-400"></span></span>' +
+      '<span class="font-display text-2xl font-semibold text-sand-50">' + esc(d.brand_name) + '</span></span>' +
+      '<p class="mt-6 max-w-md text-sm leading-relaxed text-sand-200/80">' + esc(d.description) + '</p>' +
+      '<div class="mt-8 flex items-center gap-3">' +
+      '<span class="flex h-10 w-10 items-center justify-center rounded-full border border-sand-300/20 text-sand-200">' +
+      '<span class="h-4 w-4 rounded-full border-2 border-sand-400"></span></span>' +
+      '<span class="flex h-10 w-10 items-center justify-center rounded-full border border-sand-300/20 text-sand-200">' +
+      '<span class="h-4 w-4 rounded-full border-2 border-sand-400"></span></span>' +
+      '<span class="flex h-10 w-10 items-center justify-center rounded-full border border-sand-300/20 text-sand-200">' +
+      '<span class="h-4 w-4 rounded-full border-2 border-sand-400"></span></span>' +
+      '</div></div>' +
+      '<div class="lg:col-span-3">' +
+      '<h4 class="text-xs font-semibold uppercase tracking-[0.28em] text-sand-400">Explore</h4>' +
+      '<ul class="mt-5 space-y-3">' + explore + '</ul></div>' +
+      '<div class="lg:col-span-4">' +
+      '<h4 class="text-xs font-semibold uppercase tracking-[0.28em] text-sand-400">Get in touch</h4>' +
+      '<ul class="mt-5 space-y-3 text-sm text-sand-200/85">' +
+      '<li class="flex items-start gap-3"><span class="mt-0.5 h-4 w-4 shrink-0 rounded-full border border-sand-400"></span><span>' + esc(d.address) + '</span></li>' +
+      '<li class="flex items-center gap-3"><span class="h-4 w-4 shrink-0 rounded-full border border-sand-400"></span><span>' + esc(d.phone) + '</span></li>' +
+      '<li class="flex items-center gap-3"><span class="h-4 w-4 shrink-0 rounded-full border border-sand-400"></span><span>' + esc(d.email) + '</span></li>' +
+      '</ul></div></div>' +
+      '<div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-sand-300/10 pt-8 text-xs text-sand-300/60 sm:flex-row">' +
+      '<p>&copy; ' + new Date().getFullYear() + ' ' + esc(d.brand_name) + '. ' + esc(d.copyright_text) + '</p>' +
+      '<div class="flex items-center gap-6">' + legal + '</div>' +
+      '</div></div></footer>';
+
+    return wrap(html);
+  });
+
   /* ---------- Homepage ---------- */
   window.CMS.registerPreviewTemplate('homepage', function (props) {
     var d = getData(props.entry);

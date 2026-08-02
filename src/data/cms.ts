@@ -10,6 +10,24 @@ export type SiteSettings = {
   facebook_url: string;
 };
 
+export type FooterLink = {
+  label: string;
+  to: string;
+};
+
+export type FooterContent = {
+  brand_name: string;
+  description: string;
+  instagram_url: string;
+  facebook_url: string;
+  explore_links: FooterLink[];
+  address: string;
+  phone: string;
+  email: string;
+  copyright_text: string;
+  legal_links: FooterLink[];
+};
+
 export type HeroFrame = {
   image: string;
   caption?: string;
@@ -91,6 +109,30 @@ const defaultSettings: SiteSettings = {
   address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
   instagram_url: '#',
   facebook_url: '#',
+};
+
+const defaultFooter: FooterContent = {
+  brand_name: 'Walk the Sahara',
+  description:
+    'Luxury desert journeys through the golden dunes of Merzouga and beyond. Small groups, local guides, and camps that leave nothing behind but footprints.',
+  instagram_url: '#',
+  facebook_url: '#',
+  explore_links: [
+    { label: 'All Tours', to: '/tours' },
+    { label: 'Experiences', to: '/experiences' },
+    { label: 'Blog', to: '/blog' },
+    { label: 'About Us', to: '/about' },
+    { label: 'Contact', to: '/contact' },
+  ],
+  address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
+  phone: '+212 5 35 00 00 00',
+  email: 'hello@walkthesahara.com',
+  copyright_text: 'All rights reserved.',
+  legal_links: [
+    { label: 'Privacy', to: '#' },
+    { label: 'Terms', to: '#' },
+    { label: 'Responsible Travel', to: '#' },
+  ],
 };
 
 const defaultHeroFrames: HeroFrame[] = [
@@ -210,6 +252,11 @@ async function loadCollection<T>(path: string, fallback: T[]): Promise<T[]> {
 
 export async function getSiteSettings(): Promise<SiteSettings> {
   return loadJson('/content/site/settings.json', defaultSettings);
+}
+
+export async function getFooterContent(): Promise<FooterContent> {
+  const raw = await loadJson<Partial<FooterContent>>('/content/site/footer.json', defaultFooter);
+  return mergeValues(defaultFooter, raw);
 }
 
 export async function getHomePageContent(): Promise<HomePageContent> {
