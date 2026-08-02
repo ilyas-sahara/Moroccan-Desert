@@ -18,12 +18,13 @@
     }
   ],
   "hero_eyebrow": "Our Story",
-  "cta_label": "browsee tourss",
+  "cta_label": "Browse Tours",
   "intro_title": "A family of guides, not a company.",
   "intro_image": "https://images.pexels.com/photos/35901289/pexels-photo-35901289.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  "cta_link": "http://localhost:5173/toursx",
+  "cta_link": "/tours",
   "intro_description": "We are a small collective of Berber guides and camp hosts from the Erg Chebbi region. We grew up walking these dunes, and we started Walk the Sahara to share them with travelers who want more than a photo stop.",
-  "cta_title": "come",
+  "cta_title": "Come walk the Sahara with us.",
+  "cta_image": "https://images.pexels.com/photos/37441710/pexels-photo-37441710.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "hero_title": "Born at the edge of the dunes",
   "hero_image": "https://images.pexels.com/photos/9029494/pexels-photo-9029494.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "hero_subtitle": "Walk the Sahara began with a single Berber family in Merzouga and a belief that the desert should be shared with care."
