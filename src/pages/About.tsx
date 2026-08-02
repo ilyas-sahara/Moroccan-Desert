@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Leaf, Heart, Users, Compass, ArrowRight } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
-import { IMAGES } from '@/data/content';
 import { getAboutPageContent, type AboutPageContent } from '@/data/cms';
 
 const VALUE_ICONS: Record<string, typeof Compass> = { Users, Leaf, Heart, Compass };
@@ -17,21 +16,29 @@ const VALUE_ICON_BY_TITLE = Object.fromEntries(
   VALUES.map(({ icon, title }) => [title, icon]),
 ) as Record<string, typeof Compass>;
 
+const DEFAULT_ABOUT: AboutPageContent = {
+  hero_eyebrow: 'Our Story',
+  hero_title: 'Born at the edge of the dunes',
+  hero_subtitle: 'Walk the Sahara began with a single Berber family in Merzouga and a belief that the desert should be shared with care.',
+  hero_image: '',
+  intro_title: 'A family of guides, not a company.',
+  intro_description: 'We are a small collective of Berber guides and camp hosts from the Erg Chebbi region. We grew up walking these dunes, and we started Walk the Sahara to share them with travelers who want more than a photo stop.',
+  intro_image: '',
+  values: [
+    { title: 'Local First', text: 'Every guide is Berber, born and raised at the edge of the dunes. The money you spend stays in the desert.' },
+    { title: 'Leave No Trace', text: 'Our camps are fully removable. We pack out every trace and protect the fragile dune ecology.' },
+    { title: 'Small Groups', text: 'We cap every departure at a handful of guests. The desert is for silence, not crowds.' },
+    { title: 'Genuine Craft', text: 'We weave real encounters with nomad families, weavers, and musicians — never staged shows.' },
+  ],
+  cta_title: 'Come walk the Sahara with us.',
+  cta_label: 'Browse Tours',
+  cta_link: '/tours',
+  cta_image: '',
+};
+
 export default function About() {
   const ref = useReveal<HTMLDivElement>();
-  const [aboutContent, setAboutContent] = useState<AboutPageContent>({
-    hero_eyebrow: 'Our Story',
-    hero_title: 'Born at the edge of the dunes',
-    hero_subtitle: 'Walk the Sahara began with a single Berber family in Merzouga and a belief that the desert should be shared with care.',
-    intro_title: 'A family of guides, not a company.',
-    intro_description: 'We are a small collective of Berber guides and camp hosts from the Erg Chebbi region. We grew up walking these dunes, and we started Walk the Sahara to share them with travelers who want more than a photo stop.',
-    values: [
-      { title: 'Local First', text: 'Every guide is Berber, born and raised at the edge of the dunes. The money you spend stays in the desert.' },
-      { title: 'Leave No Trace', text: 'Our camps are fully removable. We pack out every trace and protect the fragile dune ecology.' },
-      { title: 'Small Groups', text: 'We cap every departure at a handful of guests. The desert is for silence, not crowds.' },
-      { title: 'Genuine Craft', text: 'We weave real encounters with nomad families, weavers, and musicians — never staged shows.' },
-    ],
-  });
+  const [aboutContent, setAboutContent] = useState<AboutPageContent>(DEFAULT_ABOUT);
 
   useEffect(() => {
     void (async () => {
@@ -44,7 +51,7 @@ export default function About() {
     <main className="pt-20">
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0">
-          <img src={IMAGES.loneTraveler} alt="" className="h-full w-full object-cover opacity-40" />
+          <img src={aboutContent.hero_image} alt="" className="h-full w-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-ink-950/70 via-ink-950/50 to-ink-950/80" />
         </div>
         <div className="container-x relative z-10">
@@ -60,7 +67,7 @@ export default function About() {
       <section className="bg-sand-50 py-20 lg:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-6">
-            <img src={IMAGES.campNomad} alt="Nomad camp" loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-lg" />
+            <img src={aboutContent.intro_image} alt="Nomad camp" loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-lg" />
           </div>
           <div className="lg:col-span-6">
             <SectionHeading
@@ -113,14 +120,14 @@ export default function About() {
 
       <section className="relative overflow-hidden bg-sand-800 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0 opacity-20">
-          <img src={IMAGES.ergChebbi} alt="" className="h-full w-full object-cover" />
+          <img src={aboutContent.cta_image} alt="" className="h-full w-full object-cover" />
         </div>
         <div className="container-x relative z-10 text-center">
           <h2 className="mx-auto max-w-2xl font-display text-3xl font-medium text-white text-balance sm:text-4xl">
-            Come walk the Sahara with us.
+            {aboutContent.cta_title}
           </h2>
-          <Link to="/tours" className="btn-light mt-9">
-            Browse Tours <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+          <Link to={aboutContent.cta_link} className="btn-light mt-9">
+            {aboutContent.cta_label} <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
           </Link>
         </div>
       </section>

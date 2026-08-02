@@ -1,8 +1,8 @@
-import { FormEvent, useMemo, useState } from 'react';
+import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { Check, Compass, Mail, Minus, Plus, Send } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
-import { IMAGES } from '@/data/content';
 import { CITY_LABELS, MOROCCO_PATH } from '@/data/morocco-map';
+import { getCustomJourneyPageContent, type CustomJourneyPageContent } from '@/data/cms';
 
 type Stop = {
   id: string;
@@ -29,6 +29,19 @@ export default function CustomJourney() {
   const [sent, setSent] = useState(false);
   const [dayCount, setDayCount] = useState(3);
   const [dayPlans, setDayPlans] = useState(['marrakech', 'ait-ben-haddou', 'erg-chigaga']);
+  const [pageContent, setPageContent] = useState<CustomJourneyPageContent>({
+    hero_eyebrow: 'Build your own journey',
+    hero_title: 'Your Sahara, mapped your way.',
+    hero_subtitle: 'Choose the places, pace, and experiences that matter to you. Our local team will turn them into a considered private itinerary.',
+    hero_image: '',
+  });
+
+  useEffect(() => {
+    void (async () => {
+      const content = await getCustomJourneyPageContent();
+      setPageContent(content);
+    })();
+  }, []);
 
   const toggleInterest = (interest: string) => {
     setInterests((current) => current.includes(interest) ? current.filter((item) => item !== interest) : [...current, interest]);
@@ -71,11 +84,11 @@ export default function CustomJourney() {
     <main className="pt-20">
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-28">
         <div className="absolute inset-0">
-          <img src={IMAGES.heroAerial} alt="" className="h-full w-full object-cover opacity-35" />
+          <img src={pageContent.hero_image} alt="" className="h-full w-full object-cover opacity-35" />
           <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/35" />
         </div>
         <div className="container-x relative z-10 max-w-4xl">
-          <SectionHeading light eyebrow="Build your own journey" title="Your Sahara, mapped your way." subtitle="Choose the places, pace, and experiences that matter to you. Our local team will turn them into a considered private itinerary." />
+          <SectionHeading light eyebrow={pageContent.hero_eyebrow} title={pageContent.hero_title} subtitle={pageContent.hero_subtitle} />
         </div>
       </section>
 

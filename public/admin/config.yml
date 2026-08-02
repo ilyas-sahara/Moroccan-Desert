@@ -75,6 +75,60 @@ collections:
           - label: CTA link
             name: cta_link
             widget: string
+          - label: Hero kicker
+            name: hero_kicker
+            widget: string
+          - label: Hero heading
+            name: hero_heading
+            widget: string
+          - label: Hero lead
+            name: hero_lead
+            widget: text
+          - label: Hero rating
+            name: hero_rating
+            widget: string
+          - label: Hero review text
+            name: hero_review_text
+            widget: string
+          - label: Hero frames
+            name: hero_frames
+            widget: list
+            required: false
+            default: []
+            fields:
+              - label: Image
+                name: image
+                widget: image
+                required: false
+              - label: Caption
+                name: caption
+                widget: string
+                required: false
+          - label: Intro image A
+            name: intro_image_a
+            widget: image
+            required: false
+          - label: Intro image B
+            name: intro_image_b
+            widget: image
+            required: false
+          - label: Story background image
+            name: story_image
+            widget: image
+            required: false
+          - label: Gallery
+            name: gallery
+            widget: list
+            required: false
+            default: []
+            field:
+              label: Image
+              name: image
+              widget: image
+          - label: CTA background image
+            name: cta_image
+            widget: image
+            required: false
 
   - name: about
     label: About Page
@@ -93,12 +147,20 @@ collections:
           - label: Hero subtitle
             name: hero_subtitle
             widget: text
+          - label: Hero image
+            name: hero_image
+            widget: image
+            required: false
           - label: Intro title
             name: intro_title
             widget: string
           - label: Intro description
             name: intro_description
             widget: text
+          - label: Intro image
+            name: intro_image
+            widget: image
+            required: false
           - label: Values
             name: values
             widget: list
@@ -118,6 +180,19 @@ collections:
                   - Leaf
                   - Heart
                   - Compass
+          - label: CTA title
+            name: cta_title
+            widget: string
+          - label: CTA label
+            name: cta_label
+            widget: string
+          - label: CTA link
+            name: cta_link
+            widget: string
+          - label: CTA background image
+            name: cta_image
+            widget: image
+            required: false
 
   - name: contact
     label: Contact Page
@@ -136,6 +211,10 @@ collections:
           - label: Hero subtitle
             name: hero_subtitle
             widget: text
+          - label: Hero image
+            name: hero_image
+            widget: image
+            required: false
           - label: Office text
             name: office_text
             widget: text
@@ -145,6 +224,31 @@ collections:
           - label: Email
             name: email
             widget: string
+          - label: Address
+            name: address
+            widget: string
+
+  - name: custom_journey
+    label: Custom Journey Page
+    files:
+      - file: public/content/site/custom-journey.json
+        format: json
+        label: Custom Journey Page
+        name: custom_journey
+        fields:
+          - label: Hero eyebrow
+            name: hero_eyebrow
+            widget: string
+          - label: Hero title
+            name: hero_title
+            widget: string
+          - label: Hero subtitle
+            name: hero_subtitle
+            widget: text
+          - label: Hero image
+            name: hero_image
+            widget: image
+            required: false
 
   - name: tours
     label: Tours
@@ -406,6 +510,44 @@ collections:
                   - Coffee
                   - Users
                   - Mountain
+
+  - name: experiences_page
+    label: Experiences Page
+    files:
+      - file: public/content/site/experiences.json
+        format: json
+        label: Experiences Page
+        name: experiences_page
+        fields:
+          - label: Hero eyebrow
+            name: hero_eyebrow
+            widget: string
+          - label: Hero title
+            name: hero_title
+            widget: string
+          - label: Hero subtitle
+            name: hero_subtitle
+            widget: text
+          - label: Hero image
+            name: hero_image
+            widget: image
+            required: false
+          - label: CTA title
+            name: cta_title
+            widget: string
+          - label: CTA subtitle
+            name: cta_subtitle
+            widget: text
+          - label: CTA label
+            name: cta_label
+            widget: string
+          - label: CTA link
+            name: cta_link
+            widget: string
+          - label: CTA background image
+            name: cta_image
+            widget: image
+            required: false
 
   - name: blog
     label: Blog

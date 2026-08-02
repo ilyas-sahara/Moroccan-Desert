@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Send, Check, ChevronDown } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
-import { TOURS, FAQS, IMAGES } from '@/data/content';
+import { TOURS, FAQS } from '@/data/content';
 import { getContactPageContent, getCmsFaqs, getCmsTours } from '@/data/cms';
 
 export default function Contact() {
@@ -14,9 +14,11 @@ export default function Contact() {
     hero_eyebrow: 'Contact',
     hero_title: "Let's plan your Sahara",
     hero_subtitle: "Tell us your dates, your group, and your dream — we'll reply within 24 hours with a tailored proposal.",
+    hero_image: '',
     office_text: "Prefer to talk it through? Reach us directly — we're based in Merzouga, on the edge of the dunes.",
     phone: '+212 5 35 00 00 00',
     email: 'hello@walkthesahara.com',
+    address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
   });
   const [tourOptions, setTourOptions] = useState(TOURS.map((t) => t.title));
   const [faqs, setFaqs] = useState(FAQS);
@@ -50,7 +52,7 @@ export default function Contact() {
     <main className="pt-20">
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0">
-          <img src={IMAGES.campfire} alt="" className="h-full w-full object-cover opacity-40" />
+          <img src={contactContent.hero_image} alt="" className="h-full w-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-ink-950/70 via-ink-950/50 to-ink-950/80" />
         </div>
         <div className="container-x relative z-10">
@@ -128,7 +130,7 @@ export default function Contact() {
                   </span>
                   <div>
                     <p className="text-[11px] uppercase tracking-[0.18em] text-sand-400">Office</p>
-                    <p className="mt-0.5 text-sand-100">Avenue Mohammed V, Merzouga, Errachidia, Morocco</p>
+                    <p className="mt-0.5 text-sand-100">{contactContent.address}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">

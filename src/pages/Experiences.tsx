@@ -3,21 +3,35 @@ import { Link } from 'react-router-dom';
 import { Compass, Tent, Star, Coffee, Users, Mountain, ArrowRight } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
-import { EXPERIENCES, IMAGES } from '@/data/content';
-import { getCmsExperiences } from '@/data/cms';
+import { EXPERIENCES } from '@/data/content';
+import { getCmsExperiences, getExperiencesPageContent, type ExperiencesPageContent } from '@/data/cms';
 
 const ICONS: Record<string, typeof Compass> = {
   Compass, Tent, Star, Coffee, Users, Mountain,
 };
 
+const DEFAULT_PAGE: ExperiencesPageContent = {
+  hero_eyebrow: 'Experiences',
+  hero_title: 'The small moments that make a journey',
+  hero_subtitle: 'Every Walk the Sahara trip is built from these threads. Browse them, then let us weave them into something just for you.',
+  hero_image: '',
+  cta_title: 'Want all of these in one journey?',
+  cta_subtitle: 'We build bespoke itineraries that combine any of these experiences into a single, seamless trip.',
+  cta_label: 'Plan a Bespoke Journey',
+  cta_link: '/contact',
+  cta_image: '',
+};
+
 export default function Experiences() {
   const ref = useReveal<HTMLDivElement>();
   const [experiences, setExperiences] = useState(EXPERIENCES);
+  const [pageContent, setPageContent] = useState<ExperiencesPageContent>(DEFAULT_PAGE);
 
   useEffect(() => {
     void (async () => {
-      const cmsExperiences = await getCmsExperiences();
+      const [cmsExperiences, page] = await Promise.all([getCmsExperiences(), getExperiencesPageContent()]);
       setExperiences(cmsExperiences);
+      setPageContent(page);
     })();
   }, []);
 
@@ -25,15 +39,15 @@ export default function Experiences() {
     <main className="pt-20">
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0">
-          <img src={IMAGES.campBerber} alt="" className="h-full w-full object-cover opacity-40" />
+          <img src={pageContent.hero_image} alt="" className="h-full w-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-ink-950/70 via-ink-950/50 to-ink-950/80" />
         </div>
         <div className="container-x relative z-10">
           <SectionHeading
             light
-            eyebrow="Experiences"
-            title="The small moments that make a journey"
-            subtitle="Every Walk the Sahara trip is built from these threads. Browse them, then let us weave them into something just for you."
+            eyebrow={pageContent.hero_eyebrow}
+            title={pageContent.hero_title}
+            subtitle={pageContent.hero_subtitle}
           />
         </div>
       </section>
@@ -71,16 +85,16 @@ export default function Experiences() {
 
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0 opacity-30">
-          <img src={IMAGES.sunrise} alt="" className="h-full w-full object-cover" />
+          <img src={pageContent.cta_image} alt="" className="h-full w-full object-cover" />
         </div>
         <div className="container-x relative z-10 text-center">
           <h2 className="mx-auto max-w-2xl font-display text-3xl font-medium text-white text-balance sm:text-4xl">
-            Want all of these in one journey?
+            {pageContent.cta_title}
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-sand-200/85">
-            We build bespoke itineraries that combine any of these experiences into a single, seamless trip.
+            {pageContent.cta_subtitle}
           </p>
-          <Link to="/contact" className="btn-light mt-9">Plan a Bespoke Journey</Link>
+          <Link to={pageContent.cta_link} className="btn-light mt-9">{pageContent.cta_label}</Link>
         </div>
       </section>
     </main>

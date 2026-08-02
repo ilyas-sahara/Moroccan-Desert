@@ -2,35 +2,53 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Star } from 'lucide-react';
 import { IMAGES } from '@/data/content';
-
-const FRAMES = [
-  { src: IMAGES.heroAerial, caption: 'Scene 01 — Drone over the golden dunes of Merzouga' },
-  { src: IMAGES.camelCaravan, caption: 'Scene 02 — A caravan follows the ridge at sunrise' },
-  { src: IMAGES.campBerber, caption: 'Scene 03 — A luxury Berber camp nestled in the dunes' },
-  { src: IMAGES.campfire, caption: 'Scene 04 — Mint tea is poured as the sun sets' },
-  { src: IMAGES.heroAerial, caption: 'Ending — The camera rises over an endless sea of dunes' },
-];
+import type { HeroFrame } from '@/data/cms';
 
 const FRAME_MS = 3000;
 
-export default function Hero() {
+const DEFAULT_FRAMES: HeroFrame[] = [
+  { image: IMAGES.heroAerial, caption: 'Scene 01 — Drone over the golden dunes of Merzouga' },
+  { image: IMAGES.camelCaravan, caption: 'Scene 02 — A caravan follows the ridge at sunrise' },
+  { image: IMAGES.campBerber, caption: 'Scene 03 — A luxury Berber camp nestled in the dunes' },
+  { image: IMAGES.campfire, caption: 'Scene 04 — Mint tea is poured as the sun sets' },
+  { image: IMAGES.heroAerial, caption: 'Ending — The camera rises over an endless sea of dunes' },
+];
+
+type HeroProps = {
+  frames?: HeroFrame[];
+  kicker?: string;
+  heading?: string;
+  lead?: string;
+  rating?: string;
+  reviewText?: string;
+};
+
+export default function Hero({
+  frames: rawFrames,
+  kicker = 'Moroccan Sahara · Est. 2009',
+  heading = 'Walk the Sahara',
+  lead = 'Luxury desert journeys through the golden dunes of Merzouga. Camel treks, Berber camps, and nights under the darkest sky on earth.',
+  rating = '4.9',
+  reviewText = 'from 1,200+ travelers worldwide',
+}: HeroProps) {
+  const frames = rawFrames && rawFrames.length ? rawFrames : DEFAULT_FRAMES;
   const [active, setActive] = useState(0);
   const timer = useRef<number | null>(null);
 
   useEffect(() => {
     timer.current = window.setInterval(() => {
-      setActive((i) => (i + 1) % FRAMES.length);
+      setActive((i) => (i + 1) % frames.length);
     }, FRAME_MS);
     return () => {
       if (timer.current) window.clearInterval(timer.current);
     };
-  }, []);
+  }, [frames.length]);
 
   return (
     <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-ink-950">
       {/* Cinematic frame stack — stands in for the hero video */}
       <div className="absolute inset-0">
-        {FRAMES.map((frame, i) => (
+        {frames.map((frame, i) => (
           <div
             key={i}
             className={`absolute inset-0 transition-opacity duration-[1600ms] ease-in-out ${
@@ -39,7 +57,7 @@ export default function Hero() {
             aria-hidden={i !== active}
           >
             <img
-              src={frame.src}
+              src={frame.image}
               alt=""
               className={`h-full w-full object-cover ${i === active ? 'animate-ken-burns' : ''}`}
               loading={i === 0 ? 'eager' : 'lazy'}
@@ -63,20 +81,19 @@ export default function Hero() {
             className="eyebrow text-sand-200 opacity-0"
             style={{ animation: 'fade-up 0.9s ease-out 0.2s forwards' }}
           >
-            <span className="h-px w-8 bg-sand-300" /> Moroccan Sahara · Est. 2009
+            <span className="h-px w-8 bg-sand-300" /> {kicker}
           </p>
           <h1
             className="mt-5 font-display text-5xl font-medium leading-[1.05] text-white text-balance opacity-0 sm:text-6xl lg:text-7xl"
             style={{ animation: 'fade-up 0.9s ease-out 0.4s forwards' }}
           >
-            Walk the Sahara
+            {heading}
           </h1>
           <p
             className="mt-5 max-w-xl text-lg leading-relaxed text-sand-100/90 opacity-0 sm:text-xl"
             style={{ animation: 'fade-up 0.9s ease-out 0.6s forwards' }}
           >
-            Luxury desert journeys through the golden dunes of Merzouga. Camel treks,
-            Berber camps, and nights under the darkest sky on earth.
+            {lead}
           </p>
           <div
             className="mt-9 flex flex-wrap items-center gap-4 opacity-0"
@@ -102,7 +119,7 @@ export default function Hero() {
               ))}
             </div>
             <p className="text-sm text-sand-100/80">
-              <span className="font-semibold text-white">4.9</span> from 1,200+ travelers worldwide
+              <span className="font-semibold text-white">{rating}</span> {reviewText}
             </p>
           </div>
         </div>
@@ -116,11 +133,11 @@ export default function Hero() {
             className="max-w-xs text-xs uppercase tracking-[0.24em] text-sand-100/70 opacity-0"
             style={{ animation: 'fade-in 0.8s ease-out 0.2s forwards' }}
           >
-            {FRAMES[active].caption}
+            {frames[active].caption}
           </p>
           {/* Progress dots */}
           <div className="flex items-center gap-2">
-            {FRAMES.map((_, i) => (
+            {frames.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}

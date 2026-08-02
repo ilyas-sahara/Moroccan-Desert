@@ -5,11 +5,36 @@ import Hero from '@/components/Hero';
 import SectionHeading from '@/components/SectionHeading';
 import TourCard from '@/components/TourCard';
 import { useReveal } from '@/hooks/useReveal';
-import { TOURS, EXPERIENCES, TESTIMONIALS, IMAGES, type Tour } from '@/data/content';
-import { getCmsTours, getCmsExperiences, getCmsTestimonials, getHomePageContent } from '@/data/cms';
+import { TOURS, EXPERIENCES, TESTIMONIALS, type Tour } from '@/data/content';
+import {
+  getCmsTours, getCmsExperiences, getCmsTestimonials, getHomePageContent, type HomePageContent,
+} from '@/data/cms';
 
 const ICONS: Record<string, typeof Compass> = {
   Compass, Tent, Star, Coffee, Users, Mountain,
+};
+
+const DEFAULT_HOME: HomePageContent = {
+  hero_eyebrow: 'The Journey',
+  hero_title: 'The desert changes everyone who walks into it.',
+  hero_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace.',
+  hero_kicker: 'Moroccan Sahara · Est. 2009',
+  hero_heading: 'Walk the Sahara',
+  hero_lead: 'Luxury desert journeys through the golden dunes of Merzouga. Camel treks, Berber camps, and nights under the darkest sky on earth.',
+  hero_frames: [],
+  hero_rating: '4.9',
+  hero_review_text: 'from 1,200+ travelers worldwide',
+  intro_title: 'The Sahara changes everyone who walks into it.',
+  intro_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace. This is the Sahara as it has always been — vast, silent, and impossibly beautiful.',
+  intro_image_a: '',
+  intro_image_b: '',
+  story_title: 'The Sahara has one of the darkest skies on earth.',
+  story_description: 'Far from any city light, the dunes of Erg Chebbi become an observatory. Our guides will point out the Milky Way, the planets, and the stories the Berber people have told the stars for centuries.',
+  story_image: '',
+  gallery: [],
+  cta_label: 'Plan Your Journey',
+  cta_link: '/contact',
+  cta_image: '',
 };
 
 export default function Home() {
@@ -19,17 +44,7 @@ export default function Home() {
   const galleryRef = useReveal<HTMLDivElement>();
   const testimonialsRef = useReveal<HTMLDivElement>();
   const ctaRef = useReveal<HTMLDivElement>();
-  const [homeContent, setHomeContent] = useState({
-    hero_eyebrow: 'The Journey',
-    hero_title: 'The desert changes everyone who walks into it.',
-    hero_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace.',
-    intro_title: 'The Sahara changes everyone who walks into it.',
-    intro_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace. This is the Sahara as it has always been — vast, silent, and impossibly beautiful.',
-    story_title: 'The Sahara has one of the darkest skies on earth.',
-    story_description: 'Far from any city light, the dunes of Erg Chebbi become an observatory. Our guides will point out the Milky Way, the planets, and the stories the Berber people have told the stars for centuries.',
-    cta_label: 'Plan Your Journey',
-    cta_link: '/contact',
-  });
+  const [homeContent, setHomeContent] = useState<HomePageContent>(DEFAULT_HOME);
   const [tours, setTours] = useState<Tour[]>(TOURS);
   const [experiences, setExperiences] = useState(EXPERIENCES);
   const [testimonials, setTestimonials] = useState(TESTIMONIALS);
@@ -51,7 +66,14 @@ export default function Home() {
 
   return (
     <main>
-      <Hero />
+      <Hero
+        frames={homeContent.hero_frames}
+        kicker={homeContent.hero_kicker}
+        heading={homeContent.hero_heading}
+        lead={homeContent.hero_lead}
+        rating={homeContent.hero_rating}
+        reviewText={homeContent.hero_review_text}
+      />
 
       {/* Intro / brand statement */}
       <section className="bg-sand-50 py-24 lg:py-32">
@@ -74,8 +96,8 @@ export default function Home() {
             </div>
             <div className="lg:col-span-6">
               <div className="grid grid-cols-2 gap-4">
-                <img src={IMAGES.mintTeaCarpet} alt="Mint tea on a Moroccan carpet" loading="lazy" className="aspect-[3/4] w-full rounded-2xl object-cover shadow-lg" />
-                <img src={IMAGES.camelTrek} alt="Camel trek on the dunes" loading="lazy" className="mt-8 aspect-[3/4] w-full rounded-2xl object-cover shadow-lg" />
+                <img src={homeContent.intro_image_a} alt="Mint tea on a Moroccan carpet" loading="lazy" className="aspect-[3/4] w-full rounded-2xl object-cover shadow-lg" />
+                <img src={homeContent.intro_image_b} alt="Camel trek on the dunes" loading="lazy" className="mt-8 aspect-[3/4] w-full rounded-2xl object-cover shadow-lg" />
               </div>
             </div>
           </div>
@@ -142,7 +164,7 @@ export default function Home() {
       {/* Story / split feature */}
       <section ref={storyRef} className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0">
-          <img src={IMAGES.stars} alt="" loading="lazy" className="h-full w-full object-cover opacity-40" />
+          <img src={homeContent.story_image} alt="" loading="lazy" className="h-full w-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/40" />
         </div>
         <div className="container-x relative z-10">
@@ -178,12 +200,12 @@ export default function Home() {
         </div>
         <div ref={galleryRef} className="reveal mt-14 flex gap-4 overflow-hidden mask-fade-b">
           <div className="flex shrink-0 animate-marquee gap-4">
-            {[IMAGES.heroAerial, IMAGES.camelCaravan, IMAGES.campBerber, IMAGES.campfire, IMAGES.mintTea, IMAGES.stars, IMAGES.ergChebbi, IMAGES.sunrise].map((src, i) => (
+            {homeContent.gallery.map((src, i) => (
               <img key={i} src={src} alt="" loading="lazy" className="h-72 w-96 shrink-0 rounded-2xl object-cover" />
             ))}
           </div>
           <div className="flex shrink-0 animate-marquee gap-4" aria-hidden>
-            {[IMAGES.heroAerial, IMAGES.camelCaravan, IMAGES.campBerber, IMAGES.campfire, IMAGES.mintTea, IMAGES.stars, IMAGES.ergChebbi, IMAGES.sunrise].map((src, i) => (
+            {homeContent.gallery.map((src, i) => (
               <img key={`b-${i}`} src={src} alt="" loading="lazy" className="h-72 w-96 shrink-0 rounded-2xl object-cover" />
             ))}
           </div>
@@ -225,7 +247,7 @@ export default function Home() {
       {/* CTA */}
       <section ref={ctaRef} className="relative overflow-hidden bg-sand-800 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0 opacity-20">
-          <img src={IMAGES.duneRipples} alt="" loading="lazy" className="h-full w-full object-cover" />
+          <img src={homeContent.cta_image} alt="" loading="lazy" className="h-full w-full object-cover" />
         </div>
         <div className="container-x relative z-10 text-center">
           <h2 className="reveal mx-auto max-w-2xl font-display text-3xl font-medium leading-tight text-white text-balance sm:text-4xl lg:text-5xl">
