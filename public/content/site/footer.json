@@ -1,22 +1,46 @@
 {
-  "brand_name": "Walk the Sahara",
-  "description": "Luxury desert journeys through the golden dunes of Merzouga and beyond. Small groups, local guides, and camps that leave nothing behind but footprints.",
   "instagram_url": "https://www.instagram.com/laichi_ismail",
-  "facebook_url": "https://www.facebook.com/profile.php?id=100008385751874",
-  "explore_links": [
-    { "label": "All Tours", "to": "/tours" },
-    { "label": "Experiences", "to": "/experiences" },
-    { "label": "Blog", "to": "/blog" },
-    { "label": "About Us", "to": "/about" },
-    { "label": "Contact", "to": "/contact" }
-  ],
-  "address": "Avenue Mohammed V, Merzouga, Errachidia, Morocco",
-  "phone": "+212 5 35 00 00 00",
-  "email": "hello@walkthesahara.com",
+  "brand_name": "Walk the Sahara",
   "copyright_text": "All rights reserved.",
+  "explore_links": [
+    {
+      "label": "All Tours",
+      "to": "/tours"
+    },
+    {
+      "label": "Experiences",
+      "to": "/experiences"
+    },
+    {
+      "label": "Blog",
+      "to": "/blog"
+    },
+    {
+      "label": "About Us",
+      "to": "/about"
+    },
+    {
+      "label": "Contact",
+      "to": "/contact"
+    }
+  ],
+  "phone": "+212 6 74 28 36 39",
   "legal_links": [
-    { "label": "Privacy", "to": "#" },
-    { "label": "Terms", "to": "#" },
-    { "label": "Responsible Travel", "to": "#" }
-  ]
+    {
+      "label": "Privacy",
+      "to": "#"
+    },
+    {
+      "label": "Terms",
+      "to": "#"
+    },
+    {
+      "label": "Responsible Travel",
+      "to": "#"
+    }
+  ],
+  "address": "Avenue Mohammed V, Zagora, Morocco",
+  "facebook_url": "https://www.facebook.com/profile.php?id=100008385751874",
+  "email": "hello@walkthesahara.com",
+  "description": "Luxury desert journeys through the golden dunes of Merzouga and beyond. Small groups, local guides, and camps that leave nothing behind but footprints."
 }
