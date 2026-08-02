@@ -2,6 +2,18 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Menu, X, Compass, ChevronDown } from 'lucide-react';
 import { useScrolled } from '@/hooks/useReveal';
+import { getSiteSettings, type SiteSettings } from '@/data/cms';
+
+const DEFAULT_SETTINGS: SiteSettings = {
+  brand_name: 'Walk the Sahara',
+  tagline: 'Moroccan Desert Journeys',
+  logo_image: '',
+  phone: '',
+  email: '',
+  address: '',
+  instagram_url: '',
+  facebook_url: '',
+};
 
 const LINKS = [
   { to: '/', label: 'Home' },
@@ -47,7 +59,14 @@ export default function Navbar() {
   const scrolled = useScrolled(40);
   const [open, setOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [settings, setSettings] = useState<SiteSettings>(DEFAULT_SETTINGS);
   const { pathname } = useLocation();
+
+  useEffect(() => {
+    void (async () => {
+      setSettings(await getSiteSettings());
+    })();
+  }, []);
 
   useEffect(() => {
     setOpen(false);
@@ -72,30 +91,40 @@ export default function Navbar() {
       }`}
     >
       <div className="container-x flex h-20 items-center justify-between">
-        <Link to="/" className="group flex items-center gap-2.5" aria-label="Walk the Sahara home">
-          <span
-            className={`flex h-10 w-10 items-center justify-center rounded-full border transition-colors duration-500 ${
-              solid ? 'border-sand-300 text-sand-700' : 'border-white/60 text-white'
-            }`}
-          >
-            <Compass className="h-5 w-5" strokeWidth={1.5} />
-          </span>
-          <span className="flex flex-col leading-none">
-            <span
-              className={`font-display text-xl font-semibold tracking-wide transition-colors duration-500 ${
-                solid ? 'text-ink-900' : 'text-white'
-              }`}
-            >
-              Walk the Sahara
-            </span>
-            <span
-              className={`text-[10px] font-medium uppercase tracking-[0.32em] transition-colors duration-500 ${
-                solid ? 'text-sand-600' : 'text-sand-100/80'
-              }`}
-            >
-              Moroccan Desert Journeys
-            </span>
-          </span>
+        <Link to="/" className="group flex items-center gap-2.5" aria-label={`${settings.brand_name} home`}>
+          {settings.logo_image ? (
+            <img
+              src={settings.logo_image}
+              alt={settings.brand_name}
+              className="h-12 w-auto lg:h-14"
+            />
+          ) : (
+            <>
+              <span
+                className={`flex h-10 w-10 items-center justify-center rounded-full border transition-colors duration-500 ${
+                  solid ? 'border-sand-300 text-sand-700' : 'border-white/60 text-white'
+                }`}
+              >
+                <Compass className="h-5 w-5" strokeWidth={1.5} />
+              </span>
+              <span className="flex flex-col leading-none">
+                <span
+                  className={`font-display text-xl font-semibold tracking-wide transition-colors duration-500 ${
+                    solid ? 'text-ink-900' : 'text-white'
+                  }`}
+                >
+                  {settings.brand_name}
+                </span>
+                <span
+                  className={`text-[10px] font-medium uppercase tracking-[0.32em] transition-colors duration-500 ${
+                    solid ? 'text-sand-600' : 'text-sand-100/80'
+                  }`}
+                >
+                  {settings.tagline}
+                </span>
+              </span>
+            </>
+          )}
         </Link>
 
         <nav className="hidden items-center gap-9 lg:flex">

@@ -3,6 +3,7 @@ import { BLOG_POSTS, TOURS, EXPERIENCES, TESTIMONIALS, FAQS, IMAGES, type BlogPo
 export type SiteSettings = {
   brand_name: string;
   tagline: string;
+  logo_image: string;
   phone: string;
   email: string;
   address: string;
@@ -104,6 +105,7 @@ export type ExperiencesPageContent = {
 const defaultSettings: SiteSettings = {
   brand_name: 'Walk the Sahara',
   tagline: 'Moroccan Desert Journeys',
+  logo_image: '',
   phone: '+212 5 35 00 00 00',
   email: 'hello@walkthesahara.com',
   address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',

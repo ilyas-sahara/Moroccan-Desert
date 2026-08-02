@@ -24,6 +24,10 @@ collections:
           - label: Tagline
             name: tagline
             widget: string
+          - label: Logo image
+            name: logo_image
+            widget: image
+            required: false
           - label: Phone
             name: phone
             widget: string
