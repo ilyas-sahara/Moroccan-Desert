@@ -1,0 +1,31 @@
+{
+  "values": [
+    {
+      "title": "Local d'abord",
+      "text": "Chaque guide est berbère, né et élevé au bord des dunes. L'argent que vous dépensez reste dans le désert."
+    },
+    {
+      "title": "Zéro trace",
+      "text": "Nos camps sont entièrement démontables. Nous emportons chaque trace et protégeons la fragile écologie des dunes."
+    },
+    {
+      "title": "Petits groupes",
+      "text": "Nous limitons chaque départ à une poignée de voyageurs. Le désert est fait pour le silence, pas pour la foule."
+    },
+    {
+      "title": "Un savoir-faire authentique",
+      "text": "Nous tissons de véritables rencontres avec les familles nomades, les tisserands et les musiciens — jamais de spectacles mis en scène."
+    }
+  ],
+  "hero_eyebrow": "Notre histoire",
+  "cta_label": "Voir les circuits",
+  "intro_title": "Une famille de guides, pas une entreprise.",
+  "intro_image": "https://images.pexels.com/photos/35901289/pexels-photo-35901289.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "cta_link": "/tours",
+  "intro_description": "Nous sommes un petit collectif de guides berbères et d'hôtes de camp de la région de l'Erg Chebbi. Nous avons grandi en parcourant ces dunes, et nous avons fondé Walk the Sahara pour les partager avec des voyageurs en quête de plus qu'un simple arrêt photo.",
+  "cta_title": "Venez marcher dans le Sahara avec nous.",
+  "cta_image": "https://images.pexels.com/photos/37441710/pexels-photo-37441710.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "hero_title": "Né au bord des dunes",
+  "hero_image": "https://images.pexels.com/photos/9029494/pexels-photo-9029494.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "hero_subtitle": "Walk the Sahara est né d'une seule famille berbère à Merzouga et d'une conviction : le désert doit être partagé avec soin."
+}

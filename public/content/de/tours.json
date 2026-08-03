@@ -1,0 +1,312 @@
+{
+  "items": [
+    {
+      "groupSize": "Bis zu 6 Gäste",
+      "bestSeason": "Oktober — März",
+      "experiences": [
+        "desert-camping"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "In den Erg Chebbi",
+          "description": "Start in Merzouga. Kamele beladen und in die Dünen trekken. Erste Nacht in einem festen Luxuscamp mit Abendessen und Sternenbeobachtung."
+        },
+        {
+          "day": 2,
+          "title": "Khamlia & Gnaoua-Rhythmen",
+          "description": "Besuch des Dorfes Khamlia, Heimat einer Gnaoua-Musikgemeinschaft. Nach dem Mittagessen Trek zu einem wilden Camp zwischen den kleineren Dünen des Erg Znigui."
+        },
+        {
+          "day": 3,
+          "title": "Die stillen Dünen",
+          "description": "Ein langer, langsamer Trek über wellige Dünen ohne einen anderen Menschen in Sicht. Mittagessen im Schatten einer Tamariske. Camp nahe eines ausgetrockneten Flussbetts."
+        },
+        {
+          "day": 4,
+          "title": "Nomadenlager",
+          "description": "Begegnung mit einer Nomadenfamilie, gemeinsamer Tee und Lernen, wie sie mit den Jahreszeiten ziehen. Am Nachmittag Aufstieg auf eine 150 m hohe Düne zum Sonnenuntergang."
+        },
+        {
+          "day": 5,
+          "title": "Rückkehr nach Merzouga",
+          "description": "Letzter Sonnenaufgang, Frühstück und 4x4-Transfer zurück nach Merzouga."
+        }
+      ],
+      "slug": "sahara-grand-crossing",
+      "notIncluded": [
+        "Transport nach Merzouga",
+        "Schlafsack-Inlett",
+        "Reiseversicherung",
+        "Trinkgelder"
+      ],
+      "gallery": [
+        "https://images.pexels.com/photos/33566021/pexels-photo-33566021.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/8357638/pexels-photo-8357638.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/37441710/pexels-photo-37441710.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      ],
+      "priceFrom": 890,
+      "duration": "5 Tage · 4 Nächte",
+      "region": "Erg Chebbi · Erg Znigui",
+      "days": 5,
+      "subtitle": "Fünf Tage tief in den Dünen, von Oase zu Oase",
+      "title": "Große Sahara-Überquerung",
+      "overview": "Für Reisende, die wirklich in der Wüste verschwinden wollen. Eine fünftägige, kamelgestützte Überquerung von Merzouga durch die stillen Dünen des Erg Znigui, mit zwei verschiedenen Wildcamps und Begegnungen mit den Menschen, die diese Landschaft ihr Zuhause nennen.",
+      "reviews": 96,
+      "image": "https://images.pexels.com/photos/33566021/pexels-photo-33566021.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "difficulty": "Adventurous",
+      "included": [
+        "Kameltrek mit Führer",
+        "4x4-Begleitfahrzeug",
+        "4 Nächte Camp",
+        "Alle Mahlzeiten",
+        "Besuch des Gnaoua-Dorfes",
+        "Begegnung mit lokalen Nomaden"
+      ],
+      "rating": 4.8,
+      "highlights": [
+        "Mehrtägige Kamelkarawane über die Dünen",
+        "Zwei unterschiedliche Wildcamps",
+        "Besuch eines Gnaoua-Musikdorfes",
+        "Sonnenuntergang vom Gipfel einer 150 m hohen Düne"
+      ]
+    },
+    {
+      "groupSize": "Bis zu 10 Gäste",
+      "bestSeason": "September — Mai",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Marrakesch nach Aït Ben Haddou",
+          "description": "Überqueren Sie den Tizi-n'Tichka-Pass durch den Hohen Atlas. Ankunft in Aït Ben Haddou für eine geführte Besichtigung der UNESCO-geschützten Kasbah bei Sonnenuntergang. Übernachtung in einer Kasbah-Pension."
+        },
+        {
+          "day": 2,
+          "title": "Die Straße zum Dadès",
+          "description": "Fahrt durch das Tal der Tausend Kasbahs und die Dadès-Schlucht. Mittagessen bei einer lokalen Familie. Nachmittags Weiterfahrt nach Merzouga."
+        },
+        {
+          "day": 3,
+          "title": "In die Sahara",
+          "description": "Tauschen Sie den 4x4 gegen Kamele und trekken Sie in den Erg Chebbi. Sonnenuntergang, Minztee und eine Nacht in einem Luxus-Berbercamp mit Sternenbeobachtung."
+        },
+        {
+          "day": 4,
+          "title": "Sonnenaufgang & Rückkehr",
+          "description": "Sonnenaufgang über den Dünen, Frühstück und Kamelritt zurück nach Merzouga. 4x4-Transfer zurück nach Marrakesch."
+        }
+      ],
+      "slug": "atlas-to-sahara",
+      "notIncluded": [
+        "Mittagessen",
+        "Getränke",
+        "Reiseversicherung",
+        "Trinkgelder"
+      ],
+      "gallery": [
+        "https://images.pexels.com/photos/29976840/pexels-photo-29976840.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/14145449/pexels-photo-14145449.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/30906049/pexels-photo-30906049.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      ],
+      "priceFrom": 640,
+      "duration": "4 Tage · 3 Nächte",
+      "region": "Marrakesch · Aït Ben Haddou · Merzouga",
+      "days": 4,
+      "subtitle": "Von den Pässen des Hohen Atlas zu den Dünen des Erg Chebbi",
+      "title": "Vom Atlas zur Sahara",
+      "overview": "Eine viertägige private Reise, die zwei große Landschaften Marokkos verbindet: die Lehmziegel-Kasbahs des Hohen Atlas und die goldenen Dünen der Sahara. Reisen Sie im 4x4 mit einem lokalen Fahrer-Guide und enden Sie mit einer Nacht in einem Luxus-Wüstencamp.",
+      "reviews": 158,
+      "image": "https://images.pexels.com/photos/29976840/pexels-photo-29976840.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "difficulty": "Moderate",
+      "included": [
+        "Privater 4x4 mit Fahrer-Guide",
+        "3 Nächte Unterkunft",
+        "Kameltrek",
+        "Camp-Dinner & Frühstück",
+        "Geführte Tour Aït Ben Haddou"
+      ],
+      "rating": 4.9,
+      "highlights": [
+        "Den Tizi-n'Tichka-Pass überqueren",
+        "Sonnenuntergang an der Kasbah von Aït Ben Haddou",
+        "Übernachtung in den Dünen des Erg Chebbi",
+        "Privater 4x4 mit lokalem Fahrer-Guide"
+      ]
+    },
+    {
+      "groupSize": "Bis zu 12 Gäste",
+      "bestSeason": "Oktober — April",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Sonnenuntergang & Sterne",
+          "description": "Nachmittags Kameltrek in die Dünen. Ankunft im Camp für Sonnenuntergang, Minztee und Abendessen. Nach dem Essen eine geführte Teleskop-Session und Berber-Trommeln am Feuer."
+        },
+        {
+          "day": 2,
+          "title": "Sonnenaufgang & Abreise",
+          "description": "Frühe Wanderung zu einer nahen Düne für den Sonnenaufgang. Frühstück im Camp, dann Kamelritt zurück nach Merzouga."
+        }
+      ],
+      "slug": "stargazing-night-camp",
+      "notIncluded": [
+        "Transport nach Merzouga",
+        "Mittagessen",
+        "Getränke",
+        "Trinkgelder"
+      ],
+      "gallery": [
+        "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/14809603/pexels-photo-14809603.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/8369874/pexels-photo-8369874.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/12128953/pexels-photo-12128953.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      ],
+      "priceFrom": 180,
+      "duration": "2 Tage · 1 Nacht",
+      "region": "Erg Chebbi · Merzouga",
+      "days": 2,
+      "subtitle": "Eine Nacht, ein Camp, der ganze Himmel",
+      "title": "Sternenbeobachtungs-Nachtcamp",
+      "overview": "Eine einzige unvergessliche Nacht in der Wüste. Ankunft in Merzouga am Nachmittag, Kameltrek zu einem Luxuscamp und ein Abend mit einem lokalen Astronomen, Berber-Trommlern und dem klarsten Himmel, den Sie je sehen werden.",
+      "reviews": 302,
+      "image": "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "difficulty": "Gentle",
+      "included": [
+        "Kameltrek",
+        "1 Nacht Luxuscamp",
+        "Dinner & Frühstück",
+        "Teleskop-Session",
+        "Berber-Musik"
+      ],
+      "rating": 4.7,
+      "highlights": [
+        "Geführte Nachthimmel-Tour mit Teleskop",
+        "Feuermusik mit Berber-Trommlern",
+        "Dünenwanderung bei Sonnenaufgang",
+        "Ideal für Wüsten-Neulinge"
+      ]
+    },
+    {
+      "groupSize": "Bis zu 6 Gäste",
+      "bestSeason": "November — März",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Die Nomaden treffen",
+          "description": "Kameltrek von Merzouga zum saisonalen Lager einer Nomadenfamilie. Tee teilen, lernen, wie sie mit den Jahreszeiten ziehen, und in einem traditionellen Zelt schlafen."
+        },
+        {
+          "day": 2,
+          "title": "Brot im Sand",
+          "description": "Verbringen Sie den Tag mit der Familie. Lernen Sie, Brot im Sand zu backen, Ziegen zu melken und eine Tajine zuzubereiten. Nachmittags Spaziergang zu einem nahen Fossilienfeld."
+        },
+        {
+          "day": 3,
+          "title": "Web-Workshop",
+          "description": "Reise zu einer Berber-Webkooperative. Verbringen Sie den Tag damit, die Muster und Geschichten zu lernen, die in jeden Teppich gewebt sind. Übernachtung in einem Wildcamp."
+        },
+        {
+          "day": 4,
+          "title": "Rückkehr nach Merzouga",
+          "description": "Sonnenaufgang, Frühstück und Kamelritt zurück nach Merzouga."
+        }
+      ],
+      "slug": "nomad-berber-immersion",
+      "notIncluded": [
+        "Transport nach Merzouga",
+        "Getränke",
+        "Reiseversicherung",
+        "Trinkgelder"
+      ],
+      "gallery": [
+        "https://images.pexels.com/photos/35901297/pexels-photo-35901297.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/35901289/pexels-photo-35901289.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/30906051/pexels-photo-30906051.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/9029494/pexels-photo-9029494.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      ],
+      "priceFrom": 720,
+      "duration": "4 Tage · 3 Nächte",
+      "region": "Erg Chebbi · Nomadengebiet",
+      "days": 4,
+      "subtitle": "Vier Tage lang mit den Menschen der Wüste leben",
+      "title": "Nomaden- & Berber-Immersion",
+      "overview": "Ein tiefer kultureller Tauchgang. Verbringen Sie vier Tage mit den Menschen der Sahara — Nomadenfamilien, Berberweber und den Führern, die zwischen diesen Dünen aufgewachsen sind. Sie essen, schlafen und reisen wie sie.",
+      "reviews": 64,
+      "image": "https://images.pexels.com/photos/35901297/pexels-photo-35901297.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "difficulty": "Moderate",
+      "included": [
+        "Kameltrek",
+        "3 Nächte Unterkunft",
+        "Alle Mahlzeiten",
+        "Aufenthalt bei einer Nomadenfamilie",
+        "Web-Workshop"
+      ],
+      "rating": 4.9,
+      "highlights": [
+        "Aufenthalt bei einer Nomadenfamilie",
+        "Brot im Sand backen lernen",
+        "Web- & Teppich-Workshop",
+        "Wildcampen abseits des Netzes"
+      ]
+    },
+    {
+      "groupSize": "Privat",
+      "bestSeason": "Ganzjährig (maßgeschneidert)",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Beratung",
+          "description": "Ein Gespräch mit unserem Team, um Ihre Gruppe, Ihre Daten und die Art des Wüstenerlebnisses zu verstehen, das Sie suchen."
+        },
+        {
+          "day": 2,
+          "title": "Maßgeschneiderter Vorschlag",
+          "description": "Wir senden innerhalb von 48 Stunden eine individuelle Route mit Optionen für Strecke, Camp und Führer."
+        },
+        {
+          "day": 3,
+          "title": "Ihre Reise",
+          "description": "Alles ist arrangiert. Sie kommen an, und die Wüste übernimmt den Rest."
+        }
+      ],
+      "slug": "private-bespoke-desert",
+      "notIncluded": [
+        "Internationale Flüge",
+        "Reiseversicherung",
+        "Trinkgelder"
+      ],
+      "gallery": [
+        "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/37441710/pexels-photo-37441710.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/10434667/pexels-photo-10434667.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/998635/pexels-photo-998635.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      ],
+      "priceFrom": 1200,
+      "duration": "Flexibel",
+      "region": "Auf Sie zugeschnitten",
+      "days": 0,
+      "subtitle": "Ihre eigene Route, Ihr eigenes Tempo, Ihre eigene Sahara",
+      "title": "Privates maßgeschneidertes Wüstenerlebnis",
+      "overview": "Für Reisende, die etwas ganz Eigenes wollen. Erzählen Sie uns von Ihrem Traum — ein Helikopter-Absetzer in ein abgelegenes Dünenfeld, ein privates Camp für zwei, eine Fotografie-Expedition — und wir bauen ihn.",
+      "reviews": 41,
+      "image": "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "difficulty": "Gentle",
+      "included": [
+        "Privater Führer",
+        "Privates Camp",
+        "Alle Mahlzeiten",
+        "Maßgeschneiderte Route",
+        "Concierge-Service"
+      ],
+      "rating": 5,
+      "highlights": [
+        "Vollständig privater Führer & Camp",
+        "Flexible Dauer und Route",
+        "Fotografie-orientierte Optionen",
+        "Helikopter- oder 4x4-Transfers verfügbar"
+      ]
+    }
+  ]
+}

@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, CalendarDays, Clock3, UserRound } from 'lucide-react';
 import { BLOG_POSTS, type BlogPost } from '@/data/content';
+import { useLocale } from '@/i18n';
 import { getCmsBlogPosts } from '@/data/cms';
 
 export default function BlogDetail() {
   const { slug } = useParams();
+  const { t } = useLocale();
   const [posts, setPosts] = useState<BlogPost[]>(BLOG_POSTS);
   const post = posts.find((item) => item.slug === slug);
 
@@ -20,8 +22,8 @@ export default function BlogDetail() {
     return (
       <main className="pt-32">
         <div className="container-x py-24 text-center">
-          <h1 className="font-display text-4xl text-ink-900">Article not found</h1>
-          <Link to="/blog" className="btn-primary mt-8">Back to blog</Link>
+          <h1 className="font-display text-4xl text-ink-900">{t('blog.articleNotFound')}</h1>
+          <Link to="/blog" className="btn-primary mt-8">{t('blog.backToBlog')}</Link>
         </div>
       </main>
     );
@@ -32,7 +34,7 @@ export default function BlogDetail() {
       <section className="bg-sand-50 py-12 lg:py-16">
         <div className="container-x max-w-4xl">
           <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-sand-700 hover:text-sand-800">
-            <ArrowLeft className="h-4 w-4" strokeWidth={1.75} /> Back to blog
+            <ArrowLeft className="h-4 w-4" strokeWidth={1.75} /> {t('blog.backToBlog')}
           </Link>
 
           <article className="mt-8 overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-sand-200/60">

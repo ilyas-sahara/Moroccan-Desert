@@ -1,0 +1,60 @@
+{
+  "items": [
+  {
+    "slug": "camel-trekking",
+    "title": "Trekking con i cammelli",
+    "description": "Segui antiche rotte carovaniere tra le dune all'alba o al tramonto.",
+    "image": "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Compass"
+  },
+  {
+    "slug": "desert-camping",
+    "title": "Accampamenti berberi di lusso",
+    "description": "Dormi sotto le stelle in un accampamento privato di tende con servizio completo.",
+    "image": "https://images.pexels.com/photos/12536402/pexels-photo-12536402.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Tent"
+  },
+  {
+    "slug": "stargazing",
+    "title": "Osservazione delle stelle",
+    "description": "Il cielo del Sahara è uno dei più bui della Terra. Telescopi inclusi.",
+    "image": "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Star"
+  },
+  {
+    "slug": "mint-tea",
+    "title": "Cerimonia del tè alla menta",
+    "description": "Il rituale che apre ogni incontro nel deserto.",
+    "image": "https://images.pexels.com/photos/31497982/pexels-photo-31497982.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Coffee"
+  },
+  {
+    "slug": "nomadic-culture",
+    "title": "Incontri con i nomadi",
+    "description": "Trascorri una giornata con una famiglia che ancora si sposta con le stagioni.",
+    "image": "https://images.pexels.com/photos/35901289/pexels-photo-35901289.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Users"
+  },
+  {
+    "slug": "sandboarding",
+    "title": "Sandboarding",
+    "description": "Sali sulle dune e scendi con la tavola. Tavole e istruzioni incluse.",
+    "image": "https://images.pexels.com/photos/28829638/pexels-photo-28829638.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Mountain"
+  },
+  {
+    "slug": "4x4-desert-routes",
+    "title": "Itinerari 4x4 nel deserto",
+    "description": "Viaggia oltre la strada asfaltata attraverso valli, hammada e dune remote.",
+    "image": "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Mountain"
+  },
+  {
+    "slug": "kasbahs-and-oases",
+    "title": "Kasbah e oasi",
+    "description": "Combina il Sahara con valli di palme, antiche kasbah e villaggi del sud del Marocco.",
+    "image": "https://images.pexels.com/photos/29976840/pexels-photo-29976840.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Users"
+  }
+  ]
+}

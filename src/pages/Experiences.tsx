@@ -4,6 +4,7 @@ import { Compass, Tent, Star, Coffee, Users, Mountain, ArrowRight } from 'lucide
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
 import { EXPERIENCES } from '@/data/content';
+import { useLocale } from '@/i18n';
 import { getCmsExperiences, getExperiencesPageContent, type ExperiencesPageContent } from '@/data/cms';
 
 const ICONS: Record<string, typeof Compass> = {
@@ -24,16 +25,17 @@ const DEFAULT_PAGE: ExperiencesPageContent = {
 
 export default function Experiences() {
   const ref = useReveal<HTMLDivElement>();
+  const { locale, t } = useLocale();
   const [experiences, setExperiences] = useState(EXPERIENCES);
   const [pageContent, setPageContent] = useState<ExperiencesPageContent>(DEFAULT_PAGE);
 
   useEffect(() => {
     void (async () => {
-      const [cmsExperiences, page] = await Promise.all([getCmsExperiences(), getExperiencesPageContent()]);
+      const [cmsExperiences, page] = await Promise.all([getCmsExperiences(locale), getExperiencesPageContent(locale)]);
       setExperiences(cmsExperiences);
       setPageContent(page);
     })();
-  }, []);
+  }, [locale]);
 
   return (
     <main className="pt-20">
@@ -73,7 +75,7 @@ export default function Experiences() {
                     <h3 className="font-display text-xl font-medium text-ink-900">{exp.title}</h3>
                     <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-600">{exp.description}</p>
                     <Link to={`/tours?experience=${encodeURIComponent(exp.slug)}`} className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-sand-700 hover:text-sand-800">
-                      Find tours with this <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+                      {t('experiences.findTours')} <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
                     </Link>
                   </div>
                 </article>

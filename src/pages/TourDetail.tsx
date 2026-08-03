@@ -7,12 +7,14 @@ import {
 import { TOURS, type Tour } from '@/data/content';
 import { getCmsTours } from '@/data/cms';
 import { useReveal } from '@/hooks/useReveal';
+import { useLocale } from '@/i18n';
 import TourCard from '@/components/TourCard';
 import TourMap from '@/components/TourMap';
 import SectionHeading from '@/components/SectionHeading';
 
 export default function TourDetail() {
   const { slug } = useParams();
+  const { locale, t } = useLocale();
   const [tours, setTours] = useState<Tour[]>(TOURS);
   const tour = tours.find((t) => t.slug === slug) as Tour | undefined;
   const [activeImg, setActiveImg] = useState(0);
@@ -20,10 +22,10 @@ export default function TourDetail() {
 
   useEffect(() => {
     void (async () => {
-      const cmsTours = await getCmsTours();
+      const cmsTours = await getCmsTours(locale);
       setTours(cmsTours);
     })();
-  }, []);
+  }, [locale]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,8 +36,8 @@ export default function TourDetail() {
     return (
       <main className="pt-32">
         <div className="container-x py-24 text-center">
-          <h1 className="font-display text-4xl text-ink-900">Journey not found</h1>
-          <Link to="/tours" className="btn-primary mt-8">Back to all tours</Link>
+          <h1 className="font-display text-4xl text-ink-900">{t('tours.journeyNotFound')}</h1>
+          <Link to="/tours" className="btn-primary mt-8">{t('tours.backToAllTours')}</Link>
         </div>
       </main>
     );
@@ -48,9 +50,9 @@ export default function TourDetail() {
       {/* Breadcrumb */}
       <div className="border-b border-sand-200/60 bg-sand-50">
         <div className="container-x flex items-center gap-2 py-4 text-xs text-sand-600">
-          <Link to="/" className="hover:text-sand-800">Home</Link>
+          <Link to="/" className="hover:text-sand-800">{t('nav.home')}</Link>
           <ChevronRight className="h-3 w-3" />
-          <Link to="/tours" className="hover:text-sand-800">Tours</Link>
+          <Link to="/tours" className="hover:text-sand-800">{t('nav.tours')}</Link>
           <ChevronRight className="h-3 w-3" />
           <span className="text-ink-800">{tour.title}</span>
         </div>
@@ -106,10 +108,10 @@ export default function TourDetail() {
             {/* Quick facts row */}
             <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {[
-                { icon: Clock, label: 'Duration', value: tour.duration },
-                { icon: Users, label: 'Group size', value: tour.groupSize },
-                { icon: Mountain, label: 'Level', value: tour.difficulty },
-                { icon: Calendar, label: 'Best season', value: tour.bestSeason },
+                { icon: Clock, label: t('tours.duration'), value: tour.duration },
+                { icon: Users, label: t('tours.groupSizeLabel'), value: tour.groupSize },
+                { icon: Mountain, label: t('tours.level'), value: tour.difficulty },
+                { icon: Calendar, label: t('tours.bestSeason'), value: tour.bestSeason },
               ].map((f) => (
                 <div key={f.label} className="rounded-xl bg-sand-100/60 p-4">
                   <f.icon className="h-5 w-5 text-sand-600" strokeWidth={1.5} />
@@ -121,13 +123,13 @@ export default function TourDetail() {
 
             {/* Overview */}
             <div className="mt-12">
-              <h2 className="font-display text-2xl font-medium text-ink-900">Overview</h2>
+              <h2 className="font-display text-2xl font-medium text-ink-900">{t('tours.overview')}</h2>
               <p className="mt-4 text-base leading-relaxed text-ink-700">{tour.overview}</p>
             </div>
 
             {/* Highlights */}
             <div className="mt-10">
-              <h2 className="font-display text-2xl font-medium text-ink-900">Highlights</h2>
+              <h2 className="font-display text-2xl font-medium text-ink-900">{t('tours.highlights')}</h2>
               <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                 {tour.highlights.map((h) => (
                   <li key={h} className="flex items-start gap-3 rounded-xl bg-sand-100/50 p-4">
@@ -142,7 +144,7 @@ export default function TourDetail() {
 
             {/* Itinerary */}
             <div className="mt-12">
-              <h2 className="font-display text-2xl font-medium text-ink-900">Itinerary</h2>
+              <h2 className="font-display text-2xl font-medium text-ink-900">{t('tours.itinerary')}</h2>
               <ol ref={ref} className="mt-6 space-y-4">
                 {tour.itinerary.map((day, i) => (
                   <li
@@ -156,7 +158,7 @@ export default function TourDetail() {
                       {i < tour.itinerary.length - 1 && <span className="mt-2 w-px flex-1 bg-sand-200" />}
                     </div>
                     <div className="flex-1 pb-2">
-                      <p className="text-[11px] uppercase tracking-[0.18em] text-sand-500">Day {day.day}</p>
+                      <p className="text-[11px] uppercase tracking-[0.18em] text-sand-500">{t('tours.day', { day: day.day })}</p>
                       <h3 className="mt-1 font-display text-xl font-medium text-ink-900">{day.title}</h3>
                       <p className="mt-2 text-sm leading-relaxed text-ink-600">{day.description}</p>
                     </div>
@@ -168,7 +170,7 @@ export default function TourDetail() {
             {/* Included / not included */}
             <div className="mt-12 grid gap-8 sm:grid-cols-2">
               <div>
-                <h2 className="font-display text-2xl font-medium text-ink-900">What's included</h2>
+                <h2 className="font-display text-2xl font-medium text-ink-900">{t('tours.whatsIncluded')}</h2>
                 <ul className="mt-5 space-y-3">
                   {tour.included.map((item) => (
                     <li key={item} className="flex items-start gap-3">
@@ -181,7 +183,7 @@ export default function TourDetail() {
                 </ul>
               </div>
               <div>
-                <h2 className="font-display text-2xl font-medium text-ink-900">Not included</h2>
+                <h2 className="font-display text-2xl font-medium text-ink-900">{t('tours.notIncluded')}</h2>
                 <ul className="mt-5 space-y-3">
                   {tour.notIncluded.map((item) => (
                     <li key={item} className="flex items-start gap-3">
@@ -200,35 +202,35 @@ export default function TourDetail() {
           <aside className="lg:col-span-4">
             <div className="sticky top-28 rounded-2xl bg-white p-7 shadow-lg ring-1 ring-sand-200/60">
               <TourMap tour={tour} className="mb-6" />
-              <p className="text-[11px] uppercase tracking-[0.18em] text-sand-500">From</p>
+              <p className="text-[11px] uppercase tracking-[0.18em] text-sand-500">{t('common.from')}</p>
               <p className="font-display text-4xl font-semibold text-ink-900">
                 €{tour.priceFrom}
-                {tour.days > 0 && <span className="ml-1 text-sm font-normal text-ink-400">/ person</span>}
+                {tour.days > 0 && <span className="ml-1 text-sm font-normal text-ink-400">{t('common.perPerson')}</span>}
               </p>
 
               <div className="mt-6 space-y-3 border-y border-sand-100 py-5 text-sm">
                 <div className="flex items-center justify-between">
-                  <span className="text-ink-500">Duration</span>
+                  <span className="text-ink-500">{t('tours.duration')}</span>
                   <span className="font-semibold text-ink-800">{tour.duration}</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-ink-500">Group size</span>
+                  <span className="text-ink-500">{t('tours.groupSizeLabel')}</span>
                   <span className="font-semibold text-ink-800">{tour.groupSize}</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-ink-500">Best season</span>
+                  <span className="text-ink-500">{t('tours.bestSeason')}</span>
                   <span className="font-semibold text-ink-800">{tour.bestSeason}</span>
                 </div>
               </div>
 
               <Link to={`/contact?tour=${encodeURIComponent(tour.title)}`} className="btn-primary mt-6 w-full">
-                Book this Journey
+                {t('tours.bookThisJourney')}
               </Link>
               <Link to={`/contact?tour=${encodeURIComponent(tour.title)}`} className="btn-ghost mt-3 w-full">
-                Ask a Question
+                {t('tours.askQuestion')}
               </Link>
               <p className="mt-5 text-center text-xs text-sand-500">
-                Free cancellation up to 7 days before departure
+                {t('tours.freeCancellation')}
               </p>
             </div>
           </aside>
@@ -238,7 +240,7 @@ export default function TourDetail() {
       {/* Related */}
       <section className="bg-sand-100/40 py-20 lg:py-28">
         <div className="container-x">
-          <SectionHeading eyebrow="Keep Exploring" title="You may also like" />
+          <SectionHeading eyebrow={t('tours.keepExploring')} title={t('tours.youMayAlsoLike')} />
           <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((t, i) => (
               <TourCard key={t.slug} tour={t} index={i} />
@@ -251,7 +253,7 @@ export default function TourDetail() {
       <div className="bg-sand-50 py-10">
         <div className="container-x">
           <Link to="/tours" className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-sand-700 hover:text-sand-800">
-            <ArrowLeft className="h-4 w-4" strokeWidth={1.75} /> All Tours
+            <ArrowLeft className="h-4 w-4" strokeWidth={1.75} /> {t('common.allTours')}
           </Link>
         </div>
       </div>

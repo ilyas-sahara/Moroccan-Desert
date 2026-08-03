@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Compass, Instagram, Facebook, Mail, MapPin, Phone } from 'lucide-react';
 import { getFooterContent, type FooterContent } from '@/data/cms';
+import { useLocale } from '@/i18n';
 
 const DEFAULT_FOOTER: FooterContent = {
   brand_name: 'Walk the Sahara',
@@ -29,12 +30,13 @@ const DEFAULT_FOOTER: FooterContent = {
 
 export default function Footer() {
   const [footer, setFooter] = useState<FooterContent>(DEFAULT_FOOTER);
+  const { locale, t } = useLocale();
 
   useEffect(() => {
     void (async () => {
-      setFooter(await getFooterContent());
+      setFooter(await getFooterContent(locale));
     })();
-  }, []);
+  }, [locale]);
 
   return (
     <footer className="relative overflow-hidden bg-ink-950 text-sand-100">
@@ -85,7 +87,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.28em] text-sand-400">Explore</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.28em] text-sand-400">{t('common.explore')}</h4>
             <ul className="mt-5 space-y-3 text-sm text-sand-200/85">
               {footer.explore_links.map((link) => (
                 <li key={link.label}>
@@ -98,7 +100,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-4">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.28em] text-sand-400">Get in touch</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.28em] text-sand-400">{t('common.getInTouch')}</h4>
             <ul className="mt-5 space-y-3 text-sm text-sand-200/85">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-sand-400" strokeWidth={1.5} />

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronDown, Star } from 'lucide-react';
 import { IMAGES } from '@/data/content';
 import type { HeroFrame } from '@/data/cms';
+import { useLocale } from '@/i18n';
 
 const FRAME_MS = 3000;
 
@@ -31,6 +32,7 @@ export default function Hero({
   rating = '4.9',
   reviewText = 'from 1,200+ travelers worldwide',
 }: HeroProps) {
+  const { t } = useLocale();
   const frames = rawFrames && rawFrames.length ? rawFrames : DEFAULT_FRAMES;
   const [active, setActive] = useState(0);
   const timer = useRef<number | null>(null);
@@ -100,13 +102,13 @@ export default function Hero({
             style={{ animation: 'fade-up 0.9s ease-out 0.8s forwards' }}
           >
             <Link to="/tours" className="btn-light">
-              Explore Tours
+              {t('common.exploreTours')}
             </Link>
             <Link
               to="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white/10"
             >
-              Plan Your Journey
+              {t('common.planJourney')}
             </Link>
           </div>
           <div
@@ -141,7 +143,7 @@ export default function Hero({
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                aria-label={`Go to scene ${i + 1}`}
+                aria-label={t('hero.goToScene', { n: i + 1 })}
                 className={`h-1.5 rounded-full transition-all duration-500 ${
                   i === active ? 'w-8 bg-sand-200' : 'w-1.5 bg-sand-200/40 hover:bg-sand-200/70'
                 }`}

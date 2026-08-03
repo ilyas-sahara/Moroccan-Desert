@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SectionHeading from '@/components/SectionHeading';
 import { BLOG_POSTS, type BlogPost } from '@/data/content';
+import { useLocale } from '@/i18n';
 import { getCmsBlogPosts } from '@/data/cms';
 
 export default function Blog() {
+  const { t } = useLocale();
   const [posts, setPosts] = useState<BlogPost[]>(BLOG_POSTS);
 
   useEffect(() => {
@@ -28,9 +30,9 @@ export default function Blog() {
         <div className="container-x relative z-10">
           <SectionHeading
             light
-            eyebrow="Journal"
-            title="Stories from the Sahara"
-            subtitle="Editorial notes, lightweight planning guides, and the kind of travel writing that helps guest expectations meet reality."
+            eyebrow={t('blog.eyebrow')}
+            title={t('blog.title')}
+            subtitle={t('blog.subtitle')}
           />
         </div>
       </section>
@@ -54,7 +56,7 @@ export default function Blog() {
                     <p className="mt-1 text-xs text-sand-600">{post.publishedAt}</p>
                   </div>
                   <Link to={`/blog/${post.slug}`} className="btn-ghost !px-4 !py-2 !text-xs">
-                    Read article
+                    {t('common.readArticle')}
                   </Link>
                 </div>
               </div>

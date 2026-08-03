@@ -6,6 +6,7 @@ import SectionHeading from '@/components/SectionHeading';
 import TourCard from '@/components/TourCard';
 import { useReveal } from '@/hooks/useReveal';
 import { TOURS, EXPERIENCES, TESTIMONIALS, type Tour } from '@/data/content';
+import { useLocale } from '@/i18n';
 import {
   getCmsTours, getCmsExperiences, getCmsTestimonials, getHomePageContent, type HomePageContent,
 } from '@/data/cms';
@@ -48,13 +49,14 @@ export default function Home() {
   const [tours, setTours] = useState<Tour[]>(TOURS);
   const [experiences, setExperiences] = useState(EXPERIENCES);
   const [testimonials, setTestimonials] = useState(TESTIMONIALS);
+  const { locale, t } = useLocale();
 
   useEffect(() => {
     void (async () => {
       const [pageContent, cmsTours, cmsExperiences, cmsTestimonials] = await Promise.all([
-        getHomePageContent(),
-        getCmsTours(),
-        getCmsExperiences(),
+        getHomePageContent(locale),
+        getCmsTours(locale),
+        getCmsExperiences(locale),
         getCmsTestimonials(),
       ]);
       setHomeContent(pageContent);
@@ -62,7 +64,7 @@ export default function Home() {
       setExperiences(cmsExperiences);
       setTestimonials(cmsTestimonials);
     })();
-  }, []);
+  }, [locale]);
 
   return (
     <main>
@@ -87,17 +89,17 @@ export default function Home() {
               />
               <div className="mt-8 flex flex-wrap items-center gap-5">
                 <Link to="/about" className="btn-primary">
-                  Our Story <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+                  {t('common.ourStory')} <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
                 </Link>
                 <Link to="/tours" className="link-underline text-sm font-semibold uppercase tracking-[0.18em] text-ink-700">
-                  Browse Tours
+                  {t('common.browseTours')}
                 </Link>
               </div>
             </div>
             <div className="lg:col-span-6">
               <div className="grid grid-cols-2 gap-4">
-                <img src={homeContent.intro_image_a} alt="Mint tea on a Moroccan carpet" loading="lazy" className="aspect-[3/4] w-full rounded-2xl object-cover shadow-lg" />
-                <img src={homeContent.intro_image_b} alt="Camel trek on the dunes" loading="lazy" className="mt-8 aspect-[3/4] w-full rounded-2xl object-cover shadow-lg" />
+                <img src={homeContent.intro_image_a} alt={t('home.introImageAltA')} loading="lazy" className="aspect-[3/4] w-full rounded-2xl object-cover shadow-lg" />
+                <img src={homeContent.intro_image_b} alt={t('home.introImageAltB')} loading="lazy" className="mt-8 aspect-[3/4] w-full rounded-2xl object-cover shadow-lg" />
               </div>
             </div>
           </div>
@@ -109,12 +111,12 @@ export default function Home() {
         <div className="container-x">
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
             <SectionHeading
-              eyebrow="Signature Journeys"
-              title="Tours crafted around the rhythm of the desert"
-              subtitle="From a single night under the stars to a five-day crossing — every journey is led by local guides and built around small groups."
+              eyebrow={t('home.signatureJourneys')}
+              title={t('home.featuredTitle')}
+              subtitle={t('home.featuredSubtitle')}
             />
             <Link to="/tours" className="btn-ghost shrink-0">
-              All Tours <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
+              {t('common.allTours')} <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
             </Link>
           </div>
 
@@ -131,9 +133,9 @@ export default function Home() {
         <div className="container-x">
           <SectionHeading
             align="center"
-            eyebrow="What You'll Do"
-            title="Experiences that stay with you"
-            subtitle="Every journey is woven from small moments — the call of a camel driver, the first sip of mint tea, the silence of a sky full of stars."
+            eyebrow={t('home.whatYoullDo')}
+            title={t('home.expTitle')}
+            subtitle={t('home.expSubtitle')}
           />
           <div ref={expRef} className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {experiences.map((exp, i) => {
@@ -169,7 +171,7 @@ export default function Home() {
         </div>
         <div className="container-x relative z-10">
           <div className="max-w-xl">
-            <span className="eyebrow text-sand-300"><span className="hairline" /> A Night Like No Other</span>
+            <span className="eyebrow text-sand-300"><span className="hairline" /> {t('home.nightLikeNoOther')}</span>
             <h2 className="reveal mt-4 font-display text-3xl font-medium leading-tight text-white sm:text-4xl lg:text-[2.75rem] text-balance">
               {homeContent.story_title}
             </h2>
@@ -181,7 +183,7 @@ export default function Home() {
                 {homeContent.cta_label}
               </Link>
               <Link to="/experiences" className="inline-flex items-center gap-2 rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:bg-white/10">
-                See All Experiences
+                {t('common.seeAllExperiences')}
               </Link>
             </div>
           </div>
@@ -193,9 +195,9 @@ export default function Home() {
         <div className="container-x">
           <SectionHeading
             align="center"
-            eyebrow="The Landscape"
-            title="A few moments from the dunes"
-            subtitle="Gold, silence, and sky. The Sahara of Merzouga in pictures."
+            eyebrow={t('home.landscape')}
+            title={t('home.galleryTitle')}
+            subtitle={t('home.gallerySubtitle')}
           />
         </div>
         <div ref={galleryRef} className="reveal mt-14 flex gap-4 overflow-hidden mask-fade-b">
@@ -217,8 +219,8 @@ export default function Home() {
         <div className="container-x">
           <SectionHeading
             align="center"
-            eyebrow="Travelers' Words"
-            title="What our guests carry home"
+            eyebrow={t('home.travelersWords')}
+            title={t('home.guestsTitle')}
           />
           <div ref={testimonialsRef} className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((t, i) => (
@@ -251,15 +253,15 @@ export default function Home() {
         </div>
         <div className="container-x relative z-10 text-center">
           <h2 className="reveal mx-auto max-w-2xl font-display text-3xl font-medium leading-tight text-white text-balance sm:text-4xl lg:text-5xl">
-            Your journey into the Sahara begins with a single message.
+            {t('home.ctaTitle')}
           </h2>
           <p className="reveal reveal-delay-1 mx-auto mt-5 max-w-xl text-sand-100/85">
-            Tell us your dates and your dream — we'll craft the rest.
+            {t('home.ctaSubtitle')}
           </p>
           <div className="reveal reveal-delay-2 mt-9 flex flex-wrap items-center justify-center gap-4">
-            <Link to="/contact" className="btn-light">Plan Your Journey</Link>
+            <Link to="/contact" className="btn-light">{t('common.planJourney')}</Link>
             <Link to="/tours" className="inline-flex items-center gap-2 rounded-full border border-sand-200/40 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-sand-50 transition-colors hover:bg-sand-700/40">
-              View All Tours
+              {t('common.viewAllTours')}
             </Link>
           </div>
         </div>

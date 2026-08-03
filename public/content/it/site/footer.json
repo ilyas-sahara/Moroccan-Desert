@@ -1,0 +1,46 @@
+{
+  "instagram_url": "https://www.instagram.com/laichi_ismail",
+  "brand_name": "Walk the Sahara",
+  "copyright_text": "Tutti i diritti riservati.",
+  "explore_links": [
+    {
+      "label": "Tutti i tour",
+      "to": "/tours"
+    },
+    {
+      "label": "Esperienze",
+      "to": "/experiences"
+    },
+    {
+      "label": "Blog",
+      "to": "/blog"
+    },
+    {
+      "label": "Chi siamo",
+      "to": "/about"
+    },
+    {
+      "label": "Contatti",
+      "to": "/contact"
+    }
+  ],
+  "phone": "+212 6 74 28 36 39",
+  "legal_links": [
+    {
+      "label": "Privacy",
+      "to": "#"
+    },
+    {
+      "label": "Termini",
+      "to": "#"
+    },
+    {
+      "label": "Turismo responsabile",
+      "to": "#"
+    }
+  ],
+  "address": "Avenue Mohammed V, Zagora, Marocco",
+  "facebook_url": "https://www.facebook.com/profile.php?id=100008385751874",
+  "email": "hello@walkthesahara.com",
+  "description": "Viaggi di lusso nel deserto tra le dune dorate di Merzouga e oltre. Gruppi ridotti, guide locali e accampamenti che non lasciano nulla se non orme."
+}

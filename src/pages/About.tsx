@@ -3,18 +3,11 @@ import { Link } from 'react-router-dom';
 import { Leaf, Heart, Users, Compass, ArrowRight } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
+import { useLocale } from '@/i18n';
 import { getAboutPageContent, type AboutPageContent } from '@/data/cms';
 
 const VALUE_ICONS: Record<string, typeof Compass> = { Users, Leaf, Heart, Compass };
-const VALUES = [
-  { icon: Users, title: 'Local First', text: 'Every guide is Berber, born and raised at the edge of the dunes. The money you spend stays in the desert.' },
-  { icon: Leaf, title: 'Leave No Trace', text: 'Our camps are fully removable. We pack out every trace and protect the fragile dune ecology.' },
-  { icon: Heart, title: 'Small Groups', text: 'We cap every departure at a handful of guests. The desert is for silence, not crowds.' },
-  { icon: Compass, title: 'Genuine Craft', text: 'We weave real encounters with nomad families, weavers, and musicians — never staged shows.' },
-];
-const VALUE_ICON_BY_TITLE = Object.fromEntries(
-  VALUES.map(({ icon, title }) => [title, icon]),
-) as Record<string, typeof Compass>;
+const ICON_CYCLE: Array<typeof Compass> = [Users, Leaf, Heart, Compass];
 
 const DEFAULT_ABOUT: AboutPageContent = {
   hero_eyebrow: 'Our Story',
@@ -39,13 +32,14 @@ const DEFAULT_ABOUT: AboutPageContent = {
 export default function About() {
   const ref = useReveal<HTMLDivElement>();
   const [aboutContent, setAboutContent] = useState<AboutPageContent>(DEFAULT_ABOUT);
+  const { locale, t } = useLocale();
 
   useEffect(() => {
     void (async () => {
-      const pageContent = await getAboutPageContent();
+      const pageContent = await getAboutPageContent(locale);
       setAboutContent(pageContent);
     })();
-  }, []);
+  }, [locale]);
 
   return (
     <main className="pt-20">
@@ -67,23 +61,22 @@ export default function About() {
       <section className="bg-sand-50 py-20 lg:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-6">
-            <img src={aboutContent.intro_image} alt="Nomad camp" loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-lg" />
+            <img src={aboutContent.intro_image} alt={t('about.nomadCampAlt')} loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-lg" />
           </div>
           <div className="lg:col-span-6">
             <SectionHeading
-              eyebrow="Who We Are"
+              eyebrow={t('about.whoWeAre')}
               title={aboutContent.intro_title}
               subtitle={aboutContent.intro_description}
             />
             <p className="mt-5 text-base leading-relaxed text-ink-600">
-              Fifteen years later we still lead every trip ourselves. No subcontractors, no scripted
-              performances — just the desert, the people who know it, and a handful of guests at a time.
+              {t('about.fifteenYears')}
             </p>
             <div className="mt-8 grid grid-cols-3 gap-6">
               {[
-                { n: '15+', l: 'Years guiding' },
-                { n: '1,200+', l: 'Travelers hosted' },
-                { n: '4.9', l: 'Average rating' },
+                { n: '15+', l: t('about.yearsGuiding') },
+                { n: '1,200+', l: t('about.travelersHosted') },
+                { n: '4.9', l: t('about.averageRating') },
               ].map((s) => (
                 <div key={s.l}>
                   <p className="font-display text-3xl font-semibold text-sand-800">{s.n}</p>
@@ -97,10 +90,10 @@ export default function About() {
 
       <section className="bg-sand-100/40 py-20 lg:py-28">
         <div className="container-x">
-          <SectionHeading align="center" eyebrow="What We Believe" title="The principles behind every journey" />
+          <SectionHeading align="center" eyebrow={t('about.whatWeBelieve')} title={t('about.principlesTitle')} />
           <div ref={ref} className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {aboutContent.values.map((v, i) => {
-              const Icon = VALUE_ICONS[v.icon ?? ''] ?? VALUE_ICON_BY_TITLE[v.title] ?? Compass;
+              const Icon = VALUE_ICONS[v.icon ?? ''] ?? ICON_CYCLE[i % 4];
               return (
               <div
                 key={v.title}

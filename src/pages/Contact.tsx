@@ -4,10 +4,12 @@ import { useSearchParams } from 'react-router-dom';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
 import { TOURS, FAQS } from '@/data/content';
+import { useLocale } from '@/i18n';
 import { getContactPageContent, getCmsFaqs, getCmsTours } from '@/data/cms';
 
 export default function Contact() {
   const ref = useReveal<HTMLDivElement>();
+  const { locale, t } = useLocale();
   const [sent, setSent] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [contactContent, setContactContent] = useState({
@@ -33,15 +35,15 @@ export default function Contact() {
   useEffect(() => {
     void (async () => {
       const [pageContent, cmsTours, cmsFaqs] = await Promise.all([
-        getContactPageContent(),
-        getCmsTours(),
-        getCmsFaqs(),
+        getContactPageContent(locale),
+        getCmsTours(locale),
+        getCmsFaqs(locale),
       ]);
       setContactContent(pageContent);
       setTourOptions(cmsTours.map((t) => t.title));
       setFaqs(cmsFaqs);
     })();
-  }, []);
+  }, [locale]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -75,41 +77,40 @@ export default function Contact() {
                   <span className="flex h-16 w-16 items-center justify-center rounded-full bg-oasis-100 text-oasis-700">
                     <Check className="h-8 w-8" strokeWidth={2} />
                   </span>
-                  <h2 className="mt-6 font-display text-3xl font-medium text-ink-900">Message sent</h2>
+                  <h2 className="mt-6 font-display text-3xl font-medium text-ink-900">{t('contact.messageSent')}</h2>
                   <p className="mt-3 max-w-md text-ink-600">
-                    Thank you for reaching out. A member of our team will reply within 24 hours to start
-                    shaping your journey.
+                    {t('contact.thankYou')}
                   </p>
-                  <button onClick={() => setSent(false)} className="btn-ghost mt-8">Send another message</button>
+                  <button onClick={() => setSent(false)} className="btn-ghost mt-8">{t('contact.sendAnother')}</button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <Field label="First name" name="firstName" required />
-                    <Field label="Last name" name="lastName" required />
+                    <Field label={t('contact.firstName')} name="firstName" required />
+                    <Field label={t('contact.lastName')} name="lastName" required />
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <Field label="Email" name="email" type="email" required />
-                    <Field label="Phone (optional)" name="phone" type="tel" />
+                    <Field label={t('contact.email')} name="email" type="email" required />
+                    <Field label={t('contact.phoneOptional')} name="phone" type="tel" />
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <SelectField label="Interested in" name="tour" options={tourOptions} value={interestedIn} onChange={setInterestedIn} />
-                    <NumberField label="Group size" name="group" min={1} max={50} required />
+                    <SelectField label={t('contact.interestedIn')} name="tour" options={tourOptions} emptyLabel={t('contact.select')} value={interestedIn} onChange={setInterestedIn} />
+                    <NumberField label={t('contact.groupSize')} name="group" min={1} max={50} required />
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <Field label="Preferred date" name="date" type="date" />
+                    <Field label={t('contact.preferredDate')} name="date" type="date" />
                   </div>
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-ink-700">Your message</label>
+                    <label className="mb-1.5 block text-sm font-medium text-ink-700">{t('contact.yourMessage')}</label>
                     <textarea
                       name="message"
                       rows={4}
-                      placeholder="Tell us about the journey you're dreaming of..."
+                      placeholder={t('contact.messagePlaceholder')}
                       className="w-full rounded-xl border border-sand-200 bg-sand-50/40 px-4 py-3 text-sm text-ink-800 placeholder:text-sand-500 focus:border-sand-400 focus:outline-none focus:ring-2 focus:ring-sand-200"
                     />
                   </div>
                   <button type="submit" className="btn-primary w-full sm:w-auto">
-                    Send Message <Send className="h-4 w-4" strokeWidth={1.75} />
+                    {t('contact.sendMessage')} <Send className="h-4 w-4" strokeWidth={1.75} />
                   </button>
                 </form>
               )}
@@ -119,7 +120,7 @@ export default function Contact() {
           {/* Sidebar */}
           <aside className="lg:col-span-5">
             <div className="rounded-2xl bg-ink-950 p-7 text-sand-100 shadow-lg sm:p-9">
-              <h3 className="font-display text-2xl font-medium text-white">Talk to a human</h3>
+              <h3 className="font-display text-2xl font-medium text-white">{t('contact.talkToHuman')}</h3>
               <p className="mt-3 text-sm leading-relaxed text-sand-200/85">
                 {contactContent.office_text}
               </p>
@@ -129,7 +130,7 @@ export default function Contact() {
                     <MapPin className="h-5 w-5" strokeWidth={1.5} />
                   </span>
                   <div>
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-sand-400">Office</p>
+                    <p className="text-[11px] uppercase tracking-[0.18em] text-sand-400">{t('contact.office')}</p>
                     <p className="mt-0.5 text-sand-100">{contactContent.address}</p>
                   </div>
                 </li>
@@ -138,7 +139,7 @@ export default function Contact() {
                     <Phone className="h-5 w-5" strokeWidth={1.5} />
                   </span>
                   <div>
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-sand-400">Phone / WhatsApp</p>
+                    <p className="text-[11px] uppercase tracking-[0.18em] text-sand-400">{t('contact.phoneWhatsApp')}</p>
                     <p className="mt-0.5 text-sand-100">{contactContent.phone}</p>
                   </div>
                 </li>
@@ -147,7 +148,7 @@ export default function Contact() {
                     <Mail className="h-5 w-5" strokeWidth={1.5} />
                   </span>
                   <div>
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-sand-400">Email</p>
+                    <p className="text-[11px] uppercase tracking-[0.18em] text-sand-400">{t('contact.email')}</p>
                     <p className="mt-0.5 text-sand-100">{contactContent.email}</p>
                   </div>
                 </li>
@@ -160,7 +161,7 @@ export default function Contact() {
       {/* FAQ */}
       <section className="bg-sand-100/40 py-20 lg:py-28">
         <div className="container-x">
-          <SectionHeading align="center" eyebrow="Good to Know" title="Frequently asked questions" />
+          <SectionHeading align="center" eyebrow={t('contact.goodToKnow')} title={t('contact.faqTitle')} />
           <div ref={ref} className="mx-auto mt-12 max-w-3xl space-y-3">
             {faqs.map((f, i) => {
               const open = openFaq === i;
@@ -210,11 +211,12 @@ function Field({
 }
 
 function SelectField({
-  label, name, options, value, onChange,
+  label, name, options, emptyLabel, value, onChange,
 }: {
   label: string;
   name: string;
   options: string[];
+  emptyLabel?: string;
   value?: string;
   onChange?: (value: string) => void;
 }) {
@@ -227,7 +229,7 @@ function SelectField({
         onChange={(e) => onChange?.(e.target.value)}
         className="w-full rounded-xl border border-sand-200 bg-sand-50/40 px-4 py-3 text-sm text-ink-800 focus:border-sand-400 focus:outline-none focus:ring-2 focus:ring-sand-200"
       >
-        <option value="">Select...</option>
+        <option value="">{emptyLabel ?? 'Select...'}</option>
         {options.map((o) => (
           <option key={o} value={o}>{o}</option>
         ))}

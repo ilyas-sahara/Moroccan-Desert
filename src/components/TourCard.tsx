@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Clock, Users, ArrowUpRight, MapPin } from 'lucide-react';
 import type { Tour } from '@/data/content';
+import { useLocale } from '@/i18n';
 
 export default function TourCard({ tour, index = 0 }: { tour: Tour; index?: number }) {
+  const { t } = useLocale();
   const delay = `reveal-delay-${Math.min(index % 4, 4) + 1}`;
   return (
     <Link
@@ -34,14 +36,14 @@ export default function TourCard({ tour, index = 0 }: { tour: Tour; index?: numb
 
         <div className="mt-5 flex items-end justify-between border-t border-sand-100 pt-5">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.16em] text-sand-500">From</p>
+            <p className="text-[11px] uppercase tracking-[0.16em] text-sand-500">{t('common.from')}</p>
             <p className="font-display text-2xl font-semibold text-ink-900">
               €{tour.priceFrom}
-              {tour.days > 0 && <span className="ml-1 text-xs font-normal text-ink-400">/ person</span>}
+              {tour.days > 0 && <span className="ml-1 text-xs font-normal text-ink-400">{t('common.perPerson')}</span>}
             </p>
           </div>
           <span className="flex items-center gap-1 text-sm font-semibold text-sand-700 transition-colors group-hover:text-sand-800">
-            View
+            {t('common.view')}
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={1.75} />
           </span>
         </div>

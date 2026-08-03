@@ -1,0 +1,60 @@
+{
+  "items": [
+  {
+    "slug": "camel-trekking",
+    "title": "Kameltrekking",
+    "description": "Folgen Sie alten Karawanenwegen über die Dünen bei Sonnenaufgang oder Sonnenuntergang.",
+    "image": "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Compass"
+  },
+  {
+    "slug": "desert-camping",
+    "title": "Luxus-Berbercamps",
+    "description": "Schlafen Sie unter den Sternen in einem privaten Zeltcamp mit vollem Service.",
+    "image": "https://images.pexels.com/photos/12536402/pexels-photo-12536402.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Tent"
+  },
+  {
+    "slug": "stargazing",
+    "title": "Sternenbeobachtung",
+    "description": "Der Himmel der Sahara ist einer der dunkelsten der Erde. Teleskope inklusive.",
+    "image": "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Star"
+  },
+  {
+    "slug": "mint-tea",
+    "title": "Minztee-Zeremonie",
+    "description": "Das Ritual, das jede Begegnung in der Wüste eröffnet.",
+    "image": "https://images.pexels.com/photos/31497982/pexels-photo-31497982.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Coffee"
+  },
+  {
+    "slug": "nomadic-culture",
+    "title": "Begegnungen mit Nomaden",
+    "description": "Verbringen Sie einen Tag mit einer Familie, die noch immer mit den Jahreszeiten zieht.",
+    "image": "https://images.pexels.com/photos/35901289/pexels-photo-35901289.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Users"
+  },
+  {
+    "slug": "sandboarding",
+    "title": "Sandboarding",
+    "description": "Steigen Sie auf die Dünen und fahren Sie hinunter. Bretter und Anleitung inklusive.",
+    "image": "https://images.pexels.com/photos/28829638/pexels-photo-28829638.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Mountain"
+  },
+  {
+    "slug": "4x4-desert-routes",
+    "title": "Wüstenrouten mit dem 4x4",
+    "description": "Reisen Sie jenseits der asphaltierten Straße durch Täler, Hammadas und entlegene Dünen.",
+    "image": "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Mountain"
+  },
+  {
+    "slug": "kasbahs-and-oases",
+    "title": "Kasbahs & Oasen",
+    "description": "Kombinieren Sie die Sahara mit Palmtälern, alten Kasbahs und Dörfern Südmarokkos.",
+    "image": "https://images.pexels.com/photos/29976840/pexels-photo-29976840.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Users"
+  }
+  ]
+}

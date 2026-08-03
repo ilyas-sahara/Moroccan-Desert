@@ -2,30 +2,25 @@ import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { Check, Compass, Mail, Minus, Plus, Send } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { CITY_LABELS, MOROCCO_PATH } from '@/data/morocco-map';
+import { useLocale } from '@/i18n';
 import { getCustomJourneyPageContent, type CustomJourneyPageContent } from '@/data/cms';
 
-type Stop = {
-  id: string;
-  name: string;
-  description: string;
-  x: number;
-  y: number;
-};
+const STOPS = [
+  { id: 'marrakech', name: 'Marrakech', x: 44.13, y: 51.45 },
+  { id: 'ait-ben-haddou', name: 'Aït Ben Haddou', x: 50.82, y: 56.84 },
+  { id: 'ouarzazate', name: 'Ouarzazate', x: 52.68, y: 57.89 },
+  { id: 'zagora', name: 'Zagora', x: 60.97, y: 63.45 },
+  { id: 'mhamid', name: "M'Hamid", x: 61.89, y: 68.15 },
+  { id: 'erg-chigaga', name: 'Erg Chigaga', x: 57.73, y: 68.12 },
+  { id: 'merzouga', name: 'Merzouga', x: 75.21, y: 56.51 },
+] as const;
 
-const STOPS: Stop[] = [
-  { id: 'marrakech', name: 'Marrakech', description: 'Atlas gateway', x: 44.13, y: 51.45 },
-  { id: 'ait-ben-haddou', name: 'Aït Ben Haddou', description: 'Kasbah country', x: 50.82, y: 56.84 },
-  { id: 'ouarzazate', name: 'Ouarzazate', description: 'Desert gateway', x: 52.68, y: 57.89 },
-  { id: 'zagora', name: 'Zagora', description: 'Drâa Valley', x: 60.97, y: 63.45 },
-  { id: 'mhamid', name: "M'Hamid", description: 'Last village before the Sahara', x: 61.89, y: 68.15 },
-  { id: 'erg-chigaga', name: 'Erg Chigaga', description: 'Wild dunes', x: 57.73, y: 68.12 },
-  { id: 'merzouga', name: 'Merzouga', description: 'Erg Chebbi dunes', x: 75.21, y: 56.51 },
-];
-
-const INTERESTS = ['Camel trekking', 'Desert camping', '4x4 adventure', 'Nomad culture', 'Stargazing', 'Kasbahs & oases', 'Sandboarding'];
+const INTERESTS = ['camel', 'camping', 'fourxfour', 'nomad', 'stargazing', 'kasbahs', 'sandboarding'] as const;
+type InterestKey = (typeof INTERESTS)[number];
 
 export default function CustomJourney() {
-  const [interests, setInterests] = useState<string[]>(['Desert camping']);
+  const { locale, t } = useLocale();
+  const [interests, setInterests] = useState<InterestKey[]>(['camping']);
   const [sent, setSent] = useState(false);
   const [dayCount, setDayCount] = useState(3);
   const [dayPlans, setDayPlans] = useState(['marrakech', 'ait-ben-haddou', 'erg-chigaga']);
@@ -38,12 +33,12 @@ export default function CustomJourney() {
 
   useEffect(() => {
     void (async () => {
-      const content = await getCustomJourneyPageContent();
+      const content = await getCustomJourneyPageContent(locale);
       setPageContent(content);
     })();
-  }, []);
+  }, [locale]);
 
-  const toggleInterest = (interest: string) => {
+  const toggleInterest = (interest: InterestKey) => {
     setInterests((current) => current.includes(interest) ? current.filter((item) => item !== interest) : [...current, interest]);
   };
 
@@ -60,23 +55,38 @@ export default function CustomJourney() {
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    const phone = String(data.get('phone') ?? '');
+    const date = String(data.get('date') ?? '');
+    const travelers = String(data.get('travelers') ?? '');
+    const pickupLocation = String(data.get('pickupLocation') ?? '');
+    const notes = String(data.get('notes') ?? '');
     const body = [
-      'New custom Sahara journey request',
+      t('custom.emailBody.title'),
       '',
-      `Name: ${data.get('name')}`,
-      `Email: ${data.get('email')}`,
-      `Phone: ${data.get('phone') || 'Not provided'}`,
-      `Preferred start date: ${data.get('date') || 'Flexible'}`,
-      `Travelers: ${data.get('travelers') || 'Not specified'}`,
-      `Comfort: ${data.get('comfort')}`,
-      `Pickup / meet-up: ${data.get('pickupType')} — ${data.get('pickupLocation') || 'To be confirmed'}`,
-      'Day-by-day outline:',
-      ...dayPlans.map((id, index) => `Day ${index + 1}: ${STOPS.find((stop) => stop.id === id)?.name ?? 'Open / guide recommendation'}`),
-      `Interests: ${interests.join(', ') || 'No preferences selected'}`,
+      t('custom.emailBody.name', { value: String(data.get('name') ?? '') }),
+      t('custom.emailBody.email', { value: String(data.get('email') ?? '') }),
+      phone ? t('custom.emailBody.phone', { value: phone }) : t('custom.emailBody.phoneNotProvided'),
+      date ? t('custom.emailBody.date', { value: date }) : t('custom.emailBody.dateFlexible'),
+      travelers ? t('custom.emailBody.travelers', { value: travelers }) : t('custom.emailBody.travelersNotSpecified'),
+      t('custom.emailBody.comfort', { value: String(data.get('comfort') ?? '') }),
+      t('custom.emailBody.pickup', {
+        value: String(data.get('pickupType') ?? ''),
+        location: pickupLocation || t('custom.emailBody.pickupToBeConfirmed'),
+      }),
+      t('custom.emailBody.dayByDay'),
+      ...dayPlans.map((id, index) =>
+        t('custom.emailBody.day', {
+          n: index + 1,
+          stop: STOPS.find((stop) => stop.id === id)?.name ?? t('custom.emailBody.open'),
+        }),
+      ),
+      interests.length
+        ? t('custom.emailBody.interests', { value: interests.map((key) => t(`custom.interests.${key}`)).join(', ') })
+        : t('custom.emailBody.noPreferences'),
       '',
-      `Notes: ${data.get('notes') || 'None'}`,
+      notes ? t('custom.emailBody.notes', { value: notes }) : t('custom.emailBody.none'),
     ].join('\n');
-    window.location.href = `mailto:hello@walkthesahara.com?subject=${encodeURIComponent('Custom Sahara journey request')}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:hello@walkthesahara.com?subject=${encodeURIComponent(t('custom.emailBody.subject'))}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
 
@@ -98,28 +108,28 @@ export default function CustomJourney() {
             {/* Form */}
             <div className="lg:col-span-7">
               <div className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-sand-200/70 sm:p-10">
-                <SectionHeading eyebrow="Tell us the details" title="2. Request your custom itinerary" subtitle="We will reply with a tailored route, availability, and transparent pricing." />
-                {sent && <div className="mt-6 rounded-xl bg-oasis-100 p-4 text-sm text-oasis-700">Your email app has opened with the request prepared. Send it there to reach our team.</div>}
+                <SectionHeading eyebrow={t('custom.eyebrow')} title={t('custom.stepTitle')} subtitle={t('custom.stepSubtitle')} />
+                {sent && <div className="mt-6 rounded-xl bg-oasis-100 p-4 text-sm text-oasis-700">{t('custom.sent')}</div>}
                 <form onSubmit={submit} className="mt-8 space-y-6">
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <Input label="Your name" name="name" required /><Input label="Email" name="email" type="email" required />
-                    <Input label="Phone / WhatsApp" name="phone" type="tel" /><Input label="Preferred start date" name="date" type="date" />
-                    <Input label="Travelers" name="travelers" type="number" required min={1} max={50} placeholder="e.g. 2" />
+                    <Input label={t('custom.yourName')} name="name" required /><Input label={t('contact.email')} name="email" type="email" required />
+                    <Input label={t('custom.phoneWhatsApp')} name="phone" type="tel" /><Input label={t('custom.preferredStartDate')} name="date" type="date" />
+                    <Input label={t('custom.travelers')} name="travelers" type="number" required min={1} max={50} placeholder={t('custom.travelerPlaceholder')} />
                   </div>
                   <div className="rounded-2xl bg-sand-100/60 p-5">
-                    <h3 className="font-display text-xl text-ink-900">Pickup or meet-up point</h3>
-                    <p className="mt-1 text-sm text-ink-600">Tell your guide how the journey should begin.</p>
-                    <div className="mt-4 grid gap-5 sm:grid-cols-2"><Select label="Pickup preference" name="pickupType" options={['Pickup from hotel / riad', 'Meet at airport', 'Meet at a chosen location', 'I need a recommendation']} /><Input label="Hotel, airport, or meeting location" name="pickupLocation" placeholder="e.g. Marrakech Menara Airport" /></div>
+                    <h3 className="font-display text-xl text-ink-900">{t('custom.pickupTitle')}</h3>
+                    <p className="mt-1 text-sm text-ink-600">{t('custom.pickupDesc')}</p>
+                    <div className="mt-4 grid gap-5 sm:grid-cols-2"><Select label={t('custom.pickupPref')} name="pickupType" options={[t('custom.pickupOptions.hotel'), t('custom.pickupOptions.airport'), t('custom.pickupOptions.location'), t('custom.pickupOptions.recommendation')]} /><Input label={t('custom.pickupLocation')} name="pickupLocation" placeholder={t('custom.pickupLocationPlaceholder')} /></div>
                   </div>
                   <div className="rounded-2xl bg-sand-100/60 p-5">
-                    <div className="flex flex-wrap items-center justify-between gap-4"><div><h3 className="font-display text-xl text-ink-900">Day-by-day itinerary</h3><p className="mt-1 text-sm text-ink-600">Set a destination for each day, or leave it open for our guide to refine. The map updates as you plan.</p></div><div className="flex items-center gap-3"><button type="button" onClick={() => setNumberOfDays(dayCount - 1)} disabled={dayCount === 1} className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-ink-700 disabled:opacity-40"><Minus className="h-4 w-4" /></button><span className="min-w-16 text-center text-sm font-semibold text-ink-800">{dayCount} days</span><button type="button" onClick={() => setNumberOfDays(dayCount + 1)} disabled={dayCount === 14} className="flex h-9 w-9 items-center justify-center rounded-full bg-sand-800 text-white disabled:opacity-40"><Plus className="h-4 w-4" /></button></div></div>
-                    <div className="mt-5 grid gap-3 sm:grid-cols-2">{dayPlans.map((plan, index) => <div key={index} className="flex items-center gap-3 rounded-xl bg-white p-3"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sand-800 text-xs font-semibold text-white">{index + 1}</span><select value={plan} onChange={(event) => setDayPlan(index, event.target.value)} className="min-w-0 flex-1 bg-transparent text-sm text-ink-800 focus:outline-none"><option value="">Guide recommendation</option>{STOPS.map((stop) => <option key={stop.id} value={stop.id}>{stop.name}</option>)}</select></div>)}</div>
+                    <div className="flex flex-wrap items-center justify-between gap-4"><div><h3 className="font-display text-xl text-ink-900">{t('custom.itineraryTitle')}</h3><p className="mt-1 text-sm text-ink-600">{t('custom.itineraryDesc')}</p></div><div className="flex items-center gap-3"><button type="button" onClick={() => setNumberOfDays(dayCount - 1)} disabled={dayCount === 1} className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-ink-700 disabled:opacity-40"><Minus className="h-4 w-4" /></button><span className="min-w-16 text-center text-sm font-semibold text-ink-800">{t('custom.days', { count: dayCount })}</span><button type="button" onClick={() => setNumberOfDays(dayCount + 1)} disabled={dayCount === 14} className="flex h-9 w-9 items-center justify-center rounded-full bg-sand-800 text-white disabled:opacity-40"><Plus className="h-4 w-4" /></button></div></div>
+                    <div className="mt-5 grid gap-3 sm:grid-cols-2">{dayPlans.map((plan, index) => <div key={index} className="flex items-center gap-3 rounded-xl bg-white p-3"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sand-800 text-xs font-semibold text-white">{index + 1}</span><select value={plan} onChange={(event) => setDayPlan(index, event.target.value)} className="min-w-0 flex-1 bg-transparent text-sm text-ink-800 focus:outline-none"><option value="">{t('custom.guideRecommendation')}</option>{STOPS.map((stop) => <option key={stop.id} value={stop.id}>{stop.name}</option>)}</select></div>)}</div>
                   </div>
-                  <Select label="Preferred comfort" name="comfort" options={['Authentic bivouac', 'Comfortable desert camp', 'Luxury camp', 'A mix of both']} />
-                  <div><label className="mb-2 block text-sm font-medium text-ink-700">Experiences to include</label><div className="flex flex-wrap gap-2">{INTERESTS.map((interest) => <button type="button" key={interest} onClick={() => toggleInterest(interest)} className={`rounded-full px-4 py-2 text-sm transition-colors ${interests.includes(interest) ? 'bg-sand-800 text-sand-50' : 'bg-sand-100 text-ink-700 hover:bg-sand-200'}`}>{interests.includes(interest) ? <Check className="mr-1 inline h-4 w-4" /> : <Plus className="mr-1 inline h-4 w-4" />}{interest}</button>)}</div></div>
-                  <div><label className="mb-1.5 block text-sm font-medium text-ink-700">Anything else we should know?</label><textarea name="notes" rows={5} placeholder="Tell us about your travel style, special occasions, dietary needs, or anything you want to experience." className="w-full rounded-xl border border-sand-200 bg-sand-50/40 px-4 py-3 text-sm text-ink-800 placeholder:text-sand-500 focus:border-sand-400 focus:outline-none focus:ring-2 focus:ring-sand-200" /></div>
-                  <button type="submit" className="btn-primary"><Send className="h-4 w-4" />Send custom journey request</button>
-                  <p className="flex items-center gap-2 text-xs text-sand-600"><Mail className="h-4 w-4" />This opens your email app with your route and preferences included.</p>
+                  <Select label={t('custom.comfortLabel')} name="comfort" options={[t('custom.comfortOptions.bivouac'), t('custom.comfortOptions.comfortable'), t('custom.comfortOptions.luxury'), t('custom.comfortOptions.mix')]} />
+                  <div><label className="mb-2 block text-sm font-medium text-ink-700">{t('custom.interestsLabel')}</label><div className="flex flex-wrap gap-2">{INTERESTS.map((interest) => <button type="button" key={interest} onClick={() => toggleInterest(interest)} className={`rounded-full px-4 py-2 text-sm transition-colors ${interests.includes(interest) ? 'bg-sand-800 text-sand-50' : 'bg-sand-100 text-ink-700 hover:bg-sand-200'}`}>{interests.includes(interest) ? <Check className="mr-1 inline h-4 w-4" /> : <Plus className="mr-1 inline h-4 w-4" />}{t(`custom.interests.${interest}`)}</button>)}</div></div>
+                  <div><label className="mb-1.5 block text-sm font-medium text-ink-700">{t('custom.anythingElse')}</label><textarea name="notes" rows={5} placeholder={t('custom.notesPlaceholder')} className="w-full rounded-xl border border-sand-200 bg-sand-50/40 px-4 py-3 text-sm text-ink-800 placeholder:text-sand-500 focus:border-sand-400 focus:outline-none focus:ring-2 focus:ring-sand-200" /></div>
+                  <button type="submit" className="btn-primary"><Send className="h-4 w-4" />{t('custom.sendRequest')}</button>
+                  <p className="flex items-center gap-2 text-xs text-sand-600"><Mail className="h-4 w-4" />{t('custom.emailHint')}</p>
                 </form>
               </div>
             </div>
@@ -135,9 +145,12 @@ export default function CustomJourney() {
   );
 }
 
-function JourneyMap({ dayPlans, dayCount, interests }: { dayPlans: string[]; dayCount: number; interests: string[] }) {
+function JourneyMap({ dayPlans, dayCount, interests }: { dayPlans: string[]; dayCount: number; interests: InterestKey[] }) {
+  const { t } = useLocale();
   const routeStops = useMemo(
-    () => dayPlans.map((id) => STOPS.find((stop) => stop.id === id)).filter((stop): stop is Stop => Boolean(stop)),
+    () => dayPlans
+      .map((id) => STOPS.find((stop) => stop.id === id))
+      .filter((stop): stop is (typeof STOPS)[number] => Boolean(stop)),
     [dayPlans],
   );
   const points = routeStops.map((stop) => `${stop.x},${stop.y}`).join(' ');
@@ -152,16 +165,16 @@ function JourneyMap({ dayPlans, dayCount, interests }: { dayPlans: string[]; day
     <aside className="sticky top-28 max-h-[calc(100vh-7rem)] scrollbar-hide overflow-y-auto rounded-3xl bg-white p-6 shadow-lg shadow-sand-900/10 ring-1 ring-sand-200/60 sm:p-7">
       <div className="flex items-center justify-between gap-4">
         <div>
-          <p className="eyebrow"><span className="hairline" /> Your route</p>
-          <h2 className="mt-2 font-display text-2xl font-medium text-ink-900">The journey takes shape</h2>
+          <p className="eyebrow"><span className="hairline" /> {t('custom.yourRoute')}</p>
+          <h2 className="mt-2 font-display text-2xl font-medium text-ink-900">{t('custom.journeyTakesShape')}</h2>
         </div>
         <span className="flex items-center gap-2 rounded-full bg-oasis-100 px-3 py-1.5 text-xs font-semibold text-oasis-700">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-oasis-500" /> Live
+          <span className="h-2 w-2 animate-pulse rounded-full bg-oasis-500" /> {t('custom.live')}
         </span>
       </div>
 
       <div className="relative mt-6 overflow-hidden rounded-2xl bg-sand-100/60">
-        <svg viewBox="26 45 56 28" className="block aspect-[2/1] w-full" role="img" aria-label="Detail map of southern Morocco showing your selected route">
+        <svg viewBox="26 45 56 28" className="block aspect-[2/1] w-full" role="img" aria-label={t('custom.mapAria')}>
           <defs>
             <linearGradient id="africa" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#F1E7D3" />
@@ -236,8 +249,8 @@ function JourneyMap({ dayPlans, dayCount, interests }: { dayPlans: string[]; day
 
       <div className="mt-6">
         <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.18em] text-sand-600">
-          <span>Day by day</span>
-          <span>{dayCount} days · {routeStops.length} stops</span>
+          <span>{t('custom.dayByDay')}</span>
+          <span>{t('custom.days', { count: dayCount })} · {t('custom.stops', { count: routeStops.length })}</span>
         </div>
         <div className="mt-3 space-y-1.5">
           {Array.from({ length: dayCount }, (_, index) => {
@@ -245,8 +258,8 @@ function JourneyMap({ dayPlans, dayCount, interests }: { dayPlans: string[]; day
             return (
               <div key={index} className="flex items-center gap-3 rounded-xl bg-sand-100/60 px-3 py-2 text-sm">
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sand-800 text-[11px] font-semibold text-sand-50">{index + 1}</span>
-                <span className={stop ? 'font-medium text-ink-800' : 'text-sand-600'}>{stop ? stop.name : 'Guide recommendation'}</span>
-                {stop && <span className="ml-auto hidden text-xs text-sand-500 sm:block">{stop.description}</span>}
+                <span className={stop ? 'font-medium text-ink-800' : 'text-sand-600'}>{stop ? stop.name : t('custom.guideRecommendation')}</span>
+                {stop && <span className="ml-auto hidden text-xs text-sand-500 sm:block">{t(`custom.stopDescriptions.${stop.id}`)}</span>}
               </div>
             );
           })}
@@ -254,14 +267,14 @@ function JourneyMap({ dayPlans, dayCount, interests }: { dayPlans: string[]; day
       </div>
 
       <div className="mt-5 border-t border-sand-100 pt-5">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sand-600">Experiences</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sand-600">{t('custom.experiencesLabel')}</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {interests.length ? (
             interests.map((interest) => (
-              <span key={interest} className="rounded-full bg-oasis-100 px-3 py-1 text-xs font-medium text-oasis-700">{interest}</span>
+              <span key={interest} className="rounded-full bg-oasis-100 px-3 py-1 text-xs font-medium text-oasis-700">{t(`custom.interests.${interest}`)}</span>
             ))
           ) : (
-            <span className="text-xs text-sand-500">No experiences selected yet.</span>
+            <span className="text-xs text-sand-500">{t('custom.noExperiences')}</span>
           )}
         </div>
       </div>

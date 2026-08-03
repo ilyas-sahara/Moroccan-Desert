@@ -5,18 +5,25 @@ import TourCard from '@/components/TourCard';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
 import { TOURS, type Tour } from '@/data/content';
+import { useLocale } from '@/i18n';
 import { getCmsTours } from '@/data/cms';
 
-const DIFFICULTIES = ['All', 'Gentle', 'Moderate', 'Adventurous'] as const;
+const DIFFICULTIES = [
+  { id: 'all', match: '' },
+  { id: 'gentle', match: 'Gentle' },
+  { id: 'moderate', match: 'Moderate' },
+  { id: 'adventurous', match: 'Adventurous' },
+] as const;
 const SORTS = [
-  { id: 'recommended', label: 'Recommended' },
-  { id: 'price-asc', label: 'Price: Low to High' },
-  { id: 'price-desc', label: 'Price: High to Low' },
-  { id: 'duration', label: 'Longest First' },
+  { id: 'recommended' },
+  { id: 'priceAsc' },
+  { id: 'priceDesc' },
+  { id: 'duration' },
 ] as const;
 
 export default function Tours() {
-  const [difficulty, setDifficulty] = useState<(typeof DIFFICULTIES)[number]>('All');
+  const { locale, t } = useLocale();
+  const [difficulty, setDifficulty] = useState<(typeof DIFFICULTIES)[number]['id']>('all');
   const [sort, setSort] = useState<(typeof SORTS)[number]['id']>('recommended');
   const [query, setQuery] = useState('');
   const [tours, setTours] = useState<Tour[]>(TOURS);
@@ -25,14 +32,15 @@ export default function Tours() {
 
   useEffect(() => {
     void (async () => {
-      const cmsTours = await getCmsTours();
+      const cmsTours = await getCmsTours(locale);
       setTours(cmsTours);
     })();
-  }, []);
+  }, [locale]);
 
   const filtered = useMemo(() => {
+    const difficultyMatch = DIFFICULTIES.find((d) => d.id === difficulty)?.match;
     let list = tours.filter((t) =>
-      (difficulty === 'All' ? true : t.difficulty === difficulty) &&
+      (difficulty === 'all' || t.difficulty === difficultyMatch) &&
       (!selectedExperience || t.experiences?.includes(selectedExperience)),
     );
     if (query.trim()) {
@@ -45,10 +53,10 @@ export default function Tours() {
       );
     }
     switch (sort) {
-      case 'price-asc':
+      case 'priceAsc':
         list = [...list].sort((a, b) => a.priceFrom - b.priceFrom);
         break;
-      case 'price-desc':
+      case 'priceDesc':
         list = [...list].sort((a, b) => b.priceFrom - a.priceFrom);
         break;
       case 'duration':
@@ -74,9 +82,9 @@ export default function Tours() {
         <div className="container-x relative z-10">
           <SectionHeading
             light
-            eyebrow="All Journeys"
-            title="Find your way into the desert"
-            subtitle="Every tour is led by local Berber guides, capped at small groups, and built around the rhythm of the dunes."
+            eyebrow={t('tours.eyebrow')}
+            title={t('tours.title')}
+            subtitle={t('tours.subtitle')}
           />
         </div>
       </section>
@@ -86,19 +94,19 @@ export default function Tours() {
         <div className="container-x flex flex-col gap-4 py-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-wrap items-center gap-2">
             <span className="hidden items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-sand-600 sm:flex">
-              <SlidersHorizontal className="h-4 w-4" strokeWidth={1.5} /> Filter
+              <SlidersHorizontal className="h-4 w-4" strokeWidth={1.5} /> {t('tours.filter')}
             </span>
             {DIFFICULTIES.map((d) => (
               <button
-                key={d}
-                onClick={() => setDifficulty(d)}
+                key={d.id}
+                onClick={() => setDifficulty(d.id)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                  difficulty === d
+                  difficulty === d.id
                     ? 'bg-sand-800 text-sand-50'
                     : 'bg-sand-100 text-ink-700 hover:bg-sand-200'
                 }`}
               >
-                {d}
+                {t(`tours.difficulty.${d.id}`)}
               </button>
             ))}
           </div>
@@ -109,7 +117,7 @@ export default function Tours() {
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search tours or regions..."
+                placeholder={t('tours.searchPlaceholder')}
                 className="w-full rounded-full border border-sand-200 bg-white py-2.5 pl-10 pr-4 text-sm text-ink-800 placeholder:text-sand-500 focus:border-sand-400 focus:outline-none focus:ring-2 focus:ring-sand-200 sm:w-64"
               />
             </div>
@@ -119,7 +127,7 @@ export default function Tours() {
               className="rounded-full border border-sand-200 bg-white px-4 py-2.5 text-sm text-ink-800 focus:border-sand-400 focus:outline-none focus:ring-2 focus:ring-sand-200"
             >
               {SORTS.map((s) => (
-                <option key={s.id} value={s.id}>{s.label}</option>
+                <option key={s.id} value={s.id}>{t(`tours.sort.${s.id}`)}</option>
               ))}
             </select>
           </div>
@@ -130,17 +138,17 @@ export default function Tours() {
       <section className="bg-sand-50 py-16 lg:py-24">
         <div className="container-x">
           <p className="mb-8 text-sm text-sand-600">
-            Showing <span className="font-semibold text-ink-800">{filtered.length}</span> of {tours.length} journeys
-            {selectedExperience && <button onClick={() => setSearchParams({})} className="ml-3 font-semibold text-sand-700 underline">Clear experience filter</button>}
+            {t('tours.showing', { count: filtered.length, total: tours.length })}
+            {selectedExperience && <button onClick={() => setSearchParams({})} className="ml-3 font-semibold text-sand-700 underline">{t('tours.clearExperienceFilter')}</button>}
           </p>
           {filtered.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-sand-300 py-24 text-center">
-              <p className="font-display text-2xl text-ink-700">No journeys match your search.</p>
+              <p className="font-display text-2xl text-ink-700">{t('tours.noMatch')}</p>
               <button
-                onClick={() => { setDifficulty('All'); setQuery(''); setSearchParams({}); }}
+                onClick={() => { setDifficulty('all'); setQuery(''); setSearchParams({}); }}
                 className="btn-ghost mt-6"
               >
-                Reset filters
+                {t('tours.resetFilters')}
               </button>
             </div>
           ) : (

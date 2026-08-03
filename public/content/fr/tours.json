@@ -1,0 +1,312 @@
+{
+  "items": [
+    {
+      "groupSize": "Jusqu'à 6 voyageurs",
+      "bestSeason": "Octobre — Mars",
+      "experiences": [
+        "desert-camping"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Dans l'Erg Chebbi",
+          "description": "Départ de Merzouga. Chargez les dromadaires et partez en trek dans les dunes. Première nuit dans un camp de luxe fixe avec dîner complet et observation des étoiles."
+        },
+        {
+          "day": 2,
+          "title": "Khamlia & Rythmes gnaouas",
+          "description": "Visite du village de Khamlia, foyer d'une communauté de musique gnaoua. Après le déjeuner, trek vers un camp sauvage parmi les dunes plus petites de l'Erg Znigui."
+        },
+        {
+          "day": 3,
+          "title": "Les dunes silencieuses",
+          "description": "Un long trek lent à travers des dunes ondulantes, sans autre humain en vue. Déjeuner à l'ombre d'un tamaris. Camp près d'un lit de rivière asséché."
+        },
+        {
+          "day": 4,
+          "title": "Campement nomade",
+          "description": "Rencontre avec une famille nomade, thé partagé et apprentissage de leur vie au rythme des saisons. L'après-midi, ascension d'une dune de 150 m pour le coucher du soleil."
+        },
+        {
+          "day": 5,
+          "title": "Retour à Merzouga",
+          "description": "Dernier lever de soleil, petit-déjeuner et transfert en 4x4 de retour à Merzouga."
+        }
+      ],
+      "slug": "sahara-grand-crossing",
+      "notIncluded": [
+        "Transport vers Merzouga",
+        "Drap housse de sac de couchage",
+        "Assurance voyage",
+        "Pourboires"
+      ],
+      "gallery": [
+        "https://images.pexels.com/photos/33566021/pexels-photo-33566021.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/8357638/pexels-photo-8357638.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/37441710/pexels-photo-37441710.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      ],
+      "priceFrom": 890,
+      "duration": "5 jours · 4 nuits",
+      "region": "Erg Chebbi · Erg Znigui",
+      "days": 5,
+      "subtitle": "Cinq jours au cœur des dunes, d'oasis en oasis",
+      "title": "Grande traversée du Sahara",
+      "overview": "Pour les voyageurs qui veulent vraiment disparaître dans le désert. Une traversée de cinq jours avec dromadaires de Merzouga à travers les dunes silencieuses de l'Erg Znigui, deux nuits dans des camps sauvages différents et des rencontres avec ceux qui habitent ce paysage.",
+      "reviews": 96,
+      "image": "https://images.pexels.com/photos/33566021/pexels-photo-33566021.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "difficulty": "Adventurous",
+      "included": [
+        "Trek à dos de dromadaire avec guide",
+        "Véhicule d'assistance 4x4",
+        "4 nuits en camp",
+        "Tous les repas",
+        "Visite du village gnaoua",
+        "Rencontre avec des nomades locaux"
+      ],
+      "rating": 4.8,
+      "highlights": [
+        "Caravane de dromadaires de plusieurs jours à travers les dunes",
+        "Deux camps sauvages distincts",
+        "Visite d'un village de musique gnaoua",
+        "Coucher de soleil depuis le sommet d'une dune de 150 m"
+      ]
+    },
+    {
+      "groupSize": "Jusqu'à 10 voyageurs",
+      "bestSeason": "Septembre — Mai",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Marrakech à Aït Ben Haddou",
+          "description": "Franchissez le col de Tizi n'Tichka à travers le Haut Atlas. Arrivée à Aït Ben Haddou pour une visite guidée au coucher du soleil de la kasbah classée à l'UNESCO. Nuit dans une maison d'hôtes de la kasbah."
+        },
+        {
+          "day": 2,
+          "title": "La route du Dadès",
+          "description": "Traversée de la vallée des Mille Kasbahs et des gorges du Dadès. Déjeuner dans une famille locale. L'après-midi, route vers Merzouga."
+        },
+        {
+          "day": 3,
+          "title": "Dans le Sahara",
+          "description": "Échangez le 4x4 contre les dromadaires et partez en trek dans l'Erg Chebbi. Coucher de soleil, thé à la menthe et nuit dans un camp berbère de luxe avec observation des étoiles."
+        },
+        {
+          "day": 4,
+          "title": "Lever de soleil & retour",
+          "description": "Lever de soleil sur les dunes, petit-déjeuner et retour à dos de dromadaire à Merzouga. Transfert en 4x4 vers Marrakech."
+        }
+      ],
+      "slug": "atlas-to-sahara",
+      "notIncluded": [
+        "Déjeuners",
+        "Boissons",
+        "Assurance voyage",
+        "Pourboires"
+      ],
+      "gallery": [
+        "https://images.pexels.com/photos/29976840/pexels-photo-29976840.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/14145449/pexels-photo-14145449.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/30906049/pexels-photo-30906049.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      ],
+      "priceFrom": 640,
+      "duration": "4 jours · 3 nuits",
+      "region": "Marrakech · Aït Ben Haddou · Merzouga",
+      "days": 4,
+      "subtitle": "Des cols du Haut Atlas aux dunes de l'Erg Chebbi",
+      "title": "De l'Atlas au Sahara",
+      "overview": "Un voyage privé de quatre jours reliant deux grands paysages du Maroc : les kasbahs de brique crue du Haut Atlas et les dunes dorées du Sahara. Voyage en 4x4 avec un chauffeur-guide local, et nuit dans un camp de luxe dans le désert.",
+      "reviews": 158,
+      "image": "https://images.pexels.com/photos/29976840/pexels-photo-29976840.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "difficulty": "Moderate",
+      "included": [
+        "4x4 privé avec chauffeur-guide",
+        "3 nuits d'hébergement",
+        "Trek à dos de dromadaire",
+        "Dîner et petit-déjeuner au camp",
+        "Visite guidée d'Aït Ben Haddou"
+      ],
+      "rating": 4.9,
+      "highlights": [
+        "Franchir le col de Tizi n'Tichka",
+        "Coucher de soleil à la kasbah d'Aït Ben Haddou",
+        "Nuit dans les dunes de l'Erg Chebbi",
+        "4x4 privé avec chauffeur-guide local"
+      ]
+    },
+    {
+      "groupSize": "Jusqu'à 12 voyageurs",
+      "bestSeason": "Octobre — Avril",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Coucher de soleil & étoiles",
+          "description": "Trek à dos de dromadaire l'après-midi dans les dunes. Arrivée au camp pour le coucher du soleil, le thé à la menthe et le dîner. Après le dîner, séance guidée au télescope et percussions berbères autour du feu."
+        },
+        {
+          "day": 2,
+          "title": "Lever de soleil & départ",
+          "description": "Randonnée matinale vers une dune voisine pour le lever du soleil. Petit-déjeuner au camp, puis retour à dos de dromadaire à Merzouga."
+        }
+      ],
+      "slug": "stargazing-night-camp",
+      "notIncluded": [
+        "Transport vers Merzouga",
+        "Déjeuner",
+        "Boissons",
+        "Pourboires"
+      ],
+      "gallery": [
+        "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/14809603/pexels-photo-14809603.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/8369874/pexels-photo-8369874.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/12128953/pexels-photo-12128953.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      ],
+      "priceFrom": 180,
+      "duration": "2 jours · 1 nuit",
+      "region": "Erg Chebbi · Merzouga",
+      "days": 2,
+      "subtitle": "Une nuit, un camp, tout le ciel",
+      "title": "Camp d'une nuit sous les étoiles",
+      "overview": "Une seule nuit inoubliable dans le désert. Arrivée à Merzouga l'après-midi, trek à dos de dromadaire vers un camp de luxe, et soirée avec un astronome local, des percussionnistes berbères et le ciel le plus clair que vous verrez jamais.",
+      "reviews": 302,
+      "image": "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "difficulty": "Gentle",
+      "included": [
+        "Trek à dos de dromadaire",
+        "1 nuit en camp de luxe",
+        "Dîner et petit-déjeuner",
+        "Séance au télescope",
+        "Musique berbère"
+      ],
+      "rating": 4.7,
+      "highlights": [
+        "Visite guidée du ciel nocturne au télescope",
+        "Musique au coin du feu avec des percussionnistes berbères",
+        "Randonnée sur les dunes au lever du soleil",
+        "Idéal pour les premiers visiteurs du désert"
+      ]
+    },
+    {
+      "groupSize": "Jusqu'à 6 voyageurs",
+      "bestSeason": "Novembre — Mars",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Rencontre avec les nomades",
+          "description": "Trek à dos de dromadaire de Merzouga jusqu'au campement saisonnier d'une famille nomade. Partagez le thé, découvrez leur vie au rythme des saisons et dormez dans une tente traditionnelle."
+        },
+        {
+          "day": 2,
+          "title": "Le pain cuit dans le sable",
+          "description": "Passez la journée avec la famille. Apprenez à cuire le pain dans le sable, à traire les chèvres et à préparer un tajine. L'après-midi, marche vers un gisement de fossiles voisin."
+        },
+        {
+          "day": 3,
+          "title": "Atelier de tissage",
+          "description": "Direction une coopérative de tissage berbère. Passez la journée à apprendre les motifs et les histoires tissés dans chaque tapis. Nuit dans un camp sauvage."
+        },
+        {
+          "day": 4,
+          "title": "Retour à Merzouga",
+          "description": "Lever de soleil, petit-déjeuner et retour à dos de dromadaire à Merzouga."
+        }
+      ],
+      "slug": "nomad-berber-immersion",
+      "notIncluded": [
+        "Transport vers Merzouga",
+        "Boissons",
+        "Assurance voyage",
+        "Pourboires"
+      ],
+      "gallery": [
+        "https://images.pexels.com/photos/35901297/pexels-photo-35901297.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/35901289/pexels-photo-35901289.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/30906051/pexels-photo-30906051.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/9029494/pexels-photo-9029494.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      ],
+      "priceFrom": 720,
+      "duration": "4 jours · 3 nuits",
+      "region": "Erg Chebbi · Territoire nomade",
+      "days": 4,
+      "subtitle": "Vivez avec les gens du désert pendant quatre jours",
+      "title": "Immersion nomade et berbère",
+      "overview": "Une immersion culturelle profonde. Passez quatre jours avec les gens du Sahara — familles nomades, tisserands berbères et guides qui ont grandi entre ces dunes. Vous mangerez, dormirez et voyagerez comme eux.",
+      "reviews": 64,
+      "image": "https://images.pexels.com/photos/35901297/pexels-photo-35901297.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "difficulty": "Moderate",
+      "included": [
+        "Trek à dos de dromadaire",
+        "3 nuits d'hébergement",
+        "Tous les repas",
+        "Séjour dans une famille nomade",
+        "Atelier de tissage"
+      ],
+      "rating": 4.9,
+      "highlights": [
+        "Séjour avec une famille nomade",
+        "Apprendre à cuire le pain dans le sable",
+        "Atelier de tissage et de tapis",
+        "Camping sauvage hors réseau"
+      ]
+    },
+    {
+      "groupSize": "Privé",
+      "bestSeason": "Toute l'année (sur mesure)",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Consultation",
+          "description": "Un appel avec notre équipe pour comprendre votre groupe, vos dates et le type d'expérience désertique que vous recherchez."
+        },
+        {
+          "day": 2,
+          "title": "Proposition sur mesure",
+          "description": "Nous envoyons un itinéraire personnalisé avec options de route, de camp et de guide sous 48 heures."
+        },
+        {
+          "day": 3,
+          "title": "Votre voyage",
+          "description": "Tout est arrangé. Vous arrivez et le désert fait le reste."
+        }
+      ],
+      "slug": "private-bespoke-desert",
+      "notIncluded": [
+        "Vols internationaux",
+        "Assurance voyage",
+        "Pourboires"
+      ],
+      "gallery": [
+        "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/37441710/pexels-photo-37441710.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/10434667/pexels-photo-10434667.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/998635/pexels-photo-998635.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      ],
+      "priceFrom": 1200,
+      "duration": "Flexible",
+      "region": "Sur mesure pour vous",
+      "days": 0,
+      "subtitle": "Votre propre route, votre propre rythme, votre propre Sahara",
+      "title": "Désert privé sur mesure",
+      "overview": "Pour les voyageurs qui veulent quelque chose de vraiment unique. Dites-nous votre rêve — un dépôt en hélicoptère dans un champ de dunes reculé, un camp privé pour deux, une expédition photographique — et nous le construirons.",
+      "reviews": 41,
+      "image": "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "difficulty": "Gentle",
+      "included": [
+        "Guide privé",
+        "Camp privé",
+        "Tous les repas",
+        "Itinéraire sur mesure",
+        "Service de conciergerie"
+      ],
+      "rating": 5,
+      "highlights": [
+        "Guide et camp entièrement privés",
+        "Durée et itinéraire flexibles",
+        "Options axées sur la photographie",
+        "Transferts en hélicoptère ou en 4x4 disponibles"
+      ]
+    }
+  ]
+}

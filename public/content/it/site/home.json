@@ -1,0 +1,37 @@
+{
+  "hero_eyebrow": "Il Viaggio",
+  "hero_title": "Il deserto cambia chiunque vi entri.",
+  "hero_subtitle": "Da quindici anni guidiamo viaggiatori tra le dune dorate del Sahara marocchino. Gruppi ridotti, guide berbere locali e accampamenti costruiti per scomparire senza lasciare traccia.",
+  "hero_kicker": "Sahara Marocchino · Est. 2009",
+  "hero_heading": "Walk the Sahara",
+  "hero_lead": "Viaggi di lusso nel deserto tra le dune dorate di Merzouga. Trekking con i cammelli, accampamenti berberi e notti sotto il cielo più scuro della Terra.",
+  "hero_frames": [
+    { "image": "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=2000", "caption": "Scena 01 — Drone sulle dune dorate di Merzouga" },
+    { "image": "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600", "caption": "Scena 02 — Una carovana segue la cresta all'alba" },
+    { "image": "https://images.pexels.com/photos/12536402/pexels-photo-12536402.jpeg?auto=compress&cs=tinysrgb&w=1600", "caption": "Scena 03 — Un lussuoso accampamento berbero tra le dune" },
+    { "image": "https://images.pexels.com/photos/12128953/pexels-photo-12128953.jpeg?auto=compress&cs=tinysrgb&w=1600", "caption": "Scena 04 — Il tè alla menta viene versato mentre tramonta il sole" },
+    { "image": "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=2000", "caption": "Finale — La telecamera si alza su un mare infinito di dune" }
+  ],
+  "hero_rating": "4.9",
+  "hero_review_text": "da oltre 1.200 viaggiatori in tutto il mondo",
+  "intro_title": "Il Sahara cambia chiunque vi entri.",
+  "intro_subtitle": "Da quindici anni guidiamo viaggiatori tra le dune dorate del Sahara marocchino. Gruppi ridotti, guide berbere locali e accampamenti costruiti per scomparire senza lasciare traccia. Questo è il Sahara, com'è sempre stato: immenso, silenzioso e incredibilmente bello.",
+  "intro_image_a": "https://images.pexels.com/photos/30906051/pexels-photo-30906051.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "intro_image_b": "https://images.pexels.com/photos/33566021/pexels-photo-33566021.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "story_title": "Il Sahara ha uno dei cieli più bui della Terra.",
+  "story_description": "Lontano da ogni luce della città, le dune dell'Erg Chebbi diventano un osservatorio. Le nostre guide vi mostreranno la Via Lattea, i pianeti e le storie che il popolo berbero racconta alle stelle da secoli.",
+  "story_image": "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "gallery": [
+    "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "https://images.pexels.com/photos/12536402/pexels-photo-12536402.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "https://images.pexels.com/photos/12128953/pexels-photo-12128953.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "https://images.pexels.com/photos/31497982/pexels-photo-31497982.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "https://images.pexels.com/photos/37441710/pexels-photo-37441710.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "https://images.pexels.com/photos/998635/pexels-photo-998635.jpeg?auto=compress&cs=tinysrgb&w=1600"
+  ],
+  "cta_label": "Progetta il tuo viaggio",
+  "cta_link": "/contact",
+  "cta_image": "https://images.pexels.com/photos/28829638/pexels-photo-28829638.jpeg?auto=compress&cs=tinysrgb&w=1600"
+}

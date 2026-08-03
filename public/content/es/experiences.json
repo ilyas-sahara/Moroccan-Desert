@@ -1,0 +1,60 @@
+{
+  "items": [
+  {
+    "slug": "camel-trekking",
+    "title": "Rutas en camello",
+    "description": "Sigue antiguas rutas de caravanas por las dunas al amanecer o al atardecer.",
+    "image": "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Compass"
+  },
+  {
+    "slug": "desert-camping",
+    "title": "Campamentos bereberes de lujo",
+    "description": "Duerme bajo las estrellas en un campamento privado de tiendas con servicio completo.",
+    "image": "https://images.pexels.com/photos/12536402/pexels-photo-12536402.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Tent"
+  },
+  {
+    "slug": "stargazing",
+    "title": "Observación de estrellas",
+    "description": "El cielo del Sáhara es uno de los más oscuros de la Tierra. Telescopios incluidos.",
+    "image": "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Star"
+  },
+  {
+    "slug": "mint-tea",
+    "title": "Ceremonia del té de menta",
+    "description": "El ritual que abre cada encuentro en el desierto.",
+    "image": "https://images.pexels.com/photos/31497982/pexels-photo-31497982.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Coffee"
+  },
+  {
+    "slug": "nomadic-culture",
+    "title": "Encuentros nómadas",
+    "description": "Pasa un día con una familia que todavía se desplaza con las estaciones.",
+    "image": "https://images.pexels.com/photos/35901289/pexels-photo-35901289.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Users"
+  },
+  {
+    "slug": "sandboarding",
+    "title": "Sandboarding",
+    "description": "Sube las dunas y desciende sobre la tabla. Tablas e instrucciones incluidas.",
+    "image": "https://images.pexels.com/photos/28829638/pexels-photo-28829638.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Mountain"
+  },
+  {
+    "slug": "4x4-desert-routes",
+    "title": "Rutas 4x4 por el desierto",
+    "description": "Viaja más allá de la carretera asfaltada a través de valles, hammada y dunas remotas.",
+    "image": "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Mountain"
+  },
+  {
+    "slug": "kasbahs-and-oases",
+    "title": "Kasbahs y oasis",
+    "description": "Combina el Sáhara con valles de palmeras, antiguas kasbahs y pueblos del sur de Marruecos.",
+    "image": "https://images.pexels.com/photos/29976840/pexels-photo-29976840.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "icon": "Users"
+  }
+  ]
+}

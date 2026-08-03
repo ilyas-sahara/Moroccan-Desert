@@ -1,4 +1,5 @@
 import { BLOG_POSTS, TOURS, EXPERIENCES, TESTIMONIALS, FAQS, IMAGES, type BlogPost, type Tour } from '@/data/content';
+import type { Locale } from '@/i18n';
 
 export type SiteSettings = {
   brand_name: string;
@@ -250,44 +251,56 @@ async function loadCollection<T>(path: string, fallback: T[]): Promise<T[]> {
   return Array.isArray(content.items) && content.items.length ? content.items : fallback;
 }
 
+function localizedPath(locale: Locale, path: string): string {
+  if (locale === 'en') return path;
+  return path.replace(/^\/content\//, `/content/${locale}/`);
+}
+
+async function loadLocalizedPartial<T>(locale: Locale, path: string, fallback: T): Promise<T> {
+  const english = await loadJson<Partial<T>>(path, fallback);
+  const localized = await loadJson<Partial<T> | undefined>(localizedPath(locale, path), undefined);
+  if (localized === undefined) return english as T;
+  return mergeValues(english as T, localized);
+}
+
+async function loadLocalizedCollection<T>(locale: Locale, path: string, fallback: T[]): Promise<T[]> {
+  const localized = await loadCollection<T>(localizedPath(locale, path), []);
+  if (localized.length) return localized;
+  return loadCollection(path, fallback);
+}
+
 export async function getSiteSettings(): Promise<SiteSettings> {
   return loadJson('/content/site/settings.json', defaultSettings);
 }
 
-export async function getFooterContent(): Promise<FooterContent> {
-  const raw = await loadJson<Partial<FooterContent>>('/content/site/footer.json', defaultFooter);
-  return mergeValues(defaultFooter, raw);
+export async function getFooterContent(locale: Locale = 'en'): Promise<FooterContent> {
+  return loadLocalizedPartial(locale, '/content/site/footer.json', defaultFooter);
 }
 
-export async function getHomePageContent(): Promise<HomePageContent> {
-  const raw = await loadJson<Partial<HomePageContent>>('/content/site/home.json', defaultHome);
-  return mergeValues(defaultHome, raw);
+export async function getHomePageContent(locale: Locale = 'en'): Promise<HomePageContent> {
+  return loadLocalizedPartial(locale, '/content/site/home.json', defaultHome);
 }
 
-export async function getAboutPageContent(): Promise<AboutPageContent> {
-  const raw = await loadJson<Partial<AboutPageContent>>('/content/site/about.json', defaultAbout);
-  return mergeValues(defaultAbout, raw);
+export async function getAboutPageContent(locale: Locale = 'en'): Promise<AboutPageContent> {
+  return loadLocalizedPartial(locale, '/content/site/about.json', defaultAbout);
 }
 
-export async function getContactPageContent(): Promise<ContactPageContent> {
-  const raw = await loadJson<Partial<ContactPageContent>>('/content/site/contact.json', defaultContact);
-  return mergeValues(defaultContact, raw);
+export async function getContactPageContent(locale: Locale = 'en'): Promise<ContactPageContent> {
+  return loadLocalizedPartial(locale, '/content/site/contact.json', defaultContact);
 }
 
-export async function getCustomJourneyPageContent(): Promise<CustomJourneyPageContent> {
-  const raw = await loadJson<Partial<CustomJourneyPageContent>>('/content/site/custom-journey.json', defaultCustomJourney);
-  return mergeValues(defaultCustomJourney, raw);
+export async function getCustomJourneyPageContent(locale: Locale = 'en'): Promise<CustomJourneyPageContent> {
+  return loadLocalizedPartial(locale, '/content/site/custom-journey.json', defaultCustomJourney);
 }
 
-export async function getExperiencesPageContent(): Promise<ExperiencesPageContent> {
-  const raw = await loadJson<Partial<ExperiencesPageContent>>('/content/site/experiences.json', defaultExperiencesPage);
-  return mergeValues(defaultExperiencesPage, raw);
+export async function getExperiencesPageContent(locale: Locale = 'en'): Promise<ExperiencesPageContent> {
+  return loadLocalizedPartial(locale, '/content/site/experiences.json', defaultExperiencesPage);
 }
 
-export async function getCmsTours(): Promise<Tour[]> {
+export async function getCmsTours(locale: Locale = 'en'): Promise<Tour[]> {
   const [primaryTours, importedTours] = await Promise.all([
-    loadCollection('/content/tours.json', TOURS),
-    loadCollection<Tour>('/content/sahara-vibe-desert-tours.json', []),
+    loadLocalizedCollection(locale, '/content/tours.json', TOURS),
+    loadLocalizedCollection<Tour>(locale, '/content/sahara-vibe-desert-tours.json', []),
   ]);
   return [...primaryTours, ...importedTours.filter((tour) => !primaryTours.some((existing) => existing.slug === tour.slug))]
     .map((tour) => ({ ...tour, experiences: tour.experiences?.length ? tour.experiences : inferTourExperiences(tour) }));
@@ -308,8 +321,8 @@ function inferTourExperiences(tour: Tour): string[] {
   return experiences;
 }
 
-export async function getCmsExperiences(): Promise<Array<{ slug: string; title: string; description: string; image: string; icon: string }>> {
-  return loadCollection('/content/experiences.json', EXPERIENCES);
+export async function getCmsExperiences(locale: Locale = 'en'): Promise<Array<{ slug: string; title: string; description: string; image: string; icon: string }>> {
+  return loadLocalizedCollection(locale, '/content/experiences.json', EXPERIENCES);
 }
 
 export async function getCmsBlogPosts(): Promise<BlogPost[]> {
@@ -320,8 +333,8 @@ export async function getCmsTestimonials(): Promise<Array<{ name: string; countr
   return loadCollection('/content/testimonials.json', TESTIMONIALS);
 }
 
-export async function getCmsFaqs(): Promise<Array<{ q: string; a: string }>> {
-  return loadCollection('/content/faqs.json', FAQS);
+export async function getCmsFaqs(locale: Locale = 'en'): Promise<Array<{ q: string; a: string }>> {
+  return loadLocalizedCollection(locale, '/content/faqs.json', FAQS);
 }
 
 export const CMS_IMAGES = IMAGES;
