@@ -1,6 +1,6 @@
-# Walk the Sahara — Moroccan Desert Journeys
+# Sahara Vacations — Moroccan Desert Journeys
 
-Marketing site for Walk the Sahara (Merzouga, Morocco), built with Vite +
+Marketing site for Sahara Vacations (Merzouga, Morocco), built with Vite +
 React + TypeScript + Tailwind. Includes a blog, tours, experiences, and a
 GitHub-backed Decap CMS admin surface for non-developers.
 

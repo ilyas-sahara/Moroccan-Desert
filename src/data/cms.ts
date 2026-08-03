@@ -103,17 +103,17 @@ export type ExperiencesPageContent = {
 };
 
 const defaultSettings: SiteSettings = {
-  brand_name: 'Walk the Sahara',
+  brand_name: 'Sahara Vacations',
   tagline: 'Moroccan Desert Journeys',
   phone: '+212 5 35 00 00 00',
-  email: 'hello@walkthesahara.com',
+  email: 'hello@saharavacations.com',
   address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
   instagram_url: '#',
   facebook_url: '#',
 };
 
 const defaultFooter: FooterContent = {
-  brand_name: 'Walk the Sahara',
+  brand_name: 'Sahara Vacations',
   description:
     'Luxury desert journeys through the golden dunes of Merzouga and beyond. Small groups, local guides, and camps that leave nothing behind but footprints.',
   instagram_url: '#',
@@ -127,7 +127,7 @@ const defaultFooter: FooterContent = {
   ],
   address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
   phone: '+212 5 35 00 00 00',
-  email: 'hello@walkthesahara.com',
+  email: 'hello@saharavacations.com',
   copyright_text: 'All rights reserved.',
   legal_links: [
     { label: 'Privacy', to: '#' },
@@ -149,7 +149,7 @@ const defaultHome: HomePageContent = {
   hero_title: 'The desert changes everyone who walks into it.',
   hero_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace.',
   hero_kicker: 'Moroccan Sahara · Est. 2009',
-  hero_heading: 'Walk the Sahara',
+  hero_heading: 'Sahara Vacations',
   hero_lead: 'Luxury desert journeys through the golden dunes of Merzouga. Camel treks, Berber camps, and nights under the darkest sky on earth.',
   hero_frames: defaultHeroFrames,
   hero_rating: '4.9',
@@ -170,10 +170,10 @@ const defaultHome: HomePageContent = {
 const defaultAbout: AboutPageContent = {
   hero_eyebrow: 'Our Story',
   hero_title: 'Born at the edge of the dunes',
-  hero_subtitle: 'Walk the Sahara began with a single Berber family in Merzouga and a belief that the desert should be shared with care.',
+  hero_subtitle: 'Sahara Vacations began with a single Berber family in Merzouga and a belief that the desert should be shared with care.',
   hero_image: IMAGES.loneTraveler,
   intro_title: 'A family of guides, not a company.',
-  intro_description: 'We are a small collective of Berber guides and camp hosts from the Erg Chebbi region. We grew up walking these dunes, and we started Walk the Sahara to share them with travelers who want more than a photo stop.',
+  intro_description: 'We are a small collective of Berber guides and camp hosts from the Erg Chebbi region. We grew up walking these dunes, and we started Sahara Vacations to share them with travelers who want more than a photo stop.',
   intro_image: IMAGES.campNomad,
   values: [
     { title: 'Local First', text: 'Every guide is Berber, born and raised at the edge of the dunes. The money you spend stays in the desert.' },
@@ -194,7 +194,7 @@ const defaultContact: ContactPageContent = {
   hero_image: IMAGES.campfire,
   office_text: "Prefer to talk it through? Reach us directly — we're based in Merzouga, on the edge of the dunes.",
   phone: '+212 5 35 00 00 00',
-  email: 'hello@walkthesahara.com',
+  email: 'hello@saharavacations.com',
   address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
 };
 
@@ -208,7 +208,7 @@ const defaultCustomJourney: CustomJourneyPageContent = {
 const defaultExperiencesPage: ExperiencesPageContent = {
   hero_eyebrow: 'Experiences',
   hero_title: 'The small moments that make a journey',
-  hero_subtitle: 'Every Walk the Sahara trip is built from these threads. Browse them, then let us weave them into something just for you.',
+  hero_subtitle: 'Every Sahara Vacations trip is built from these threads. Browse them, then let us weave them into something just for you.',
   hero_image: IMAGES.campBerber,
   cta_title: 'Want all of these in one journey?',
   cta_subtitle: 'We build bespoke itineraries that combine any of these experiences into a single, seamless trip.',

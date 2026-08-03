@@ -11,7 +11,7 @@ export const en = {
     book: 'Book a Journey',
     toggleMenu: 'Toggle menu',
     toggleDropdown: 'Toggle {{name}} menu',
-    homeAria: 'Walk the Sahara home',
+    homeAria: 'Sahara Vacations home',
     toursDropdown: {
       all: 'All Tours',
       allDesc: 'Browse every journey',
@@ -275,34 +275,34 @@ export const en = {
     text: "The page you're looking for has drifted with the wind. Let's get you back to firm ground.",
   },
   seo: {
-    brand: 'Walk the Sahara',
-    homeTitle: 'Walk the Sahara — Luxury Moroccan Desert Journeys',
+    brand: 'Sahara Vacations',
+    homeTitle: 'Sahara Vacations — Luxury Moroccan Desert Journeys',
     homeDescription:
       'Luxury desert journeys through the golden dunes of Merzouga. Camel treks, Berber camps, stargazing nights, and bespoke Moroccan Sahara adventures.',
     toursTitle: 'Morocco Desert Tours — Camel Treks & Sahara Adventures',
     toursDescription:
       'Browse handcrafted Sahara tours: camel treks, luxury Berber camps, stargazing nights, and 4x4 desert routes across Morocco.',
-    tourTitle: '{{name}} — Walk the Sahara',
+    tourTitle: '{{name}} — Sahara Vacations',
     tourDescription:
-      '{{name}} in {{region}}. Led by local Berber guides — book your Moroccan Sahara journey with Walk the Sahara.',
-    experiencesTitle: 'Experiences — Walk the Sahara',
+      '{{name}} in {{region}}. Led by local Berber guides — book your Moroccan Sahara journey with Sahara Vacations.',
+    experiencesTitle: 'Experiences — Sahara Vacations',
     experiencesDescription:
       'Camel treks, luxury desert camps, stargazing, mint tea ceremonies, nomad encounters, sandboarding and more in the Moroccan Sahara.',
     blogTitle: 'Sahara Blog — Stories & Travel Guides',
     blogDescription:
       'Travel notes, planning guides and stories from the Moroccan Sahara — planning your first desert night, camp comfort, and culture beyond the dunes.',
-    articleTitle: '{{title}} — Walk the Sahara Blog',
+    articleTitle: '{{title}} — Sahara Vacations Blog',
     articleDescription: '{{excerpt}}',
-    aboutTitle: 'About — Walk the Sahara',
+    aboutTitle: 'About — Sahara Vacations',
     aboutDescription:
       'A family of Berber guides born at the edge of the dunes in Merzouga. Small groups, local guides, and leave-no-trace desert camps since 2009.',
     contactTitle: 'Contact — Plan Your Sahara Journey',
     contactDescription:
       'Tell us your dates, your group, and your dream. Our local team replies within 24 hours with a tailored Sahara proposal.',
-    customTitle: 'Custom Sahara Journey — Walk the Sahara',
+    customTitle: 'Custom Sahara Journey — Sahara Vacations',
     customDescription:
       'Build your own Moroccan Sahara journey: choose the places, pace, and experiences, and our team crafts a private itinerary.',
-    notFoundTitle: 'Page Not Found — Walk the Sahara',
+    notFoundTitle: 'Page Not Found — Sahara Vacations',
     notFoundDescription: 'This trail does not appear on our maps.',
   },
   lang: {

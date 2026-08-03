@@ -50,7 +50,7 @@ export default function BlogDetail() {
     author: { '@type': 'Person', name: post.author },
     publisher: {
       '@type': 'Organization',
-      name: 'Walk the Sahara',
+      name: 'Sahara Vacations',
       logo: {
         '@type': 'ImageObject',
         url: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`,

@@ -25,7 +25,7 @@ type HeroProps = {
 export default function Hero({
   frames: rawFrames,
   kicker = 'Moroccan Sahara · Est. 2009',
-  heading = 'Walk the Sahara',
+  heading = 'Sahara Vacations',
   lead = 'Luxury desert journeys through the golden dunes of Merzouga. Camel treks, Berber camps, and nights under the darkest sky on earth.',
 }: HeroProps) {
   const { t } = useLocale();

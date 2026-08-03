@@ -13,10 +13,10 @@ const ICON_CYCLE: Array<typeof Compass> = [Users, Leaf, Heart, Compass];
 const DEFAULT_ABOUT: AboutPageContent = {
   hero_eyebrow: 'Our Story',
   hero_title: 'Born at the edge of the dunes',
-  hero_subtitle: 'Walk the Sahara began with a single Berber family in Merzouga and a belief that the desert should be shared with care.',
+  hero_subtitle: 'Sahara Vacations began with a single Berber family in Merzouga and a belief that the desert should be shared with care.',
   hero_image: '',
   intro_title: 'A family of guides, not a company.',
-  intro_description: 'We are a small collective of Berber guides and camp hosts from the Erg Chebbi region. We grew up walking these dunes, and we started Walk the Sahara to share them with travelers who want more than a photo stop.',
+  intro_description: 'We are a small collective of Berber guides and camp hosts from the Erg Chebbi region. We grew up walking these dunes, and we started Sahara Vacations to share them with travelers who want more than a photo stop.',
   intro_image: '',
   values: [
     { title: 'Local First', text: 'Every guide is Berber, born and raised at the edge of the dunes. The money you spend stays in the desert.' },
