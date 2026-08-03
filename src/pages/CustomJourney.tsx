@@ -3,6 +3,7 @@ import { Check, Compass, Mail, Minus, Plus, Send } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { CITY_LABELS, MOROCCO_PATH } from '@/data/morocco-map';
 import { useLocale } from '@/i18n';
+import { useSeo } from '@/hooks/useSeo';
 import { getCustomJourneyPageContent, type CustomJourneyPageContent } from '@/data/cms';
 
 const STOPS = [
@@ -29,6 +30,13 @@ export default function CustomJourney() {
     hero_title: 'Your Sahara, mapped your way.',
     hero_subtitle: 'Choose the places, pace, and experiences that matter to you. Our local team will turn them into a considered private itinerary.',
     hero_image: '',
+  });
+
+  useSeo({
+    title: t('seo.customTitle'),
+    description: t('seo.customDescription'),
+    path: '/custom-journey',
+    image: pageContent.hero_image,
   });
 
   useEffect(() => {
@@ -94,8 +102,8 @@ export default function CustomJourney() {
     <main className="pt-20">
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-28">
         <div className="absolute inset-0">
-          <img src={pageContent.hero_image} alt="" className="h-full w-full object-cover opacity-35" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/35" />
+          <img src={pageContent.hero_image} alt="" className="h-full w-full object-cover opacity-70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink-950/50 via-ink-950/25 to-ink-950/10" />
         </div>
         <div className="container-x relative z-10 max-w-4xl">
           <SectionHeading light eyebrow={pageContent.hero_eyebrow} title={pageContent.hero_title} subtitle={pageContent.hero_subtitle} />

@@ -3,13 +3,23 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, CalendarDays, Clock3, UserRound } from 'lucide-react';
 import { BLOG_POSTS, type BlogPost } from '@/data/content';
 import { useLocale } from '@/i18n';
+import { useSeo, SITE_URL } from '@/hooks/useSeo';
 import { getCmsBlogPosts } from '@/data/cms';
+import JsonLd from '@/components/JsonLd';
 
 export default function BlogDetail() {
   const { slug } = useParams();
   const { t } = useLocale();
   const [posts, setPosts] = useState<BlogPost[]>(BLOG_POSTS);
   const post = posts.find((item) => item.slug === slug);
+
+  useSeo({
+    title: post ? t('seo.articleTitle', { title: post.title }) : t('seo.notFoundTitle'),
+    description: post ? t('seo.articleDescription', { excerpt: post.excerpt }) : t('seo.notFoundDescription'),
+    path: post ? `/blog/${post.slug}` : '/blog',
+    image: post?.image,
+    type: 'article',
+  });
 
   useEffect(() => {
     void (async () => {
@@ -29,8 +39,28 @@ export default function BlogDetail() {
     );
   }
 
+  const blogPosting = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    image: post.image,
+    url: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog/${post.slug}`,
+    datePublished: post.publishedAt,
+    author: { '@type': 'Person', name: post.author },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Walk the Sahara',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`,
+      },
+    },
+  };
+
   return (
     <main className="pt-20">
+      <JsonLd data={blogPosting} />
       <section className="bg-sand-50 py-12 lg:py-16">
         <div className="container-x max-w-4xl">
           <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-sand-700 hover:text-sand-800">

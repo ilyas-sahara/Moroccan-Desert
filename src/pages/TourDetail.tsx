@@ -7,10 +7,12 @@ import {
 import { TOURS, type Tour } from '@/data/content';
 import { getCmsTours } from '@/data/cms';
 import { useReveal } from '@/hooks/useReveal';
+import { useSeo, SITE_URL } from '@/hooks/useSeo';
 import { useLocale } from '@/i18n';
 import TourCard from '@/components/TourCard';
 import TourMap from '@/components/TourMap';
 import SectionHeading from '@/components/SectionHeading';
+import JsonLd from '@/components/JsonLd';
 
 export default function TourDetail() {
   const { slug } = useParams();
@@ -32,6 +34,15 @@ export default function TourDetail() {
     setActiveImg(0);
   }, [slug]);
 
+  useSeo({
+    title: tour ? t('seo.tourTitle', { name: tour.title }) : t('seo.notFoundTitle'),
+    description: tour
+      ? t('seo.tourDescription', { name: tour.title, region: tour.region })
+      : t('seo.notFoundDescription'),
+    path: tour ? `/tours/${tour.slug}` : '/tours',
+    image: tour?.image,
+  });
+
   if (!tour) {
     return (
       <main className="pt-32">
@@ -45,8 +56,30 @@ export default function TourDetail() {
 
   const related = tours.filter((t) => t.slug !== tour.slug).slice(0, 3);
 
+  const tourUrl = `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/tours/${tour.slug}`;
+  const tourProduct = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: tour.title,
+    description: tour.subtitle,
+    image: tour.gallery,
+    url: tourUrl,
+    brand: { '@type': 'Brand', name: 'Walk the Sahara' },
+    offers: {
+      '@type': 'Offer',
+      price: tour.priceFrom,
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStock',
+      url: tourUrl,
+    },
+    ...(tour.rating > 0 && tour.reviews > 0
+      ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: tour.rating, reviewCount: tour.reviews } }
+      : {}),
+  };
+
   return (
     <main className="pt-20">
+      <JsonLd data={tourProduct} />
       {/* Breadcrumb */}
       <div className="border-b border-sand-200/60 bg-sand-50">
         <div className="container-x flex items-center gap-2 py-4 text-xs text-sand-600">

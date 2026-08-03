@@ -2,9 +2,16 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Compass } from 'lucide-react';
 import { IMAGES } from '@/data/content';
 import { useLocale } from '@/i18n';
+import { useSeo } from '@/hooks/useSeo';
 
 export default function NotFound() {
   const { t } = useLocale();
+  useSeo({
+    title: t('seo.notFoundTitle'),
+    description: t('seo.notFoundDescription'),
+    path: '/404',
+    type: 'website',
+  });
   return (
     <main className="pt-20">
       <section className="relative flex min-h-[80vh] items-center overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">

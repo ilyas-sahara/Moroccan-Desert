@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import TourCard from '@/components/TourCard';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
+import { useSeo } from '@/hooks/useSeo';
 import { TOURS, type Tour } from '@/data/content';
 import { useLocale } from '@/i18n';
 import { getCmsTours } from '@/data/cms';
@@ -29,6 +30,12 @@ export default function Tours() {
   const [tours, setTours] = useState<Tour[]>(TOURS);
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedExperience = searchParams.get('experience');
+
+  useSeo({
+    title: t('seo.toursTitle'),
+    description: t('seo.toursDescription'),
+    path: '/tours',
+  });
 
   useEffect(() => {
     void (async () => {

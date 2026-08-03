@@ -239,6 +239,35 @@ export const es: LocaleDict = {
   'notFound.title': 'Este sendero no aparece en nuestros mapas.',
   'notFound.text':
     'La página que buscas se ha llevado el viento. Volvamos a terreno firme.',
+  'seo.brand': 'Walk the Sahara',
+  'seo.homeTitle': 'Walk the Sahara — Viajes de lujo por el desierto de Marruecos',
+  'seo.homeDescription':
+    'Viajes de lujo por el desierto a través de las dunas doradas de Merzouga. Rutas en camello, campamentos bereberes, noches de estrellas y aventuras a medida en el Sáhara marroquí.',
+  'seo.toursTitle': 'Tours por el desierto de Marruecos — Rutas en camello y aventuras en el Sáhara',
+  'seo.toursDescription':
+    'Descubre nuestros tours por el Sáhara: rutas en camello, campamentos bereberes de lujo, observación de estrellas y rutas 4x4 por Marruecos.',
+  'seo.tourTitle': '{{name}} — Walk the Sahara',
+  'seo.tourDescription':
+    '{{name}} en {{region}}. Con guías bereberes locales — reserva tu viaje por el Sáhara marroquí con Walk the Sahara.',
+  'seo.experiencesTitle': 'Experiencias — Walk the Sahara',
+  'seo.experiencesDescription':
+    'Rutas en camello, campamentos de lujo, observación de estrellas, ceremonias del té de menta, encuentros nómadas, sandboarding y más en el Sáhara marroquí.',
+  'seo.blogTitle': 'Blog del Sáhara — Historias y guías de viaje',
+  'seo.blogDescription':
+    'Notas de viaje, guías de planificación e historias del Sáhara marroquí: planear tu primera noche en el desierto, el confort del campamento y la cultura más allá de las dunas.',
+  'seo.articleTitle': '{{title}} — Blog de Walk the Sahara',
+  'seo.articleDescription': '{{excerpt}}',
+  'seo.aboutTitle': 'Sobre nosotros — Walk the Sahara',
+  'seo.aboutDescription':
+    'Una familia de guías bereberes nacida al borde de las dunas de Merzouga. Grupos reducidos, guías locales y campamentos en el desierto sin dejar rastro desde 2009.',
+  'seo.contactTitle': 'Contacto — Planifica tu viaje al Sáhara',
+  'seo.contactDescription':
+    'Cuéntanos tus fechas, tu grupo y tu sueño. Nuestro equipo local responde en 24 horas con una propuesta a medida.',
+  'seo.customTitle': 'Viaje a medida por el Sáhara — Walk the Sahara',
+  'seo.customDescription':
+    'Crea tu propio viaje por el Sáhara marroquí: elige los lugares, el ritmo y las experiencias, y nuestro equipo diseña un itinerario privado.',
+  'seo.notFoundTitle': 'Página no encontrada — Walk the Sahara',
+  'seo.notFoundDescription': 'Este sendero no aparece en nuestros mapas.',
   'lang.switchLabel': 'Cambiar idioma',
   'lang.en': 'Inglés',
   'lang.fr': 'Francés',

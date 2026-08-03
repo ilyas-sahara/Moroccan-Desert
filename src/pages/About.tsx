@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Leaf, Heart, Users, Compass, ArrowRight } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
+import { useSeo } from '@/hooks/useSeo';
 import { useLocale } from '@/i18n';
 import { getAboutPageContent, type AboutPageContent } from '@/data/cms';
 
@@ -33,6 +34,13 @@ export default function About() {
   const ref = useReveal<HTMLDivElement>();
   const [aboutContent, setAboutContent] = useState<AboutPageContent>(DEFAULT_ABOUT);
   const { locale, t } = useLocale();
+
+  useSeo({
+    title: t('seo.aboutTitle'),
+    description: t('seo.aboutDescription'),
+    path: '/about',
+    image: aboutContent.hero_image,
+  });
 
   useEffect(() => {
     void (async () => {

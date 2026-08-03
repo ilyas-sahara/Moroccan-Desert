@@ -239,6 +239,35 @@ export const de: LocaleDict = {
   'notFound.title': 'Dieser Pfad steht nicht auf unseren Karten.',
   'notFound.text':
     'Die Seite, die Sie suchen, ist mit dem Wind davongeweht. Bringen wir Sie zurück auf festen Boden.',
+  'seo.brand': 'Walk the Sahara',
+  'seo.homeTitle': 'Walk the Sahara — Luxuriöse Wüstenreisen in Marokko',
+  'seo.homeDescription':
+    'Luxuriöse Wüstenreisen durch die goldenen Dünen von Merzouga. Kameltreks, Berber-Camps, Nächte unter Sternen und maßgeschneiderte Abenteuer in der marokkanischen Sahara.',
+  'seo.toursTitle': 'Marokko-Wüstentouren — Kameltreks und Sahara-Abenteuer',
+  'seo.toursDescription':
+    'Entdecken Sie handgefertigte Sahara-Touren: Kameltreks, luxuriöse Berber-Camps, Sternenbeobachtung und 4x4-Wüstenrouten durch Marokko.',
+  'seo.tourTitle': '{{name}} — Walk the Sahara',
+  'seo.tourDescription':
+    '{{name}} in {{region}}. Geführt von lokalen Berber-Guides — buchen Sie Ihre Reise in die marokkanische Sahara mit Walk the Sahara.',
+  'seo.experiencesTitle': 'Erlebnisse — Walk the Sahara',
+  'seo.experiencesDescription':
+    'Kameltreks, luxuriöse Wüstencamps, Sternenbeobachtung, Minztee-Zeremonien, Nomadenbegegnungen, Sandboarding und mehr in der marokkanischen Sahara.',
+  'seo.blogTitle': 'Sahara-Blog — Geschichten und Reiseführer',
+  'seo.blogDescription':
+    'Reisenotizen, Planungsratgeber und Geschichten aus der marokkanischen Sahara — die erste Wüstennacht planen, Komfort im Camp und Kultur jenseits der Dünen.',
+  'seo.articleTitle': '{{title}} — Walk the Sahara Blog',
+  'seo.articleDescription': '{{excerpt}}',
+  'seo.aboutTitle': 'Über uns — Walk the Sahara',
+  'seo.aboutDescription':
+    'Eine Familie von Berber-Guides, geboren am Rand der Dünen von Merzouga. Kleine Gruppen, lokale Guides und spurlose Wüstencamps seit 2009.',
+  'seo.contactTitle': 'Kontakt — Planen Sie Ihre Sahara-Reise',
+  'seo.contactDescription':
+    'Teilen Sie uns Ihre Termine, Ihre Gruppe und Ihren Traum mit. Unser lokales Team antwortet innerhalb von 24 Stunden mit einem maßgeschneiderten Vorschlag.',
+  'seo.customTitle': 'Individuelle Sahara-Reise — Walk the Sahara',
+  'seo.customDescription':
+    'Gestalten Sie Ihre eigene Reise durch die marokkanische Sahara: wählen Sie Orte, Tempo und Erlebnisse — unser Team erstellt einen privaten Reiseplan.',
+  'seo.notFoundTitle': 'Seite nicht gefunden — Walk the Sahara',
+  'seo.notFoundDescription': 'Dieser Pfad steht nicht auf unseren Karten.',
   'lang.switchLabel': 'Sprache ändern',
   'lang.en': 'Englisch',
   'lang.fr': 'Französisch',

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Compass, Tent, Star, Coffee, Users, Mountain, ArrowRight } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
+import { useSeo } from '@/hooks/useSeo';
 import { EXPERIENCES } from '@/data/content';
 import { useLocale } from '@/i18n';
 import { getCmsExperiences, getExperiencesPageContent, type ExperiencesPageContent } from '@/data/cms';
@@ -29,6 +30,12 @@ export default function Experiences() {
   const [experiences, setExperiences] = useState(EXPERIENCES);
   const [pageContent, setPageContent] = useState<ExperiencesPageContent>(DEFAULT_PAGE);
 
+  useSeo({
+    title: t('seo.experiencesTitle'),
+    description: t('seo.experiencesDescription'),
+    path: '/experiences',
+  });
+
   useEffect(() => {
     void (async () => {
       const [cmsExperiences, page] = await Promise.all([getCmsExperiences(locale), getExperiencesPageContent(locale)]);
@@ -41,8 +48,8 @@ export default function Experiences() {
     <main className="pt-20">
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0">
-          <img src={pageContent.hero_image} alt="" className="h-full w-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink-950/70 via-ink-950/50 to-ink-950/80" />
+          <img src={pageContent.hero_image} alt="" className="h-full w-full object-cover opacity-75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink-950/30 via-ink-950/10 to-ink-950/35" />
         </div>
         <div className="container-x relative z-10">
           <SectionHeading
@@ -86,7 +93,7 @@ export default function Experiences() {
       </section>
 
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
-        <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 opacity-60">
           <img src={pageContent.cta_image} alt="" className="h-full w-full object-cover" />
         </div>
         <div className="container-x relative z-10 text-center">

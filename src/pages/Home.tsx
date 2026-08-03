@@ -4,11 +4,14 @@ import { ArrowRight, Compass, Tent, Star, Coffee, Users, Mountain } from 'lucide
 import Hero from '@/components/Hero';
 import SectionHeading from '@/components/SectionHeading';
 import TourCard from '@/components/TourCard';
+import JsonLd from '@/components/JsonLd';
 import { useReveal } from '@/hooks/useReveal';
+import { useSeo, SITE_URL } from '@/hooks/useSeo';
 import { TOURS, EXPERIENCES, TESTIMONIALS, type Tour } from '@/data/content';
 import { useLocale } from '@/i18n';
 import {
-  getCmsTours, getCmsExperiences, getCmsTestimonials, getHomePageContent, type HomePageContent,
+  getCmsTours, getCmsExperiences, getCmsTestimonials, getHomePageContent,
+  getSiteSettings, type HomePageContent, type SiteSettings,
 } from '@/data/cms';
 
 const ICONS: Record<string, typeof Compass> = {
@@ -38,6 +41,16 @@ const DEFAULT_HOME: HomePageContent = {
   cta_image: '',
 };
 
+const DEFAULT_SETTINGS: SiteSettings = {
+  brand_name: 'Walk the Sahara',
+  tagline: 'Moroccan Desert Journeys',
+  phone: '+212 5 35 00 00 00',
+  email: 'hello@walkthesahara.com',
+  address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
+  instagram_url: '',
+  facebook_url: '',
+};
+
 export default function Home() {
   const featuredRef = useReveal<HTMLDivElement>();
   const expRef = useReveal<HTMLDivElement>();
@@ -46,28 +59,62 @@ export default function Home() {
   const testimonialsRef = useReveal<HTMLDivElement>();
   const ctaRef = useReveal<HTMLDivElement>();
   const [homeContent, setHomeContent] = useState<HomePageContent>(DEFAULT_HOME);
+  const [settings, setSettings] = useState<SiteSettings>(DEFAULT_SETTINGS);
   const [tours, setTours] = useState<Tour[]>(TOURS);
   const [experiences, setExperiences] = useState(EXPERIENCES);
   const [testimonials, setTestimonials] = useState(TESTIMONIALS);
   const { locale, t } = useLocale();
 
+  const seoImage = homeContent.hero_frames[0]?.image;
+  useSeo({
+    title: t('seo.homeTitle'),
+    description: t('seo.homeDescription'),
+    path: '/',
+    image: seoImage,
+  });
+
   useEffect(() => {
     void (async () => {
-      const [pageContent, cmsTours, cmsExperiences, cmsTestimonials] = await Promise.all([
+      const [pageContent, cmsTours, cmsExperiences, cmsTestimonials, siteSettings] = await Promise.all([
         getHomePageContent(locale),
         getCmsTours(locale),
         getCmsExperiences(locale),
         getCmsTestimonials(),
+        getSiteSettings(),
       ]);
       setHomeContent(pageContent);
+      setSettings(siteSettings);
       setTours(cmsTours);
       setExperiences(cmsExperiences);
       setTestimonials(cmsTestimonials);
     })();
   }, [locale]);
 
+  const travelAgency = {
+    '@context': 'https://schema.org',
+    '@type': 'TravelAgency',
+    name: settings.brand_name,
+    slogan: settings.tagline,
+    url: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/`,
+    logo: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`,
+    image: seoImage,
+    description: t('seo.homeDescription'),
+    telephone: settings.phone,
+    email: settings.email,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: settings.address,
+      addressCountry: 'MA',
+    },
+    sameAs: [settings.instagram_url, settings.facebook_url].filter((u) => Boolean(u) && u !== '#'),
+    priceRange: '€€',
+    areaServed: 'Morocco',
+    foundingDate: '2009',
+  };
+
   return (
     <main>
+      <JsonLd data={travelAgency} />
       <Hero
         frames={homeContent.hero_frames}
         kicker={homeContent.hero_kicker}
@@ -164,8 +211,8 @@ export default function Home() {
       {/* Story / split feature */}
       <section ref={storyRef} className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0">
-          <img src={homeContent.story_image} alt="" loading="lazy" className="h-full w-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/40" />
+          <img src={homeContent.story_image} alt="" loading="lazy" className="h-full w-full object-cover opacity-70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink-950/55 via-ink-950/30 to-ink-950/5" />
         </div>
         <div className="container-x relative z-10">
           <div className="max-w-xl">

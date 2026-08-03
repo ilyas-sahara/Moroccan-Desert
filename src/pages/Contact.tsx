@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Send, Check, ChevronDown } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
+import { useSeo } from '@/hooks/useSeo';
 import { TOURS, FAQS } from '@/data/content';
 import { useLocale } from '@/i18n';
 import { getContactPageContent, getCmsFaqs, getCmsTours } from '@/data/cms';
@@ -26,6 +27,13 @@ export default function Contact() {
   const [faqs, setFaqs] = useState(FAQS);
   const [searchParams] = useSearchParams();
   const [interestedIn, setInterestedIn] = useState('');
+
+  useSeo({
+    title: t('seo.contactTitle'),
+    description: t('seo.contactDescription'),
+    path: '/contact',
+    image: contactContent.hero_image,
+  });
 
   useEffect(() => {
     const fromUrl = searchParams.get('tour');
@@ -54,8 +62,8 @@ export default function Contact() {
     <main className="pt-20">
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0">
-          <img src={contactContent.hero_image} alt="" className="h-full w-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink-950/70 via-ink-950/50 to-ink-950/80" />
+          <img src={contactContent.hero_image} alt="" className="h-full w-full object-cover opacity-75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink-950/30 via-ink-950/10 to-ink-950/35" />
         </div>
         <div className="container-x relative z-10">
           <SectionHeading

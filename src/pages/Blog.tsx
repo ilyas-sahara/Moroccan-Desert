@@ -3,11 +3,18 @@ import { Link } from 'react-router-dom';
 import SectionHeading from '@/components/SectionHeading';
 import { BLOG_POSTS, type BlogPost } from '@/data/content';
 import { useLocale } from '@/i18n';
+import { useSeo } from '@/hooks/useSeo';
 import { getCmsBlogPosts } from '@/data/cms';
 
 export default function Blog() {
   const { t } = useLocale();
   const [posts, setPosts] = useState<BlogPost[]>(BLOG_POSTS);
+
+  useSeo({
+    title: t('seo.blogTitle'),
+    description: t('seo.blogDescription'),
+    path: '/blog',
+  });
 
   useEffect(() => {
     void (async () => {
