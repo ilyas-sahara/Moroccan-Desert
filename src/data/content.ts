@@ -33,7 +33,7 @@ export type BlogPost = {
   readTime: string;
 };
 
-export const PLACEHOLDER = '/assets/images/sample1.jpg';
+export const PLACEHOLDER = `${import.meta.env.BASE_URL}assets/images/sample1.jpg`;
 
 export const IMAGES = {
   heroDunes: 'https://images.pexels.com/photos/28829635/pexels-photo-28829635.jpeg?auto=compress&cs=tinysrgb&w=2000',

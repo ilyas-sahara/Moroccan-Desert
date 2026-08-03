@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Walk the Sahara</title>
+    <script>
+      (function () {
+        var base = '/Moroccan-Desert/';
+        var pathname = window.location.pathname;
+        var rest = pathname.indexOf(base) === 0 ? pathname.slice(base.length) : pathname.replace(/^\//, '');
+        sessionStorage.setItem('spa-redirect', rest || '/');
+        window.location.replace(base);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

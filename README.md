@@ -1,29 +1,37 @@
-# Walk the Sahara CMS foundation
+# Walk the Sahara — Moroccan Desert Journeys
 
-This project now includes a blog route and a GitHub-backed Decap CMS admin surface for non-developers.
+Marketing site for Walk the Sahara (Merzouga, Morocco), built with Vite +
+React + TypeScript + Tailwind. Includes a blog, tours, experiences, and a
+GitHub-backed Decap CMS admin surface for non-developers.
 
-## Local-only GitHub auth setup
+## Hosting
 
-For a local development setup, you do not need a public web host. Decap can run from a local dev server and use the GitHub backend with the Netlify auth endpoint shape that matches the expected local browser flow.
+- **Site**: GitHub Pages at `https://akimweb-bit.github.io/Moroccan-Desert/`
+- **CMS login**: Decap CMS with a Cloudflare Worker OAuth proxy (`oauth-proxy/`)
+- **Deploys**: `.github/workflows/deploy.yml` builds and publishes on every push
+  to `master` (including CMS content commits)
 
-## How to complete the setup
+See [SETUP.md](SETUP.md) for the full GitHub Pages + Cloudflare Worker setup.
 
-1. Keep your real repo name in [public/admin/config.yml](public/admin/config.yml).
-2. Use the local development site domain value in `site_domain`.
-3. Use the standard local auth pattern:
-   - `base_url: https://api.netlify.com`
-   - `auth_endpoint: auth`
-   - `api_root: https://api.github.com`
-4. Start the app locally and open `/admin/`.
-5. Click **Login with GitHub** and complete the popup flow.
+## Local development
 
-This is the local-only configuration path that matches the working admin example you showed.
+```bash
+npm install
+npm run dev
+```
 
-## What this foundation supports
+Run `/admin/` locally from `npm run dev` — login still goes through the deployed
+Cloudflare Worker.
 
-- Add and edit blog articles
-- Upload images/videos through the CMS media folder
-- Add tours and update tour details
-- Keep page content editable without changing code
+## Content editing
 
-> The admin shell is wired and the GitHub login path now expects a real OAuth proxy deployment. That is the final missing server-side piece for the popup flow to complete.
+The Decap CMS panel at `/admin/` lets editors with repo write access edit
+tours, settings, blog, FAQs, testimonials, experiences, and page content.
+All edits are committed to `master` and trigger a fresh Pages deployment.
+
+## Note on the base path
+
+The site lives under the `Moroccan-Desert` repository path on GitHub Pages, so
+`vite.config.ts` sets `base: '/Moroccan-Desert/'` and the router uses the same
+basename. If a custom domain is added later, flip both back to `/` (see the
+"Custom domain" section of `SETUP.md`).

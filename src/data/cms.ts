@@ -218,7 +218,7 @@ const defaultExperiencesPage: ExperiencesPageContent = {
 
 async function loadJson<T>(path: string, fallback: T): Promise<T> {
   try {
-    const response = await fetch(path);
+    const response = await fetch(`${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`);
     if (!response.ok) {
       return fallback;
     }

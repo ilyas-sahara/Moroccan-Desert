@@ -1,0 +1,5 @@
+{
+  "name": "moroccan-desert-cms-auth",
+  "compatibility_date": "2026-08-03",
+  "main": "worker.js"
+}

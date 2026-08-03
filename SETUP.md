@@ -1,70 +1,72 @@
-# Decap CMS on Vercel — Setup Guide
+# Decap CMS on GitHub Pages + Cloudflare Worker — Setup Guide
 
-The `/admin/` route is a [Decap CMS](https://decapcms.org/) (formerly Netlify CMS) panel that
-writes content directly to this GitHub repository. Authentication goes through a tiny
-serverless proxy at `/api/cms-auth/`, which keeps the GitHub OAuth credentials off the
-browser and works on any static host — including Vercel.
+The site is built with Vite and deployed to GitHub Pages at
+`https://akimweb-bit.github.io/Moroccan-Desert/`. The `/admin/` route is a
+[Decap CMS](https://decapcms.org/) panel that writes content directly to this
+GitHub repository. GitHub requires a server-side OAuth proxy for login, which is
+provided by a free Cloudflare Worker in `oauth-proxy/worker.js` (the Vercel
+proxy was removed when the site moved off Vercel).
 
-If the admin popup opens GitHub but GitHub shows a 404, or if you see "auth isn't
-configured" inside the popup, the environment variables are not set. Follow the steps
-below once per Vercel project.
+## 1. Deploy the Cloudflare Worker
 
-## 1. Create a GitHub OAuth App
-
-1. Go to **https://github.com/settings/developers** and click **New OAuth App**.
-2. Fill in:
+1. Create a GitHub OAuth App at **https://github.com/settings/developers**:
    - **Application name** — anything, e.g. `Moroccan Desert Decap CMS`.
-   - **Homepage URL** — `https://moroccan-desert.vercel.app`
-     (use your custom domain if you have one).
-   - **Authorization callback URL** — `https://moroccan-desert.vercel.app/api/cms-auth/callback`
-3. Click **Register application**.
-4. On the next screen, copy the **Client ID** and click **Generate a new client secret**, then
-   copy the secret.
+   - **Homepage URL** — `https://akimweb-bit.github.io/Moroccan-Desert`
+   - **Authorization callback URL** — `https://moroccan-desert-cms-auth.<your-subdomain>.workers.dev/callback`
+2. Copy the **Client ID** and generate a **Client Secret**.
+3. Deploy `oauth-proxy/worker.js` as a new Cloudflare Worker (e.g. name it
+   `moroccan-desert-cms-auth`) with three environment variables:
 
-## 2. Add the secrets to Vercel
+   | Name                      | Value                                      |
+   | ------------------------- | ------------------------------------------ |
+   | `GITHUB_CLIENT_ID`        | the Client ID from step 1                  |
+   | `GITHUB_CLIENT_SECRET`    | the client secret from step 1              |
+   | `PUBLIC_PROXY_BASE_URL`   | `https://moroccan-desert-cms-auth.<your-subdomain>.workers.dev` |
+   | `CMS_ALLOWED_ORIGIN`      | `https://akimweb-bit.github.io`            |
 
-1. Open the Vercel dashboard and select the project.
-2. Go to **Settings → Environment Variables**.
-3. Add two variables for the **Production** environment (and Preview if you want):
+4. Take the Worker's URL and put it in `public/admin/config.yml`:
 
-   | Name                          | Value                                     |
-   | ----------------------------- | ----------------------------------------- |
-   | `GITHUB_OAUTH_CLIENT_ID`      | the Client ID from step 1                 |
-   | `GITHUB_OAUTH_CLIENT_SECRET`  | the client secret from step 1             |
+   ```yml
+   base_url: https://moroccan-desert-cms-auth.<your-subdomain>.workers.dev
+   auth_endpoint: /auth
+   ```
 
-4. Save each variable.
+   `base_url` is the origin only; `auth_endpoint` is the path on that origin.
 
-## 3. Redeploy
+## 2. Enable GitHub Pages
 
-Vercel picks up new environment variables on the next deployment.
+1. Go to the repo **Settings → Pages**.
+2. Under **Source**, choose **GitHub Actions**.
+3. The `.github/workflows/deploy.yml` workflow builds `dist` and deploys it on
+   every push to `master` (including CMS content commits).
 
-1. Go to **Deployments**.
-2. Open the **⋯** menu on the latest deployment and choose **Redeploy**.
+## 3. Verify
 
-## 4. Verify
+Visit `https://akimweb-bit.github.io/Moroccan-Desert/admin/`. A popup opens,
+redirects to GitHub for authorization, then closes and the CMS loads.
 
-Visit `https://moroccan-desert.vercel.app/admin/`. A popup should open and immediately
-redirect you to GitHub asking you to authorize the OAuth App. After you authorize, the
-popup closes and the CMS loads.
+Troubleshooting:
 
-If the popup stays blank or shows "Page not found" on GitHub, the OAuth App's
-**Authorization callback URL** is misconfigured (must match exactly
-`https://<your-domain>/api/cms-auth/callback`).
+- Popup shows a 404 on GitHub → the OAuth App **Authorization callback URL**
+  must match `${PUBLIC_PROXY_BASE_URL}/callback` exactly.
+- Popup shows "CMS auth not configured" → the Worker env vars are missing.
+- Media uploads return broken URLs → `public_folder` in `config.yml` must start
+  with the Pages base (`/Moroccan-Desert/assets/images`).
 
-If the popup shows "Decap CMS auth isn't configured on this deployment", the Vercel env
-vars from step 2 are missing or the project hasn't been redeployed after adding them.
-
-## 5. Editing content
+## 4. Editing content
 
 - Logged-in users with **write access** to the repo can edit any collection
   (tours, settings, blog, FAQs, …) from the sidebar.
-- All edits land as commits on the `master` branch, which triggers a fresh Vercel
-  deployment automatically.
-- For private repos, the GitHub account you authorize must be a collaborator.
+- All edits land as commits on the `master` branch, which triggers a fresh
+  GitHub Pages deployment automatically.
 
-## 6. Custom domain
+## 5. Custom domain (later)
 
-If you later point a custom domain at this Vercel project, update both the
-**Homepage URL** and **Authorization callback URL** in the GitHub OAuth App settings,
-and update `base_url` (the origin only) and `auth_endpoint` (path on that origin) in
-`public/admin/config.yml` to match the new origin.
+When you point a custom domain at GitHub Pages, the deployment moves to the
+root of that domain:
+
+1. Change `base` in `vite.config.ts` from `/Moroccan-Desert/` to `/`.
+2. Change `public_folder` in `config.yml` back to `/assets/images`.
+3. Update the OAuth App **Homepage URL** and **Authorization callback URL**
+   (the callback stays the Worker URL, so it usually needs no change).
+4. Add the domain in **Settings → Pages**.

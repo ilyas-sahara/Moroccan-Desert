@@ -6,7 +6,8 @@
 
   var h = window.h;
 
-  window.CMS.registerPreviewStyle('/assets/site.css');
+  var adminBase = window.location.pathname.replace(/\/admin\/.*$/, '');
+  window.CMS.registerPreviewStyle(adminBase + '/assets/site.css');
   window.CMS.registerPreviewStyle(
     'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap',
   );
