@@ -49,7 +49,7 @@ export default function Experiences() {
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0">
           <img src={pageContent.hero_image} alt="" className="h-full w-full object-cover opacity-75" />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink-950/30 via-ink-950/10 to-ink-950/35" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink-950/50 via-ink-950/30 to-ink-950/55" />
         </div>
         <div className="container-x relative z-10">
           <SectionHeading

@@ -103,7 +103,7 @@ export default function CustomJourney() {
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-28">
         <div className="absolute inset-0">
           <img src={pageContent.hero_image} alt="" className="h-full w-full object-cover opacity-70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink-950/50 via-ink-950/25 to-ink-950/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink-950/75 via-ink-950/55 to-ink-950/25" />
         </div>
         <div className="container-x relative z-10 max-w-4xl">
           <SectionHeading light eyebrow={pageContent.hero_eyebrow} title={pageContent.hero_title} subtitle={pageContent.hero_subtitle} />
