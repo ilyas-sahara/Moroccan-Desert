@@ -81,12 +81,10 @@
       ['Instagram URL', d.instagram_url],
       ['Facebook URL', d.facebook_url],
     ].filter(function (r) { return r[1]; });
-    var logo = d.logo_image ? '<div class="mt-6">' + img(d.logo_image, d.brand_name, 'h-14 w-auto rounded-md ring-1 ring-sand-200/60') + '</div>' : '';
     var html =
       '<div class="bg-sand-50 min-h-screen p-10">' +
       '<div class="container-x"><div class="max-w-2xl rounded-2xl bg-white p-8 shadow-sm ring-1 ring-sand-200/50">' +
       '<h1 class="font-display text-3xl font-medium text-ink-900">Site Settings</h1>' +
-      logo +
       '<dl class="mt-6 divide-y divide-sand-100">' +
       rows.map(function (r) {
         return '<div class="grid gap-1 py-3 sm:grid-cols-3"><dt class="text-[11px] font-semibold uppercase tracking-[0.16em] text-sand-500">' + esc(r[0]) + '</dt><dd class="sm:col-span-2 text-sm text-ink-800">' + esc(r[1]) + '</dd></div>';
