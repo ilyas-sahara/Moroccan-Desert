@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, Star } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { IMAGES } from '@/data/content';
 import type { HeroFrame } from '@/data/cms';
 import { useLocale } from '@/i18n';
@@ -20,8 +20,6 @@ type HeroProps = {
   kicker?: string;
   heading?: string;
   lead?: string;
-  rating?: string;
-  reviewText?: string;
 };
 
 export default function Hero({
@@ -29,8 +27,6 @@ export default function Hero({
   kicker = 'Moroccan Sahara · Est. 2009',
   heading = 'Walk the Sahara',
   lead = 'Luxury desert journeys through the golden dunes of Merzouga. Camel treks, Berber camps, and nights under the darkest sky on earth.',
-  rating = '4.9',
-  reviewText = 'from 1,200+ travelers worldwide',
 }: HeroProps) {
   const { t } = useLocale();
   const frames = rawFrames && rawFrames.length ? rawFrames : DEFAULT_FRAMES;
@@ -110,19 +106,6 @@ export default function Hero({
             >
               {t('common.planJourney')}
             </Link>
-          </div>
-          <div
-            className="mt-10 flex items-center gap-5 opacity-0"
-            style={{ animation: 'fade-up 0.9s ease-out 1s forwards' }}
-          >
-            <div className="flex items-center gap-1.5 text-sand-100">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-sand-300 text-sand-300" />
-              ))}
-            </div>
-            <p className="text-sm text-sand-100/80">
-              <span className="font-semibold text-white">{rating}</span> {reviewText}
-            </p>
           </div>
         </div>
       </div>

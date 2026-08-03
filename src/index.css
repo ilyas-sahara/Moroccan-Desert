@@ -81,6 +81,16 @@
   animation: float 7s ease-in-out infinite;
 }
 
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 @keyframes dash {
   to { stroke-dashoffset: -19.8; }
 }

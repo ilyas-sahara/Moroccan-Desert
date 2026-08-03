@@ -73,8 +73,6 @@ export default function Home() {
         kicker={homeContent.hero_kicker}
         heading={homeContent.hero_heading}
         lead={homeContent.hero_lead}
-        rating={homeContent.hero_rating}
-        reviewText={homeContent.hero_review_text}
       />
 
       {/* Intro / brand statement */}
