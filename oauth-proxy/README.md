@@ -10,7 +10,7 @@ Decap 3.4.0 popup handshake.
 - `GITHUB_CLIENT_ID`
 - `GITHUB_CLIENT_SECRET`
 - `PUBLIC_PROXY_BASE_URL` — e.g. `https://moroccan-desert-cms-auth.<your-subdomain>.workers.dev`
-- `CMS_ALLOWED_ORIGIN` — the origin hosting the admin, e.g. `https://akimweb-bit.github.io`
+- `CMS_ALLOWED_ORIGIN` — the origin hosting the admin, e.g. `https://ilyas-sahara.github.io`
 
 ## Routes
 
@@ -31,9 +31,9 @@ Decap 3.4.0 popup handshake.
 ```yml
 backend:
   name: github
-  repo: akimweb-bit/Moroccan-Desert
+  repo: ilyas-sahara/Moroccan-Desert
   branch: master
-  base_url: https://moroccan-desert-cms-auth.<your-subdomain>.workers.dev
+  base_url: https://moroccan-desert-cms-auth.bouzyanilyas.workers.dev
   auth_endpoint: /auth
   api_root: https://api.github.com
 ```
