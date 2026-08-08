@@ -364,9 +364,27 @@ collections:
                 required: false
                 default: []
                 field:
-                  label: Image
+                  label: Image or video
                   name: image
-                  widget: image
+                  widget: file
+                  choose_url: true
+                  media_library:
+                    config:
+                      max_file_size: 26214400
+              - label: Video
+                name: video
+                widget: file
+                required: false
+                choose_url: true
+                hint: Upload a video file (mp4/webm) or paste a YouTube, Vimeo, or direct video URL to show a video on the tour page.
+                media_library:
+                  config:
+                    max_file_size: 26214400
+              - label: Video poster image
+                name: video_poster
+                widget: image
+                required: false
+                hint: Optional poster shown while a direct video file loads.
               - label: Overview
                 name: overview
                 widget: text
@@ -476,9 +494,27 @@ collections:
                 required: false
                 default: []
                 field:
-                  label: Image
+                  label: Image or video
                   name: image
-                  widget: image
+                  widget: file
+                  choose_url: true
+                  media_library:
+                    config:
+                      max_file_size: 26214400
+              - label: Video
+                name: video
+                widget: file
+                required: false
+                choose_url: true
+                hint: Upload a video file (mp4/webm) or paste a YouTube, Vimeo, or direct video URL to show a video on the tour page.
+                media_library:
+                  config:
+                    max_file_size: 26214400
+              - label: Video poster image
+                name: video_poster
+                widget: image
+                required: false
+                hint: Optional poster shown while a direct video file loads.
               - label: Overview
                 name: overview
                 widget: text

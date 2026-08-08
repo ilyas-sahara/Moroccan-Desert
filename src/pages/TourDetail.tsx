@@ -11,8 +11,11 @@ import { useSeo, SITE_URL } from '@/hooks/useSeo';
 import { useLocale } from '@/i18n';
 import TourCard from '@/components/TourCard';
 import TourMap from '@/components/TourMap';
+import TourVideo from '@/components/TourVideo';
+import VideoPlayer from '@/components/VideoPlayer';
 import SectionHeading from '@/components/SectionHeading';
 import JsonLd from '@/components/JsonLd';
+import { isVideoUrl } from '@/lib/media';
 
 export default function TourDetail() {
   const { slug } = useParams();
@@ -97,13 +100,22 @@ export default function TourDetail() {
           <div className="grid gap-4 lg:grid-cols-12">
             <div className="lg:col-span-8">
               <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
-                <img
-                  key={activeImg}
-                  src={tour.gallery[activeImg]}
-                  alt={tour.title}
-                  className="h-full w-full object-cover"
-                  style={{ animation: 'fade-in 0.6s ease-out' }}
-                />
+                {isVideoUrl(tour.gallery[activeImg]) ? (
+                  <VideoPlayer
+                    src={tour.gallery[activeImg]}
+                    title={tour.title}
+                    poster={tour.video_poster}
+                    className="h-full w-full"
+                  />
+                ) : (
+                  <img
+                    key={activeImg}
+                    src={tour.gallery[activeImg]}
+                    alt={tour.title}
+                    className="h-full w-full object-cover"
+                    style={{ animation: 'fade-in 0.6s ease-out' }}
+                  />
+                )}
                 <div className="absolute left-4 top-4 rounded-full bg-sand-50/95 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-sand-800">
                   {tour.region}
                 </div>
@@ -112,19 +124,30 @@ export default function TourDetail() {
             <div className="grid grid-cols-4 gap-4 lg:col-span-4 lg:grid-cols-2">
               {tour.gallery.map((src, i) => (
                 <button
-                  key={i}
+                  key={`${src}-${i}`}
                   onClick={() => setActiveImg(i)}
                   className={`relative aspect-square overflow-hidden rounded-xl ring-2 transition-all ${
                     i === activeImg ? 'ring-sand-600' : 'ring-transparent hover:ring-sand-300'
                   }`}
                 >
-                  <img src={src} alt="" loading="lazy" className="h-full w-full object-cover" />
+                  {isVideoUrl(src) ? (
+                    <div className="flex h-full w-full items-center justify-center bg-ink-950">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-sand-50/15 ring-1 ring-sand-50/40">
+                        <span className="ml-0.5 h-0 w-0 border-y-[7px] border-l-[11px] border-y-transparent border-l-sand-50" />
+                      </span>
+                    </div>
+                  ) : (
+                    <img src={src} alt="" loading="lazy" className="h-full w-full object-cover" />
+                  )}
                 </button>
               ))}
             </div>
           </div>
         </div>
       </section>
+
+      {/* Video */}
+      {tour.video && <TourVideo tour={tour} />}
 
       {/* Title + quick facts */}
       <section className="bg-sand-50 py-12 lg:py-16">
