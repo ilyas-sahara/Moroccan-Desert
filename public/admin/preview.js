@@ -21,6 +21,15 @@
       .replace(/'/g, '&#39;');
   }
 
+  function isVideoUrl(url) {
+    if (!url) return false;
+    return (
+      /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)/.test(url) ||
+      /vimeo\.com\/(?:video\/)?\d+/.test(url) ||
+      /\.(mp4|webm|ogv|ogg|m4v|mov)(\?.*)?$/i.test(url)
+    );
+  }
+
   function img(src, alt, cls) {
     return src
       ? '<img src="' + esc(src) + '" alt="' + esc(alt || '') + '" class="' + esc(cls || '') + '" />'
@@ -327,7 +336,7 @@
       '<div class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-sand-200/50">' +
       '<div class="relative aspect-[4/3] overflow-hidden">' +
       img(t.image, t.title, 'h-full w-full object-cover') +
-      (t.video ? '<div class="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full bg-ink-950/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-sand-50"><span class="h-0 w-0 border-y-[5px] border-l-[8px] border-y-transparent border-l-sand-50"></span>Video</div>' : '') +
+      ((t.gallery || []).some(isVideoUrl) ? '<div class="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full bg-ink-950/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-sand-50"><span class="h-0 w-0 border-y-[5px] border-l-[8px] border-y-transparent border-l-sand-50"></span>Video</div>' : '') +
       '<div class="absolute inset-0 bg-gradient-to-t from-ink-950/45 via-transparent to-transparent"></div>' +
       (t.region
         ? '<div class="absolute left-4 top-4 rounded-full bg-sand-50/95 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-sand-800">' + esc(String(t.region).split('·')[0].trim()) + '</div>'

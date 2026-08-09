@@ -170,8 +170,6 @@ export const en = {
     freeCancellation: 'Free cancellation up to 7 days before departure',
     keepExploring: 'Keep Exploring',
     youMayAlsoLike: 'You may also like',
-    watchVideo: 'Watch the journey',
-    videoTitle: 'See {{name}} in motion',
   },
   experiences: {
     findTours: 'Find tours with this',

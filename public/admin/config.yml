@@ -363,28 +363,15 @@ collections:
                 widget: list
                 required: false
                 default: []
+                hint: Mix images and videos (mp4, webm, YouTube, Vimeo) in any order.
                 field:
-                  label: Image or video
+                  label: Image or video URL
                   name: image
                   widget: file
                   choose_url: true
                   media_library:
                     config:
                       max_file_size: 26214400
-              - label: Video
-                name: video
-                widget: file
-                required: false
-                choose_url: true
-                hint: Upload a video file (mp4/webm) or paste a YouTube, Vimeo, or direct video URL to show a video on the tour page.
-                media_library:
-                  config:
-                    max_file_size: 26214400
-              - label: Video poster image
-                name: video_poster
-                widget: image
-                required: false
-                hint: Optional poster shown while a direct video file loads.
               - label: Overview
                 name: overview
                 widget: text
@@ -493,28 +480,15 @@ collections:
                 widget: list
                 required: false
                 default: []
+                hint: Mix images and videos (mp4, webm, YouTube, Vimeo) in any order.
                 field:
-                  label: Image or video
+                  label: Image or video URL
                   name: image
                   widget: file
                   choose_url: true
                   media_library:
                     config:
                       max_file_size: 26214400
-              - label: Video
-                name: video
-                widget: file
-                required: false
-                choose_url: true
-                hint: Upload a video file (mp4/webm) or paste a YouTube, Vimeo, or direct video URL to show a video on the tour page.
-                media_library:
-                  config:
-                    max_file_size: 26214400
-              - label: Video poster image
-                name: video_poster
-                widget: image
-                required: false
-                hint: Optional poster shown while a direct video file loads.
               - label: Overview
                 name: overview
                 widget: text

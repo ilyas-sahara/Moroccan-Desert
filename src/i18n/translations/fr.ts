@@ -150,8 +150,6 @@ export const fr: LocaleDict = {
   'tours.freeCancellation': 'Annulation gratuite jusqu’à 7 jours avant le départ',
   'tours.keepExploring': 'Continuer l’exploration',
   'tours.youMayAlsoLike': 'Vous aimerez aussi',
-  'tours.watchVideo': 'Regarder le voyage',
-  'tours.videoTitle': 'Voir {{name}} en action',
   'experiences.findTours': 'Trouver des circuits avec cette expérience',
   'custom.eyebrow': 'Parlez-nous des détails',
   'custom.stepTitle': '2. Demandez votre itinéraire sur mesure',

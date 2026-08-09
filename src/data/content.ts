@@ -13,8 +13,6 @@ export type Tour = {
   highlights: string[];
   image: string;
   gallery: string[];
-  video?: string;
-  video_poster?: string;
   overview: string;
   itinerary: { day: number; title: string; description: string }[];
   included: string[];

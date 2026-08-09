@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import {
   ArrowLeft, Clock, Users, Mountain, Calendar, Check, X,
-  MapPin, Compass, ChevronRight,
+  MapPin, Compass, ChevronLeft, ChevronRight,
 } from 'lucide-react';
 import { TOURS, type Tour } from '@/data/content';
 import { getCmsTours } from '@/data/cms';
@@ -11,7 +11,6 @@ import { useSeo, SITE_URL } from '@/hooks/useSeo';
 import { useLocale } from '@/i18n';
 import TourCard from '@/components/TourCard';
 import TourMap from '@/components/TourMap';
-import TourVideo from '@/components/TourVideo';
 import VideoPlayer from '@/components/VideoPlayer';
 import SectionHeading from '@/components/SectionHeading';
 import JsonLd from '@/components/JsonLd';
@@ -36,6 +35,24 @@ export default function TourDetail() {
     window.scrollTo(0, 0);
     setActiveImg(0);
   }, [slug]);
+
+  const galleryCount = tour?.gallery.length ?? 0;
+  const galleryRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (galleryCount <= 1) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (!galleryRef.current || !galleryRef.current.contains(document.activeElement)) return;
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        setActiveImg((i) => (i - 1 + galleryCount) % galleryCount);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        setActiveImg((i) => (i + 1) % galleryCount);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [galleryCount]);
 
   useSeo({
     title: tour ? t('seo.tourTitle', { name: tour.title }) : t('seo.notFoundTitle'),
@@ -99,12 +116,16 @@ export default function TourDetail() {
         <div className="container-x">
           <div className="grid gap-4 lg:grid-cols-12">
             <div className="lg:col-span-8">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+              <div
+                ref={galleryRef}
+                tabIndex={tour.gallery.length > 1 ? 0 : -1}
+                className="relative aspect-[16/10] overflow-hidden rounded-2xl focus:outline-none"
+              >
                 {isVideoUrl(tour.gallery[activeImg]) ? (
                   <VideoPlayer
                     src={tour.gallery[activeImg]}
                     title={tour.title}
-                    poster={tour.video_poster}
+                    poster={tour.image}
                     className="h-full w-full"
                   />
                 ) : (
@@ -119,6 +140,29 @@ export default function TourDetail() {
                 <div className="absolute left-4 top-4 rounded-full bg-sand-50/95 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-sand-800">
                   {tour.region}
                 </div>
+                {tour.gallery.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => setActiveImg((i) => (i - 1 + tour.gallery.length) % tour.gallery.length)}
+                      aria-label="Previous image or video"
+                      className="absolute left-4 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-sand-50/90 text-ink-900 shadow-lg ring-1 ring-ink-950/10 transition hover:scale-105 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sand-600"
+                    >
+                      <ChevronLeft className="h-5 w-5" strokeWidth={2} />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveImg((i) => (i + 1) % tour.gallery.length)}
+                      aria-label="Next image or video"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-sand-50/90 text-ink-900 shadow-lg ring-1 ring-ink-950/10 transition hover:scale-105 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sand-600"
+                    >
+                      <ChevronRight className="h-5 w-5" strokeWidth={2} />
+                    </button>
+                    <div className="absolute bottom-4 right-4 rounded-full bg-ink-950/60 px-3 py-1 text-xs font-medium text-sand-50">
+                      {activeImg + 1} / {tour.gallery.length}
+                    </div>
+                  </>
+                )}
               </div>
             </div>
             <div className="grid grid-cols-4 gap-4 lg:col-span-4 lg:grid-cols-2">
@@ -145,9 +189,6 @@ export default function TourDetail() {
           </div>
         </div>
       </section>
-
-      {/* Video */}
-      {tour.video && <TourVideo tour={tour} />}
 
       {/* Title + quick facts */}
       <section className="bg-sand-50 py-12 lg:py-16">

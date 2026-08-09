@@ -150,8 +150,6 @@ export const de: LocaleDict = {
   'tours.freeCancellation': 'Kostenlose Stornierung bis zu 7 Tage vor Abreise',
   'tours.keepExploring': 'Weiter entdecken',
   'tours.youMayAlsoLike': 'Das könnte Ihnen auch gefallen',
-  'tours.watchVideo': 'Die Reise ansehen',
-  'tours.videoTitle': '{{name}} in Bewegung erleben',
   'experiences.findTours': 'Touren mit diesem Erlebnis finden',
   'custom.eyebrow': 'Erzählen Sie uns die Details',
   'custom.stepTitle': '2. Anfrage für Ihre Individualreise',
