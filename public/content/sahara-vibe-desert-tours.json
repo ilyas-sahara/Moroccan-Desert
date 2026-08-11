@@ -3,6 +3,9 @@
     {
       "groupSize": "Up to 20 guests",
       "bestSeason": "September to May",
+      "experiences": [
+        "camel-trekking"
+      ],
       "itinerary": [
         {
           "day": 1,
@@ -17,13 +20,14 @@
       ],
       "slug": "sahara-vibe-2-day-trekking",
       "notIncluded": [
-        "Sleeping bags Tips for staff and extras Insurance"
+        "Sleeping bags  Tips for staff and extras   Insurance"
       ],
       "gallery": [
-        "https://images.pexels.com/photos/30906049/pexels-photo-30906049.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "/Moroccan-Desert/assets/images/20251120_201408-1-.jpg",
         "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "https://images.pexels.com/photos/37818882/pexels-photo-37818882.jpeg?_gl=1*187yktw*_ga*MTY3NjQzNjc4MS4xNzg1NzU3MDEw*_ga_8JE65Q40S6*czE3ODU3NTcwMDkkbzEkZzEkdDE3ODU3NTcwMjgkajQxJGwwJGgw",
-        "/Moroccan-Desert/assets/images/sample1.jpg"
+        "/Moroccan-Desert/assets/images/sample1.jpg",
+        "/Moroccan-Desert/assets/images/20251123_095544-1-.jpg"
       ],
       "priceFrom": 149,
       "duration": "2 days · 1 night",
@@ -51,7 +55,8 @@
         "Camel caravan with nomadic guides",
         "Sunset and sunrise in the dunes",
         "Traditional camp dinner",
-        "Night in a desert bivouac"
+        "Night in a desert bivouac",
+        "Traditional Moroccan Cuisine"
       ]
     },
     {
