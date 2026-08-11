@@ -1,12 +1,12 @@
 {
-  "hero_lead": "Luxury desert journeys through the golden dunes of Merzouga. Camel treks, Berber camps, and nights under the darkest sky on earth.",
+  "hero_lead": "Luxury desert journeys through the golden dunes of Chigaga . Camel treks, nomadic camps, and nights under the darkest sky on earth.",
   "hero_rating": "4.9",
-  "hero_eyebrow": "The Journey",
+  "hero_eyebrow": "WHO WE ARE",
   "cta_label": "Plan Your Journey",
   "intro_title": "The Sahara changes everyone who walks into it.",
   "cta_link": "/contact",
-  "intro_image_a": "https://images.pexels.com/photos/30906051/pexels-photo-30906051.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  "intro_subtitle": "For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace. This is the Sahara as it has always been — vast, silent, and impossibly beautiful.",
+  "intro_image_a": "/Moroccan-Desert/assets/images/sample1.jpg",
+  "intro_subtitle": "Sahara Vacation is a family-run travel company from the heart of the Moroccan Sahara, founded by a nomadic family with generations of desert experience. We offer private Sahara Desert tours, 4x4 adventures, camel trekking, desert camps, trekking, and authentic cultural experiences. We can arrange your journey from Marrakech, Fez, Casablanca, Rabat, Agadir, Ouarzazate, and other cities across Morocco, taking you beyond the usual tourist routes to discover the real Sahara. Travel with local people, experience nomadic traditions, explore the golden dunes, sleep under the stars, and discover the desert as we know it — from our family to you.",
   "hero_frames": [
     {
       "image": "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=2000",
@@ -44,9 +44,9 @@
     "https://images.pexels.com/photos/37441710/pexels-photo-37441710.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "https://images.pexels.com/photos/998635/pexels-photo-998635.jpeg?auto=compress&cs=tinysrgb&w=1600"
   ],
-  "story_description": "Far from any city light, the dunes of Erg Chebbi become an observatory. Our guides will point out the Milky Way, the planets, and the stories the Berber people have told the stars for centuries.",
-  "hero_title": "The desert changes everyone who walks into it.",
+  "story_description": "Far from any city light, the dunes of Erg Chigaga  become an observatory. Our guides will point out the Milky Way, the planets, and the stories the nomad  people have told the stars for centuries.",
+  "hero_title": "Authentic Sahara Desert Tours in Morocco with a Nomadic Family",
   "hero_kicker": "Moroccan Sahara · Est. 2009",
   "hero_subtitle": "For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace.",
-  "hero_heading": "Sahara Vacations"
+  "hero_heading": "Sahara Vacation"
 }
