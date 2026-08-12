@@ -67,18 +67,18 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "M'Hamid to Sidi Naji",
-          "description": "Cross the palm groves and walk toward the old pilgrimage area of Sidi Naji before camping in the desert."
+          "title": " MARRAKECH – M’HAMID",
+          "description": "Begin your Sahara adventure with a scenic drive from Marrakech to M’Hamid, crossing the dramatic Tiffernine Mountains and Saghro massif. Continue through the spectacular Drâa Valley, surrounded by palm groves, ancient kasbahs, and traditional villages. Upon arrival in M’Hamid, meet your camel team before heading into the desert for your first night under the stars, with dinner at the bivouac."
         },
         {
           "day": 2,
-          "title": "Sidi Naji to Erg Aït Ounir",
-          "description": "Follow the caravan through sand and open plains to a new camp among the dunes."
+          "title": " M’Hamid – Erg Sahal",
+          "description": "Set off from M’Hamid with your camel caravan towards Erg Sahal, crossing the dry Drâa River and traveling through a peaceful landscape of sand, rocky plains, and tamarisk trees. Along the way, enjoy wide desert views with the Lakrab Mountains and Drâa Hamada appearing on the horizon. A beautiful day of trekking through the quiet and untouched Sahara."
         },
         {
           "day": 3,
-          "title": "Return to M'Hamid",
-          "description": "Breakfast in camp and a final walk back toward M'Hamid."
+          "title": "M’Hamid – Marrakech",
+          "description": "After breakfast, begin your journey back to Marrakech, leaving the peaceful Sahara behind. Enjoy a lunch break along the way before continuing through the beautiful landscapes of southern Morocco. Arrive in Marrakech in the afternoon, marking the end of your desert adventure."
         }
       ],
       "slug": "sahara-vibe-3-day-trekking",
@@ -97,15 +97,19 @@
       "days": 3,
       "subtitle": "Three days of walking and camping with a camel caravan",
       "title": "3 Days Sahara Desert Trekking Morocco",
-      "overview": "An accessible three-day Sahara trek designed around quiet walking, nomadic hospitality, and two nights camping in the open desert.",
+      "overview": "Experience the magic of the Moroccan Sahara on a 3-day trek through the golden dunes of M’Hamid. Accompanied by local nomadic guides and camels carrying your luggage, you’ll walk at a relaxed pace, discover the peaceful desert landscape, and enjoy unforgettable sunsets and sunrises.\n\nSpend your nights under the stars or in traditional desert tents, enjoy freshly prepared Moroccan meals, traditional tea, and bread baked in the sand. It’s a simple, authentic adventure designed to disconnect from everyday life and reconnect with the beauty and silence of the Sahara.\n\nAvailable from mid-September to mid-May, with departures from just 2 people.",
       "reviews": 10,
-      "image": "https://images.pexels.com/photos/33566021/pexels-photo-33566021.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "image": "/Moroccan-Desert/assets/images/20251120_201408-1-.jpg",
       "difficulty": "Moderate",
       "included": [
-        "Guide, cook, and camel team",
-        "Camp equipment",
-        "Full-board meals",
-        "Water and tea"
+        "Round-trip transfers between Marrakech and M’Hamid",
+        "3 days of camel trekking through the Sahara",
+        "Camels to carry luggage and camping equipment",
+        "2 nights in a desert bivouac including tents mattresses and blankets",
+        "Full board throughout the trek",
+        "Local French-speaking guide/cook and camel handlers",
+        "Tourist promotion and tourist stay taxes",
+        ""
       ],
       "rating": 5,
       "highlights": [
