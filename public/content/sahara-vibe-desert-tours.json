@@ -371,44 +371,48 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "Marrakech to M'Hamid",
-          "description": "Travel south through the Atlas and Drâa Valley to meet the desert team."
+          "title": "Marrakech – M’Hamid",
+          "description": "Depart from Marrakech in the morning and cross the High Atlas Mountains via the Tizi-n-Tichka Pass. Continue through the Tiffernine Mountains and the Saghro massif via the Tizi n’Tinififft Pass, before descending into the beautiful Drâa Valley, surrounded by ancient kasbahs and fortified villages. Arrive in M’Hamid, meet your camel handlers, and begin your Sahara adventure with dinner and an overnight stay in the desert."
         },
         {
           "day": 2,
-          "title": "M'Hamid to Sidi Naji",
-          "description": "Begin the trek through alternating sand and rocky plains."
+          "title": "M’Hamid – Sidi Naji",
+          "description": "After breakfast, begin your trek towards Sidi Naji, crossing a beautiful desert landscape of golden dunes and rocky plains dotted with tamarisk trees. Along the way, enjoy views of the Kraab mountain range and the peaceful surroundings of the Sahara. End the day by settling into a traditional bivouac among the dunes for a relaxing night in the desert."
         },
         {
           "day": 3,
-          "title": "Caravan route",
-          "description": "Continue through quiet desert landscapes."
+          "title": "Sidi Naji – Erg Zahar",
+          "description": "Continue your Sahara adventure towards the impressive dunes of Erg Zahar, traveling through a vast sandy landscape. Upon arrival, take the opportunity to climb one of the region’s highest dunes and enjoy breathtaking views across the desert. In the evening, settle into your bivouac at the foot of the dunes and enjoy a peaceful night in the heart of the Sahara."
         },
         {
           "day": 4,
-          "title": "Deep Sahara",
-          "description": "A full day of walking and camp life."
+          "title": "Erg Zahar – Creatjmal",
+          "description": "Continue your trek through the beautiful dune landscape of Erg Zahar, where golden sands meet scattered tamarisk trees and the Oued Drâa. Enjoy the peaceful scenery as you make your way towards Creatjmal, where your bivouac will be set up for another relaxing night in the Sahara."
         },
         {
           "day": 5,
-          "title": "Dune country",
-          "description": "Follow the nomadic route between camps."
+          "title": "Creatjmal – Bertam",
+          "description": "Start the day by enjoying the peaceful landscapes of Oued Naam, then stop for lunch beneath the shade of large tamarisk trees. In the afternoon, continue your trek through the smaller dunes towards Bertam. Settle into your bivouac among the dunes and enjoy another quiet evening in the Sahara."
         },
         {
           "day": 6,
-          "title": "Final camp",
-          "description": "Enjoy the last evening around the fire."
+          "title": "Bertam – M’Hamid",
+          "description": "Continue your trek through the peaceful landscape of smaller dunes on the way back to M’Hamid. After a long day of walking, arrive in M’Hamid in the late afternoon, where you can relax and enjoy a refreshing shower. End the day with dinner and another night in the desert."
         },
         {
           "day": 7,
-          "title": "Return journey",
-          "description": "Complete the trek and arrange onward travel."
+          "title": "M’Hamid – Marrakech",
+          "description": "After breakfast, begin your journey back to Marrakech, leaving the peaceful Sahara behind. Enjoy a lunch stop along the way and take in the changing landscapes of southern Morocco. Continue the drive towards Marrakech and arrive in the afternoon, marking the end of your 7-day Sahara trekking adventure."
         }
       ],
       "slug": "sahara-vibe-7-day-trekking",
       "notIncluded": [
-        "Drinks",
-        "Tips"
+        "Personal expenses",
+        "Drinks and beverages",
+        "Travel insurance",
+        "Tips for guides and camel handlers",
+        "Entrance fees not mentioned in the itinerary",
+        "Any services not mentioned in the “Included” section"
       ],
       "gallery": [
         "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -420,23 +424,44 @@
       "days": 7,
       "subtitle": "A week-long camel-supported journey into the Great Sahara",
       "title": "7 Days Sahara Desert Trekking Morocco",
-      "overview": "A complete week in the southern Moroccan Sahara, traveling with nomadic guides, camel handlers, and a mobile camp.",
+      "overview": "Immerse yourself in the beauty and silence of the Moroccan Sahara on a 7-day trekking adventure through vast golden dunes and remote desert landscapes. Accompanied by local nomadic guides and camel handlers, you’ll travel at a relaxed pace while camels carry your luggage and equipment.\n\nDiscover traditional desert life, encounter local nomads, and experience the unique plants and wildlife of the Sahara. Enjoy breathtaking sunrises and sunsets, freshly prepared Moroccan cuisine, traditional tea, and bread baked in the sand.\n\nSpend peaceful nights in traditional desert bivouacs or beneath the stars, following the natural rhythm of the sun and enjoying a true escape from everyday life.\n\nAvailable from mid-September to mid-May, with departures from just 2 participants on the date of your choice.",
       "reviews": 5,
       "image": "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "difficulty": "Adventurous",
       "included": [
-        "Marrakech–M'Hamid transfers",
-        "Camel trekking and support",
-        "Six nights' camp",
-        "Full board",
-        "Local guide and cook"
+        "Round-trip transfers from Marrakech",
+        "7 days of Sahara desert trekking",
+        "Camel caravan and camel handlers",
+        "Local professional guide and cook",
+        "6 nights in desert bivouac",
+        "Tents",
+        "mattresses and blankets",
+        "Full board during the trek",
+        "Traditional Moroccan meals",
+        "Tea and bread baked in the sand",
+        "Tourist promotion tax",
+        "Tourist stay tax"
       ],
       "rating": 5,
       "highlights": [
-        "Six nights in desert camps",
-        "Nomadic guides and camel handlers",
-        "Desert flora and wildlife",
-        "Flexible private departure dates"
+        "Authentic Sahara Trek",
+        "7 Days of Desert Adventure",
+        "Camel Caravan",
+        "Local Nomadic Guides",
+        "Traditional Nomadic Life",
+        "Vast Golden Dunes",
+        "Remote Desert Landscapes",
+        "Desert Wildlife & Nature",
+        "Stunning Sunrises & Sunsets",
+        "Traditional Moroccan Cuisine",
+        "Bread Baked in the Sand",
+        "Traditional Tea",
+        "Peaceful Desert Atmosphere",
+        "Desert Bivouac",
+        "Sleeping Under the Stars",
+        "Disconnect from Modern Life",
+        "Flexible Departures",
+        "Minimum 2 Participants"
       ]
     },
     {
