@@ -125,30 +125,33 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "Meet the caravan",
-          "description": "Begin from M'Hamid and head into the first dune fields."
+          "title": " Marrakech – Ouled Driss",
+          "description": "Depart early from Marrakech and cross the spectacular Tichka Pass at 2,260 meters before descending into the beautiful Drâa Valley, known for its ancient kasbahs and fortified villages. Continue towards Ouled Driss, where you’ll meet the camel handlers and begin your Sahara adventure. Enjoy dinner and your first night in a traditional desert tent. Approximately 450 km covered."
         },
         {
           "day": 2,
-          "title": "Desert rhythms",
-          "description": "Walk at a relaxed pace with stops for tea and lunch in the shade."
+          "title": "Ouled Driss – Lahnaniche Dunes",
+          "description": "Begin your trek towards the beautiful Lahnaniche Dunes, crossing a vast desert plateau surrounded by peaceful landscapes. Along the way, discover an ancient kasbah and old houses that reflect the region’s rich history. Enjoy lunch in the shade of tamarisk trees before continuing your trek to the desert camp. After around 5 hours of walking, arrive at the Lahnaniche Dunes for a relaxing evening in the Sahara."
         },
         {
           "day": 3,
-          "title": "Deep desert camp",
-          "description": "Explore remote sand and camp with a traditional dinner."
+          "title": "Lahnaniche – Ras Nkhal",
+          "description": "After breakfast, continue your trek through the golden dunes of the Erg, enjoying the peaceful beauty of the Sahara. Stop for a traditional lunch prepared by your cook in the shade of palm trees. In the afternoon, continue towards Ras Nkhal, near M’Hamid and its palm groves, where you’ll set up camp for the night. Relax under a traditional tent or sleep beneath the stars after around 5.5 hours of walking."
         },
         {
           "day": 4,
-          "title": "Return to M'Hamid",
-          "description": "Enjoy a final sunrise before returning to the village."
+          "title": "Ras Nkhal – Zagora – Ouarzazate – Marrakech",
+          "description": "After breakfast, begin your journey back to Marrakech, with a stop in Tamegroute to discover its traditional pottery and historic Quranic library. Continue through Zagora and Ouarzazate, enjoying the beautiful landscapes of southern Morocco, with a lunch stop along the way. Arrive in Marrakech in the late afternoon, marking the end of your Sahara adventure."
         }
       ],
       "slug": "sahara-vibe-4-day-trekking",
       "notIncluded": [
-        "Transfers",
-        "Drinks",
-        "Tips"
+        "Personal expenses",
+        "Drinks and beverages",
+        "Travel insurance",
+        "Tips for guides and camel handlers",
+        "Entrance fees not mentioned in the itinerary",
+        "Any services not mentioned in the “Included” section"
       ],
       "gallery": [
         "https://images.pexels.com/photos/35901297/pexels-photo-35901297.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -158,24 +161,42 @@
       "duration": "4 days · 3 nights",
       "region": "M'Hamid El Ghizlane · Sahara",
       "days": 4,
-      "subtitle": "A longer nomadic trek through southern Morocco's dunes",
+      "subtitle": "A longer nomadic trek through southern Morocco dunes",
       "title": "4 Days Sahara Desert Trekking Morocco",
-      "overview": "Spend four days moving through the Sahara with a local camel team. The route is built for travelers who want more time away from roads and crowds.",
+      "overview": "Discover the peaceful beauty of the Moroccan Sahara on a 4-day trek through the golden dunes around M’Hamid. Accompanied by local nomadic guides and camel handlers, you’ll travel at a relaxed pace while camels carry your luggage and equipment.\n\nExperience the silence of the desert, meet local nomads, enjoy traditional Moroccan meals, and watch spectacular sunsets and sunrises. Nights are spent in traditional bivouacs under the stars, with fresh tea, bread baked in the sand, and the simple rhythm of desert life.\n\nAvailable from mid-September to mid-May, with departures from just 2 people.",
       "reviews": 2,
       "image": "https://images.pexels.com/photos/35901297/pexels-photo-35901297.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "difficulty": "Moderate",
       "included": [
-        "Local guide and camel handlers",
-        "Camel support",
-        "Three nights' camp",
-        "Full-board meals"
+        "Round-trip transfers from Marrakech",
+        "4 days of Sahara trekking",
+        "Camel caravan and camel handlers",
+        "Local professional guide and cook",
+        "3 nights in desert bivouac",
+        "Tents mattresses and blankets",
+        "Full board during the trek",
+        "Traditional Moroccan meals",
+        "Tea and bread baked in the sand",
+        "Visit to Tamegroute pottery",
+        "Visit to the ancient Quranic library",
+        "Tourist promotion tax",
+        "Tourist stay tax"
       ],
       "rating": 5,
       "highlights": [
-        "Three desert nights",
-        "Nomadic-led trekking",
-        "Camel caravan",
-        "Campfire meals and tea"
+        "Authentic Sahara Trek",
+        "Camel Caravan",
+        "Local Nomadic Encounters",
+        "Desert Wildlife & Nature",
+        "Stunning Sunrises & Sunsets",
+        "Traditional Moroccan Cuisine",
+        "Bread Baked in the Sand",
+        "Peaceful Desert Atmosphere",
+        "Traditional Desert Bivouac",
+        "Sleeping Under the Stars",
+        "Flexible Departures",
+        "Available from Mid-September to Mid-May",
+        "Minimum 2 Participants"
       ]
     },
     {
