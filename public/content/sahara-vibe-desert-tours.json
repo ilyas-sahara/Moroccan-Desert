@@ -214,39 +214,43 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "Departure from M'Hamid",
-          "description": "Meet the team and start across the desert edge."
+          "title": " Marrakech – M’Hamid",
+          "description": "Depart from Marrakech in the morning and travel through the scenic Tiffernine Mountains and across the Saghro massif via the Tizi n’Tinififft Pass. Continue through the beautiful Drâa Valley, surrounded by ancient kasbahs and fortified villages, until reaching M’Hamid. Meet your camel handlers before heading into the desert for your first night in a traditional bivouac, with dinner and an authentic Sahara atmosphere."
         },
         {
           "day": 2,
-          "title": "Dunes and desert plains",
-          "description": "Continue through varied desert terrain."
+          "title": "M’Hamid – Erg Bouzian",
+          "description": "Begin your desert trek from M’Hamid towards Erg Bouzian, crossing the dry Drâa River and traveling through wide sandy and rocky plains dotted with tamarisk trees. Enjoy the peaceful desert scenery as the Lakrab Mountains and the Drâa Hamada appear on the horizon. Continue with your camel caravan through the untouched landscapes of the Sahara and settle into the desert camp for the night."
         },
         {
           "day": 3,
-          "title": "Nomadic camp life",
-          "description": "A full day of trekking, tea, and camp cooking."
+          "title": "Erg Bouzian – Rass Errich",
+          "description": "Continue your desert journey towards Rass Errich, crossing peaceful and untouched landscapes dotted with acacia trees. As you approach the dunes, take time to admire the spectacular Sahara sunset before settling into your desert camp for a magical night beneath the stars."
         },
         {
           "day": 4,
-          "title": "Remote Sahara",
-          "description": "Explore quiet dune country at the rhythm of the caravan."
+          "title": "Rass Errich – M’Hamid",
+          "description": "Continue your trek across the golden dunes and vast desert plateaus towards the palm groves of M’Hamid. Upon arrival, take some time to relax and enjoy a refreshing shower. In the evening, enjoy dinner and spend another peaceful night in the desert."
         },
         {
           "day": 5,
-          "title": "Return",
-          "description": "Breakfast and return to M'Hamid."
+          "title": "M’Hamid – Marrakech",
+          "description": "After breakfast, begin your journey back to Marrakech, leaving the peaceful Sahara behind. Enjoy a lunch stop along the way while taking in the changing landscapes of southern Morocco. Continue the drive and arrive in Marrakech in the afternoon, marking the end of your Sahara adventure."
         }
       ],
       "slug": "sahara-vibe-5-day-trekking",
       "notIncluded": [
-        "Transport to M'Hamid",
-        "Mineral water",
-        "Tips"
+        "Personal expenses",
+        "Drinks and beverages",
+        "Travel insurance",
+        "Tips for guides and camel handlers",
+        "Entrance fees not mentioned in the itinerary",
+        "Any services not mentioned in the “Included” section"
       ],
       "gallery": [
         "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        "https://images.pexels.com/photos/37441710/pexels-photo-37441710.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        "https://images.pexels.com/photos/37441710/pexels-photo-37441710.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "/Moroccan-Desert/assets/images/20251122_080209.jpg"
       ],
       "priceFrom": 575,
       "duration": "5 days · 4 nights",
@@ -254,22 +258,42 @@
       "days": 5,
       "subtitle": "Five days of camel trekking and nomadic camp life",
       "title": "5 Days Sahara Desert Trekking Morocco",
-      "overview": "A five-day expedition for travelers seeking a slower, deeper Sahara experience, with camel support and camping far from the usual routes.",
+      "overview": "Experience the magic of the Moroccan Sahara on a 5-day trek through the vast golden dunes of southern Morocco. Accompanied by local nomadic guides and camel handlers, you’ll explore the desert at a relaxed pace while camels carry your luggage.\n\nDiscover remote landscapes, traditional nomadic life, and the peaceful silence of the Sahara. Enjoy spectacular sunrises and sunsets, freshly prepared Moroccan meals, traditional tea, and bread baked in the sand. Spend your nights in desert bivouacs under the stars and experience the authentic rhythm of life in the Sahara.\n\nAvailable from mid-September to mid-May, with departures from just 2 participants.",
       "reviews": 3,
       "image": "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "difficulty": "Adventurous",
       "included": [
-        "Guide, cook, and camel drivers",
-        "Four nights in bivouac",
-        "Full-board meals",
-        "Camel equipment transport"
+        "Round-trip transfers from Marrakech",
+        "5 days of Sahara desert trekking",
+        "Camel caravan and camel handlers",
+        "Local professional guide and cook",
+        "4 nights in desert bivouac",
+        "Tents mattresses and blankets",
+        "Full board during the trek",
+        "Traditional Moroccan meals",
+        "Tea and bread baked in the sand",
+        "Tourist promotion tax",
+        "Tourist stay tax"
       ],
       "rating": 5,
       "highlights": [
-        "Four nights under the stars",
-        "Desert walking at your pace",
-        "Nomadic cooking",
-        "Remote dune landscapes"
+        "Authentic Sahara Trek",
+        "5 Days of Desert Adventure",
+        "Camel Caravan",
+        "Local Nomadic Guides",
+        "Traditional Nomadic Life",
+        "Golden Sand Dunes",
+        "Desert Wildlife & Nature",
+        "Stunning Sunrises & Sunsets",
+        "Traditional Moroccan Cuisine",
+        "Bread Baked in the Sand",
+        "Traditional Tea",
+        "Peaceful Desert Atmosphere",
+        "Desert Bivouac",
+        "Sleeping Under the Stars",
+        "Disconnect from Modern Life",
+        "Flexible Departures",
+        "Minimum 2 Participants"
       ]
     },
     {
