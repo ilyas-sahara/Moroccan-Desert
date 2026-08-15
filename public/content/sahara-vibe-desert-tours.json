@@ -581,25 +581,29 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "M'Hamid to desert camp",
-          "description": "Leave the village by 4x4 and cross changing desert terrain to camp."
+          "title": "M’Hamid El Ghizlane – Sacred Oasis – Erg Chigaga",
+          "description": "Start your Sahara adventure in M’Hamid El Ghizlane, the gateway to the Moroccan desert. Travel by 4x4 across rocky plains, dry riverbeds, and beautiful desert landscapes.\n\nAlong the way, stop at the peaceful Sacred Oasis, where tamarisk trees create a quiet place in the middle of the desert.\n\nContinue towards the impressive Erg Chigaga dunes and arrive at your desert camp in the afternoon. Enjoy a traditional mint tea and take some time to relax and discover the dunes.\n\nAs the sun sets, enjoy a camel ride across the golden sand. In the evening, share a traditional Moroccan dinner around the campfire, listen to Saharan music and drums, and enjoy the stars above the desert.\n\nOvernight in a desert camp."
         },
         {
           "day": 2,
-          "title": "Erg Chigaga",
-          "description": "Explore the large dune field and enjoy sunset in the Sahara."
+          "title": "Full Day in Erg Chigaga – Nomads & Camel Trekking",
+          "description": "Wake up early to enjoy a beautiful sunrise over the Erg Chigaga dunes. After breakfast at the camp, begin a camel trek through the golden sands and discover the peaceful landscapes of the Sahara.\n\nDuring the day, visit a local nomadic family and learn more about their traditional way of life, culture, and hospitality.\n\nEnjoy a delicious Moroccan lunch, then take some time to relax at the camp, explore the dunes, or try sandboarding.\n\nIn the evening, watch another beautiful desert sunset before enjoying dinner around the campfire. Listen to Saharan music, share stories, and admire the clear starry sky in the silence of the Sahara.\n\nOvernight in a desert camp."
         },
         {
           "day": 3,
-          "title": "Return to M'Hamid",
-          "description": "Watch sunrise and travel back across the desert."
+          "title": "Erg Chigaga – Iriqui Lake – M’Hamid El Ghizlane",
+          "description": "After breakfast, say goodbye to the desert camp and begin your journey back to M’Hamid El Ghizlane by 4x4.\n\nTravel through Iriqui National Park and enjoy the wide, peaceful landscapes of the desert. Cross the dry bed of Iriqui Lake, an impressive area known for its unique scenery and desert wildlife.\n\nAlong the way, stop to take photos, enjoy a traditional tea, and appreciate the silence and beauty of the Sahara.\n\nContinue towards M’Hamid El Ghizlane, arriving in the afternoon with unforgettable memories of the dunes, nomadic life, camel trekking, and peaceful desert nights."
         }
       ],
       "slug": "sahara-vibe-mhamid-erg-chigaga-3-day",
       "notIncluded": [
-        "Drinks",
-        "Tips",
-        "Personal insurance"
+        "Personal travel insurance",
+        "drinks and personal snacks",
+        "tips and gratuities for guides",
+        "drivers or camp staff",
+        "personal items such as sunscreen",
+        "scarves",
+        "reusable water bottle and headlamp"
       ],
       "gallery": [
         "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -611,22 +615,32 @@
       "days": 3,
       "subtitle": "A 4x4 journey from Morocco's desert gateway to its wildest dunes",
       "title": "3 Days Sahara Desert Tour from M'Hamid to Erg Chigaga",
-      "overview": "Travel by 4x4 from M'Hamid to remote Erg Chigaga, passing golden dunes, rocky reg, and wide hamada landscapes beyond the paved road.",
+      "overview": "Join us for a 3-day desert adventure from M’Hamid to Erg Chigaga, where you can discover the beauty, silence, and simple life of the Moroccan Sahara.\n\nThe journey begins in M’Hamid, where you meet our local desert team and start your adventure by 4×4. We leave the roads behind and travel through wide desert landscapes, rocky plains, sandy areas, and small dunes on our way to the remote Erg Chigaga.\n\nOnce we reach the great dunes, the Sahara becomes your home. Take your time to walk in the sand, enjoy a traditional tea, climb the dunes, or simply sit and enjoy the peaceful desert around you. At sunset, experience a camel ride through the golden dunes and watch the sun disappear behind the horizon.\n\nAt the desert camp, enjoy a traditional Moroccan dinner prepared by our team. Later, gather around the fire, listen to Saharan music and stories, and enjoy the incredible night sky. Sleep comfortably in your private tent or choose to spend the night under the stars.\n\nThe next day gives you more time to discover the desert at a slower pace. Enjoy the sunrise, walk through the dunes, try sandboarding, relax at camp, or simply enjoy the silence of the Sahara.\n\nOn the final day, after breakfast, we begin our journey back to M’Hamid, crossing the desert once again and enjoying the landscapes along the way.\n\nWith us, the Sahara is not just a place to visit. It is a place to experience — with our local team, our traditions, and the peaceful rhythm of desert life.",
       "reviews": 10,
       "image": "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "difficulty": "Gentle",
       "included": [
-        "4x4 with local driver",
-        "Desert accommodation",
-        "Meals as scheduled",
-        "Camel experience"
+        "Private 4x4 transport",
+        "camel rides at sunset and during trekking",
+        "2 nights in a luxury or standard desert camp",
+        "all meals including 2 breakfasts",
+        "3 lunches and 2 dinners",
+        "experienced local nomad guide",
+        "sandboarding",
+        "visit with nomadic families",
+        "traditional tea ceremony"
       ],
       "rating": 5,
       "highlights": [
-        "4x4 desert crossings",
-        "Erg Chigaga dunes",
-        "Camel ride option",
-        "Two nights in the Sahara"
+        "Camel trekking in Erg Chigaga",
+        "Authentic desert camping",
+        "Beautiful sunsets and sunrises",
+        "Saharan music and local culture",
+        "4x4 desert adventure",
+        "Sacred Oasis and Iriqui National Park",
+        "Meet local nomads",
+        "Peaceful desert nights",
+        "Stargazing under the stars"
       ]
     },
     {
