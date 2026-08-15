@@ -649,43 +649,40 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "Marrakech to Aït Ben Haddou",
-          "description": "Cross the High Atlas, visit Telouet and Aït Ben Haddou, and continue south."
+          "title": "Marrakech – High Atlas – Telouet – Ait Ben Haddou",
+          "description": "Leave Marrakech at 09:30 in your private 4x4 and begin your journey through the High Atlas Mountains. Cross the Tizi n’Tichka Pass at around 2,260 metres, enjoying beautiful mountain views and traditional Berber villages along the way.\n\nContinue towards the Telouet area, then follow the scenic Ounila Valley, passing through small villages, green valleys, and impressive mountain landscapes.\n\nArrive near Ait Ben Haddou, one of Morocco’s most famous historic ksars, and take time to explore the area.\n\nIn the evening, relax and enjoy a peaceful overnight stay in a traditional kasbah-style guesthouse near Ait Ben Haddou."
         },
         {
           "day": 2,
-          "title": "Drâa Valley to M'Hamid",
-          "description": "Travel through Agdz, Zagora, and the palm-lined Drâa Valley."
+          "title": "Ait Ben Haddou – Foum Zguid – Iriqui National Park – Erg Chigaga",
+          "description": "After breakfast, continue south through the beautiful landscapes of the Anti-Atlas Mountains, passing through Tazenakht and Foum Zguid.\n\nFrom Foum Zguid, leave the paved road behind and begin an exciting 4x4 off-road adventure through Iriqui National Park. Cross the wide desert landscapes, passing the dry salt flats of Lake Iriqui and the rugged Madouar Mountains.\n\nContinue deep into the Sahara until you reach the impressive Erg Chigaga dunes in the afternoon.\n\nAfter arriving at the desert camp, enjoy a traditional mint tea and take some time to relax. Later, experience a camel ride across the golden dunes and climb one of the highest dunes to watch the beautiful Sahara sunset.\n\nIn the evening, enjoy a traditional Moroccan dinner around the campfire, listen to Saharan music, and admire the stars in the peaceful desert sky.\n\nOvernight at the desert camp."
         },
         {
           "day": 3,
-          "title": "Erg Chigaga",
-          "description": "Cross the desert to the dunes for camel riding, sandboarding, dinner, and music at camp."
+          "title": "Erg Chigaga – M’Hamid – Tamegroute – Zagora – Agdz",
+          "description": "After breakfast, leave Erg Chigaga and travel back towards M’Hamid El Ghizlane by 4x4. Continue through Tamegroute and Zagora, following the beautiful Drâa Valley with its green palm groves, villages, and kasbahs.\n\nContinue north towards Agdz, enjoying the changing landscapes along the way. Arrive in the afternoon and relax in a charming local guesthouse.\n\nOvernight near Agdz.\n\nAlternative: If you prefer more time in the Sahara, stay for a second night at Erg Chigaga. Enjoy a relaxed day in the dunes with free time for walking, camel riding, sandboarding, or simply enjoying the peaceful desert atmosphere.\n\nOvernight at the desert camp"
         },
         {
           "day": 4,
-          "title": "Erg Chigaga to Marrakech",
-          "description": "Return via Lake Iriki, Foum Zguid, Taznakht, and the Atlas."
+          "title": " Agdz – Ouarzazate – High Atlas – Marrakech",
+          "description": "After breakfast, leave Agdz and begin your journey back to Marrakech. Travel through the beautiful Anti-Atlas Mountains, with impressive views of the High Atlas and the surrounding desert landscapes.\n\nContinue towards Ouarzazate, passing the famous NOOR solar power complex, before crossing the High Atlas Mountains again via the Tizi n’Tichka Pass.\n\nEnjoy the changing landscapes along the way, from desert valleys and mountains to traditional villages. Arrive in Marrakech in the afternoon, bringing your Sahara adventure to an end.\n\nIf you choose the second night in Erg Chigaga: After breakfast, leave the desert and travel by 4x4 through M’Hamid, Foum Zguid, and Ouarzazate before continuing to Marrakech. This is a longer travel day, with arrival usually in the late afternoon or early evening."
         }
       ],
       "slug": "sahara-vibe-marrakech-erg-chigaga-4-day",
       "notIncluded": [
-        "Drinks",
-        "Lunches unless stated",
-        "Tips",
-        "Extras"
+        "Lunches on travel days Drinks at guest-houses Tips for driver and camp team Entry fees at optional kasbah visits Personal purchases and sundries Travel insurance"
       ],
       "gallery": [
         "https://images.pexels.com/photos/29976840/pexels-photo-29976840.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "https://images.pexels.com/photos/37441710/pexels-photo-37441710.jpeg?auto=compress&cs=tinysrgb&w=1600"
       ],
-      "priceFrom": 530,
+      "priceFrom": 675,
       "duration": "4 days · 3 nights",
       "region": "Marrakech · Erg Chigaga",
       "days": 4,
       "subtitle": "Atlas passes, kasbahs, the Drâa Valley, and wild Sahara dunes",
       "title": "4-Day Desert Tour from Marrakech to Erg Chigaga",
-      "overview": "A four-day private-style circuit from Marrakech into Erg Chigaga, combining the High Atlas, historic kasbahs, palm valleys, and a desert camp experience.",
+      "overview": "Discover the beauty of Morocco on a private 4-day journey from Marrakech to the remote Erg Chigaga dunes and back.\n\nTravel with your own local driver through the High Atlas Mountains, the beautiful Drâa Valley, and the wide landscapes of southern Morocco before reaching the peaceful Sahara.\n\nEnjoy the journey in a private 4x4, with stops along the way to discover local villages, landscapes, and hidden places. In the desert, experience the golden dunes of Erg Chigaga, enjoy a camel ride at sunset, share traditional Moroccan food around the campfire, and spend the night under a sky full of stars.\n\nThis private experience is ideal for couples, families, and friends who want to discover the Sahara at their own pace.\n\nStay in comfortable local guesthouses and a traditional desert camp, with the option to add an extra night in the Sahara for more time to enjoy the desert.\n\nA private journey through Morocco, from the mountains to the Sahara, with a local team and an authentic desert experience.",
       "reviews": 0,
       "image": "https://images.pexels.com/photos/29976840/pexels-photo-29976840.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "difficulty": "Gentle",
@@ -697,10 +694,16 @@
       ],
       "rating": 0,
       "highlights": [
-        "Tizi n'Tichka Pass",
-        "Aït Ben Haddou and Telouet",
-        "Drâa Valley",
-        "Luxury camp in Erg Chigaga"
+        "Cross the High Atlas Mountains",
+        "explore the Ait Ben Haddou region and Ounila Valley",
+        "private travel with an English-speaking 4x4 driver",
+        "off-road adventure through Iriqui National Park",
+        "discover the remote Erg Chigaga dunes",
+        "watch the sunset from the high dunes",
+        "enjoy a camel trek across the Sahara",
+        "spend one or two nights in a traditional desert camp",
+        "travel through the palm-lined Drâa Valley",
+        "stay in charming local guesthouses with authentic Moroccan character"
       ]
     },
     {
