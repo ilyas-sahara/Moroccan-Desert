@@ -9,36 +9,57 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "Into Erg Chebbi",
-          "description": "Begin in Merzouga. Load the camels and trek into the dunes. First night at a fixed luxury camp with full dinner and stargazing."
+          "title": "Day 1: Marrakech – Welcome to Morocco",
+          "description": "Arrive in Marrakech, the starting point of your Grand Sahara journey.\n\nEnjoy a private airport welcome and transfer to your hotel. Check in, relax, and take some time to settle into the atmosphere of the Red City.\n\nIn the evening, enjoy dinner and a peaceful first night in Marrakech.\n\nArrival: Personalized airport welcome\nTransfer: Private transfer to the hotel\nAccommodation: Zalagh Kasbah or similar\nMeals: Dinner"
         },
         {
           "day": 2,
-          "title": "Khamlia & Gnawa Rhythms",
-          "description": "Visit the village of Khamlia, home to a Gnawa music community. After lunch, trek to a wild camp among the smaller dunes of Erg Znigui."
+          "title": "Marrakech – Discover the Red City",
+          "description": "Spend the day exploring the historic heart of Marrakech, known for its beautiful palaces, gardens, souks, and lively atmosphere.\n\nIn the morning, visit the Koutoubia Mosque, Menara Gardens, and Ben Youssef Madrasa.\n\nEnjoy free time for lunch and discover some of the flavors of Moroccan cuisine.\n\nIn the afternoon, explore the colorful souks and experience the energy of Jemaa El Fna Square.\n\nAccommodation: Zalagh Kasbah or similar\nMeals: Dinner"
         },
         {
           "day": 3,
-          "title": "The Silent Dunes",
-          "description": "A long, slow trek across rolling dunes with no other humans in sight. Lunch in the shade of a tamarisk. Camp near a dry riverbed."
+          "title": "Day 3: Marrakech – Ouarzazate – Aït Ben Haddou – Dadès Valley",
+          "description": "Leave Marrakech and cross the spectacular High Atlas Mountains via the Tizi n’Tichka Pass.\n\nContinue through southern Morocco to Aït Ben Haddou, the famous UNESCO-listed ksar, and explore its traditional earthen buildings and narrow streets.\n\nThen continue to Ouarzazate, known for its kasbahs and film history, before traveling through the beautiful Valley of the Roses towards the Dadès Valley.\n\nEnjoy dinner and a peaceful evening surrounded by the impressive landscapes of the region.\n\nAccommodation: Hôtel Panorama or similar, Dadès Valley\nMeals: Dinner"
         },
         {
           "day": 4,
-          "title": "Nomad Encampment",
-          "description": "Meet a nomad family, share tea, and learn how they move with the seasons. Afternoon climb to a 150m dune for sunset."
+          "title": " Dadès Valley – Todra Gorges – Erfoud – Erg Chebbi",
+          "description": "Continue your journey towards the Sahara Desert and the impressive dunes of Erg Chebbi.\n\nTravel through Tinghir and explore the spectacular Todra Gorges, surrounded by high rocky cliffs.\n\nContinue to Erfoud, known for its fossils and desert landscapes, before reaching Merzouga and the golden dunes of Erg Chebbi.\n\nIn the afternoon, enjoy a camel ride across the dunes to reach your desert camp. Watch the sunset over the Sahara before enjoying a traditional Moroccan dinner.\n\nSpend the evening around the campfire and admire the stars over the desert.\n\nAccommodation: Dar Morocco Camp or similar\nMeals: Dinner"
         },
         {
           "day": 5,
-          "title": "Return to Merzouga",
-          "description": "Final sunrise, breakfast, and a 4x4 transfer back to Merzouga."
+          "title": "Day 5: Merzouga – Midelt – Azrou – Ifrane – Fès",
+          "description": "Leave the golden sands of Erg Chebbi and travel north towards the green landscapes of the Middle Atlas Mountains.\n\nCross the beautiful Ziz Valley and stop in Midelt for lunch before continuing through the mountains.\n\nIn Azrou, discover the famous cedar forests and look for the local Barbary macaques. Continue to Ifrane, known for its alpine-style architecture and peaceful mountain setting.\n\nArrive in Fès in the evening, where you can relax after this scenic journey.\n\nAccommodation: Menzeh Zalagh or similar, Fès\nMeals: Dinner"
+        },
+        {
+          "day": 6,
+          "description": "Spend the day exploring Fès, Morocco’s historic spiritual and cultural capital.\n\nWith a local guide, discover the famous medina, Bou Inania Madrasa, and Nejjarine Square. Walk through the narrow streets and explore the traditional quarters of tanners, weavers, and coppersmiths, where Moroccan craftsmanship is still alive.\n\nContinue to the Mellah, the historic Jewish quarter, and discover another important part of Fès’ rich cultural heritage.\n\nEnjoy a relaxed evening in the city after a full day of discovery.\n\nAccommodation: Menzeh Zalagh or similar, Fès\nMeals: Dinner",
+          "title": "Fès – Discover the Soul of Morocco"
+        },
+        {
+          "description": "Leave Fès and continue your journey through Morocco’s historic imperial cities towards the Atlantic coast.\n\nStop in Meknès, the former imperial city of Sultan Moulay Ismaïl, and discover its impressive historic gates and architecture.\n\nContinue to Rabat, the capital of Morocco, where you can visit the Hassan Tower and explore the charming Kasbah of the Udayas overlooking the Atlantic.\n\nIn the afternoon, continue to Casablanca, Morocco’s modern economic capital. Enjoy an exterior visit of the impressive Hassan II Mosque, one of the city’s most famous landmarks.\n\nAccommodation: Prince de Paris or similar, Casablanca\nMeals: Dinner",
+          "title": "Fès – Meknès – Rabat – Casablanca",
+          "day": 7
+        },
+        {
+          "description": "Enjoy your final breakfast in Casablanca before beginning the journey back to Marrakech.\n\nTravel through the Moroccan countryside and arrive in Marrakech in time for your flight. Your driver will assist you with the transfer to the airport.\n\nYour Grand Morocco journey comes to an end, leaving you with unforgettable memories of the Sahara, mountains, imperial cities, and Moroccan culture.\n\nMeals: Breakfast\nTransfer: Casablanca – Marrakech Airport\nEnd of trip: Departure flight from Marrakech",
+          "title": "Casablanca – Marrakech – Departure",
+          "day": 8
         }
       ],
-      "slug": "sahara-grand-crossing",
+      "slug": "morocco-sahara-grand-tour-dunes-atlas",
       "notIncluded": [
-        "Transport to Merzouga",
-        "Sleeping bag liner",
-        "Travel insurance",
-        "Tips"
+        "International flights",
+        "travel insurance",
+        "lunches",
+        "drinks and personal snacks",
+        "entrance fees to monuments and attractions",
+        "local guides unless mentioned",
+        "tips and gratuities",
+        "personal expenses and souvenirs",
+        "optional activities",
+        "any services not mentioned in the itinerary"
       ],
       "gallery": [
         "https://images.pexels.com/photos/33566021/pexels-photo-33566021.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -48,29 +69,57 @@
         "/Moroccan-Desert/assets/images/14632492_2160_3840_60fps.mp4"
       ],
       "priceFrom": 890,
-      "duration": "5 days · 4 nights",
-      "region": "Erg Chebbi · Erg Znigui",
-      "days": 5,
-      "subtitle": "Five days deep into the dunes, from oasis to oasis",
-      "title": "Sahara Grand Crossing",
-      "overview": "For travelers who want to truly disappear into the desert. A five-day camel-supported crossing from Merzouga through the silent dunes of Erg Znigui, sleeping in two different wild camps and meeting the people who call this landscape home.",
+      "duration": "8 days · 7 nights",
+      "region": "Sahara Desert, Drâa Valley & Atlas Mountains, Southern Morocco",
+      "days": 8,
+      "subtitle": "From the Golden Dunes of the Sahara to the Majestic Atlas Mountains An Authentic 8-Day Moroccan Adventure",
+      "title": "Morocco Sahara Grand Tour",
+      "overview": "A Journey from the Sahara to the Atlas Mountains\n\nDiscover the beauty of southern Morocco on an 8-day private journey through the Sahara, combining desert landscapes, traditional villages, peaceful oases, and the impressive Atlas Mountains.\n\nThis special journey is designed for travelers who want to experience Morocco in a comfortable, authentic, and relaxed way. Travel with our local team and discover the country beyond the usual tourist routes.\n\nStay in charming riads and local guesthouses, as well as a comfortable desert camp, where you can enjoy the peaceful atmosphere of the Sahara.\n\nTravel through wide desert landscapes, walk among golden dunes, discover palm-filled oases, and meet local people along the way. Enjoy a camel ride at sunset, traditional Moroccan meals, tea around the campfire, and unforgettable nights under the stars.\n\nFrom the quiet beauty of the Sahara to the dramatic landscapes of the Atlas Mountains, every day offers something different.\n\nA journey of desert, culture, nature, and Moroccan hospitality — created for travelers who want to slow down, discover, and experience Morocco in a truly special way.",
       "reviews": 96,
       "image": "https://images.pexels.com/photos/33566021/pexels-photo-33566021.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "difficulty": "Adventurous",
       "included": [
-        "Camel trek with guide",
-        "4x4 support vehicle",
-        "4 nights camp",
-        "All meals",
-        "Gnawa village visit",
-        "Local nomad encounter"
+        "Private transportation throughout the tour",
+        "airport transfers",
+        "experienced English-speaking driver",
+        "7 nights accommodation in selected hotels",
+        "riads and desert camp",
+        "daily breakfast",
+        "dinners as mentioned in the itinerary",
+        "guided visits in Marrakech and Fès",
+        "camel trekking in Erg Chebbi",
+        "desert camp experience",
+        "visits to Aït Ben Haddou",
+        "Todra Gorges",
+        "Meknès",
+        "Rabat and Casablanca",
+        "local taxes and service charges"
       ],
       "rating": 4.8,
       "highlights": [
-        "Multi-day camel caravan across the dunes",
-        "Two distinct wild camps",
-        "Visit to a Gnawa music village",
-        "Sunset from a 150m dune summit"
+        "Marrakech medina and souks",
+        "High Atlas Mountains",
+        "Tizi n’Tichka Pass",
+        "Aït Ben Haddou",
+        "Ouarzazate",
+        "Valley of the Roses",
+        "Dadès Valley",
+        "Todra Gorges",
+        "Erg Chebbi dunes",
+        "Camel trekking",
+        "Sahara desert camp",
+        "Ziz Valley",
+        "Middle Atlas Mountains",
+        "Azrou cedar forests",
+        "Ifrane",
+        "Fès medina",
+        "Meknès",
+        "Rabat",
+        "Hassan Tower",
+        "Kasbah of the Udayas",
+        "Casablanca",
+        "Hassan II Mosque",
+        "Authentic Moroccan culture and landscapes"
       ]
     },
     {
