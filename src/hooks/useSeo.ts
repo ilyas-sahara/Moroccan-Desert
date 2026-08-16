@@ -34,7 +34,7 @@ export function useSeo({ title, description, path, image, type = 'website' }: Se
     const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     const url = `${SITE_URL}${base}${path}`;
     const ogLocale = locale === 'en' ? 'en_US' : `${locale}_${locale.toUpperCase()}`;
-    const siteName = 'Sahara Vacations';
+    const siteName = 'Saharavacation';
 
     upsertMeta('name', 'description', description);
     upsertMeta('name', 'robots', 'index, follow');

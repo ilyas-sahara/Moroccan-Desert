@@ -12,7 +12,7 @@ export const fr: LocaleDict = {
   'nav.book': 'Réserver un voyage',
   'nav.toggleMenu': 'Ouvrir le menu',
   'nav.toggleDropdown': 'Ouvrir le menu {{name}}',
-  'nav.homeAria': 'Sahara Vacations — accueil',
+  'nav.homeAria': 'Saharavacation — accueil',
   'nav.toursDropdown.all': 'Tous les circuits',
   'nav.toursDropdown.allDesc': 'Parcourir chaque voyage',
   'nav.toursDropdown.camel': 'Randonnées à dos de dromadaire',
@@ -240,34 +240,34 @@ export const fr: LocaleDict = {
   'notFound.title': 'Ce sentier ne figure pas sur nos cartes.',
   'notFound.text':
     'La page que vous cherchez s’est envolée avec le vent. Revenons sur du terrain solide.',
-  'seo.brand': 'Sahara Vacations',
-  'seo.homeTitle': 'Sahara Vacations — Voyages de luxe dans le désert marocain',
+  'seo.brand': 'Saharavacation',
+  'seo.homeTitle': 'Saharavacation — Voyages de luxe dans le désert marocain',
   'seo.homeDescription':
     'Voyages de luxe à travers les dunes dorées de Merzouga. Randonnées à dos de dromadaire, camps berbères, nuits d’observation des étoiles et aventures sur mesure dans le Sahara marocain.',
   'seo.toursTitle': 'Circuits dans le désert du Maroc — Treks à dos de dromadaire et aventures sahariennes',
   'seo.toursDescription':
     'Parcourez nos circuits sahariens : randonnées à dos de dromadaire, camps berbères de luxe, nuits d’observation des étoiles et routes 4x4 à travers le Maroc.',
-  'seo.tourTitle': '{{name}} — Sahara Vacations',
+  'seo.tourTitle': '{{name}} — Saharavacation',
   'seo.tourDescription':
-    '{{name}} dans {{region}}. Mené par des guides berbères locaux — réservez votre voyage dans le Sahara marocain avec Sahara Vacations.',
-  'seo.experiencesTitle': 'Expériences — Sahara Vacations',
+    '{{name}} dans {{region}}. Mené par des guides berbères locaux — réservez votre voyage dans le Sahara marocain avec Saharavacation.',
+  'seo.experiencesTitle': 'Expériences — Saharavacation',
   'seo.experiencesDescription':
     'Randonnées à dos de dromadaire, camps de luxe, observation des étoiles, cérémonies du thé à la menthe, rencontres nomades, sandboard et plus encore dans le Sahara marocain.',
   'seo.blogTitle': 'Blog Sahara — Histoires et guides de voyage',
   'seo.blogDescription':
     'Notes de voyage, guides de planification et histoires du Sahara marocain — organiser votre première nuit dans le désert, le confort au camp et la culture au-delà des dunes.',
-  'seo.articleTitle': '{{title}} — Blog Sahara Vacations',
+  'seo.articleTitle': '{{title}} — Blog Saharavacation',
   'seo.articleDescription': '{{excerpt}}',
-  'seo.aboutTitle': 'À propos — Sahara Vacations',
+  'seo.aboutTitle': 'À propos — Saharavacation',
   'seo.aboutDescription':
     'Une famille de guides berbères nés au bord des dunes de Merzouga. Petits groupes, guides locaux et camps dans le désert sans laisser de trace depuis 2009.',
   'seo.contactTitle': 'Contact — Planifiez votre voyage au Sahara',
   'seo.contactDescription':
     'Dites-nous vos dates, votre groupe et votre rêve. Notre équipe locale répond sous 24 heures avec une proposition sur mesure.',
-  'seo.customTitle': 'Voyage sur mesure au Sahara — Sahara Vacations',
+  'seo.customTitle': 'Voyage sur mesure au Sahara — Saharavacation',
   'seo.customDescription':
     'Créez votre propre voyage dans le Sahara marocain : choisissez les lieux, le rythme et les expériences, et notre équipe élabore un itinéraire privé.',
-  'seo.notFoundTitle': 'Page introuvable — Sahara Vacations',
+  'seo.notFoundTitle': 'Page introuvable — Saharavacation',
   'seo.notFoundDescription': 'Ce sentier ne figure pas sur nos cartes.',
   'lang.switchLabel': 'Changer de langue',
   'lang.en': 'Anglais',

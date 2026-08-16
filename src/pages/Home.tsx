@@ -23,7 +23,7 @@ const DEFAULT_HOME: HomePageContent = {
   hero_title: 'The desert changes everyone who walks into it.',
   hero_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace.',
   hero_kicker: 'Moroccan Sahara · Est. 2009',
-  hero_heading: 'Sahara Vacations',
+  hero_heading: 'Saharavacation',
   hero_lead: 'Luxury desert journeys through the golden dunes of Merzouga. Camel treks, Berber camps, and nights under the darkest sky on earth.',
   hero_frames: [],
   hero_rating: '4.9',
@@ -42,10 +42,10 @@ const DEFAULT_HOME: HomePageContent = {
 };
 
 const DEFAULT_SETTINGS: SiteSettings = {
-  brand_name: 'Sahara Vacations',
+  brand_name: 'Saharavacation',
   tagline: 'Moroccan Desert Journeys',
   phone: '+212 5 35 00 00 00',
-  email: 'hello@saharavacations.com',
+  email: 'hello@saharavacation.com',
   address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
   instagram_url: '',
   facebook_url: '',

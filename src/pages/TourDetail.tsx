@@ -84,7 +84,7 @@ export default function TourDetail() {
     description: tour.subtitle,
     image: tour.gallery,
     url: tourUrl,
-    brand: { '@type': 'Brand', name: 'Sahara Vacations' },
+    brand: { '@type': 'Brand', name: 'Saharavacation' },
     offers: {
       '@type': 'Offer',
       price: tour.priceFrom,

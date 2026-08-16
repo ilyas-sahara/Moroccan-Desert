@@ -15,7 +15,7 @@ const ICONS: Record<string, typeof Compass> = {
 const DEFAULT_PAGE: ExperiencesPageContent = {
   hero_eyebrow: 'Experiences',
   hero_title: 'The small moments that make a journey',
-  hero_subtitle: 'Every Sahara Vacations trip is built from these threads. Browse them, then let us weave them into something just for you.',
+  hero_subtitle: 'Every Saharavacation trip is built from these threads. Browse them, then let us weave them into something just for you.',
   hero_image: '',
   cta_title: 'Want all of these in one journey?',
   cta_subtitle: 'We build bespoke itineraries that combine any of these experiences into a single, seamless trip.',

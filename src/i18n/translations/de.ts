@@ -12,7 +12,7 @@ export const de: LocaleDict = {
   'nav.book': 'Reise buchen',
   'nav.toggleMenu': 'Menü öffnen',
   'nav.toggleDropdown': 'Menü {{name}} öffnen',
-  'nav.homeAria': 'Sahara Vacations — Startseite',
+  'nav.homeAria': 'Saharavacation — Startseite',
   'nav.toursDropdown.all': 'Alle Touren',
   'nav.toursDropdown.allDesc': 'Jede Reise ansehen',
   'nav.toursDropdown.camel': 'Kameltrekking',
@@ -239,34 +239,34 @@ export const de: LocaleDict = {
   'notFound.title': 'Dieser Pfad steht nicht auf unseren Karten.',
   'notFound.text':
     'Die Seite, die Sie suchen, ist mit dem Wind davongeweht. Bringen wir Sie zurück auf festen Boden.',
-  'seo.brand': 'Sahara Vacations',
-  'seo.homeTitle': 'Sahara Vacations — Luxuriöse Wüstenreisen in Marokko',
+  'seo.brand': 'Saharavacation',
+  'seo.homeTitle': 'Saharavacation — Luxuriöse Wüstenreisen in Marokko',
   'seo.homeDescription':
     'Luxuriöse Wüstenreisen durch die goldenen Dünen von Merzouga. Kameltreks, Berber-Camps, Nächte unter Sternen und maßgeschneiderte Abenteuer in der marokkanischen Sahara.',
   'seo.toursTitle': 'Marokko-Wüstentouren — Kameltreks und Sahara-Abenteuer',
   'seo.toursDescription':
     'Entdecken Sie handgefertigte Sahara-Touren: Kameltreks, luxuriöse Berber-Camps, Sternenbeobachtung und 4x4-Wüstenrouten durch Marokko.',
-  'seo.tourTitle': '{{name}} — Sahara Vacations',
+  'seo.tourTitle': '{{name}} — Saharavacation',
   'seo.tourDescription':
-    '{{name}} in {{region}}. Geführt von lokalen Berber-Guides — buchen Sie Ihre Reise in die marokkanische Sahara mit Sahara Vacations.',
-  'seo.experiencesTitle': 'Erlebnisse — Sahara Vacations',
+    '{{name}} in {{region}}. Geführt von lokalen Berber-Guides — buchen Sie Ihre Reise in die marokkanische Sahara mit Saharavacation.',
+  'seo.experiencesTitle': 'Erlebnisse — Saharavacation',
   'seo.experiencesDescription':
     'Kameltreks, luxuriöse Wüstencamps, Sternenbeobachtung, Minztee-Zeremonien, Nomadenbegegnungen, Sandboarding und mehr in der marokkanischen Sahara.',
   'seo.blogTitle': 'Sahara-Blog — Geschichten und Reiseführer',
   'seo.blogDescription':
     'Reisenotizen, Planungsratgeber und Geschichten aus der marokkanischen Sahara — die erste Wüstennacht planen, Komfort im Camp und Kultur jenseits der Dünen.',
-  'seo.articleTitle': '{{title}} — Sahara Vacations Blog',
+  'seo.articleTitle': '{{title}} — Saharavacation Blog',
   'seo.articleDescription': '{{excerpt}}',
-  'seo.aboutTitle': 'Über uns — Sahara Vacations',
+  'seo.aboutTitle': 'Über uns — Saharavacation',
   'seo.aboutDescription':
     'Eine Familie von Berber-Guides, geboren am Rand der Dünen von Merzouga. Kleine Gruppen, lokale Guides und spurlose Wüstencamps seit 2009.',
   'seo.contactTitle': 'Kontakt — Planen Sie Ihre Sahara-Reise',
   'seo.contactDescription':
     'Teilen Sie uns Ihre Termine, Ihre Gruppe und Ihren Traum mit. Unser lokales Team antwortet innerhalb von 24 Stunden mit einem maßgeschneiderten Vorschlag.',
-  'seo.customTitle': 'Individuelle Sahara-Reise — Sahara Vacations',
+  'seo.customTitle': 'Individuelle Sahara-Reise — Saharavacation',
   'seo.customDescription':
     'Gestalten Sie Ihre eigene Reise durch die marokkanische Sahara: wählen Sie Orte, Tempo und Erlebnisse — unser Team erstellt einen privaten Reiseplan.',
-  'seo.notFoundTitle': 'Seite nicht gefunden — Sahara Vacations',
+  'seo.notFoundTitle': 'Seite nicht gefunden — Saharavacation',
   'seo.notFoundDescription': 'Dieser Pfad steht nicht auf unseren Karten.',
   'lang.switchLabel': 'Sprache ändern',
   'lang.en': 'Englisch',

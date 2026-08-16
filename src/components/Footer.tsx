@@ -5,7 +5,7 @@ import { getFooterContent, type FooterContent } from '@/data/cms';
 import { useLocale } from '@/i18n';
 
 const DEFAULT_FOOTER: FooterContent = {
-  brand_name: 'Sahara Vacations',
+  brand_name: 'Saharavacation',
   description:
     'Luxury desert journeys through the golden dunes of Merzouga and beyond. Small groups, local guides, and camps that leave nothing behind but footprints.',
   instagram_url: '#',
@@ -19,7 +19,7 @@ const DEFAULT_FOOTER: FooterContent = {
   ],
   address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
   phone: '+212 5 35 00 00 00',
-  email: 'hello@saharavacations.com',
+  email: 'hello@saharavacation.com',
   copyright_text: 'All rights reserved.',
   legal_links: [
     { label: 'Privacy', to: '#' },

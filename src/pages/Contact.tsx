@@ -20,7 +20,7 @@ export default function Contact() {
     hero_image: '',
     office_text: "Prefer to talk it through? Reach us directly — we're based in Merzouga, on the edge of the dunes.",
     phone: '+212 5 35 00 00 00',
-    email: 'hello@saharavacations.com',
+    email: 'hello@saharavacation.com',
     address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
   });
   const [tourOptions, setTourOptions] = useState(TOURS.map((t) => t.title));

@@ -94,7 +94,7 @@ export default function CustomJourney() {
       '',
       notes ? t('custom.emailBody.notes', { value: notes }) : t('custom.emailBody.none'),
     ].join('\n');
-    window.location.href = `mailto:hello@saharavacations.com?subject=${encodeURIComponent(t('custom.emailBody.subject'))}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:hello@saharavacation.com?subject=${encodeURIComponent(t('custom.emailBody.subject'))}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
 

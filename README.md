@@ -1,12 +1,12 @@
-# Sahara Vacations — Moroccan Desert Journeys
+# Saharavacation — Moroccan Desert Journeys
 
-Marketing site for Sahara Vacations (Merzouga, Morocco), built with Vite +
+Marketing site for Saharavacation (Merzouga, Morocco), built with Vite +
 React + TypeScript + Tailwind. Includes a blog, tours, experiences, and a
 GitHub-backed Decap CMS admin surface for non-developers.
 
 ## Hosting
 
-- **Site**: GitHub Pages at `https://akimweb-bit.github.io/Moroccan-Desert/`
+- **Site**: GitHub Pages at `https://saharavacation.com`
 - **CMS login**: Decap CMS with a Cloudflare Worker OAuth proxy (`oauth-proxy/`)
 - **Deploys**: `.github/workflows/deploy.yml` builds and publishes on every push
   to `master` (including CMS content commits)
@@ -31,7 +31,6 @@ All edits are committed to `master` and trigger a fresh Pages deployment.
 
 ## Note on the base path
 
-The site lives under the `Moroccan-Desert` repository path on GitHub Pages, so
-`vite.config.ts` sets `base: '/Moroccan-Desert/'` and the router uses the same
-basename. If a custom domain is added later, flip both back to `/` (see the
-"Custom domain" section of `SETUP.md`).
+The site is served at the custom domain root, so `vite.config.ts` sets
+`base: '/'` and the router uses the same basename, with a `public/CNAME`
+pointing at `saharavacation.com`.
