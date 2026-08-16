@@ -128,31 +128,36 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "Marrakech to Aït Ben Haddou",
-          "description": "Cross the Tizi n'Tichka pass through the High Atlas. Arrive at Aït Ben Haddou for a guided sunset tour of the UNESCO-listed kasbah. Overnight in a kasbah guesthouse."
+          "title": "Marrakech – Imlil – Marrakech",
+          "description": "Drive into the Atlas Mountains: Depart Marrakech early and travel toward the heart of the High Atlas Mountains, enjoying panoramic views of dramatic peaks and green valleys.\nImlil Village & Berber Culture: Arrive in Imlil, a traditional Berber village and gateway to Toubkal National Park, home to North Africa’s highest peak. If open, explore the famous Asni Market, held every Saturday.\nOptional Hike & Waterfalls: Choose a guided hike around Imlil and Toubkal National Park, visit the nearby waterfalls, or simply relax at a local café while enjoying the mountain scenery.\nLunch & Return to Marrakech: Enjoy a traditional Berber lunch at a local guesthouse before departing Imlil in the late afternoon and returning to Marrakech."
         },
         {
           "day": 2,
-          "title": "The Road to the Dades",
-          "description": "Drive through the Valley of a Thousand Kasbahs and the Dades Gorge. Lunch in a local family home. Afternoon drive to Merzouga."
+          "title": "Marrakech – Tizi N’Tichka – Ait Ben Haddou – Ouarzazate – Kelaa M’Gouna",
+          "description": "High Atlas Mountains – Tizi N’Tichka Pass: Depart Marrakech early and cross the spectacular High Atlas Mountains via the Tizi N’Tichka Pass at 2,260 meters. Enjoy changing landscapes, from green valleys to rugged mountain peaks and traditional Berber villages scattered along the slopes.\nAit Ben Haddou – UNESCO World Heritage Site: Visit the famous ksar of Ait Ben Haddou, a remarkable fortified village built from earthen architecture. Wander through its ancient alleys and explore the kasbahs that have featured in famous films such as Gladiator and Lawrence of Arabia. Enjoy lunch at a local restaurant nearby.\nOuarzazate – Gateway to the Sahara: Continue to Ouarzazate for a short visit. Explore the city center and experience the atmosphere of this historic crossroads, where the High Atlas Mountains meet the vast landscapes of southern Morocco.\nKelaa M’Gouna – Valley of the Roses: Continue to Kelaa M’Gouna, located in the heart of Morocco’s famous Valley of the Roses. During the spring season, the valley is filled with the fragrance of Damascus roses, traditionally harvested to produce rose water and essential oils. Enjoy dinner and spend the night at a local guesthouse or kasbah hotel."
         },
         {
           "day": 3,
-          "title": "Into the Sahara",
-          "description": "Swap the 4x4 for camels and trek into Erg Chebbi. Sunset, mint tea, and a night in a luxury Berber camp with stargazing."
+          "title": "Kelaa M’Gouna – Road of 1001 Kasbahs – Todra Gorges – Merzouga",
+          "description": "Road of 1001 Kasbahs: After breakfast, continue east along the famous Road of 1001 Kasbahs. Travel through dramatic desert landscapes, traditional mud-brick kasbahs, and lush palm oases that have long been part of the caravan routes of southern Morocco.\nTodra Gorges: Arrive at the spectacular Todra Gorges, where towering limestone cliffs rise nearly 300 meters above the river. Take a walk through the narrow canyon and enjoy the peaceful atmosphere before stopping for lunch at a local café.\nMerzouga & Sunset Camel Trek into Erg Chebbi: Continue to Merzouga and arrive in the afternoon. Meet your camel caravan at the edge of the dunes and ride into the spectacular Erg Chebbi as the sun sets over the Sahara. Reach your private desert camp and enjoy a traditional Berber dinner, mint tea, and an evening of desert music and drumming under the stars. Overnight in a private desert tent."
         },
         {
           "day": 4,
-          "title": "Sunrise & Return",
-          "description": "Sunrise over the dunes, breakfast, and the camel ride back to Merzouga. 4x4 transfer back to Marrakech."
+          "title": "Erg Chebbi – Ouarzazate – Marrakech",
+          "description": "Sunrise over Erg Chebbi: Wake up before dawn and step outside your tent to watch the first rays of sunlight illuminate the Erg Chebbi dunes. Enjoy a peaceful desert sunrise before having breakfast at camp and preparing for the journey back to Marrakech.\nDrive Back via Ouarzazate: Leave the Sahara and travel west through the wide desert plains toward the Atlas Mountains. Stop for lunch in Ouarzazate, the famous Gateway to the Sahara, before continuing north through the spectacular southern landscapes.\nReturn to Marrakech: Cross the High Atlas Mountains once again via the Tizi N’Tichka Pass and continue to Marrakech. Arrival is expected at approximately 8:30 PM, followed by drop-off at your riad or hotel in the city."
         }
       ],
       "slug": "atlas-to-sahara",
       "notIncluded": [
-        "Lunches",
-        "Drinks",
-        "Travel insurance",
-        "Tips"
+        "International or domestic flights",
+        "travel insurance",
+        "lunch except where specified",
+        "drinks and beverages",
+        "entrance fees to monuments and attractions",
+        "personal expenses",
+        "tips and gratuities",
+        "optional activities",
+        "anything not mentioned in the included section"
       ],
       "gallery": [
         "https://images.pexels.com/photos/29976840/pexels-photo-29976840.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -166,23 +171,47 @@
       "days": 4,
       "subtitle": "From the High Atlas passes to the dunes of Erg Chebbi",
       "title": "Atlas to Sahara",
-      "overview": "A four-day private journey linking two of Morocco's great landscapes: the mud-brick kasbahs of the High Atlas and the golden dunes of the Sahara. Travel by 4x4 with a local driver-guide, ending with a night in a luxury desert camp.",
+      "overview": "This 4-day private Atlas Mountains and Sahara Desert tour from Marrakech combines Morocco’s most dramatic mountain and desert landscapes in one unforgettable journey. Start in the High Atlas Mountains with a full day exploring the beautiful Imlil Valley, traditional Berber villages, and surrounding mountain scenery.\n\nContinue south through the spectacular Tizi n’Tichka Pass, the UNESCO-listed Ait Ben Haddou, the Dades Valley, and the impressive Todra Gorges before reaching the Sahara Desert. In Merzouga, enjoy a sunset camel trek across the Erg Chebbi dunes and spend the night at a private desert camp in a traditional tent.\n\nWith private transportation and a flexible itinerary, this 4-day journey offers an authentic and comfortable way to experience the Atlas Mountains, southern Morocco, and the Sahara Desert from Marrakech.",
       "reviews": 158,
       "image": "https://images.pexels.com/photos/29976840/pexels-photo-29976840.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "difficulty": "Moderate",
       "included": [
-        "Private 4x4 with driver-guide",
-        "3 nights accommodation",
-        "Camel trek",
-        "Camp dinner & breakfast",
-        "Aït Ben Haddou guided tour"
+        "Private transportation from Marrakech and throughout the tour",
+        "professional English-speaking driver/guide",
+        "accommodation in a local guesthouse or kasbah hotel",
+        "overnight in a private desert tent in Erg Chebbi",
+        "breakfasts and dinners as mentioned in the itinerary",
+        "traditional Berber lunch where specified",
+        "sunset camel trek into the Erg Chebbi dunes",
+        "camel ride back from the desert camp",
+        "visit to Ait Ben Haddou",
+        "visit to Todra Gorges",
+        "Tizi N’Tichka Pass crossing",
+        "desert camp experience with mint tea and traditional Berber music",
+        "sunrise experience over the Erg Chebbi dunes",
+        "hotel/riad pick-up and drop-off in Marrakech"
       ],
       "rating": 4.9,
       "highlights": [
-        "Cross the Tizi n'Tichka pass",
-        "Sunset at Aït Ben Haddou kasbah",
-        "Overnight in the dunes of Erg Chebbi",
-        "Private 4x4 with local driver-guide"
+        "High Atlas Mountains",
+        "Tizi N’Tichka Pass at 2",
+        "260 m",
+        "Berber villages and culture",
+        "Ait Ben Haddou UNESCO World Heritage Site",
+        "Road of 1001 Kasbahs",
+        "Valley of the Roses",
+        "Ouarzazate",
+        "Todra Gorges",
+        "Merzouga",
+        "Erg Chebbi dunes",
+        "sunset camel trek",
+        "private desert camp",
+        "traditional Berber dinner",
+        "desert music and drumming",
+        "Sahara sunrise",
+        "scenic desert landscapes",
+        "panoramic mountain views",
+        "private tour from Marrakech"
       ]
     },
     {
