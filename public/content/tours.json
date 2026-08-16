@@ -220,21 +220,25 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "Sunset & Stars",
-          "description": "Afternoon camel trek into the dunes. Arrive at camp for sunset, mint tea, and dinner. After dinner, a guided telescope session and Berber drumming around the fire."
+          "title": "Zagora – Sahara Desert Camp",
+          "description": "Depart Zagora in the afternoon and travel toward the desert, passing through the beautiful landscapes of the Drâa Valley and the surrounding desert plains. Arrive at the dunes in time to enjoy a camel ride across the Sahara as the sun begins to set.\n\nReach your desert camp and settle into your private tent. Enjoy traditional Moroccan mint tea while watching the changing colors of the dunes. In the evening, have a delicious Moroccan dinner followed by Berber music and drumming around the campfire.\n\nAs the camp becomes quiet, enjoy a stargazing experience under the clear Sahara sky, far from city lights. Relax beneath thousands of stars and experience the peaceful atmosphere of the desert.\n\nDinner and overnight at the desert camp."
         },
         {
           "day": 2,
-          "title": "Sunrise & Departure",
-          "description": "Early hike to a nearby dune for sunrise. Breakfast at camp, then camel ride back to Merzouga."
+          "title": "Desert Camp – Zagora",
+          "description": "Wake up early to watch the beautiful Sahara sunrise over the dunes. After breakfast at the camp, enjoy some free time to walk around the dunes and take photos.\n\nLeave the desert by 4x4 or camel transfer and continue toward Zagora, enjoying the scenery of the desert and Drâa Valley along the way. Arrive in Zagora around midday, marking the end of your 2-day, 1-night Sahara stargazing experience."
         }
       ],
       "slug": "stargazing-night-camp",
       "notIncluded": [
-        "Transport to Merzouga",
         "Lunch",
-        "Drinks",
-        "Tips"
+        "drinks and beverages",
+        "travel insurance",
+        "personal expenses",
+        "tips and gratuities",
+        "optional activities",
+        "extra camel rides",
+        "anything not mentioned in the included section"
       ],
       "gallery": [
         "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -248,23 +252,38 @@
       "days": 2,
       "subtitle": "One night, one camp, the whole sky",
       "title": "Stargazing Night Camp",
-      "overview": "A single unforgettable night in the desert. Arrive in Merzouga in the afternoon, camel-trek to a luxury camp, and spend the evening with a local astronomer, Berber drummers, and the clearest sky you'll ever see.",
+      "overview": "Experience the magic of the Sahara Desert on a 2-day, 1-night stargazing camp from Zagora. Travel through the scenic Drâa Valley to the desert, enjoy a sunset camel ride across the dunes, and spend the night in a private desert camp. After a traditional Moroccan dinner, Berber music, and tea around the campfire, discover the incredible night sky far from city lights. Wake up to a beautiful Sahara sunrise before returning to Zagora, completing a short but unforgettable desert escape.",
       "reviews": 302,
       "image": "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "difficulty": "Gentle",
       "included": [
-        "Camel trek",
-        "1 night luxury camp",
-        "Dinner & breakfast",
-        "Telescope session",
-        "Berber music"
+        "Private transportation from Zagora",
+        "desert transfer by 4x4 or camel",
+        "sunset camel ride",
+        "one night in a private desert camp",
+        "private tent",
+        "dinner and breakfast",
+        "traditional Moroccan mint tea",
+        "Berber music and drumming around the campfire",
+        "stargazing experience",
+        "Sahara sunrise",
+        "local desert guide",
+        "hotel/riad pick-up and drop-off in Zagora"
       ],
       "rating": 4.7,
       "highlights": [
-        "Guided night-sky tour with telescope",
-        "Campfire music with Berber drummers",
-        "Sunrise dune hike",
-        "Ideal for first-time desert visitors"
+        "Sahara Desert from Zagora",
+        "sunset camel ride",
+        "private desert camp",
+        "stargazing under the Sahara sky",
+        "traditional Moroccan dinner",
+        "Berber music and drumming",
+        "campfire experience",
+        "overnight in a private tent",
+        "peaceful desert atmosphere",
+        "spectacular Sahara sunrise",
+        "Drâa Valley landscapes",
+        "authentic desert experience"
       ]
     },
     {
