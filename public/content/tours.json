@@ -313,10 +313,15 @@
       ],
       "slug": "nomad-berber-immersion",
       "notIncluded": [
-        "Transport to Merzouga",
-        "Drinks",
-        "Travel insurance",
-        "Tips"
+        "Lunches except where specified",
+        "drinks and beverages",
+        "entrance fees to monuments and attractions",
+        "travel insurance",
+        "personal expenses",
+        "tips and gratuities",
+        "optional activities",
+        "extra camel rides",
+        "anything not mentioned in the included section"
       ],
       "gallery": [
         "https://images.pexels.com/photos/35901297/pexels-photo-35901297.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -335,11 +340,28 @@
       "image": "https://images.pexels.com/photos/35901297/pexels-photo-35901297.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "difficulty": "Moderate",
       "included": [
-        "Camel trek",
+        "Private transportation from Fes to Marrakech",
+        "professional English-speaking driver/guide",
+        "hotel pickup and drop-off",
         "3 nights accommodation",
-        "All meals",
-        "Nomad family stay",
-        "Weaving workshop"
+        "1 night in a private desert camp in Erg Chebbi",
+        "breakfast and dinner",
+        "sunset camel trek in Erg Chebbi",
+        "camel ride from the desert camp",
+        "4x4 desert excursion",
+        "visit to nomad villages",
+        "traditional Berber lunch",
+        "Gnaoua music experience",
+        "visit to Rissani and Moulay Ali Cherif Mausoleum",
+        "visit to Todra Gorges",
+        "visit to Dades Valley",
+        "visit to Valley of the Roses",
+        "visit to Skoura oasis",
+        "visit to Ouarzazate",
+        "visit to Taourirt Kasbah",
+        "visit to Ait Ben Haddou",
+        "crossing the High Atlas Mountains",
+        "desert sunrise experience"
       ],
       "rating": 4.9,
       "highlights": [
@@ -355,25 +377,32 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "Consultation",
-          "description": "A call with our team to understand your group, your dates, and what kind of desert experience you're after."
+          "title": "Marrakech – High Atlas Mountains – Ait Ben Haddou – Ouarzazate – Dades Valley",
+          "description": "Depart Marrakech early and begin your private journey through the spectacular High Atlas Mountains. Cross the Tizi N’Tichka Pass at 2,260 meters, enjoying panoramic views of mountain peaks, valleys, and traditional Berber villages.\n\nContinue to Ait Ben Haddou, the famous UNESCO World Heritage Site. Explore the ancient ksar, its earthen buildings, and narrow alleyways before enjoying lunch at a local restaurant.\n\nIn the afternoon, continue toward Ouarzazate, known as the Gateway to the Sahara. Depending on your interests and timing, visit Taourirt Kasbah or one of the famous film studios.\n\nContinue through the Valley of Roses toward the Dades Valley, passing palm oases, traditional villages, and dramatic mountain landscapes.\n\nDinner and overnight in a local hotel or kasbah in Dades Valley."
         },
         {
           "day": 2,
-          "title": "Tailored Proposal",
-          "description": "We send a bespoke itinerary with route, camp, and guide options within 48 hours."
+          "title": "Dades Valley – Todra Gorges – Erfoud – Merzouga – Erg Chebbi",
+          "description": "After breakfast, explore the spectacular Dades Valley before continuing toward the Sahara. Drive through the Road of 1001 Kasbahs and continue to the impressive Todra Gorges, where towering limestone cliffs rise dramatically above the river.\n\nEnjoy a walk through the gorge before continuing toward Tinjdad, Jorf, and Erfoud, passing desert oases and palm groves along the way.\n\nArrive in Merzouga in the afternoon and meet your camel caravan. Ride across the golden dunes of Erg Chebbi as the sun begins to set.\n\nArrive at your private desert camp and settle into your tent. Enjoy traditional Moroccan dinner, mint tea, and Berber music around the campfire.\n\nAfter dinner, take time to experience the peaceful Sahara night and enjoy stargazing far from city lights.\n\nDinner and overnight in a private desert camp."
         },
         {
           "day": 3,
-          "title": "Your Journey",
-          "description": "Everything is arranged. You arrive and the desert does the rest."
+          "title": "Day 3: Erg Chebbi – Sahara Sunrise – Rissani – Drâa Valley – Marrakech",
+          "description": "Wake early to experience a spectacular sunrise over the Erg Chebbi dunes. After breakfast at the camp, leave the desert by camel or 4x4 and return to Merzouga.\n\nContinue toward Rissani, the historic gateway to the Sahara. If the market is open, explore the traditional souk and discover local products and desert culture.\n\nBegin the return journey through the dramatic landscapes of southeastern Morocco, passing through the Drâa Valley and its palm-filled oases. Enjoy lunch along the way before continuing toward the High Atlas Mountains.\n\nCross the Tizi N’Tichka Pass once again and descend toward Marrakech. Arrive in Marrakech in the evening, where your 3-day private bespoke desert adventure comes to an end."
         }
       ],
       "slug": "private-bespoke-desert",
       "notIncluded": [
-        "International flights",
-        "Travel insurance",
-        "Tips"
+        "Lunches",
+        "drinks and beverages",
+        "entrance fees to monuments and attractions",
+        "travel insurance",
+        "personal expenses",
+        "tips and gratuities",
+        "optional activities",
+        "extra camel rides",
+        "accommodation upgrades",
+        "anything not mentioned in the included section"
       ],
       "gallery": [
         "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -384,26 +413,59 @@
       "priceFrom": 1200,
       "duration": "Flexible",
       "region": "Tailored to you",
-      "days": 0,
+      "days": 3,
       "subtitle": "Your own route, your own pace, your own Sahara",
       "title": "Private Bespoke Desert",
-      "overview": "For travelers who want something truly their own. Tell us what you dream of — a helicopter drop into a remote dune field, a private camp for two, a photography expedition — and we'll build it.",
+      "overview": "Embark on a 3-day, 2-night private bespoke desert tour from Marrakech through the spectacular landscapes of southern Morocco. Cross the High Atlas Mountains and visit the UNESCO-listed Ait Ben Haddou before exploring the Dades Valley and dramatic Todra Gorges. Continue to Merzouga for a sunset camel trek across the golden dunes of Erg Chebbi and spend a magical night in a private desert camp under the stars. Experience traditional Berber culture, desert landscapes, Sahara sunrise, and the scenic Drâa Valley before returning to Marrakech. This private journey can be tailored to your interests, pace, and preferred experiences.",
       "reviews": 41,
       "image": "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "difficulty": "Gentle",
       "included": [
-        "Private guide",
-        "Private camp",
-        "All meals",
-        "Bespoke routing",
-        "Concierge support"
+        "Private transportation from Marrakech",
+        "professional English-speaking driver/guide",
+        "hotel or riad pick-up and drop-off",
+        "1 night in a local hotel or kasbah in Dades Valley",
+        "1 night in a private desert camp in Erg Chebbi",
+        "breakfast and dinner",
+        "sunset camel trek in Erg Chebbi",
+        "camel or 4x4 transfer from the desert camp",
+        "traditional Moroccan dinner",
+        "Berber music and campfire experience",
+        "stargazing experience",
+        "Sahara sunrise",
+        "visit to Ait Ben Haddou",
+        "visit to Todra Gorges",
+        "visit to Dades Valley",
+        "crossing the High Atlas Mountains",
+        "Tizi N’Tichka Pass",
+        "visit to Rissani",
+        "Drâa Valley landscapes"
       ],
       "rating": 5,
       "highlights": [
-        "Fully private guide & camp",
-        "Flexible duration and route",
-        "Photography-focused options",
-        "Helicopter or 4x4 transfers available"
+        "Private bespoke desert tour",
+        "High Atlas Mountains",
+        "Tizi N’Tichka Pass",
+        "Ait Ben Haddou UNESCO World Heritage Site",
+        "Ouarzazate",
+        "Dades Valley",
+        "Road of 1001 Kasbahs",
+        "Todra Gorges",
+        "Erfoud",
+        "Merzouga",
+        "Erg Chebbi dunes",
+        "sunset camel trek",
+        "private desert camp",
+        "Sahara sunrise",
+        "stargazing under the desert sky",
+        "Berber music and campfire",
+        "traditional Moroccan cuisine",
+        "Rissani",
+        "Drâa Valley",
+        "palm oases",
+        "authentic desert culture",
+        "spectacular landscapes",
+        "private journey from Marrakech"
       ]
     }
   ]
