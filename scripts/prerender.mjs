@@ -5,7 +5,7 @@ import puppeteer from 'puppeteer-core';
 
 const PORT = process.env.PRERENDER_PORT ? Number(process.env.PRERENDER_PORT) : 9321;
 const DIST = resolve('dist');
-const BASE_PATH = '/Moroccan-Desert';
+const BASE_PATH = '';
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',

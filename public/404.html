@@ -6,11 +6,10 @@
     <title>Sahara Vacations</title>
     <script>
       (function () {
-        var base = '/Moroccan-Desert/';
         var pathname = window.location.pathname;
-        var rest = pathname.indexOf(base) === 0 ? pathname.slice(base.length) : pathname.replace(/^\//, '');
+        var rest = pathname.replace(/^\//, '');
         sessionStorage.setItem('spa-redirect', rest || '/');
-        window.location.replace(base);
+        window.location.replace('/');
       })();
     </script>
   </head>
