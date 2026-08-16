@@ -292,23 +292,23 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "Meet the Nomads",
-          "description": "Camel trek from Merzouga to a nomad family's seasonal encampment. Share tea, learn how they move with the seasons, and sleep in a traditional tent."
+          "title": "Fes – Ifrane – Azrou – Midelt – Erfoud – Merzouga",
+          "description": "Driving Time: Approximately 7 hours 5 minutes\n\nDepart Fes in the morning and begin your journey south toward the Sahara. Travel through Ifrane, known for its alpine-style architecture and beautiful mountain scenery, before continuing to the cedar forests around Azrou, where you may spot Barbary macaques among the trees.\n\nContinue through the Middle Atlas Mountains to Midelt, where you will stop for lunch. In the afternoon, cross the dramatic landscapes of the Ziz Valley, with its rocky gorges, palm-filled oases, and spectacular desert scenery.\n\nContinue through Erfoud toward Merzouga and the golden dunes of Erg Chebbi. In the late afternoon, meet your camel caravan and ride across the dunes while watching the sunset transform the Sahara into shades of gold and rose.\n\nArrive at your Berber desert camp, where you will enjoy a traditional dinner, mint tea, and Berber music around the campfire. Spend the night in a desert tent beneath the spectacular Sahara night sky."
         },
         {
           "day": 2,
-          "title": "Bread in the Sand",
-          "description": "Spend the day with the family. Learn to bake sand-baked bread, milk the goats, and prepare a tagine. Afternoon walk to a nearby fossil bed."
+          "title": "Desert Nomad Experience – Merzouga & Erg Chebbi",
+          "description": "Wake up early to enjoy the peaceful Sahara sunrise over the Erg Chebbi dunes. After breakfast at the camp, begin your return camel ride toward Merzouga, taking in the changing colors and vast desert scenery.\n\nContinue your exploration by 4x4, discovering the hidden landscapes around Erg Chebbi. Visit traditional nomad communities and learn about their way of life in the Sahara. Along the way, discover ancient rock carvings and other traces of the region’s rich history.\n\nStop for a traditional Berber lunch and experience the unique rhythms of Gnaoua music, an important part of Morocco’s desert culture. Later, return to your accommodation and enjoy a relaxed evening with dinner, local entertainment, and a campfire under the desert sky."
         },
         {
           "day": 3,
-          "title": "Weaving Workshop",
-          "description": "Travel to a Berber weaving cooperative. Spend the day learning the patterns and stories woven into each carpet. Overnight in a wild camp."
+          "title": "Merzouga – Rissani – Todra Gorges – Boumalne Dades",
+          "description": "Driving Time: Approximately 4 hours 45 minutes\n\nAfter breakfast, leave Merzouga and begin your journey toward the spectacular Todra and Dades valleys. Start with a visit to Rissani, the historic gateway to the Sahara, where you can discover the Mausoleum of Moulay Ali Cherif, founder of the Alaouite dynasty.\n\nContinue through the desert landscapes toward Jorf and Tinjdad, passing beautiful palm groves and traditional oasis villages. Continue to Tinghir, where you can explore the old Jewish quarter and discover more about the region's rich cultural heritage.\n\nArrive at the impressive Todra Gorges, where towering limestone cliffs rise dramatically above the river. Enjoy lunch in this spectacular setting before taking some time to walk through the gorge and admire the surrounding landscapes.\n\nIn the afternoon, continue toward the Dades Valley and Boumalne Dades. Enjoy the scenic mountain roads and dramatic rock formations before settling into a comfortable local hotel. Dinner and overnight in Boumalne Dades."
         },
         {
           "day": 4,
-          "title": "Return to Merzouga",
-          "description": "Sunrise, breakfast, and camel ride back to Merzouga."
+          "title": "Boumalne Dades – Valley of the Roses – Skoura – Ouarzazate – Ait Ben Haddou – Marrakech",
+          "description": "Driving Time: Approximately 5 hours 35 minutes\n\nAfter breakfast, leave Boumalne Dades and travel through the beautiful Valley of the Roses, known for its fragrant rose fields and traditional villages. Continue toward Skoura, a lush oasis surrounded by palm groves and historic kasbahs.\n\nContinue to Ouarzazate, the famous Gateway to the Sahara. Stop to visit the renowned film studios and explore the impressive Kasbah of Taourirt, one of the region’s most remarkable historic buildings.\n\nNext, travel to Ait Ben Haddou, a spectacular fortified ksar and UNESCO World Heritage Site. Explore its ancient earthen architecture, narrow alleyways, and panoramic views across the surrounding landscape.\n\nIn the afternoon, begin the final journey to Marrakech, crossing the High Atlas Mountains via the scenic Telouet route. Enjoy spectacular mountain scenery before arriving in Marrakech, where your unforgettable 4-day journey from Fes comes to an end.\n"
         }
       ],
       "slug": "nomad-berber-immersion",
@@ -330,7 +330,7 @@
       "days": 4,
       "subtitle": "Live with the people of the desert for four days",
       "title": "Nomad & Berber Immersion",
-      "overview": "A cultural deep-dive. Spend four days with the people of the Sahara — nomad families, Berber weavers, and the guides who grew up between these dunes. You'll eat, sleep, and travel as they do.",
+      "overview": "Overview\n\nEmbark on an unforgettable 4-day journey from Fes to Marrakech through the spectacular landscapes of southern Morocco. Discover the Middle Atlas Mountains, traditional Berber villages, the dramatic Ziz Valley, and the golden dunes of Erg Chebbi. Enjoy a magical sunset camel ride, spend a night in a Sahara desert camp under the stars, explore the Todra Gorges and the famous Road of 1001 Kasbahs, and finish your adventure in Marrakech.",
       "reviews": 64,
       "image": "https://images.pexels.com/photos/35901297/pexels-photo-35901297.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "difficulty": "Moderate",
