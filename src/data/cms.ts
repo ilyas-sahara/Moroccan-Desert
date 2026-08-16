@@ -103,7 +103,7 @@ export type ExperiencesPageContent = {
 };
 
 const defaultSettings: SiteSettings = {
-  brand_name: 'Saharavacation',
+  brand_name: 'Sahara Vacation',
   tagline: 'Moroccan Desert Journeys',
   phone: '+212 5 35 00 00 00',
   email: 'hello@saharavacation.com',
@@ -113,7 +113,7 @@ const defaultSettings: SiteSettings = {
 };
 
 const defaultFooter: FooterContent = {
-  brand_name: 'Saharavacation',
+  brand_name: 'Sahara Vacation',
   description:
     'Luxury desert journeys through the golden dunes of Merzouga and beyond. Small groups, local guides, and camps that leave nothing behind but footprints.',
   instagram_url: '#',
@@ -149,7 +149,7 @@ const defaultHome: HomePageContent = {
   hero_title: 'The desert changes everyone who walks into it.',
   hero_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace.',
   hero_kicker: 'Moroccan Sahara · Est. 2009',
-  hero_heading: 'Saharavacation',
+  hero_heading: 'Sahara Vacation',
   hero_lead: 'Luxury desert journeys through the golden dunes of Merzouga. Camel treks, Berber camps, and nights under the darkest sky on earth.',
   hero_frames: defaultHeroFrames,
   hero_rating: '4.9',
@@ -170,10 +170,10 @@ const defaultHome: HomePageContent = {
 const defaultAbout: AboutPageContent = {
   hero_eyebrow: 'Our Story',
   hero_title: 'Born at the edge of the dunes',
-  hero_subtitle: 'Saharavacation began with a single Berber family in Merzouga and a belief that the desert should be shared with care.',
+  hero_subtitle: 'Sahara Vacation began with a single Berber family in Merzouga and a belief that the desert should be shared with care.',
   hero_image: IMAGES.loneTraveler,
   intro_title: 'A family of guides, not a company.',
-  intro_description: 'We are a small collective of Berber guides and camp hosts from the Erg Chebbi region. We grew up walking these dunes, and we started Saharavacation to share them with travelers who want more than a photo stop.',
+  intro_description: 'We are a small collective of Berber guides and camp hosts from the Erg Chebbi region. We grew up walking these dunes, and we started Sahara Vacation to share them with travelers who want more than a photo stop.',
   intro_image: IMAGES.campNomad,
   values: [
     { title: 'Local First', text: 'Every guide is Berber, born and raised at the edge of the dunes. The money you spend stays in the desert.' },
@@ -208,7 +208,7 @@ const defaultCustomJourney: CustomJourneyPageContent = {
 const defaultExperiencesPage: ExperiencesPageContent = {
   hero_eyebrow: 'Experiences',
   hero_title: 'The small moments that make a journey',
-  hero_subtitle: 'Every Saharavacation trip is built from these threads. Browse them, then let us weave them into something just for you.',
+  hero_subtitle: 'Every Sahara Vacation trip is built from these threads. Browse them, then let us weave them into something just for you.',
   hero_image: IMAGES.campBerber,
   cta_title: 'Want all of these in one journey?',
   cta_subtitle: 'We build bespoke itineraries that combine any of these experiences into a single, seamless trip.',

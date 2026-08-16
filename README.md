@@ -1,6 +1,6 @@
-# Saharavacation — Moroccan Desert Journeys
+# Sahara Vacation — Moroccan Desert Journeys
 
-Marketing site for Saharavacation (Merzouga, Morocco), built with Vite +
+Marketing site for Sahara Vacation (Merzouga, Morocco), built with Vite +
 React + TypeScript + Tailwind. Includes a blog, tours, experiences, and a
 GitHub-backed Decap CMS admin surface for non-developers.
 

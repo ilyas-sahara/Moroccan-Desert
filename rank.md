@@ -1,4 +1,4 @@
-# Saharavacation — Remaining SEO / Ranking Actions
+# Sahara Vacation — Remaining SEO / Ranking Actions
 
 Status of on-site SEO (done): meta tags + canonical + Open Graph/Twitter, JSON-LD
 (TravelAgency / Product / BlogPosting), robots.txt, sitemap.xml, multilingual UI

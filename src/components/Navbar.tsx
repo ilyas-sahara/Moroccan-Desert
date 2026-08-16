@@ -100,7 +100,7 @@ export default function Navbar() {
                 solid ? 'text-ink-900' : 'text-white'
               }`}
             >
-              Saharavacation
+              Sahara Vacation
             </span>
             <span
               className={`text-[10px] font-medium uppercase tracking-[0.32em] transition-colors duration-500 ${

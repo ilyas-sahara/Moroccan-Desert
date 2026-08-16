@@ -5,7 +5,7 @@ import { getFooterContent, type FooterContent } from '@/data/cms';
 import { useLocale } from '@/i18n';
 
 const DEFAULT_FOOTER: FooterContent = {
-  brand_name: 'Saharavacation',
+  brand_name: 'Sahara Vacation',
   description:
     'Luxury desert journeys through the golden dunes of Merzouga and beyond. Small groups, local guides, and camps that leave nothing behind but footprints.',
   instagram_url: '#',
