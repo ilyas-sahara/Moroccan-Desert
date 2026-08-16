@@ -9,7 +9,7 @@ import { getCmsTours } from '@/data/cms';
 import { useReveal } from '@/hooks/useReveal';
 import { useSeo, SITE_URL } from '@/hooks/useSeo';
 import { useLocale } from '@/i18n';
-import TourCard from '@/components/TourCard';
+import TourMarquee from '@/components/TourMarquee';
 import TourMap from '@/components/TourMap';
 import VideoPlayer from '@/components/VideoPlayer';
 import SectionHeading from '@/components/SectionHeading';
@@ -74,7 +74,7 @@ export default function TourDetail() {
     );
   }
 
-  const related = tours.filter((t) => t.slug !== tour.slug).slice(0, 3);
+  const related = tours.filter((t) => t.slug !== tour.slug);
 
   const tourUrl = `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/tours/${tour.slug}`;
   const tourProduct = {
@@ -335,14 +335,12 @@ export default function TourDetail() {
       </section>
 
       {/* Related */}
-      <section className="bg-sand-100/40 py-20 lg:py-28">
+      <section className="overflow-hidden bg-sand-100/40 py-20 lg:py-28">
         <div className="container-x">
           <SectionHeading eyebrow={t('tours.keepExploring')} title={t('tours.youMayAlsoLike')} />
-          <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {related.map((t, i) => (
-              <TourCard key={t.slug} tour={t} index={i} />
-            ))}
-          </div>
+        </div>
+        <div className="mt-12">
+          <TourMarquee tours={related} className="mask-fade-x" />
         </div>
       </section>
 
