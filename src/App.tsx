@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { LocaleProvider } from '@/i18n';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SiteOrganization from '@/components/SiteOrganization';
 import Home from '@/pages/Home';
 import Tours from '@/pages/Tours';
 import TourDetail from '@/pages/TourDetail';
@@ -27,6 +28,7 @@ export default function App() {
     <LocaleProvider>
       <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
         <ScrollToTop />
+        <SiteOrganization />
         <div className="flex min-h-screen flex-col">
           <Navbar />
           <div className="flex-1">

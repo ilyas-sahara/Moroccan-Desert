@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ilyas-sahara.github.io/Moroccan-Desert/sitemap.xml
+Sitemap: https://saharavacation.com/sitemap.xml

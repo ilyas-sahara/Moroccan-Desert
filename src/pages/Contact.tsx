@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Mail, Phone, MapPin, Send, Check, ChevronDown } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 import SectionHeading from '@/components/SectionHeading';
+import JsonLd from '@/components/JsonLd';
 import { useReveal } from '@/hooks/useReveal';
 import { useSeo } from '@/hooks/useSeo';
 import { TOURS, FAQS } from '@/data/content';
@@ -206,6 +207,17 @@ export default function Contact() {
       </section>
 
       {/* FAQ */}
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqs.map((f) => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a },
+          })),
+        }}
+      />
       <section className="bg-sand-100/40 py-20 lg:py-28">
         <div className="container-x">
           <SectionHeading align="center" eyebrow={t('contact.goodToKnow')} title={t('contact.faqTitle')} />

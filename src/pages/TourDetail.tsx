@@ -90,8 +90,10 @@ export default function TourDetail() {
       price: tour.priceFrom,
       priceCurrency: 'EUR',
       availability: 'https://schema.org/InStock',
+      itemCondition: 'https://schema.org/NewCondition',
       url: tourUrl,
     },
+    ...(tour.days ? { duration: `P${tour.days}D` } : {}),
     ...(tour.rating > 0 && tour.reviews > 0
       ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: tour.rating, reviewCount: tour.reviews } }
       : {}),
