@@ -8,7 +8,7 @@ const LANGS = ['fr', 'de', 'es', 'it'];
 const urlBlock = /<url>[\s\S]*?<\/url>/g;
 const locRe = /<loc>([^<]+)<\/loc>/;
 
-const base = 'https://saharavacation.com';
+const base = 'https://www.saharavacation.com';
 
 const updated = xml.replace(urlBlock, (block) => {
   const match = block.match(locRe);

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { LANGS, useLocale } from '@/i18n';
 
-export const SITE_URL = 'https://saharavacation.com';
+export const SITE_URL = 'https://www.saharavacation.com';
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
   let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
