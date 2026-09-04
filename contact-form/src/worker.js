@@ -39,15 +39,12 @@ export default {
     }
 
     const email = String(data.email || '').trim().toLowerCase();
-    const firstName = String(data.firstName || '').trim();
-    const lastName = String(data.lastName || '').trim();
-    const tour = String(data.tour || '').trim();
-    const group = String(data.group || '').trim();
-    const date = String(data.date || '').trim();
-    const phone = String(data.phone || '').trim();
-    const message = String(data.message || '').trim();
+    const name = String(
+      data.name || [data.firstName, data.lastName].filter(Boolean).join(' '),
+    ).trim();
+    const labels = data.labels && typeof data.labels === 'object' ? data.labels : null;
 
-    if (!firstName || !lastName || !email) {
+    if (!name || !email) {
       return json({ error: 'Missing required fields' }, 400, allowOrigin);
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -62,43 +59,7 @@ export default {
     }
 
     const notifyTo = env.NOTIFY_TO || 'bouzyanilyas@gmail.com';
-    const subject = `[Sahara Vacation] New inquiry: ${firstName} ${lastName} — ${tour || 'General'}`;
-
-    const html = [
-      '<h2>New Tour Inquiry from saharavacation.com</h2>',
-      '<table cellpadding="6" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px">',
-      `<tr><td><b>First name</b></td><td>${escapeHtml(firstName)}</td></tr>`,
-      `<tr><td><b>Last name</b></td><td>${escapeHtml(lastName)}</td></tr>`,
-      `<tr><td><b>Email</b></td><td>${escapeHtml(email)}</td></tr>`,
-      phone ? `<tr><td><b>Phone</b></td><td>${escapeHtml(phone)}</td></tr>` : '',
-      `<tr><td><b>Interested tour</b></td><td>${escapeHtml(tour || 'Not specified')}</td></tr>`,
-      group ? `<tr><td><b>Group size</b></td><td>${escapeHtml(group)}</td></tr>` : '',
-      date ? `<tr><td><b>Preferred date</b></td><td>${escapeHtml(date)}</td></tr>` : '',
-      message
-        ? `<tr><td valign="top"><b>Message</b></td><td>${escapeHtml(message).replace(/\n/g, '<br>')}</td></tr>`
-        : '',
-      '</table>',
-      `<p>Reply to: <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>`,
-    ]
-      .filter(Boolean)
-      .join('\n');
-
-    const text = [
-      'New Tour Inquiry from saharavacation.com',
-      '',
-      `First name: ${firstName}`,
-      `Last name: ${lastName}`,
-      `Email: ${email}`,
-      phone ? `Phone: ${phone}` : null,
-      `Interested tour: ${tour || 'Not specified'}`,
-      group ? `Group size: ${group}` : null,
-      date ? `Preferred date: ${date}` : null,
-      message ? `Message:\n${message}` : null,
-      '',
-      `Reply to: ${email}`,
-    ]
-      .filter((l) => l !== null)
-      .join('\n');
+    const { subject, html, text } = buildContent({ data, name, email, labels });
 
     try {
       await sendSmtp({ user, pass, to: notifyTo, replyTo: email, subject, text, html });
@@ -110,6 +71,82 @@ export default {
     return json({ ok: true }, 200, allowOrigin);
   },
 };
+
+function buildContent({ data, name, email, labels }) {
+  const rawSubject = String(data.subject || '').trim();
+  const subject = rawSubject
+    ? `[Sahara Vacation] ${rawSubject}`
+    : `[Sahara Vacation] New inquiry: ${name} — ${String(data.tour || 'General').trim()}`;
+
+  if (labels) {
+    const entries = Object.entries(labels).filter(([, value]) => String(value ?? '').trim() !== '');
+    const rows = entries.map(([label, value]) => {
+      const safeValue = escapeHtml(String(value)).replace(/\n/g, '<br>');
+      return `<tr><td valign="top"><b>${escapeHtml(label)}</b></td><td>${safeValue}</td></tr>`;
+    });
+    const html = [
+      `<h2>${escapeHtml(name)} — custom journey request from saharavacation.com</h2>`,
+      '<table cellpadding="6" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px">',
+      ...rows,
+      '</table>',
+      `<p>Reply to: <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>`,
+    ].join('\n');
+    const text = [
+      `${name} — custom journey request from saharavacation.com`,
+      '',
+      ...entries.map(([label, value]) => `${label}: ${String(value)}`),
+      '',
+      `Reply to: ${email}`,
+    ].join('\n');
+    return { subject, html, text };
+  }
+
+  const firstName = String(data.firstName || '').trim();
+  const lastName = String(data.lastName || '').trim();
+  const tour = String(data.tour || '').trim();
+  const group = String(data.group || '').trim();
+  const date = String(data.date || '').trim();
+  const phone = String(data.phone || '').trim();
+  const message = String(data.message || '').trim();
+
+  const html = [
+    '<h2>New Tour Inquiry from saharavacation.com</h2>',
+    '<table cellpadding="6" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px">',
+    `<tr><td><b>First name</b></td><td>${escapeHtml(firstName)}</td></tr>`,
+    `<tr><td><b>Last name</b></td><td>${escapeHtml(lastName)}</td></tr>`,
+    `<tr><td><b>Email</b></td><td>${escapeHtml(email)}</td></tr>`,
+    phone ? `<tr><td><b>Phone</b></td><td>${escapeHtml(phone)}</td></tr>` : '',
+    `<tr><td><b>Interested tour</b></td><td>${escapeHtml(tour || 'Not specified')}</td></tr>`,
+    group ? `<tr><td><b>Group size</b></td><td>${escapeHtml(group)}</td></tr>` : '',
+    date ? `<tr><td><b>Preferred date</b></td><td>${escapeHtml(date)}</td></tr>` : '',
+    message
+      ? `<tr><td valign="top"><b>Message</b></td><td>${escapeHtml(message).replace(/\n/g, '<br>')}</td></tr>`
+      : '',
+    '</table>',
+    `<p>Reply to: <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>`,
+  ]
+    .filter(Boolean)
+    .join('\n');
+
+  const text = [
+    'New Tour Inquiry from saharavacation.com',
+    '',
+    `First name: ${firstName}`,
+    `Last name: ${lastName}`,
+    `Email: ${email}`,
+    phone ? `Phone: ${phone}` : null,
+    `Interested tour: ${tour || 'Not specified'}`,
+    group ? `Group size: ${group}` : null,
+    date ? `Preferred date: ${date}` : null,
+    message ? `Message:\n${message}` : null,
+    '',
+    `Reply to: ${email}`,
+  ]
+    .filter((l) => l !== null)
+    .join('\n');
+
+  return { subject, html, text };
+}
 
 async function sendSmtp({ user, pass, to, replyTo, subject, text, html }) {
   const socket = connect({ hostname: SMTP_HOST, port: SMTP_PORT }, { secureTransport: 'on' });

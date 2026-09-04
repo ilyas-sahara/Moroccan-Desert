@@ -157,8 +157,7 @@ export const it: LocaleDict = {
   'custom.stepTitle': '2. Richiedi il tuo itinerario su misura',
   'custom.stepSubtitle':
     'Risponderemo con un percorso personalizzato, la disponibilità e prezzi trasparenti.',
-  'custom.sent':
-    'La tua app di posta si è aperta con la richiesta pronta. Inviala lì per raggiungere il nostro team.',
+  'custom.sent': 'La tua richiesta è stata inviata! Il nostro team locale risponderà entro 24 ore.',
   'custom.yourName': 'Il tuo nome',
   'custom.phoneWhatsApp': 'Telefono / WhatsApp',
   'custom.preferredStartDate': 'Data di partenza preferita',
@@ -188,7 +187,9 @@ export const it: LocaleDict = {
   'custom.notesPlaceholder':
     'Raccontaci il tuo stile di viaggio, occasioni speciali, esigenze alimentari o qualsiasi cosa tu voglia vivere.',
   'custom.sendRequest': 'Invia richiesta di viaggio su misura',
-  'custom.emailHint': 'Si apre la tua app di posta con percorso e preferenze inclusi.',
+  'custom.sending': 'Invio in corso...',
+  'custom.sendError': 'Spiacenti, qualcosa è andato storto. Riprova o scrivici a hello@saharavacation.com.',
+  'custom.emailHint': 'La tua richiesta viene inviata in modo sicuro al nostro team locale, che risponde entro 24 ore.',
   'custom.yourRoute': 'Il tuo percorso',
   'custom.journeyTakesShape': 'Il viaggio prende forma',
   'custom.live': 'Live',

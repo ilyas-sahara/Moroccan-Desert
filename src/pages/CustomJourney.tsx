@@ -46,6 +46,9 @@ export default function CustomJourney() {
     })();
   }, [locale]);
 
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
   const toggleInterest = (interest: InterestKey) => {
     setInterests((current) => current.includes(interest) ? current.filter((item) => item !== interest) : [...current, interest]);
   };
@@ -60,42 +63,66 @@ export default function CustomJourney() {
     setDayPlans((current) => current.map((plan, planIndex) => planIndex === index ? value : plan));
   };
 
-  const submit = (event: FormEvent<HTMLFormElement>) => {
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const phone = String(data.get('phone') ?? '');
     const date = String(data.get('date') ?? '');
     const travelers = String(data.get('travelers') ?? '');
+    const pickupType = String(data.get('pickupType') ?? '');
     const pickupLocation = String(data.get('pickupLocation') ?? '');
+    const comfort = String(data.get('comfort') ?? '');
     const notes = String(data.get('notes') ?? '');
-    const body = [
-      t('custom.emailBody.title'),
-      '',
-      t('custom.emailBody.name', { value: String(data.get('name') ?? '') }),
-      t('custom.emailBody.email', { value: String(data.get('email') ?? '') }),
-      phone ? t('custom.emailBody.phone', { value: phone }) : t('custom.emailBody.phoneNotProvided'),
-      date ? t('custom.emailBody.date', { value: date }) : t('custom.emailBody.dateFlexible'),
-      travelers ? t('custom.emailBody.travelers', { value: travelers }) : t('custom.emailBody.travelersNotSpecified'),
-      t('custom.emailBody.comfort', { value: String(data.get('comfort') ?? '') }),
-      t('custom.emailBody.pickup', {
-        value: String(data.get('pickupType') ?? ''),
-        location: pickupLocation || t('custom.emailBody.pickupToBeConfirmed'),
-      }),
-      t('custom.emailBody.dayByDay'),
-      ...dayPlans.map((id, index) =>
+    const dayByDay = dayPlans
+      .map((id, index) =>
         t('custom.emailBody.day', {
           n: index + 1,
           stop: STOPS.find((stop) => stop.id === id)?.name ?? t('custom.emailBody.open'),
         }),
-      ),
-      interests.length
-        ? t('custom.emailBody.interests', { value: interests.map((key) => t(`custom.interests.${key}`)).join(', ') })
-        : t('custom.emailBody.noPreferences'),
-      '',
-      notes ? t('custom.emailBody.notes', { value: notes }) : t('custom.emailBody.none'),
-    ].join('\n');
-    window.location.href = `mailto:hello@saharavacation.com?subject=${encodeURIComponent(t('custom.emailBody.subject'))}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+      )
+      .join('\n');
+
+    const labels: Record<string, string> = {};
+    labels[t('custom.phoneWhatsApp')] = phone || t('custom.emailBody.phoneNotProvided');
+    labels[t('custom.preferredStartDate')] = date || t('custom.emailBody.dateFlexible');
+    labels[t('custom.travelers')] = travelers;
+    labels[t('custom.pickupPref')] = pickupType
+      ? `${pickupType}${pickupLocation ? ` — ${pickupLocation}` : ''}`
+      : t('custom.emailBody.pickupToBeConfirmed');
+    labels[t('custom.comfortLabel')] = comfort;
+    labels[t('custom.dayByDay')] = dayByDay;
+    labels[t('custom.interestsLabel')] = interests.length
+      ? interests.map((key) => t(`custom.interests.${key}`)).join(', ')
+      : t('custom.emailBody.noPreferences');
+    if (notes) labels[t('custom.anythingElse')] = notes;
+
+    const payload = {
+      name: String(data.get('name') ?? ''),
+      email: String(data.get('email') ?? ''),
+      subject: t('custom.emailBody.subject'),
+      labels,
+    };
+
+    setSubmitting(true);
+    setSubmitError('');
+    const endpoint =
+      import.meta.env.VITE_CONTACT_FORM_URL ||
+      'https://contact-form.bouzyanilyas.workers.dev';
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        throw new Error(`Request failed: ${res.status}`);
+      }
+      setSent(true);
+    } catch {
+      setSubmitError(t('custom.sendError') || 'Sorry, something went wrong. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -118,6 +145,7 @@ export default function CustomJourney() {
               <div className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-sand-200/70 sm:p-10">
                 <SectionHeading eyebrow={t('custom.eyebrow')} title={t('custom.stepTitle')} subtitle={t('custom.stepSubtitle')} />
                 {sent && <div className="mt-6 rounded-xl bg-oasis-100 p-4 text-sm text-oasis-700">{t('custom.sent')}</div>}
+                {submitError && <div className="mt-6 rounded-xl bg-red-100 p-4 text-sm text-red-700">{submitError}</div>}
                 <form onSubmit={submit} className="mt-8 space-y-6">
                   <div className="grid gap-5 sm:grid-cols-2">
                     <Input label={t('custom.yourName')} name="name" required /><Input label={t('contact.email')} name="email" type="email" required />
@@ -136,7 +164,7 @@ export default function CustomJourney() {
                   <Select label={t('custom.comfortLabel')} name="comfort" options={[t('custom.comfortOptions.bivouac'), t('custom.comfortOptions.comfortable'), t('custom.comfortOptions.luxury'), t('custom.comfortOptions.mix')]} />
                   <div><label className="mb-2 block text-sm font-medium text-ink-700">{t('custom.interestsLabel')}</label><div className="flex flex-wrap gap-2">{INTERESTS.map((interest) => <button type="button" key={interest} onClick={() => toggleInterest(interest)} className={`rounded-full px-4 py-2 text-sm transition-colors ${interests.includes(interest) ? 'bg-sand-800 text-sand-50' : 'bg-sand-100 text-ink-700 hover:bg-sand-200'}`}>{interests.includes(interest) ? <Check className="mr-1 inline h-4 w-4" /> : <Plus className="mr-1 inline h-4 w-4" />}{t(`custom.interests.${interest}`)}</button>)}</div></div>
                   <div><label className="mb-1.5 block text-sm font-medium text-ink-700">{t('custom.anythingElse')}</label><textarea name="notes" rows={5} placeholder={t('custom.notesPlaceholder')} className="w-full rounded-xl border border-sand-200 bg-sand-50/40 px-4 py-3 text-sm text-ink-800 placeholder:text-sand-500 focus:border-sand-400 focus:outline-none focus:ring-2 focus:ring-sand-200" /></div>
-                  <button type="submit" className="btn-primary"><Send className="h-4 w-4" />{t('custom.sendRequest')}</button>
+                  <button type="submit" disabled={submitting} className="btn-primary"><Send className="h-4 w-4" />{submitting ? t('custom.sending') : t('custom.sendRequest')}</button>
                   <p className="flex items-center gap-2 text-xs text-sand-600"><Mail className="h-4 w-4" />{t('custom.emailHint')}</p>
                 </form>
               </div>

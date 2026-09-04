@@ -157,8 +157,7 @@ export const de: LocaleDict = {
   'custom.stepTitle': '2. Anfrage für Ihre Individualreise',
   'custom.stepSubtitle':
     'Wir antworten mit einer maßgeschneiderten Route, Verfügbarkeiten und transparenten Preisen.',
-  'custom.sent':
-    'Ihre E-Mail-App wurde mit der vorbereiteten Anfrage geöffnet. Senden Sie sie, um unser Team zu erreichen.',
+  'custom.sent': 'Ihre Anfrage wurde gesendet! Unser lokales Team antwortet innerhalb von 24 Stunden.',
   'custom.yourName': 'Ihr Name',
   'custom.phoneWhatsApp': 'Telefon / WhatsApp',
   'custom.preferredStartDate': 'Gewünschtes Startdatum',
@@ -188,7 +187,9 @@ export const de: LocaleDict = {
   'custom.notesPlaceholder':
     'Erzählen Sie uns von Ihrem Reisestil, besonderen Anlässen, Ernährungsbedürfnissen oder allem, was Sie erleben möchten.',
   'custom.sendRequest': 'Anfrage für Individualreise senden',
-  'custom.emailHint': 'Ihre E-Mail-App öffnet sich mit Route und Präferenzen.',
+  'custom.sending': 'Wird gesendet...',
+  'custom.sendError': 'Entschuldigung, etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns an hello@saharavacation.com.',
+  'custom.emailHint': 'Ihre Anfrage wird sicher an unser lokales Team gesendet, das innerhalb von 24 Stunden antwortet.',
   'custom.yourRoute': 'Ihre Route',
   'custom.journeyTakesShape': 'Die Reise nimmt Form an',
   'custom.live': 'Live',
