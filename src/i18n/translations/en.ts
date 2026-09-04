@@ -215,6 +215,10 @@ export const en = {
     sendRequest: 'Send custom journey request',
     sending: 'Sending...',
     sendError: 'Sorry, something went wrong. Please try again or email us at hello@saharavacation.com.',
+    messageSent: 'Request sent',
+    thankYou:
+      'Thank you. Your journey outline has been received, and a member of our team will reply within 24 hours to tailor your itinerary.',
+    sendAnother: 'Start another request',
     emailHint: 'Your request is sent securely to our local team and we reply within 24 hours.',
     yourRoute: 'Your route',
     journeyTakesShape: 'The journey takes shape',

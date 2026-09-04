@@ -189,6 +189,10 @@ export const fr: LocaleDict = {
   'custom.sendRequest': 'Envoyer la demande de voyage sur mesure',
   'custom.sending': 'Envoi en cours...',
   'custom.sendError': 'Désolé, une erreur est survenue. Veuillez réessayer ou nous écrire à hello@saharavacation.com.',
+  'custom.messageSent': 'Demande envoyée',
+  'custom.thankYou':
+    'Merci. Votre itinéraire a bien été reçu, et un membre de notre équipe vous répondra sous 24 h pour créer votre voyage sur mesure.',
+  'custom.sendAnother': 'Refaire une demande',
   'custom.emailHint': 'Votre demande est envoyée en toute sécurité à notre équipe locale, qui répond sous 24 h.',
   'custom.yourRoute': 'Votre itinéraire',
   'custom.journeyTakesShape': 'Le voyage prend forme',

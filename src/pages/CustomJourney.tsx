@@ -125,6 +125,11 @@ export default function CustomJourney() {
     }
   };
 
+  const reset = () => {
+    setSent(false);
+    setSubmitError('');
+  };
+
   return (
     <main className="pt-20">
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-28">
@@ -144,8 +149,16 @@ export default function CustomJourney() {
             <div className="lg:col-span-7">
               <div className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-sand-200/70 sm:p-10">
                 <SectionHeading eyebrow={t('custom.eyebrow')} title={t('custom.stepTitle')} subtitle={t('custom.stepSubtitle')} />
-                {sent && <div className="mt-6 rounded-xl bg-oasis-100 p-4 text-sm text-oasis-700">{t('custom.sent')}</div>}
-                {submitError && <div className="mt-6 rounded-xl bg-red-100 p-4 text-sm text-red-700">{submitError}</div>}
+                {sent ? (
+                  <div className="flex flex-col items-center py-16 text-center">
+                    <span className="flex h-16 w-16 items-center justify-center rounded-full bg-oasis-100 text-oasis-700">
+                      <Check className="h-8 w-8" strokeWidth={2} />
+                    </span>
+                    <h2 className="mt-6 font-display text-3xl font-medium text-ink-900">{t('custom.messageSent')}</h2>
+                    <p className="mt-3 max-w-md text-ink-600">{t('custom.thankYou')}</p>
+                    <button onClick={reset} className="btn-ghost mt-8">{t('custom.sendAnother')}</button>
+                  </div>
+                ) : (
                 <form onSubmit={submit} className="mt-8 space-y-6">
                   <div className="grid gap-5 sm:grid-cols-2">
                     <Input label={t('custom.yourName')} name="name" required /><Input label={t('contact.email')} name="email" type="email" required />
@@ -164,9 +177,13 @@ export default function CustomJourney() {
                   <Select label={t('custom.comfortLabel')} name="comfort" options={[t('custom.comfortOptions.bivouac'), t('custom.comfortOptions.comfortable'), t('custom.comfortOptions.luxury'), t('custom.comfortOptions.mix')]} />
                   <div><label className="mb-2 block text-sm font-medium text-ink-700">{t('custom.interestsLabel')}</label><div className="flex flex-wrap gap-2">{INTERESTS.map((interest) => <button type="button" key={interest} onClick={() => toggleInterest(interest)} className={`rounded-full px-4 py-2 text-sm transition-colors ${interests.includes(interest) ? 'bg-sand-800 text-sand-50' : 'bg-sand-100 text-ink-700 hover:bg-sand-200'}`}>{interests.includes(interest) ? <Check className="mr-1 inline h-4 w-4" /> : <Plus className="mr-1 inline h-4 w-4" />}{t(`custom.interests.${interest}`)}</button>)}</div></div>
                   <div><label className="mb-1.5 block text-sm font-medium text-ink-700">{t('custom.anythingElse')}</label><textarea name="notes" rows={5} placeholder={t('custom.notesPlaceholder')} className="w-full rounded-xl border border-sand-200 bg-sand-50/40 px-4 py-3 text-sm text-ink-800 placeholder:text-sand-500 focus:border-sand-400 focus:outline-none focus:ring-2 focus:ring-sand-200" /></div>
+                  {submitError && (
+                    <p className="rounded-xl bg-clay-100 px-4 py-3 text-sm text-clay-700">{submitError}</p>
+                  )}
                   <button type="submit" disabled={submitting} className="btn-primary"><Send className="h-4 w-4" />{submitting ? t('custom.sending') : t('custom.sendRequest')}</button>
                   <p className="flex items-center gap-2 text-xs text-sand-600"><Mail className="h-4 w-4" />{t('custom.emailHint')}</p>
                 </form>
+                )}
               </div>
             </div>
 

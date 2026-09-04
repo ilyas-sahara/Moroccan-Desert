@@ -189,6 +189,10 @@ export const it: LocaleDict = {
   'custom.sendRequest': 'Invia richiesta di viaggio su misura',
   'custom.sending': 'Invio in corso...',
   'custom.sendError': 'Spiacenti, qualcosa è andato storto. Riprova o scrivici a hello@saharavacation.com.',
+  'custom.messageSent': 'Richiesta inviata',
+  'custom.thankYou':
+    'Grazie. Abbiamo ricevuto il tuo itinerario e un membro del nostro team ti risponderà entro 24 ore per personalizzare il percorso.',
+  'custom.sendAnother': 'Avvia un\'altra richiesta',
   'custom.emailHint': 'La tua richiesta viene inviata in modo sicuro al nostro team locale, che risponde entro 24 ore.',
   'custom.yourRoute': 'Il tuo percorso',
   'custom.journeyTakesShape': 'Il viaggio prende forma',

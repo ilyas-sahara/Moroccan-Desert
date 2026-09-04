@@ -189,6 +189,10 @@ export const de: LocaleDict = {
   'custom.sendRequest': 'Anfrage für Individualreise senden',
   'custom.sending': 'Wird gesendet...',
   'custom.sendError': 'Entschuldigung, etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns an hello@saharavacation.com.',
+  'custom.messageSent': 'Anfrage gesendet',
+  'custom.thankYou':
+    'Danke. Ihre Reiseübersicht ist eingegangen, und ein Mitglied unseres Teams wird innerhalb von 24 Stunden antworten, um Ihre Route anzupassen.',
+  'custom.sendAnother': 'Neue Anfrage starten',
   'custom.emailHint': 'Ihre Anfrage wird sicher an unser lokales Team gesendet, das innerhalb von 24 Stunden antwortet.',
   'custom.yourRoute': 'Ihre Route',
   'custom.journeyTakesShape': 'Die Reise nimmt Form an',
