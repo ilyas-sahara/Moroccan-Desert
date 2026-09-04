@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocale } from '@/i18n';
+import { LANGS, useLocale } from '@/i18n';
 
 export const SITE_URL = 'https://saharavacation.com';
 
@@ -11,6 +11,32 @@ function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
     document.head.appendChild(el);
   }
   el.setAttribute('content', content);
+}
+
+function removeLinkAttrs(attr: string, prefix: string) {
+  document.head.querySelectorAll<HTMLLinkElement>(`link[${attr}^="${prefix}"]`).forEach((el) => el.remove());
+}
+
+function upsertHreflang(hreflang: string, href: string) {
+  const key = `hreflang-${hreflang}`;
+  let el = document.head.querySelector<HTMLLinkElement>(`link[data-hreflang="${key}"]`);
+  if (!el) {
+    el = document.createElement('link');
+    el.setAttribute('data-hreflang', key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('rel', 'alternate');
+  el.setAttribute('hreflang', hreflang);
+  el.setAttribute('href', href);
+}
+
+function upsertAlternateLinks(baseUrl: string) {
+  removeLinkAttrs('data-hreflang', 'hreflang-');
+  for (const lang of LANGS) {
+    const href = lang.code === 'en' ? baseUrl : `${baseUrl}?lang=${lang.code}`;
+    upsertHreflang(lang.code, href);
+  }
+  upsertHreflang('x-default', baseUrl);
 }
 
 export type SeoOptions = {
@@ -46,6 +72,8 @@ export function useSeo({ title, description, path, image, type = 'website' }: Se
       document.head.appendChild(canonical);
     }
     canonical.href = url;
+
+    upsertAlternateLinks(url);
 
     upsertMeta('property', 'og:type', type);
     upsertMeta('property', 'og:site_name', siteName);

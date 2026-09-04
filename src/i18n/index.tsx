@@ -37,9 +37,21 @@ function interpolate(template: string, vars?: Vars): string {
   );
 }
 
+function localeFromUrl(): Locale | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    const params = new URLSearchParams(window.location.search);
+    return isLocale(params.get('lang')) ? (params.get('lang') as Locale) : null;
+  } catch {
+    return null;
+  }
+}
+
 export function LocaleProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(() => {
     if (typeof window === 'undefined') return 'en';
+    const fromUrl = localeFromUrl();
+    if (fromUrl) return fromUrl;
     const stored = window.localStorage.getItem(STORAGE_KEY);
     return isLocale(stored) ? stored : 'en';
   });
@@ -56,6 +68,16 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     document.documentElement.lang = locale;
   }, [locale]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const onUrlChange = () => {
+      const fromUrl = localeFromUrl();
+      if (fromUrl) setLocaleState(fromUrl);
+    };
+    window.addEventListener('popstate', onUrlChange);
+    return () => window.removeEventListener('popstate', onUrlChange);
+  }, []);
 
   const t = useCallback(
     (key: TranslationKey, vars?: Vars) => {
