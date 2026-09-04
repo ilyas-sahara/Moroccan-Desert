@@ -1,0 +1,285 @@
+import { connect } from 'cloudflare:sockets';
+
+const ALLOWED_ORIGIN = /^https:\/\/(www\.)?saharavacation\.com$/;
+const SMTP_HOST = 'smtp.gmail.com';
+const SMTP_PORT = 465;
+const encoder = new TextEncoder();
+const decoder = new TextDecoder();
+
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    const origin = request.headers.get('origin') || '';
+
+    if (url.pathname !== '/') {
+      return json({ error: 'Not found' }, 404);
+    }
+    if (request.method !== 'POST') {
+      return json({ error: 'Method not allowed' }, 405);
+    }
+
+    if (origin && !ALLOWED_ORIGIN.test(origin)) {
+      return json({ error: 'Forbidden origin' }, 403);
+    }
+
+    let data;
+    try {
+      data = await request.json();
+    } catch {
+      return json({ error: 'Invalid JSON' }, 400);
+    }
+
+    const email = String(data.email || '').trim().toLowerCase();
+    const firstName = String(data.firstName || '').trim();
+    const lastName = String(data.lastName || '').trim();
+    const tour = String(data.tour || '').trim();
+    const group = String(data.group || '').trim();
+    const date = String(data.date || '').trim();
+    const phone = String(data.phone || '').trim();
+    const message = String(data.message || '').trim();
+
+    if (!firstName || !lastName || !email) {
+      return json({ error: 'Missing required fields' }, 400);
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return json({ error: 'Invalid email address' }, 400);
+    }
+
+    const user = env.GMAIL_USER;
+    const pass = env.GMAIL_APP_PASSWORD;
+    if (!user || !pass) {
+      console.error('GMAIL_USER / GMAIL_APP_PASSWORD secrets not configured');
+      return json({ error: 'Server not configured' }, 500);
+    }
+
+    const notifyTo = env.NOTIFY_TO || 'bouzyanilyas@gmail.com';
+    const subject = `[Sahara Vacation] New inquiry: ${firstName} ${lastName} — ${tour || 'General'}`;
+
+    const html = [
+      '<h2>New Tour Inquiry from saharavacation.com</h2>',
+      '<table cellpadding="6" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px">',
+      `<tr><td><b>First name</b></td><td>${escapeHtml(firstName)}</td></tr>`,
+      `<tr><td><b>Last name</b></td><td>${escapeHtml(lastName)}</td></tr>`,
+      `<tr><td><b>Email</b></td><td>${escapeHtml(email)}</td></tr>`,
+      phone ? `<tr><td><b>Phone</b></td><td>${escapeHtml(phone)}</td></tr>` : '',
+      `<tr><td><b>Interested tour</b></td><td>${escapeHtml(tour || 'Not specified')}</td></tr>`,
+      group ? `<tr><td><b>Group size</b></td><td>${escapeHtml(group)}</td></tr>` : '',
+      date ? `<tr><td><b>Preferred date</b></td><td>${escapeHtml(date)}</td></tr>` : '',
+      message
+        ? `<tr><td valign="top"><b>Message</b></td><td>${escapeHtml(message).replace(/\n/g, '<br>')}</td></tr>`
+        : '',
+      '</table>',
+      `<p>Reply to: <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>`,
+    ]
+      .filter(Boolean)
+      .join('\n');
+
+    const text = [
+      'New Tour Inquiry from saharavacation.com',
+      '',
+      `First name: ${firstName}`,
+      `Last name: ${lastName}`,
+      `Email: ${email}`,
+      phone ? `Phone: ${phone}` : null,
+      `Interested tour: ${tour || 'Not specified'}`,
+      group ? `Group size: ${group}` : null,
+      date ? `Preferred date: ${date}` : null,
+      message ? `Message:\n${message}` : null,
+      '',
+      `Reply to: ${email}`,
+    ]
+      .filter((l) => l !== null)
+      .join('\n');
+
+    try {
+      await sendSmtp({ user, pass, to: notifyTo, replyTo: email, subject, text, html });
+    } catch (err) {
+      console.error('send failed', JSON.stringify({ message: err.message }));
+      return json({ error: 'Failed to send notification email' }, 502);
+    }
+
+    return json({ ok: true }, 200);
+  },
+};
+
+async function sendSmtp({ user, pass, to, replyTo, subject, text, html }) {
+  const socket = connect({ hostname: SMTP_HOST, port: SMTP_PORT }, { secureTransport: 'on' });
+  try {
+    await socket.opened;
+  } catch (err) {
+    socket.close();
+    throw new Error('connect failed: ' + (err && err.message));
+  }
+
+  const smtp = new SmtpClient(socket);
+
+  await smtp.expect('220');
+  await smtp.send(`EHLO ${SMTP_HOST}`);
+  await smtp.expect('250');
+
+  await smtp.send('AUTH LOGIN');
+  await smtp.expect('334');
+  await smtp.send(btoa(user));
+  await smtp.expect('334');
+  await smtp.send(btoa(pass));
+  await smtp.expect('235');
+
+  await smtp.send(`MAIL FROM:<${user}>`);
+  await smtp.expect('250');
+  await smtp.send(`RCPT TO:<${to}>`);
+  await smtp.expect('250');
+
+  const body = [
+    `From: ${user}`,
+    `To: ${to}`,
+    replyTo ? `Reply-To: ${replyTo}` : '',
+    `Subject: ${encodeHeader(subject)}`,
+    `Date: ${new Date().toUTCString()}`,
+    'MIME-Version: 1.0',
+    'Content-Type: multipart/alternative; boundary="boun_7f39ab12"',
+    '',
+    '--boun_7f39ab12',
+    'Content-Type: text/plain; charset=utf-8',
+    'Content-Transfer-Encoding: quoted-printable',
+    '',
+    encodeQP(text),
+    '--boun_7f39ab12',
+    'Content-Type: text/html; charset=utf-8',
+    'Content-Transfer-Encoding: quoted-printable',
+    '',
+    encodeQP(html),
+    '--boun_7f39ab12--',
+  ]
+    .filter((l) => l !== null)
+    .join('\r\n');
+
+  await smtp.send('DATA');
+  await smtp.expect('354');
+  await smtp.send(body);
+  await smtp.send('.');
+  await smtp.expect('250');
+
+  await smtp.send('QUIT');
+  try {
+    await smtp.expect('221');
+  } catch {
+    /* ignore */
+  }
+  socket.close();
+}
+
+class SmtpClient {
+  constructor(socket) {
+    this.writer = socket.writable.getWriter();
+    this.reader = socket.readable.getReader();
+    this.buffer = '';
+    this.socket = socket;
+    this.reading = null;
+  }
+
+  async send(line) {
+    await this.writer.write(encoder.encode(line + '\r\n'));
+  }
+
+  async expect(code) {
+    const text = await this.readResponse();
+    if (!text.startsWith(String(code))) {
+      throw new Error(`SMTP expected ${code}, got: ${text}`);
+    }
+    return text;
+  }
+
+  readResponse() {
+    return new Promise((resolve) => {
+      this.reading = resolve;
+      this.drain();
+    });
+  }
+
+  async drain() {
+    if (!this.reading) return;
+    while (this.reading) {
+      const nl = this.buffer.indexOf('\n');
+      if (nl === -1) {
+        const { value, done } = await this.reader.read();
+        if (done) {
+          this.buffer = '';
+          const resolve = this.reading;
+          this.reading = null;
+          resolve('');
+          return;
+        }
+        this.buffer += decoder.decode(value, { stream: true });
+        continue;
+      }
+      const line = this.buffer.slice(0, nl).replace(/\r$/, '');
+      this.buffer = this.buffer.slice(nl + 1);
+      const isMulti = line.length >= 4 && line[3] === '-';
+      if (!isMulti) {
+        const resolve = this.reading;
+        this.reading = null;
+        resolve(line);
+        return;
+      }
+    }
+  }
+}
+
+function encodeHeader(str) {
+  const quoted = encodeQPWord(str);
+  return quoted.length <= 76 ? quoted : '=?UTF-8?B?' + btoa(unescape(encodeURIComponent(str))) + '?=';
+}
+
+function encodeQPWord(str) {
+  let out = '';
+  for (const ch of str) {
+    const o = ch.codePointAt(0);
+    if (ch === ' ' || (o >= 33 && o <= 126 && ch !== '=')) {
+      out += ch;
+    } else if (o <= 255) {
+      out += '=' + o.toString(16).toUpperCase().padStart(2, '0');
+    } else {
+      const buf = new TextEncoder().encode(ch);
+      for (const b of buf) out += '=' + b.toString(16).toUpperCase().padStart(2, '0');
+    }
+  }
+  return out;
+}
+
+function encodeQP(str) {
+  let out = '';
+  let line = '';
+  const push = (s) => {
+    if (line.length + s.length > 76) {
+      out += line + '=\r\n';
+      line = s;
+    } else {
+      line += s;
+    }
+  };
+  for (const c of str) {
+    const o = c.charCodeAt(0);
+    if (o >= 32 && o <= 126 && c !== '=') {
+      push(c);
+    } else {
+      push('=' + o.toString(16).toUpperCase().padStart(2, '0'));
+    }
+  }
+  return out + line;
+}
+
+function json(body, status) {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: { 'content-type': 'application/json; charset=utf-8' },
+  });
+}
+
+function escapeHtml(value) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}

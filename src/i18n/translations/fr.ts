@@ -109,6 +109,8 @@ export const fr: LocaleDict = {
   'contact.yourMessage': 'Votre message',
   'contact.messagePlaceholder': 'Parlez-nous du voyage dont vous rêvez...',
   'contact.sendMessage': 'Envoyer le message',
+  'contact.sending': 'Envoi en cours...',
+  'contact.sendError': 'Désolé, une erreur est survenue. Veuillez réessayer.',
   'contact.talkToHuman': 'Parler à quelqu’un',
   'contact.office': 'Bureau',
   'contact.phoneWhatsApp': 'Téléphone / WhatsApp',

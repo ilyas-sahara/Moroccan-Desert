@@ -53,9 +53,44 @@ export default function Contact() {
     })();
   }, [locale]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    const form = e.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+    const payload = {
+      firstName: formData.get('firstName') || '',
+      lastName: formData.get('lastName') || '',
+      email: formData.get('email') || '',
+      phone: formData.get('phone') || '',
+      tour: formData.get('tour') || '',
+      group: formData.get('group') || '',
+      date: formData.get('date') || '',
+      message: formData.get('message') || '',
+    };
+
+    setSubmitting(true);
+    setSubmitError('');
+    const endpoint =
+      import.meta.env.VITE_CONTACT_FORM_URL ||
+      'https://contact-form.bouzyanilyas.workers.dev';
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        throw new Error(`Request failed: ${res.status}`);
+      }
+      setSent(true);
+    } catch {
+      setSubmitError(t('contact.sendError') || 'Sorry, something went wrong. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -117,8 +152,12 @@ export default function Contact() {
                       className="w-full rounded-xl border border-sand-200 bg-sand-50/40 px-4 py-3 text-sm text-ink-800 placeholder:text-sand-500 focus:border-sand-400 focus:outline-none focus:ring-2 focus:ring-sand-200"
                     />
                   </div>
-                  <button type="submit" className="btn-primary w-full sm:w-auto">
-                    {t('contact.sendMessage')} <Send className="h-4 w-4" strokeWidth={1.75} />
+                  {submitError && (
+                    <p className="rounded-xl bg-clay-100 px-4 py-3 text-sm text-clay-700">{submitError}</p>
+                  )}
+                  <button type="submit" disabled={submitting} className="btn-primary w-full sm:w-auto">
+                    {submitting ? t('contact.sending') : t('contact.sendMessage')}
+                    {!submitting && <Send className="h-4 w-4" strokeWidth={1.75} />}
                   </button>
                 </form>
               )}

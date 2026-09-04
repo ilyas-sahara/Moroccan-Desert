@@ -1,0 +1,6 @@
+{
+  "name": "contact-form",
+  "account_id": "dafb8ef7734da74aa91845a88388abb8",
+  "compatibility_date": "2026-08-03",
+  "main": "src/worker.js"
+}

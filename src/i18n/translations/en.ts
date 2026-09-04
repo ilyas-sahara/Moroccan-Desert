@@ -123,6 +123,8 @@ export const en = {
     yourMessage: 'Your message',
     messagePlaceholder: "Tell us about the journey you're dreaming of...",
     sendMessage: 'Send Message',
+    sending: 'Sending...',
+    sendError: 'Sorry, something went wrong. Please try again.',
     talkToHuman: 'Talk to a human',
     office: 'Office',
     phoneWhatsApp: 'Phone / WhatsApp',
