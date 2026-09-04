@@ -10,23 +10,32 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const origin = request.headers.get('origin') || '';
+    const allowOrigin = ALLOWED_ORIGIN.test(origin) ? origin : '';
 
     if (url.pathname !== '/') {
-      return json({ error: 'Not found' }, 404);
-    }
-    if (request.method !== 'POST') {
-      return json({ error: 'Method not allowed' }, 405);
+      return json({ error: 'Not found' }, 404, allowOrigin);
     }
 
-    if (origin && !ALLOWED_ORIGIN.test(origin)) {
-      return json({ error: 'Forbidden origin' }, 403);
+    if (request.method === 'OPTIONS') {
+      return new Response(null, {
+        status: 204,
+        headers: corsHeaders(allowOrigin),
+      });
+    }
+
+    if (request.method !== 'POST') {
+      return json({ error: 'Method not allowed' }, 405, allowOrigin);
+    }
+
+    if (origin && !allowOrigin) {
+      return json({ error: 'Forbidden origin' }, 403, allowOrigin);
     }
 
     let data;
     try {
       data = await request.json();
     } catch {
-      return json({ error: 'Invalid JSON' }, 400);
+      return json({ error: 'Invalid JSON' }, 400, allowOrigin);
     }
 
     const email = String(data.email || '').trim().toLowerCase();
@@ -39,17 +48,17 @@ export default {
     const message = String(data.message || '').trim();
 
     if (!firstName || !lastName || !email) {
-      return json({ error: 'Missing required fields' }, 400);
+      return json({ error: 'Missing required fields' }, 400, allowOrigin);
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return json({ error: 'Invalid email address' }, 400);
+      return json({ error: 'Invalid email address' }, 400, allowOrigin);
     }
 
     const user = env.GMAIL_USER;
     const pass = env.GMAIL_APP_PASSWORD;
     if (!user || !pass) {
       console.error('GMAIL_USER / GMAIL_APP_PASSWORD secrets not configured');
-      return json({ error: 'Server not configured' }, 500);
+      return json({ error: 'Server not configured' }, 500, allowOrigin);
     }
 
     const notifyTo = env.NOTIFY_TO || 'bouzyanilyas@gmail.com';
@@ -95,10 +104,10 @@ export default {
       await sendSmtp({ user, pass, to: notifyTo, replyTo: email, subject, text, html });
     } catch (err) {
       console.error('send failed', JSON.stringify({ message: err.message }));
-      return json({ error: 'Failed to send notification email' }, 502);
+      return json({ error: 'Failed to send notification email' }, 502, allowOrigin);
     }
 
-    return json({ ok: true }, 200);
+    return json({ ok: true }, 200, allowOrigin);
   },
 };
 
@@ -268,11 +277,25 @@ function encodeQP(str) {
   return out + line;
 }
 
-function json(body, status) {
+function json(body, status, allowOrigin = '') {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { 'content-type': 'application/json; charset=utf-8' },
+    headers: {
+      'content-type': 'application/json; charset=utf-8',
+      ...corsHeaders(allowOrigin),
+    },
   });
+}
+
+function corsHeaders(allowOrigin) {
+  if (!allowOrigin) return {};
+  return {
+    'Access-Control-Allow-Origin': allowOrigin,
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Max-Age': '86400',
+    Vary: 'Origin',
+  };
 }
 
 function escapeHtml(value) {
