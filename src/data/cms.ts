@@ -130,9 +130,9 @@ const defaultFooter: FooterContent = {
   email: 'hello@saharavacation.com',
   copyright_text: 'All rights reserved.',
   legal_links: [
-    { label: 'Privacy', to: '#' },
-    { label: 'Terms', to: '#' },
-    { label: 'Responsible Travel', to: '#' },
+    { label: 'Privacy', to: '/privacy' },
+    { label: 'Terms', to: '/terms' },
+    { label: 'Responsible Travel', to: '/responsible-travel' },
   ],
 };
 

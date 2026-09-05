@@ -276,6 +276,15 @@ export const fr: LocaleDict = {
   'seo.customTitle': 'Voyage sur mesure au Sahara — Sahara Vacation',
   'seo.customDescription':
     'Créez votre propre voyage dans le Sahara marocain : choisissez les lieux, le rythme et les expériences, et notre équipe élabore un itinéraire privé.',
+  'seo.privacyTitle': 'Politique de confidentialité — Sahara Vacation',
+  'seo.privacyDescription':
+    'Comment Sahara Vacation collecte, utilise et protège vos données personnelles. Vos droits, la sécurité des données et comment nous contacter.',
+  'seo.termsTitle': 'Conditions générales — Sahara Vacation',
+  'seo.termsDescription':
+    'Conditions pour réserver votre circuit dans le désert du Maroc : acompte, paiement, annulations, documents de voyage, responsabilité et droit applicable.',
+  'seo.responsibleTitle': 'Voyage responsable — Sahara Vacation',
+  'seo.responsibleDescription':
+    'Comment Sahara Vacation protège le Sahara : guides berbères locaux, camps sans trace, bien-être des dromadaires et respect culturel.',
   'seo.notFoundTitle': 'Page introuvable — Sahara Vacation',
   'seo.notFoundDescription': 'Ce sentier ne figure pas sur nos cartes.',
   'lang.switchLabel': 'Changer de langue',

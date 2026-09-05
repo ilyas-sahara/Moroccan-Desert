@@ -28,15 +28,15 @@
   "legal_links": [
     {
       "label": "Privacidad",
-      "to": "#"
+      "to": "/privacy"
     },
     {
       "label": "Términos",
-      "to": "#"
+      "to": "/terms"
     },
     {
       "label": "Turismo responsable",
-      "to": "#"
+      "to": "/responsible-travel"
     }
   ],
   "address": "Avenida Mohammed V, Zagora, Marruecos",

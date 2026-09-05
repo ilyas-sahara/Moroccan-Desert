@@ -28,15 +28,15 @@
   "legal_links": [
     {
       "label": "Datenschutz",
-      "to": "#"
+      "to": "/privacy"
     },
     {
       "label": "AGB",
-      "to": "#"
+      "to": "/terms"
     },
     {
       "label": "Nachhaltiges Reisen",
-      "to": "#"
+      "to": "/responsible-travel"
     }
   ],
   "address": "Avenue Mohammed V, Zagora, Marokko",

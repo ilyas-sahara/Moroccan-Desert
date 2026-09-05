@@ -22,9 +22,9 @@ const DEFAULT_FOOTER: FooterContent = {
   email: 'hello@saharavacation.com',
   copyright_text: 'All rights reserved.',
   legal_links: [
-    { label: 'Privacy', to: '#' },
-    { label: 'Terms', to: '#' },
-    { label: 'Responsible Travel', to: '#' },
+    { label: 'Privacy', to: '/privacy' },
+    { label: 'Terms', to: '/terms' },
+    { label: 'Responsible Travel', to: '/responsible-travel' },
   ],
 };
 
@@ -124,9 +124,9 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-6">
             {footer.legal_links.map((link) => (
-              <a key={link.label} href={link.to} className="hover:text-sand-100">
+              <Link key={link.label} to={link.to} className="hover:text-sand-100">
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

@@ -276,6 +276,15 @@ export const de: LocaleDict = {
   'seo.customTitle': 'Individuelle Sahara-Reise — Sahara Vacation',
   'seo.customDescription':
     'Gestalten Sie Ihre eigene Reise durch die marokkanische Sahara: wählen Sie Orte, Tempo und Erlebnisse — unser Team erstellt einen privaten Reiseplan.',
+  'seo.privacyTitle': 'Datenschutzerklärung — Sahara Vacation',
+  'seo.privacyDescription':
+    'Wie Sahara Vacation Ihre personenbezogenen Daten erhebt, nutzt und schützt. Ihre Rechte, Datensicherheit und Kontaktmöglichkeiten.',
+  'seo.termsTitle': 'Allgemeine Geschäftsbedingungen — Sahara Vacation',
+  'seo.termsDescription':
+    'Bedingungen für Ihre Marokko-Wüstentour: Anzahlung, Zahlung, Stornierung, Reisedokumente, Haftung und anzuwendendes Recht.',
+  'seo.responsibleTitle': 'Nachhaltiges Reisen — Sahara Vacation',
+  'seo.responsibleDescription':
+    'Wie Sahara Vacation die Sahara schützt: lokale Berber-Guides, spurlose Camps, Wohl der Kamele und kultureller Respekt.',
   'seo.notFoundTitle': 'Seite nicht gefunden — Sahara Vacation',
   'seo.notFoundDescription': 'Dieser Pfad steht nicht auf unseren Karten.',
   'lang.switchLabel': 'Sprache ändern',

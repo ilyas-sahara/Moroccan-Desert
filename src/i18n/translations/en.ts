@@ -313,6 +313,15 @@ export const en = {
     customTitle: 'Custom Sahara Journey — Sahara Vacation',
     customDescription:
       'Build your own Moroccan Sahara journey: choose the places, pace, and experiences, and our team crafts a private itinerary.',
+    privacyTitle: 'Privacy Policy — Sahara Vacation',
+    privacyDescription:
+      'How Sahara Vacation collects, uses, and protects your personal data. Your rights, data security, and how to contact us.',
+    termsTitle: 'Terms of Service — Sahara Vacation',
+    termsDescription:
+      'Terms for booking your Morocco desert tour: deposits, payment, cancellations, travel documents, liability, and governing law.',
+    responsibleTitle: 'Responsible Travel — Sahara Vacation',
+    responsibleDescription:
+      'How Sahara Vacation works to protect the Sahara: local Berber guides, leave-no-trace camps, camel welfare, and cultural respect.',
     notFoundTitle: 'Page Not Found — Sahara Vacation',
     notFoundDescription: 'This trail does not appear on our maps.',
   },
