@@ -54,14 +54,32 @@ export default function TourDetail() {
     return () => window.removeEventListener('keydown', onKey);
   }, [galleryCount]);
 
-  useSeo({
-    title: tour ? t('seo.tourTitle', { name: tour.title }) : t('seo.notFoundTitle'),
-    description: tour
-      ? t('seo.tourDescription', { name: tour.title, region: tour.region })
-      : t('seo.notFoundDescription'),
-    path: tour ? `/tours/${tour.slug}` : '/tours',
-    image: tour?.image,
-  });
+  useSeo(
+    tour
+      ? tour.days > 0
+        ? {
+            title: t('seo.tourTitle', { name: tour.title, days: tour.days, region: tour.region }),
+            description: t('seo.tourDescription', {
+              name: tour.title,
+              duration: tour.duration,
+              region: tour.region,
+              price: tour.priceFrom,
+            }),
+            path: `/tours/${tour.slug}`,
+            image: tour.image,
+          }
+        : {
+            title: t('seo.tourTitleBespoke', { name: tour.title, price: tour.priceFrom }),
+            description: t('seo.tourDescriptionBespoke', { name: tour.title, price: tour.priceFrom }),
+            path: `/tours/${tour.slug}`,
+            image: tour.image,
+          }
+      : {
+          title: t('seo.notFoundTitle'),
+          description: t('seo.notFoundDescription'),
+          path: '/tours',
+        },
+  );
 
   if (!tour) {
     return (
@@ -99,9 +117,20 @@ export default function TourDetail() {
       : {}),
   };
 
+  const tourBreadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: t('nav.home'), item: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/` },
+      { '@type': 'ListItem', position: 2, name: t('nav.tours'), item: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/tours` },
+      { '@type': 'ListItem', position: 3, name: tour.title, item: tourUrl },
+    ],
+  };
+
   return (
     <main className="pt-20">
       <JsonLd data={tourProduct} />
+      <JsonLd data={tourBreadcrumb} />
       {/* Breadcrumb */}
       <div className="border-b border-sand-200/60 bg-sand-50">
         <div className="container-x flex items-center gap-2 py-4 text-xs text-sand-600">

@@ -290,9 +290,12 @@ export const en = {
     toursTitle: 'Morocco Desert Tours — Camel Treks & Sahara Adventures',
     toursDescription:
       'Browse handcrafted Sahara tours: camel treks, luxury Berber camps, stargazing nights, and 4x4 desert routes across Morocco.',
-    tourTitle: '{{name}} — Sahara Vacation',
+    tourTitle: '{{name}} – {{days}}-Day Morocco Desert Tour | Sahara Vacation',
     tourDescription:
-      '{{name}} in {{region}}. Led by local Berber guides — book your Moroccan Sahara journey with Sahara Vacation.',
+      '{{name}} – {{duration}} in {{region}}, from €{{price}} per guest. Camel trek, luxury Berber camp, stargazing and local meals with local guides.',
+    tourTitleBespoke: 'Private Morocco Desert Journey – Tailor-Made | Sahara Vacation',
+    tourDescriptionBespoke:
+      'Design your own Sahara journey: private guide and camp, flexible route and pace, from €{{price}}. Built by local Berber guides.',
     experiencesTitle: 'Experiences — Sahara Vacation',
     experiencesDescription:
       'Camel treks, luxury desert camps, stargazing, mint tea ceremonies, nomad encounters, sandboarding and more in the Moroccan Sahara.',
@@ -320,5 +323,9 @@ export const en = {
     de: 'Deutsch',
     es: 'Español',
     it: 'Italiano',
+  },
+  whatsapp: {
+    label: 'Chat on WhatsApp',
+    message: "Hello Sahara Vacation! I'm interested in your Morocco desert tours. Could you share more details?",
   },
 } as const;

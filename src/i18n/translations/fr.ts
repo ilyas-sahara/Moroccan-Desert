@@ -253,9 +253,12 @@ export const fr: LocaleDict = {
   'seo.toursTitle': 'Circuits dans le désert du Maroc — Treks à dos de dromadaire et aventures sahariennes',
   'seo.toursDescription':
     'Parcourez nos circuits sahariens : randonnées à dos de dromadaire, camps berbères de luxe, nuits d’observation des étoiles et routes 4x4 à travers le Maroc.',
-  'seo.tourTitle': '{{name}} — Sahara Vacation',
+  'seo.tourTitle': '{{name}} – Circuit de {{days}} jours dans le désert du Maroc | Sahara Vacation',
   'seo.tourDescription':
-    '{{name}} dans {{region}}. Mené par des guides berbères locaux — réservez votre voyage dans le Sahara marocain avec Sahara Vacation.',
+    '{{name}} – {{duration}} dans {{region}}, à partir de {{price}} € par personne. Randonnée à dos de dromadaire, camp berbère de luxe, observation des étoiles et repas locaux.',
+  'seo.tourTitleBespoke': 'Voyage privé dans le désert du Maroc – Sur mesure | Sahara Vacation',
+  'seo.tourDescriptionBespoke':
+    'Créez votre propre voyage dans le Sahara : guide et camp privés, itinéraire et rythme flexibles, à partir de {{price}} €. Conçu par des guides berbères locaux.',
   'seo.experiencesTitle': 'Expériences — Sahara Vacation',
   'seo.experiencesDescription':
     'Randonnées à dos de dromadaire, camps de luxe, observation des étoiles, cérémonies du thé à la menthe, rencontres nomades, sandboard et plus encore dans le Sahara marocain.',
@@ -281,4 +284,6 @@ export const fr: LocaleDict = {
   'lang.de': 'Allemand',
   'lang.es': 'Espagnol',
   'lang.it': 'Italien',
+  'whatsapp.label': 'Discuter sur WhatsApp',
+  'whatsapp.message': "Bonjour Sahara Vacation ! Je suis intéressé(e) par vos circuits dans le désert du Maroc. Pouvez-vous me donner plus de détails ?",
 };

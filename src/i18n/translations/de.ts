@@ -253,9 +253,12 @@ export const de: LocaleDict = {
   'seo.toursTitle': 'Marokko-Wüstentouren — Kameltreks und Sahara-Abenteuer',
   'seo.toursDescription':
     'Entdecken Sie handgefertigte Sahara-Touren: Kameltreks, luxuriöse Berber-Camps, Sternenbeobachtung und 4x4-Wüstenrouten durch Marokko.',
-  'seo.tourTitle': '{{name}} — Sahara Vacation',
+  'seo.tourTitle': '{{name}} – {{days}}-Tage-Marokko-Wüstentour | Sahara Vacation',
   'seo.tourDescription':
-    '{{name}} in {{region}}. Geführt von lokalen Berber-Guides — buchen Sie Ihre Reise in die marokkanische Sahara mit Sahara Vacation.',
+    '{{name}} – {{duration}} in {{region}}, ab {{price}} € pro Person. Kameltrek, Luxus-Berbercamp, Sternenbeobachtung und lokale Küche mit lokalen Guides.',
+  'seo.tourTitleBespoke': 'Privates Marokko-Wüstenabenteuer – Maßgeschneidert | Sahara Vacation',
+  'seo.tourDescriptionBespoke':
+    'Gestalten Sie Ihre eigene Saharareise: privater Guide und Camp, flexible Route und Tempo, ab {{price}} €. Von lokalen Berber-Guides.',
   'seo.experiencesTitle': 'Erlebnisse — Sahara Vacation',
   'seo.experiencesDescription':
     'Kameltreks, luxuriöse Wüstencamps, Sternenbeobachtung, Minztee-Zeremonien, Nomadenbegegnungen, Sandboarding und mehr in der marokkanischen Sahara.',
@@ -281,4 +284,6 @@ export const de: LocaleDict = {
   'lang.de': 'Deutsch',
   'lang.es': 'Spanisch',
   'lang.it': 'Italienisch',
+  'whatsapp.label': 'Auf WhatsApp chatten',
+  'whatsapp.message': 'Hallo Sahara Vacation! Ich interessiere mich für Ihre Marokko-Wüstentouren. Könnten Sie mir mehr Details mitteilen?',
 };

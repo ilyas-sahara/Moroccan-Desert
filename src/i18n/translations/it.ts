@@ -253,9 +253,12 @@ export const it: LocaleDict = {
   'seo.toursTitle': 'Tour del deserto del Marocco — Trekking con i cammelli e avventure nel Sahara',
   'seo.toursDescription':
     'Scopri i tour artigianali del Sahara: trekking con i cammelli, lussuosi accampamenti berberi, osservazione delle stelle e itinerari 4x4 attraverso il Marocco.',
-  'seo.tourTitle': '{{name}} — Sahara Vacation',
+  'seo.tourTitle': '{{name}} – Tour di {{days}} giorni nel deserto del Marocco | Sahara Vacation',
   'seo.tourDescription':
-    '{{name}} in {{region}}. Con guide berbere locali — prenota il tuo viaggio nel Sahara marocchino con Sahara Vacation.',
+    '{{name}} – {{duration}} in {{region}}, da {{price}} € a persona. Trekking in cammello, campo berbero di lusso, osservazione delle stelle e pasti locali.',
+  'seo.tourTitleBespoke': 'Viaggio privato nel deserto del Marocco – Su misura | Sahara Vacation',
+  'seo.tourDescriptionBespoke':
+    'Progetta il tuo viaggio nel Sahara: guida e campo privati, itinerario e ritmo flessibili, da {{price}} €. Guide berbere locali.',
   'seo.experiencesTitle': 'Esperienze — Sahara Vacation',
   'seo.experiencesDescription':
     'Trekking con i cammelli, accampamenti di lusso, osservazione delle stelle, cerimonie del tè alla menta, incontri con i nomadi, sandboarding e altro nel Sahara marocchino.',
@@ -281,4 +284,6 @@ export const it: LocaleDict = {
   'lang.de': 'Tedesco',
   'lang.es': 'Spagnolo',
   'lang.it': 'Italiano',
+  'whatsapp.label': 'Chatta su WhatsApp',
+  'whatsapp.message': 'Ciao Sahara Vacation! Sono interessato/a ai vostri tour nel deserto del Marocco. Potreste darmi più dettagli?',
 };

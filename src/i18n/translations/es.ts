@@ -253,9 +253,12 @@ export const es: LocaleDict = {
   'seo.toursTitle': 'Tours por el desierto de Marruecos — Rutas en camello y aventuras en el Sáhara',
   'seo.toursDescription':
     'Descubre nuestros tours por el Sáhara: rutas en camello, campamentos bereberes de lujo, observación de estrellas y rutas 4x4 por Marruecos.',
-  'seo.tourTitle': '{{name}} — Sahara Vacation',
+  'seo.tourTitle': '{{name}} – Tour de {{days}} días por el desierto de Marruecos | Sahara Vacation',
   'seo.tourDescription':
-    '{{name}} en {{region}}. Con guías bereberes locales — reserva tu viaje por el Sáhara marroquí con Sahara Vacation.',
+    '{{name}} – {{duration}} en {{region}}, desde {{price}} € por persona. Trekking en camello, campamento bereber de lujo, observación de estrellas y comidas locales.',
+  'seo.tourTitleBespoke': 'Viaje privado por el desierto de Marruecos – A medida | Sahara Vacation',
+  'seo.tourDescriptionBespoke':
+    'Diseña tu propia experiencia en el Sáhara: guía y campamento privados, ruta y ritmo flexibles, desde {{price}} €. Con guías bereberes locales.',
   'seo.experiencesTitle': 'Experiencias — Sahara Vacation',
   'seo.experiencesDescription':
     'Rutas en camello, campamentos de lujo, observación de estrellas, ceremonias del té de menta, encuentros nómadas, sandboarding y más en el Sáhara marroquí.',
@@ -281,4 +284,6 @@ export const es: LocaleDict = {
   'lang.de': 'Alemán',
   'lang.es': 'Español',
   'lang.it': 'Italiano',
+  'whatsapp.label': 'Chatear por WhatsApp',
+  'whatsapp.message': '¡Hola Sahara Vacation! Estoy interesado/a en sus tours por el desierto de Marruecos. ¿Podrían darme más detalles?',
 };
