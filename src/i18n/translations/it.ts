@@ -287,6 +287,57 @@ export const it: LocaleDict = {
     'Come Sahara Vacation protegge il Sahara: guide berbere locali, accampamenti senza tracce, benessere dei cammelli e rispetto culturale.',
   'seo.notFoundTitle': 'Pagina non trovata — Sahara Vacation',
   'seo.notFoundDescription': 'Questo sentiero non compare sulle nostre mappe.',
+  'seo.tourOverrides.morocco-sahara-grand-tour-dunes-atlas.title': 'Tour di 8 giorni nel deserto da Marrakech | Grand Tour del Marocco',
+  'seo.tourOverrides.morocco-sahara-grand-tour-dunes-atlas.description':
+    'Un viaggio di 8 giorni da Marrakech al Sahara, attraverso l’Atlante e le città imperiali di Fès, Meknès, Rabat e Casablanca – da 890 €.',
+  'seo.tourOverrides.atlas-to-sahara.title': 'Tour di 4 giorni da Marrakech a Merzouga | Deserto del Marocco',
+  'seo.tourOverrides.atlas-to-sahara.description':
+    'Tour privato di 4 giorni tra Atlante e Sahara, da Marrakech a Merzouga: Aït Ben Haddou, gole del Todra, cammelli e campo. Da 640 €.',
+  'seo.tourOverrides.stargazing-night-camp.title': 'Tour di osservazione delle stelle a Zagora – 2 giorni, 1 notte nel Sahara',
+  'seo.tourOverrides.stargazing-night-camp.description':
+    '2 giorni e 1 notte nel Sahara da Zagora: giro in cammello al tramonto, campo privato e cielo stellato. Da 180 €.',
+  'seo.tourOverrides.nomad-berber-immersion.title': 'Tour di 4 giorni da Fès a Marrakech | Esperienza nomade',
+  'seo.tourOverrides.nomad-berber-immersion.description':
+    'Tour nel deserto da Fès a Marrakech: trekking in cammello a Erg Chebbi, villaggi nomadi, gole del Todra e Aït Ben Haddou. Da 720 €.',
+  'seo.tourOverrides.private-bespoke-desert.title': 'Tour privato nel Sahara da Marrakech – Su misura',
+  'seo.tourOverrides.private-bespoke-desert.description':
+    'Il tuo tour privato nel Sahara da Marrakech: itinerario flessibile di 3 giorni fino alle dune di Erg Chebbi con campo privato. Da 1.200 €.',
+  'seo.tourOverrides.sahara-vibe-2-day-trekking.title': 'Trekking di 2 giorni in cammello in Marocco – Sahara',
+  'seo.tourOverrides.sahara-vibe-2-day-trekking.description':
+    "Trekking di 2 giorni in cammello nel Sahara marocchino da M'Hamid: cammina tra le dune dorate mentre i cammelli portano il bagaglio. Da 149 €.",
+  'seo.tourOverrides.sahara-vibe-3-day-trekking.title': "Trekking di 3 giorni in cammello in Marocco – Carovana da M'Hamid",
+  'seo.tourOverrides.sahara-vibe-3-day-trekking.description':
+    "Trekking di 3 giorni in cammello nel Sahara marocchino da M'Hamid: dune dorate, guide nomadi e pane cotto nella sabbia.",
+  'seo.tourOverrides.sahara-vibe-4-day-trekking.title': 'Trekking di 4 giorni in cammello in Marocco – Dune con guide nomadi',
+  'seo.tourOverrides.sahara-vibe-4-day-trekking.description':
+    "Trekking di 4 giorni in cammello nel Sahara marocchino: dune dorate, incontri nomadi e bivacchi vicino a M'Hamid. Da 485 €.",
+  'seo.tourOverrides.sahara-vibe-5-day-trekking.title': 'Trekking di 5 giorni in cammello in Marocco – Esperienza nomade',
+  'seo.tourOverrides.sahara-vibe-5-day-trekking.description':
+    'Trekking di 5 giorni in cammello nel Sahara marocchino: dune remote, bivacchi e pane cotto nella sabbia. Da 575 €.',
+  'seo.tourOverrides.sahara-vibe-6-day-trekking.title': 'Trekking di 6 giorni in cammello Zagora Sahara – Carovana nomade',
+  'seo.tourOverrides.sahara-vibe-6-day-trekking.description':
+    "Trekking di 6 giorni in cammello da Zagora nel Sahara di M'Hamid: dune, oasi e hamada con cammellieri nomadi. Da 480 €.",
+  'seo.tourOverrides.sahara-vibe-7-day-trekking.title': 'Trekking di 7 giorni in cammello in Marocco – Carovana profonda',
+  'seo.tourOverrides.sahara-vibe-7-day-trekking.description':
+    "Trekking di 7 giorni in cammello nel Sahara marocchino da M'Hamid: dune remote e campi nomadi in pensione completa.",
+  'seo.tourOverrides.sahara-vibe-8-day-trekking.title': 'Trekking di 8 giorni in cammello in Marocco – Avventura sahariana',
+  'seo.tourOverrides.sahara-vibe-8-day-trekking.description':
+    'Trekking di 8 giorni in cammello nel Sahara marocchino: attraversamento dell’Atlante, valle del Drâa e dune con guide nomadi. Da 750 €.',
+  'seo.tourOverrides.sahara-vibe-mhamid-erg-chigaga-3-day.title': "Tour nel deserto da M'Hamid a Erg Chigaga – 3 giorni tra le dune",
+  'seo.tourOverrides.sahara-vibe-mhamid-erg-chigaga-3-day.description':
+    "Tour di 3 giorni da M'Hamid a Erg Chigaga: 4x4 attraverso il lago Iriqui, cammello al tramonto e campo sotto le stelle.",
+  'seo.tourOverrides.sahara-vibe-marrakech-erg-chigaga-4-day.title': 'Tour di 4 giorni da Marrakech a Erg Chigaga – 4x4 privato',
+  'seo.tourOverrides.sahara-vibe-marrakech-erg-chigaga-4-day.description':
+    'Tour privato di 4 giorni da Marrakech a Erg Chigaga: Alto Atlante, Aït Ben Haddou, pianure di Iriqui e notte tra le dune. Da 675 €.',
+  'seo.tourOverrides.sahara-vibe-ouarzazate-erg-chigaga-3-day.title': 'Tour nel deserto di Erg Chigaga da Ouarzazate – 3 giorni, 2 notti',
+  'seo.tourOverrides.sahara-vibe-ouarzazate-erg-chigaga-3-day.description':
+    'Tour di 3 giorni a Erg Chigaga da Ouarzazate: valle del Drâa, cammello al tramonto e notti attorno al fuoco. Da 435 €.',
+  'seo.tourOverrides.sahara-vibe-ouarzazate-erg-chigaga-2-day.title': 'Tour di 2 giorni a Erg Chigaga da Ouarzazate – Notte nel Sahara',
+  'seo.tourOverrides.sahara-vibe-ouarzazate-erg-chigaga-2-day.description':
+    'Tour di 2 giorni a Erg Chigaga da Ouarzazate: 4x4 fino alle dune, cammello al tramonto e una notte nel Sahara. Da 200 €.',
+  'seo.tourOverrides.sahara-vibe-agadir-erg-chegaga-5-day.title': 'Tour di 5 giorni da Agadir a Erg Chigaga | Dune del Marocco',
+  'seo.tourOverrides.sahara-vibe-agadir-erg-chegaga-5-day.description':
+    'Tour di 5 giorni da Agadir a Erg Chigaga: Taroudant, zafferano di Taliouine, lago Iriqui e notti al campo nel Sahara. Da 600 €.',
   'lang.switchLabel': 'Cambia lingua',
   'lang.en': 'Inglese',
   'lang.fr': 'Francese',

@@ -8,13 +8,22 @@ import { TOURS, type Tour } from '@/data/content';
 import { getCmsTours } from '@/data/cms';
 import { useReveal } from '@/hooks/useReveal';
 import { useSeo, SITE_URL } from '@/hooks/useSeo';
-import { useLocale } from '@/i18n';
+import { useLocale, type Locale } from '@/i18n';
+import { DICTS } from '@/i18n/translations';
 import TourMarquee from '@/components/TourMarquee';
 import TourMap from '@/components/TourMap';
 import VideoPlayer from '@/components/VideoPlayer';
 import SectionHeading from '@/components/SectionHeading';
 import JsonLd from '@/components/JsonLd';
 import { isVideoUrl } from '@/lib/media';
+
+function tourOverrideMeta(locale: Locale, slug: string): { title: string; description: string } | null {
+  const dict = (DICTS[locale] ?? DICTS.en) as unknown as Record<string, string>;
+  const title = dict[`seo.tourOverrides.${slug}.title`];
+  const description = dict[`seo.tourOverrides.${slug}.description`];
+  if (!title || !description) return null;
+  return { title, description };
+}
 
 export default function TourDetail() {
   const { slug } = useParams();
@@ -54,26 +63,35 @@ export default function TourDetail() {
     return () => window.removeEventListener('keydown', onKey);
   }, [galleryCount]);
 
+  const tourMeta = tour ? tourOverrideMeta(locale, tour.slug) : null;
+
   useSeo(
     tour
-      ? tour.days > 0
+      ? tourMeta
         ? {
-            title: t('seo.tourTitle', { name: tour.title, days: tour.days, region: tour.region }),
-            description: t('seo.tourDescription', {
-              name: tour.title,
-              duration: tour.duration,
-              region: tour.region,
-              price: tour.priceFrom,
-            }),
+            title: tourMeta.title,
+            description: tourMeta.description,
             path: `/tours/${tour.slug}`,
             image: tour.image,
           }
-        : {
-            title: t('seo.tourTitleBespoke', { name: tour.title, price: tour.priceFrom }),
-            description: t('seo.tourDescriptionBespoke', { name: tour.title, price: tour.priceFrom }),
-            path: `/tours/${tour.slug}`,
-            image: tour.image,
-          }
+        : tour.days > 0
+          ? {
+              title: t('seo.tourTitle', { name: tour.title, days: tour.days, region: tour.region }),
+              description: t('seo.tourDescription', {
+                name: tour.title,
+                duration: tour.duration,
+                region: tour.region,
+                price: tour.priceFrom,
+              }),
+              path: `/tours/${tour.slug}`,
+              image: tour.image,
+            }
+          : {
+              title: t('seo.tourTitleBespoke', { name: tour.title, price: tour.priceFrom }),
+              description: t('seo.tourDescriptionBespoke', { name: tour.title, price: tour.priceFrom }),
+              path: `/tours/${tour.slug}`,
+              image: tour.image,
+            }
       : {
           title: t('seo.notFoundTitle'),
           description: t('seo.notFoundDescription'),
