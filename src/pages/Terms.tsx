@@ -23,7 +23,7 @@ const SECTIONS = [
     paragraphs: [
       'How to book. We plan your itinerary together first. To confirm your trip, please email us the full names of all participants. If you have already booked your flights, please include your flight details as well. We will then send you the available payment options and your booking details.',
       'Deposit. To secure your reservation, a deposit of 30% of the total trip cost is payable at least five weeks before arrival. We will send you an invoice for the deposit. Your booking is only confirmed once we receive it.',
-      'Balance. The remaining balance is payable on arrival in Morocco, on the first day of your trip. You are welcome to pay by credit card, PayPal, bank transfer, Western Union, MoneyGram, or postal transfer — or in cash on arrival.',
+      'Balance. The remaining balance is payable on arrival in Morocco, on the first day of your trip. You are welcome to pay by bank transfer, Western Union, MoneyGram, or postal transfer — or in cash on arrival.',
       'All prices are listed in the currency shown on our website and all bookings are subject to availability.',
     ],
   },
