@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import JsonLd from '@/components/JsonLd';
 import { getSiteSettings, type SiteSettings } from '@/data/cms';
 import { SITE_URL } from '@/hooks/useSeo';
@@ -6,7 +6,7 @@ import { SITE_URL } from '@/hooks/useSeo';
 const DEFAULT_SETTINGS: SiteSettings = {
   brand_name: 'Sahara Vacation',
   tagline: 'Moroccan Desert Journeys',
-  phone: '+212 5 35 00 00 00',
+  phone: '+212 6 74 28 36 39',
   email: 'hello@saharavacation.com',
   address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
   instagram_url: '#',

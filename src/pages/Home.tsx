@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Compass, Tent, Star, Coffee, Users, Mountain } from 'lucide-react';
 import Hero from '@/components/Hero';
@@ -22,14 +22,14 @@ const DEFAULT_HOME: HomePageContent = {
   hero_eyebrow: 'The Journey',
   hero_title: 'The desert changes everyone who walks into it.',
   hero_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace.',
-  hero_kicker: 'Moroccan Sahara · Est. 2009',
+  hero_kicker: 'Moroccan Sahara Â· Est. 2009',
   hero_heading: 'Sahara Vacation',
   hero_lead: 'Luxury desert journeys through the golden dunes of Merzouga. Camel treks, Berber camps, and nights under the darkest sky on earth.',
   hero_frames: [],
   hero_rating: '4.9',
   hero_review_text: 'from 1,200+ travelers worldwide',
   intro_title: 'The Sahara changes everyone who walks into it.',
-  intro_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace. This is the Sahara as it has always been — vast, silent, and impossibly beautiful.',
+  intro_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace. This is the Sahara as it has always been â€” vast, silent, and impossibly beautiful.',
   intro_image_a: '',
   intro_image_b: '',
   story_title: 'The Sahara has one of the darkest skies on earth.',
@@ -44,7 +44,7 @@ const DEFAULT_HOME: HomePageContent = {
 const DEFAULT_SETTINGS: SiteSettings = {
   brand_name: 'Sahara Vacation',
   tagline: 'Moroccan Desert Journeys',
-  phone: '+212 5 35 00 00 00',
+  phone: '+212 6 74 28 36 39',
   email: 'hello@saharavacation.com',
   address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
   instagram_url: '',
@@ -107,9 +107,18 @@ export default function Home() {
       addressCountry: 'MA',
     },
     sameAs: [settings.instagram_url, settings.facebook_url].filter((u) => Boolean(u) && u !== '#'),
-    priceRange: '€€',
+    priceRange: 'â‚¬â‚¬',
     areaServed: 'Morocco',
     foundingDate: '2009',
+    ...(testimonials.length > 0
+      ? {
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: Math.round((testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length) * 10) / 10,
+            reviewCount: testimonials.length,
+          },
+        }
+      : {}),
   };
 
   return (
@@ -279,11 +288,11 @@ export default function Home() {
                   ))}
                 </div>
                 <blockquote className="mt-4 flex-1 font-display text-lg italic leading-relaxed text-ink-800">
-                  “{t.text}”
+                  â€œ{t.text}â€
                 </blockquote>
                 <figcaption className="mt-6 border-t border-sand-100 pt-4">
                   <p className="font-semibold text-ink-900">{t.name}</p>
-                  <p className="text-xs uppercase tracking-[0.16em] text-sand-600">{t.country} · {t.tour}</p>
+                  <p className="text-xs uppercase tracking-[0.16em] text-sand-600">{t.country} Â· {t.tour}</p>
                 </figcaption>
               </figure>
             ))}

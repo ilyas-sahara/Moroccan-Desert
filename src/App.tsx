@@ -4,6 +4,7 @@ import { LocaleProvider } from '@/i18n';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SiteOrganization from '@/components/SiteOrganization';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import Home from '@/pages/Home';
 
 const Tours = lazy(() => import('@/pages/Tours'));
@@ -30,6 +31,7 @@ export default function App() {
       <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
         <ScrollToTop />
         <SiteOrganization />
+        <WhatsAppButton />
         <div className="flex min-h-screen flex-col">
           <Navbar />
           <div className="flex-1">

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Mail, Phone, MapPin, Send, Check, ChevronDown } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 import SectionHeading from '@/components/SectionHeading';
@@ -17,10 +17,10 @@ export default function Contact() {
   const [contactContent, setContactContent] = useState({
     hero_eyebrow: 'Contact',
     hero_title: "Let's plan your Sahara",
-    hero_subtitle: "Tell us your dates, your group, and your dream — we'll reply within 24 hours with a tailored proposal.",
+    hero_subtitle: "Tell us your dates, your group, and your dream â€” we'll reply within 24 hours with a tailored proposal.",
     hero_image: '',
-    office_text: "Prefer to talk it through? Reach us directly — we're based in Merzouga, on the edge of the dunes.",
-    phone: '+212 5 35 00 00 00',
+    office_text: "Prefer to talk it through? Reach us directly â€” we're based in Merzouga, on the edge of the dunes.",
+    phone: '+212 6 74 28 36 39',
     email: 'hello@saharavacation.com',
     address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
   });

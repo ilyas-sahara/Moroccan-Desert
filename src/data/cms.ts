@@ -1,4 +1,4 @@
-import { BLOG_POSTS, TOURS, EXPERIENCES, TESTIMONIALS, FAQS, IMAGES, type BlogPost, type Tour } from '@/data/content';
+﻿import { BLOG_POSTS, TOURS, EXPERIENCES, TESTIMONIALS, FAQS, IMAGES, type BlogPost, type Tour } from '@/data/content';
 import type { Locale } from '@/i18n';
 
 export type SiteSettings = {
@@ -105,7 +105,7 @@ export type ExperiencesPageContent = {
 const defaultSettings: SiteSettings = {
   brand_name: 'Sahara Vacation',
   tagline: 'Moroccan Desert Journeys',
-  phone: '+212 5 35 00 00 00',
+  phone: '+212 6 74 28 36 39',
   email: 'hello@saharavacation.com',
   address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
   instagram_url: '#',
@@ -126,7 +126,7 @@ const defaultFooter: FooterContent = {
     { label: 'Contact', to: '/contact' },
   ],
   address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
-  phone: '+212 5 35 00 00 00',
+  phone: '+212 6 74 28 36 39',
   email: 'hello@saharavacation.com',
   copyright_text: 'All rights reserved.',
   legal_links: [
@@ -137,25 +137,25 @@ const defaultFooter: FooterContent = {
 };
 
 const defaultHeroFrames: HeroFrame[] = [
-  { image: IMAGES.heroAerial, caption: 'Scene 01 — Drone over the golden dunes of Merzouga' },
-  { image: IMAGES.camelCaravan, caption: 'Scene 02 — A caravan follows the ridge at sunrise' },
-  { image: IMAGES.campBerber, caption: 'Scene 03 — A luxury Berber camp nestled in the dunes' },
-  { image: IMAGES.campfire, caption: 'Scene 04 — Mint tea is poured as the sun sets' },
-  { image: IMAGES.heroAerial, caption: 'Ending — The camera rises over an endless sea of dunes' },
+  { image: IMAGES.heroAerial, caption: 'Scene 01 â€” Drone over the golden dunes of Merzouga' },
+  { image: IMAGES.camelCaravan, caption: 'Scene 02 â€” A caravan follows the ridge at sunrise' },
+  { image: IMAGES.campBerber, caption: 'Scene 03 â€” A luxury Berber camp nestled in the dunes' },
+  { image: IMAGES.campfire, caption: 'Scene 04 â€” Mint tea is poured as the sun sets' },
+  { image: IMAGES.heroAerial, caption: 'Ending â€” The camera rises over an endless sea of dunes' },
 ];
 
 const defaultHome: HomePageContent = {
   hero_eyebrow: 'The Journey',
   hero_title: 'The desert changes everyone who walks into it.',
   hero_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace.',
-  hero_kicker: 'Moroccan Sahara · Est. 2009',
+  hero_kicker: 'Moroccan Sahara Â· Est. 2009',
   hero_heading: 'Sahara Vacation',
   hero_lead: 'Luxury desert journeys through the golden dunes of Merzouga. Camel treks, Berber camps, and nights under the darkest sky on earth.',
   hero_frames: defaultHeroFrames,
   hero_rating: '4.9',
   hero_review_text: 'from 1,200+ travelers worldwide',
   intro_title: 'The Sahara changes everyone who walks into it.',
-  intro_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace. This is the Sahara as it has always been — vast, silent, and impossibly beautiful.',
+  intro_subtitle: 'For fifteen years we have guided travelers into the golden dunes of the Moroccan Sahara. Small groups, local Berber guides, and camps built to disappear without a trace. This is the Sahara as it has always been â€” vast, silent, and impossibly beautiful.',
   intro_image_a: IMAGES.mintTeaCarpet,
   intro_image_b: IMAGES.camelTrek,
   story_title: 'The Sahara has one of the darkest skies on earth.',
@@ -179,7 +179,7 @@ const defaultAbout: AboutPageContent = {
     { title: 'Local First', text: 'Every guide is Berber, born and raised at the edge of the dunes. The money you spend stays in the desert.' },
     { title: 'Leave No Trace', text: 'Our camps are fully removable. We pack out every trace and protect the fragile dune ecology.' },
     { title: 'Small Groups', text: 'We cap every departure at a handful of guests. The desert is for silence, not crowds.' },
-    { title: 'Genuine Craft', text: 'We weave real encounters with nomad families, weavers, and musicians — never staged shows.' },
+    { title: 'Genuine Craft', text: 'We weave real encounters with nomad families, weavers, and musicians â€” never staged shows.' },
   ],
   cta_title: 'Come walk the Sahara with us.',
   cta_label: 'Browse Tours',
@@ -190,10 +190,10 @@ const defaultAbout: AboutPageContent = {
 const defaultContact: ContactPageContent = {
   hero_eyebrow: 'Contact',
   hero_title: "Let's plan your Sahara",
-  hero_subtitle: "Tell us your dates, your group, and your dream — we'll reply within 24 hours with a tailored proposal.",
+  hero_subtitle: "Tell us your dates, your group, and your dream â€” we'll reply within 24 hours with a tailored proposal.",
   hero_image: IMAGES.campfire,
-  office_text: "Prefer to talk it through? Reach us directly — we're based in Merzouga, on the edge of the dunes.",
-  phone: '+212 5 35 00 00 00',
+  office_text: "Prefer to talk it through? Reach us directly â€” we're based in Merzouga, on the edge of the dunes.",
+  phone: '+212 6 74 28 36 39',
   email: 'hello@saharavacation.com',
   address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
 };
@@ -317,7 +317,7 @@ function inferTourExperiences(tour: Tour): string[] {
   add('nomadic-culture', /nomad|berber|gnawa|weav/);
   add('sandboarding', /sandboard/);
   add('4x4-desert-routes', /4x4|landcruiser|drive|transfer/);
-  add('kasbahs-and-oases', /kasbah|oasis|atlas|aït ben haddou|ait ben haddou|drâa|draa/);
+  add('kasbahs-and-oases', /kasbah|oasis|atlas|aÃ¯t ben haddou|ait ben haddou|drÃ¢a|draa/);
   return experiences;
 }
 

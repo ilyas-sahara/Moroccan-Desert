@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Compass, Instagram, Facebook, Mail, MapPin, Phone } from 'lucide-react';
 import { getFooterContent, type FooterContent } from '@/data/cms';
@@ -18,7 +18,7 @@ const DEFAULT_FOOTER: FooterContent = {
     { label: 'Contact', to: '/contact' },
   ],
   address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
-  phone: '+212 5 35 00 00 00',
+  phone: '+212 6 74 28 36 39',
   email: 'hello@saharavacation.com',
   copyright_text: 'All rights reserved.',
   legal_links: [
@@ -120,7 +120,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-sand-300/10 pt-8 text-xs text-sand-300/60 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {footer.brand_name}. {footer.copyright_text}
+            Â© {new Date().getFullYear()} {footer.brand_name}. {footer.copyright_text}
           </p>
           <div className="flex items-center gap-6">
             {footer.legal_links.map((link) => (
