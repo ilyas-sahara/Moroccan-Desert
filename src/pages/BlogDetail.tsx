@@ -58,9 +58,31 @@ export default function BlogDetail() {
     },
   };
 
+  const blogsUrl = `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog`;
+  const blogBreadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: t('nav.home'),
+        item: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/`,
+      },
+      { '@type': 'ListItem', position: 2, name: t('nav.blog'), item: blogsUrl },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog/${post.slug}`,
+      },
+    ],
+  };
+
   return (
     <main className="pt-20">
       <JsonLd data={blogPosting} />
+      <JsonLd data={blogBreadcrumb} />
       <section className="bg-sand-50 py-12 lg:py-16">
         <div className="container-x max-w-4xl">
           <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-sand-700 hover:text-sand-800">
