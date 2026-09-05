@@ -59,6 +59,8 @@ export default function Hero({
               alt=""
               className={`h-full w-full object-cover ${i === active ? 'animate-ken-burns' : ''}`}
               loading={i === 0 ? 'eager' : 'lazy'}
+              fetchPriority={i === 0 ? 'high' : 'auto'}
+              decoding="async"
             />
           </div>
         ))}
