@@ -56,8 +56,9 @@ const ENTRIES = [
 ];
 
 const lastmod = new Date().toISOString().slice(0, 10);
+const trail = (p) => (p === '/' || p.endsWith('/') ? p : `${p}/`);
 const hrefOf = (entry, code) =>
-  `${SITE}${code === DEFAULT_LOCALE ? entry.path : `/${code}${entry.path}`}`;
+  `${SITE}${code === DEFAULT_LOCALE ? trail(entry.path) : `/${code}${trail(entry.path)}`}`;
 
 const urlBlocks = [];
 for (const entry of ENTRIES) {

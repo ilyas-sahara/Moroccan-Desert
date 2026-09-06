@@ -113,7 +113,7 @@ export default function TourDetail() {
 
   const related = tours.filter((t) => t.slug !== tour.slug);
 
-  const tourUrl = `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/tours/${tour.slug}`;
+  const tourUrl = `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/tours/${tour.slug}/`;
   const tourProduct = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -141,7 +141,7 @@ export default function TourDetail() {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: t('nav.home'), item: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/` },
-      { '@type': 'ListItem', position: 2, name: t('nav.tours'), item: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/tours` },
+      { '@type': 'ListItem', position: 2, name: t('nav.tours'), item: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/tours/` },
       { '@type': 'ListItem', position: 3, name: tour.title, item: tourUrl },
     ],
   };

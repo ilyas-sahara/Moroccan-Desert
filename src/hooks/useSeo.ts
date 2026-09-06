@@ -58,7 +58,8 @@ export function useSeo({ title, description, path, image, type = 'website' }: Se
 
     const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     const pathUrl = `${base}${path}`;
-    const url = `${SITE_URL}${localePrefix(locale)}${pathUrl}`;
+    const pathUrlSlash = pathUrl === '/' || pathUrl.endsWith('/') ? pathUrl : `${pathUrl}/`;
+    const url = `${SITE_URL}${localePrefix(locale)}${pathUrlSlash}`;
     const ogLocale = locale === 'en' ? 'en_US' : `${locale}_${locale.toUpperCase()}`;
     const siteName = 'Sahara Vacation';
 
@@ -73,7 +74,7 @@ export function useSeo({ title, description, path, image, type = 'website' }: Se
     }
     canonical.href = url;
 
-    upsertAlternateLinks(pathUrl);
+    upsertAlternateLinks(pathUrlSlash);
 
     upsertMeta('property', 'og:type', type);
     upsertMeta('property', 'og:site_name', siteName);

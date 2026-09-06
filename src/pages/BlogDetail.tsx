@@ -60,7 +60,7 @@ export default function BlogDetail() {
     headline: post.title,
     description: post.excerpt,
     image: post.image,
-    url: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog/${post.slug}`,
+    url: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog/${post.slug}/`,
     datePublished: post.publishedAt,
     author: { '@type': 'Person', name: post.author },
     publisher: {
@@ -73,7 +73,7 @@ export default function BlogDetail() {
     },
   };
 
-  const blogsUrl = `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog`;
+  const blogsUrl = `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog/`;
   const blogBreadcrumb = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -89,7 +89,7 @@ export default function BlogDetail() {
         '@type': 'ListItem',
         position: 3,
         name: post.title,
-        item: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog/${post.slug}`,
+        item: `${SITE_URL}${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog/${post.slug}/`,
       },
     ],
   };
