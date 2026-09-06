@@ -1,0 +1,39 @@
+# Sahara Vacation
+
+> Luxury desert tours and camel treks in the Moroccan Sahara. Private Berber camps, stargazing nights, 4x4 routes and multi-day trekking adventures departing from Merzouga, Zagora, M'Hamid, Marrakech, Ouarzazate and Agadir.
+
+## About
+
+Sahara Vacation is a boutique Moroccan desert tour operator based in Merzouga. We organize private and small-group experiences across Erg Chebbi and Erg Chigaga: full-moon camel treks, luxury mobile camps, nomad and Berber immersion programs, Atlas-to-Sahara road journeys and bespoke private departures. The website is available in French (default), Spanish, German, Italian and English.
+
+## Key pages
+
+- [Home](https://www.saharavacation.com/): French default homepage.
+- [Tours](https://www.saharavacation.com/tours): all desert tour itineraries.
+- [Experiences](https://www.saharavacation.com/experiences): stargazing nights, nomad immersion and other experiences.
+- [Custom Journey](https://www.saharavacation.com/custom-journey): design a private bespoke trip.
+- [About](https://www.saharavacation.com/about): who we are and our story.
+- [Contact](https://www.saharavacation.com/contact): phone, email and booking.
+- [Blog](https://www.saharavacation.com/blog): Sahara travel guides and planning advice.
+
+## Tours
+
+- [Morocco Sahara Grand Tour - Atlas and Dunes](https://www.saharavacation.com/tours/morocco-sahara-grand-tour-dunes-atlas): 8-day journey from Marrakech across the Atlas mountains to Erg Chebbi.
+- [Stargazing Night Camp](https://www.saharavacation.com/tours/stargazing-night-camp): 2 days, 1 night of astronomy and desert camping near Zagora.
+- [Nomad Berber Immersion](https://www.saharavacation.com/tours/nomad-berber-immersion): live with a Berber family and experience nomadic traditions.
+- [Private Bespoke Desert](https://www.saharavacation.com/tours/private-bespoke-desert): fully custom private desert itinerary.
+- [Sahara Vibe trekking tours](https://www.saharavacation.com/tours): 2 to 8-day camel and 4x4 trekking routes across Erg Chigaga and Erg Chebbi.
+
+## Details
+
+- French: https://www.saharavacation.com/
+- Spanish: https://www.saharavacation.com/es/
+- German: https://www.saharavacation.com/de/
+- Italian: https://www.saharavacation.com/it/
+- English: https://www.saharavacation.com/en/
+- Sitemap: https://www.saharavacation.com/sitemap.xml
+
+## Optional
+
+- Founder and operator: Sahara Vacation team, Merzouga, Morocco.
+- Booking: phone +212 6 74 28 36 39, email hello@saharavacation.com.
