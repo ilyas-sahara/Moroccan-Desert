@@ -5,17 +5,28 @@ import type { Locale, TranslationKey } from './translations';
 export type { Locale, TranslationKey } from './translations';
 
 export const LANGS: Array<{ code: Locale; label: string; short: string }> = [
-  { code: 'en', label: 'English', short: 'EN' },
   { code: 'fr', label: 'Français', short: 'FR' },
-  { code: 'de', label: 'Deutsch', short: 'DE' },
   { code: 'es', label: 'Español', short: 'ES' },
+  { code: 'de', label: 'Deutsch', short: 'DE' },
   { code: 'it', label: 'Italiano', short: 'IT' },
+  { code: 'en', label: 'English', short: 'EN' },
 ];
+
+export const DEFAULT_LOCALE: Locale = 'fr';
 
 const LOCALE_CODES: Locale[] = ['en', 'fr', 'de', 'es', 'it'];
 
 export function isLocale(value: string | null): value is Locale {
   return value !== null && (LOCALE_CODES as string[]).includes(value);
+}
+
+export function localePrefix(code: Locale): string {
+  return code === DEFAULT_LOCALE ? '' : `/${code}`;
+}
+
+export function localeFromPath(pathname: string): Locale | null {
+  const seg = (pathname.split('/')[1] ?? '').toLowerCase();
+  return isLocale(seg) ? seg : null;
 }
 
 const STORAGE_KEY = 'walk-the-sahara-locale';
@@ -37,8 +48,10 @@ function interpolate(template: string, vars?: Vars): string {
   );
 }
 
-function localeFromUrl(): Locale | null {
+function localeFromUrlOrQuery(): Locale | null {
   if (typeof window === 'undefined') return null;
+  const fromPath = localeFromPath(window.location.pathname);
+  if (fromPath) return fromPath;
   try {
     const params = new URLSearchParams(window.location.search);
     return isLocale(params.get('lang')) ? (params.get('lang') as Locale) : null;
@@ -49,11 +62,11 @@ function localeFromUrl(): Locale | null {
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(() => {
-    if (typeof window === 'undefined') return 'en';
-    const fromUrl = localeFromUrl();
+    if (typeof window === 'undefined') return DEFAULT_LOCALE;
+    const fromUrl = localeFromUrlOrQuery();
     if (fromUrl) return fromUrl;
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    return isLocale(stored) ? stored : 'en';
+    return isLocale(stored) ? stored : DEFAULT_LOCALE;
   });
 
   const setLocale = useCallback((next: Locale) => {
@@ -72,7 +85,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const onUrlChange = () => {
-      const fromUrl = localeFromUrl();
+      const fromUrl = localeFromUrlOrQuery();
       if (fromUrl) setLocaleState(fromUrl);
     };
     window.addEventListener('popstate', onUrlChange);

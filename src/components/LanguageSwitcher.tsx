@@ -1,11 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 import { Check, ChevronDown, Globe } from 'lucide-react';
-import { LANGS, useLocale } from '@/i18n';
+import { LANGS, isLocale, localePrefix, useLocale, type Locale } from '@/i18n';
 
 export default function LanguageSwitcher({ solid = true }: { solid?: boolean }) {
-  const { locale, setLocale, t } = useLocale();
+  const { locale, t } = useLocale();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  function navigateTo(lang: Locale): void {
+    const { origin, pathname, search, hash } = window.location;
+    const seg = (pathname.split('/')[1] ?? '').toLowerCase();
+    const stripped = isLocale(seg)
+      ? pathname.replace(/^\/(?:en|fr|de|es|it)(?=\/|$)/, '') || '/'
+      : pathname;
+    let target = origin + localePrefix(lang) + stripped + search + hash;
+    if (target === origin) target = `${origin}/`;
+    window.location.assign(target);
+  }
 
   useEffect(() => {
     function onClickOutside(event: MouseEvent) {
@@ -52,7 +63,7 @@ export default function LanguageSwitcher({ solid = true }: { solid?: boolean }) 
             key={lang.code}
             type="button"
             onClick={() => {
-              setLocale(lang.code);
+              navigateTo(lang.code);
               setOpen(false);
             }}
             className={`flex w-full items-center justify-between gap-2 rounded-xl px-3 py-2.5 text-left text-sm transition-colors ${

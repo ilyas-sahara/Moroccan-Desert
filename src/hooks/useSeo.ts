@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { LANGS, useLocale } from '@/i18n';
+import { DEFAULT_LOCALE, LANGS, localePrefix, useLocale } from '@/i18n';
 
 export const SITE_URL = 'https://www.saharavacation.com';
 
@@ -30,13 +30,12 @@ function upsertHreflang(hreflang: string, href: string) {
   el.setAttribute('href', href);
 }
 
-function upsertAlternateLinks(baseUrl: string) {
+function upsertAlternateLinks(pathUrl: string) {
   removeLinkAttrs('data-hreflang', 'hreflang-');
   for (const lang of LANGS) {
-    const href = lang.code === 'en' ? baseUrl : `${baseUrl}?lang=${lang.code}`;
-    upsertHreflang(lang.code, href);
+    upsertHreflang(lang.code, `${SITE_URL}${localePrefix(lang.code)}${pathUrl}`);
   }
-  upsertHreflang('x-default', baseUrl);
+  upsertHreflang('x-default', `${SITE_URL}${localePrefix(DEFAULT_LOCALE)}${pathUrl}`);
 }
 
 export type SeoOptions = {
@@ -58,7 +57,8 @@ export function useSeo({ title, description, path, image, type = 'website' }: Se
     document.title = title;
 
     const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-    const url = `${SITE_URL}${base}${path}`;
+    const pathUrl = `${base}${path}`;
+    const url = `${SITE_URL}${localePrefix(locale)}${pathUrl}`;
     const ogLocale = locale === 'en' ? 'en_US' : `${locale}_${locale.toUpperCase()}`;
     const siteName = 'Sahara Vacation';
 
@@ -73,7 +73,7 @@ export function useSeo({ title, description, path, image, type = 'website' }: Se
     }
     canonical.href = url;
 
-    upsertAlternateLinks(url);
+    upsertAlternateLinks(pathUrl);
 
     upsertMeta('property', 'og:type', type);
     upsertMeta('property', 'og:site_name', siteName);

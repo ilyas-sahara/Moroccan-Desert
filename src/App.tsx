@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { LocaleProvider } from '@/i18n';
+import { DEFAULT_LOCALE, LocaleProvider, isLocale, localePrefix } from '@/i18n';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SiteOrganization from '@/components/SiteOrganization';
@@ -28,11 +28,49 @@ function ScrollToTop() {
   return null;
 }
 
+function routerBasename(): string {
+  if (typeof window === 'undefined') return '';
+  const seg = (window.location.pathname.split('/')[1] ?? '').toLowerCase();
+  if (!isLocale(seg) || seg === DEFAULT_LOCALE) return '';
+  return `/${seg}`;
+}
+
+const BASENAME = routerBasename();
+
+/**
+ * Normalizes legacy URLs:
+ * - `/fr/...` -> `/...` (French is the default, served from the root)
+ * - `?lang=` query -> real localized subpath (e.g. `?lang=de` -> `/de`)
+ */
+function LegacyLocaleRedirect() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const full = window.location;
+    const seg = (full.pathname.split('/')[1] ?? '').toLowerCase();
+    if (seg === DEFAULT_LOCALE) {
+      const rest = full.pathname.replace(/^\/fr(?=\/|$)/, '') || '/';
+      full.replace(rest + full.search);
+      return;
+    }
+    if (!isLocale(seg)) {
+      const params = new URLSearchParams(full.search);
+      const lang = params.get('lang');
+      if (lang && isLocale(lang)) {
+        params.delete('lang');
+        const qs = params.toString();
+        full.replace(localePrefix(lang) + full.pathname + (qs ? `?${qs}` : ''));
+      }
+    }
+  }, [pathname]);
+  return null;
+}
+
 export default function App() {
   return (
     <LocaleProvider>
-      <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+      <BrowserRouter basename={BASENAME}>
         <ScrollToTop />
+        <LegacyLocaleRedirect />
         <SiteOrganization />
         <WhatsAppButton />
         <div className="flex min-h-screen flex-col">

@@ -34,7 +34,9 @@ function readCollection(path) {
   }
 }
 
-const routes = [
+const LOCALES = ['fr', 'es', 'de', 'it', 'en'];
+
+const CORE_ROUTES = [
   '/',
   '/tours',
   '/experiences',
@@ -49,6 +51,10 @@ const routes = [
   ...readCollection('content/sahara-vibe-desert-tours.json').map((tour) => `/tours/${tour.slug}`),
   ...readCollection('content/blog.json').map((post) => `/blog/${post.slug}`),
 ];
+
+const routes = LOCALES.flatMap((code) =>
+  CORE_ROUTES.map((route) => (code === 'fr' ? route : `/${code}${route}`)),
+);
 
 function send(res, status, body, type) {
   res.writeHead(status, { 'Content-Type': type, 'Content-Length': Buffer.byteLength(body) });
