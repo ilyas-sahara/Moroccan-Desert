@@ -460,6 +460,17 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.saharavacation.com/blog/erg-chigaga-vs-erg-chebbi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.saharavacation.com/blog/erg-chigaga-vs-erg-chebbi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.saharavacation.com/blog/erg-chigaga-vs-erg-chebbi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.saharavacation.com/blog/erg-chigaga-vs-erg-chebbi?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.saharavacation.com/blog/erg-chigaga-vs-erg-chebbi?lang=de" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.saharavacation.com/blog/erg-chigaga-vs-erg-chebbi?lang=es" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.saharavacation.com/blog/erg-chigaga-vs-erg-chebbi?lang=it" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.saharavacation.com/privacy</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.saharavacation.com/privacy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.saharavacation.com/privacy" />

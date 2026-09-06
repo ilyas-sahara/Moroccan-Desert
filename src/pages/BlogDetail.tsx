@@ -7,6 +7,20 @@ import { useSeo, SITE_URL } from '@/hooks/useSeo';
 import { getCmsBlogPosts } from '@/data/cms';
 import JsonLd from '@/components/JsonLd';
 
+function renderInline(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    return match ? (
+      <a key={i} href={match[2]} className="font-semibold text-sand-700 underline underline-offset-2 hover:text-sand-900">
+        {match[1]}
+      </a>
+    ) : (
+      <span key={i}>{part}</span>
+    );
+  });
+}
+
 export default function BlogDetail() {
   const { slug } = useParams();
   const { t } = useLocale();
@@ -79,8 +93,22 @@ export default function BlogDetail() {
     ],
   };
 
+  const faqBlock = post.body?.find((block) => block.type === 'faq');
+  const faqSchema = faqBlock && faqBlock.type === 'faq'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqBlock.items.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
+      }
+    : null;
+
   return (
     <main className="pt-20">
+      {faqSchema && <JsonLd data={faqSchema} />}
       <JsonLd data={blogPosting} />
       <JsonLd data={blogBreadcrumb} />
       <section className="bg-sand-50 py-12 lg:py-16">
@@ -109,7 +137,47 @@ export default function BlogDetail() {
               </div>
 
               <div className="mt-8 space-y-5 text-base leading-relaxed text-ink-700">
-                <p>{post.content}</p>
+                {post.body ? (
+                  post.body.map((block, i) => {
+                    switch (block.type) {
+                      case 'h2':
+                        return (
+                          <h2 key={i} className="mt-10 font-display text-2xl font-medium leading-snug text-ink-900">
+                            {renderInline(block.text)}
+                          </h2>
+                        );
+                      case 'ul':
+                        return (
+                          <ul key={i} className="list-disc space-y-2 pl-5 marker:text-sand-600">
+                            {block.items.map((item, j) => (
+                              <li key={j}>{renderInline(item)}</li>
+                            ))}
+                          </ul>
+                        );
+                      case 'quote':
+                        return (
+                          <blockquote key={i} className="border-l-4 border-sand-400 pl-4 italic text-ink-600">
+                            {renderInline(block.text)}
+                          </blockquote>
+                        );
+                      case 'faq':
+                        return (
+                          <div key={i} className="space-y-6 pt-2">
+                            {block.items.map((item, j) => (
+                              <div key={j}>
+                                <h3 className="text-lg font-semibold text-ink-900">{item.q}</h3>
+                                <p className="mt-2">{item.a}</p>
+                              </div>
+                            ))}
+                          </div>
+                        );
+                      default:
+                        return <p key={i}>{renderInline(block.text)}</p>;
+                    }
+                  })
+                ) : (
+                  <p>{post.content}</p>
+                )}
               </div>
             </div>
           </article>
