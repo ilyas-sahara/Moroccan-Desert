@@ -9,6 +9,7 @@ import { getCmsTours } from '@/data/cms';
 import { useReveal } from '@/hooks/useReveal';
 import { useSeo, SITE_URL } from '@/hooks/useSeo';
 import { useLocale, type Locale } from '@/i18n';
+import { responsiveImage } from '@/utils/responsiveImage';
 import { DICTS } from '@/i18n/translations';
 import TourMarquee from '@/components/TourMarquee';
 import TourMap from '@/components/TourMap';
@@ -180,7 +181,9 @@ export default function TourDetail() {
                 ) : (
                   <img
                     key={activeImg}
-                    src={tour.gallery[activeImg]}
+                    src={responsiveImage(tour.gallery[activeImg], { sizes: '(min-width:1024px) 58vw, 100vw' }).src}
+                    srcSet={responsiveImage(tour.gallery[activeImg], { sizes: '(min-width:1024px) 58vw, 100vw' }).srcSet}
+                    sizes="(min-width:1024px) 58vw, 100vw"
                     alt={tour.title}
                     className="h-full w-full object-cover"
                     style={{ animation: 'fade-in 0.6s ease-out' }}
@@ -230,7 +233,7 @@ export default function TourDetail() {
                       </span>
                     </div>
                   ) : (
-                    <img src={src} alt="" loading="lazy" className="h-full w-full object-cover" />
+                    <img src={responsiveImage(src, { sizes: '12vw', widths: [200, 400, 800], baseWidth: 400 }).src} srcSet={responsiveImage(src, { sizes: '12vw', widths: [200, 400, 800], baseWidth: 400 }).srcSet} alt="" loading="lazy" className="h-full w-full object-cover" />
                   )}
                 </button>
               ))}

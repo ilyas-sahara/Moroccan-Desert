@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import { Clock, Users, ArrowUpRight } from 'lucide-react';
 import type { Tour } from '@/data/content';
 import { useLocale } from '@/i18n';
+import { responsiveImage } from '@/utils/responsiveImage';
 
 function MarqueeCard({ tour }: { tour: Tour }) {
   const { t } = useLocale();
+  const img = responsiveImage(tour.image, { sizes: '50vw', widths: [300, 600, 900, 1200] });
   return (
     <Link
       to={`/tours/${tour.slug}`}
@@ -12,7 +14,9 @@ function MarqueeCard({ tour }: { tour: Tour }) {
     >
       <div className="relative aspect-[16/10] overflow-hidden">
         <img
-          src={tour.image}
+          src={img.src}
+          srcSet={img.srcSet}
+          sizes={img.sizes}
           alt={tour.title}
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"

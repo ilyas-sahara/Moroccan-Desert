@@ -7,6 +7,7 @@ import { useSeo } from '@/hooks/useSeo';
 import { EXPERIENCES } from '@/data/content';
 import { useLocale } from '@/i18n';
 import { getCmsExperiences, getExperiencesPageContent, type ExperiencesPageContent } from '@/data/cms';
+import { responsiveImage } from '@/utils/responsiveImage';
 
 const ICONS: Record<string, typeof Compass> = {
   Compass, Tent, Star, Coffee, Users, Mountain,
@@ -48,7 +49,7 @@ export default function Experiences() {
     <main className="pt-20">
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0">
-          <img src={pageContent.hero_image} alt="" className="h-full w-full object-cover opacity-75" />
+          <img src={responsiveImage(pageContent.hero_image, { sizes: '100vw' }).src} srcSet={responsiveImage(pageContent.hero_image, { sizes: '100vw' }).srcSet} sizes="100vw" alt="" className="h-full w-full object-cover opacity-75" />
           <div className="absolute inset-0 bg-gradient-to-b from-ink-950/50 via-ink-950/30 to-ink-950/55" />
         </div>
         <div className="container-x relative z-10">
@@ -72,7 +73,7 @@ export default function Experiences() {
                   className={`reveal reveal-delay-${(i % 3) + 1} group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-sand-200/50 card-lift`}
                 >
                   <div className="relative aspect-[5/3] overflow-hidden">
-                    <img src={exp.image} alt={exp.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <img src={responsiveImage(exp.image, { sizes: '(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw' }).src} srcSet={responsiveImage(exp.image, { sizes: '(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw' }).srcSet} alt={exp.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink-950/55 to-transparent" />
                     <div className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-sand-50/95 text-sand-700">
                       <Icon className="h-5 w-5" strokeWidth={1.5} />
@@ -94,7 +95,7 @@ export default function Experiences() {
 
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0 opacity-60">
-          <img src={pageContent.cta_image} alt="" className="h-full w-full object-cover" />
+          <img src={responsiveImage(pageContent.cta_image, { sizes: '100vw' }).src} srcSet={responsiveImage(pageContent.cta_image, { sizes: '100vw' }).srcSet} sizes="100vw" alt="" className="h-full w-full object-cover" />
         </div>
         <div className="container-x relative z-10 text-center">
           <h2 className="mx-auto max-w-2xl font-display text-3xl font-medium text-white text-balance sm:text-4xl">

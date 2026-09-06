@@ -131,10 +131,10 @@
       '<span class="h-4 w-4 rounded-full border-2 border-sand-400"></span></span>' +
       '</div></div>' +
       '<div class="lg:col-span-3">' +
-      '<h4 class="text-xs font-semibold uppercase tracking-[0.28em] text-sand-400">Explore</h4>' +
+      '<h3 class="text-xs font-semibold uppercase tracking-[0.28em] text-sand-400">Explore</h3>' +
       '<ul class="mt-5 space-y-3">' + explore + '</ul></div>' +
       '<div class="lg:col-span-4">' +
-      '<h4 class="text-xs font-semibold uppercase tracking-[0.28em] text-sand-400">Get in touch</h4>' +
+      '<h3 class="text-xs font-semibold uppercase tracking-[0.28em] text-sand-400">Get in touch</h3>' +
       '<ul class="mt-5 space-y-3 text-sm text-sand-200/85">' +
       '<li class="flex items-start gap-3"><span class="mt-0.5 h-4 w-4 shrink-0 rounded-full border border-sand-400"></span><span>' + esc(d.address) + '</span></li>' +
       '<li class="flex items-center gap-3"><span class="h-4 w-4 shrink-0 rounded-full border border-sand-400"></span><span>' + esc(d.phone) + '</span></li>' +

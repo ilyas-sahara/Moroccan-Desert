@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Compass } from 'lucide-react';
 import { IMAGES } from '@/data/content';
 import { useLocale } from '@/i18n';
+import { responsiveImage } from '@/utils/responsiveImage';
 import { useSeo } from '@/hooks/useSeo';
 
 export default function NotFound() {
@@ -16,7 +17,7 @@ export default function NotFound() {
     <main className="pt-20">
       <section className="relative flex min-h-[80vh] items-center overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0">
-          <img src={IMAGES.stars} alt="" className="h-full w-full object-cover opacity-40" />
+          <img src={responsiveImage(IMAGES.stars, { sizes: '100vw' }).src} srcSet={responsiveImage(IMAGES.stars, { sizes: '100vw' }).srcSet} sizes="100vw" alt="" className="h-full w-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-ink-950/80 via-ink-950/60 to-ink-950/90" />
         </div>
         <div className="container-x relative z-10">

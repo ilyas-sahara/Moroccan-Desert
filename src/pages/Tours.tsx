@@ -8,6 +8,7 @@ import { useSeo } from '@/hooks/useSeo';
 import { TOURS, type Tour } from '@/data/content';
 import { useLocale } from '@/i18n';
 import { getCmsTours } from '@/data/cms';
+import { responsiveImage } from '@/utils/responsiveImage';
 
 const DIFFICULTIES = [
   { id: 'all', match: '' },
@@ -80,7 +81,9 @@ export default function Tours() {
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0">
           <img
-            src="https://images.pexels.com/photos/28829635/pexels-photo-28829635.jpeg?auto=compress&cs=tinysrgb&w=2000"
+            src={responsiveImage('https://images.pexels.com/photos/28829635/pexels-photo-28829635.jpeg', { sizes: '100vw', baseWidth: 1600, widths: [640, 1200, 1600] }).src}
+            srcSet={responsiveImage('https://images.pexels.com/photos/28829635/pexels-photo-28829635.jpeg', { sizes: '100vw', baseWidth: 1600, widths: [640, 1200, 1600] }).srcSet}
+            sizes="100vw"
             alt=""
             className="h-full w-full object-cover opacity-40"
           />

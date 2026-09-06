@@ -34,6 +34,18 @@ function readCollection(path) {
   }
 }
 
+/**
+ * The capture runs until networkidle, so the lazy Google Fonts stylesheet's
+ * `onload` has already fired and serialized with `media="all"` (render-blocking
+ * again for real users). Restore `media="print"` so served pages load fonts
+ * asynchronously; the onload handler flips it back to `all` after load.
+ */
+function normalizeLazyFonts(html) {
+  return html.replace(/<link rel="stylesheet" href="https:\/\/fonts\.googleapis\.com\/css2[^>]*media="all" onload="this\.media='all'"[^>]*>/g, (match) =>
+    match.replace('media="all"', 'media="print"'),
+  );
+}
+
 const LOCALES = ['fr', 'es', 'de', 'it', 'en'];
 
 const CORE_ROUTES = [
@@ -136,7 +148,7 @@ async function prerender() {
         continue;
       }
       await new Promise((r) => setTimeout(r, 400));
-      const html = await page.content();
+      const html = normalizeLazyFonts(await page.content());
       const outFile = route === '/' ? join(DIST, 'index.html') : join(DIST, route, 'index.html');
       mkdirSync(dirname(outFile), { recursive: true });
       writeFileSync(outFile, html, 'utf-8');

@@ -217,16 +217,25 @@ const defaultExperiencesPage: ExperiencesPageContent = {
   cta_image: IMAGES.sunrise,
 };
 
+const jsonCache = new Map<string, Promise<unknown>>();
+
 async function loadJson<T>(path: string, fallback: T): Promise<T> {
-  try {
-    const response = await fetch(`${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`);
-    if (!response.ok) {
+  const url = `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+  const cached = jsonCache.get(url);
+  if (cached) return cached as Promise<T>;
+  const promise = (async () => {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        return fallback;
+      }
+      return (await response.json()) as T;
+    } catch {
       return fallback;
     }
-    return (await response.json()) as T;
-  } catch {
-    return fallback;
-  }
+  })();
+  jsonCache.set(url, promise);
+  return promise;
 }
 
 function mergeValues<T>(defaults: T, value: Partial<T> | undefined | null): T {

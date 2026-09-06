@@ -5,6 +5,7 @@ import { CITY_LABELS, MOROCCO_PATH } from '@/data/morocco-map';
 import { useLocale } from '@/i18n';
 import { useSeo } from '@/hooks/useSeo';
 import { getCustomJourneyPageContent, type CustomJourneyPageContent } from '@/data/cms';
+import { responsiveImage } from '@/utils/responsiveImage';
 
 const STOPS = [
   { id: 'marrakech', name: 'Marrakech', x: 44.13, y: 51.45 },
@@ -134,7 +135,7 @@ export default function CustomJourney() {
     <main className="pt-20">
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-28">
         <div className="absolute inset-0">
-          <img src={pageContent.hero_image} alt="" className="h-full w-full object-cover opacity-70" />
+          <img src={responsiveImage(pageContent.hero_image, { sizes: '100vw' }).src} srcSet={responsiveImage(pageContent.hero_image, { sizes: '100vw' }).srcSet} sizes="100vw" alt="" className="h-full w-full object-cover opacity-70" />
           <div className="absolute inset-0 bg-gradient-to-r from-ink-950/75 via-ink-950/55 to-ink-950/25" />
         </div>
         <div className="container-x relative z-10 max-w-4xl">

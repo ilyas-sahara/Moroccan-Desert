@@ -6,6 +6,7 @@ import { useReveal } from '@/hooks/useReveal';
 import { useSeo } from '@/hooks/useSeo';
 import { useLocale } from '@/i18n';
 import { getAboutPageContent, type AboutPageContent } from '@/data/cms';
+import { responsiveImage } from '@/utils/responsiveImage';
 
 const VALUE_ICONS: Record<string, typeof Compass> = { Users, Leaf, Heart, Compass };
 const ICON_CYCLE: Array<typeof Compass> = [Users, Leaf, Heart, Compass];
@@ -53,7 +54,7 @@ export default function About() {
     <main className="pt-20">
       <section className="relative overflow-hidden bg-ink-950 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0">
-          <img src={aboutContent.hero_image} alt="" className="h-full w-full object-cover opacity-40" />
+          <img src={responsiveImage(aboutContent.hero_image, { sizes: '100vw' }).src} srcSet={responsiveImage(aboutContent.hero_image, { sizes: '100vw' }).srcSet} sizes="100vw" alt="" className="h-full w-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-ink-950/70 via-ink-950/50 to-ink-950/80" />
         </div>
         <div className="container-x relative z-10">
@@ -69,7 +70,7 @@ export default function About() {
       <section className="bg-sand-50 py-20 lg:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-6">
-            <img src={aboutContent.intro_image} alt={t('about.nomadCampAlt')} loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-lg" />
+            <img src={responsiveImage(aboutContent.intro_image, { sizes: '(min-width:1024px) 45vw, 92vw' }).src} srcSet={responsiveImage(aboutContent.intro_image, { sizes: '(min-width:1024px) 45vw, 92vw' }).srcSet} alt={t('about.nomadCampAlt')} loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-lg" />
           </div>
           <div className="lg:col-span-6">
             <SectionHeading
@@ -121,7 +122,7 @@ export default function About() {
 
       <section className="relative overflow-hidden bg-sand-800 py-24 text-sand-50 lg:py-32">
         <div className="absolute inset-0 opacity-20">
-          <img src={aboutContent.cta_image} alt="" className="h-full w-full object-cover" />
+          <img src={responsiveImage(aboutContent.cta_image, { sizes: '100vw' }).src} srcSet={responsiveImage(aboutContent.cta_image, { sizes: '100vw' }).srcSet} sizes="100vw" alt="" className="h-full w-full object-cover" />
         </div>
         <div className="container-x relative z-10 text-center">
           <h2 className="mx-auto max-w-2xl font-display text-3xl font-medium text-white text-balance sm:text-4xl">

@@ -2,9 +2,13 @@ import { Link } from 'react-router-dom';
 import { Clock, Users, ArrowUpRight, MapPin } from 'lucide-react';
 import type { Tour } from '@/data/content';
 import { useLocale } from '@/i18n';
+import { responsiveImage } from '@/utils/responsiveImage';
 
 export default function TourCard({ tour, index = 0 }: { tour: Tour; index?: number }) {
   const { t } = useLocale();
+  const img = responsiveImage(tour.image, {
+    sizes: '(min-width:1280px) 25vw, (min-width:640px) 40vw, 92vw',
+  });
   const delay = `reveal-delay-${Math.min(index % 4, 4) + 1}`;
   return (
     <Link
@@ -13,7 +17,9 @@ export default function TourCard({ tour, index = 0 }: { tour: Tour; index?: numb
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
-          src={tour.image}
+          src={img.src}
+          srcSet={img.srcSet}
+          sizes={img.sizes}
           alt={tour.title}
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"

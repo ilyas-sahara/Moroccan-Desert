@@ -87,7 +87,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.28em] text-sand-400">{t('common.explore')}</h4>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.28em] text-sand-400">{t('common.explore')}</h3>
             <ul className="mt-5 space-y-3 text-sm text-sand-200/85">
               {footer.explore_links.map((link) => (
                 <li key={link.label}>
@@ -100,7 +100,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-4">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.28em] text-sand-400">{t('common.getInTouch')}</h4>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.28em] text-sand-400">{t('common.getInTouch')}</h3>
             <ul className="mt-5 space-y-3 text-sm text-sand-200/85">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-sand-400" strokeWidth={1.5} />

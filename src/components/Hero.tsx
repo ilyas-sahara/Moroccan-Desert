@@ -4,6 +4,7 @@ import { ChevronDown } from 'lucide-react';
 import { IMAGES } from '@/data/content';
 import type { HeroFrame } from '@/data/cms';
 import { useLocale } from '@/i18n';
+import { responsiveImage } from '@/utils/responsiveImage';
 
 const FRAME_MS = 3000;
 
@@ -55,7 +56,9 @@ export default function Hero({
             aria-hidden={i !== active}
           >
             <img
-              src={frame.image}
+              src={responsiveImage(frame.image, { sizes: '100vw' }).src}
+              srcSet={responsiveImage(frame.image, { sizes: '100vw' }).srcSet}
+              sizes="100vw"
               alt=""
               className={`h-full w-full object-cover ${i === active ? 'animate-ken-burns' : ''}`}
               loading={i === 0 ? 'eager' : 'lazy'}

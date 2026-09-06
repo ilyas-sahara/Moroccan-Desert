@@ -5,6 +5,7 @@ import { BLOG_POSTS, type BlogPost } from '@/data/content';
 import { useLocale } from '@/i18n';
 import { useSeo, SITE_URL } from '@/hooks/useSeo';
 import { getCmsBlogPosts } from '@/data/cms';
+import { responsiveImage } from '@/utils/responsiveImage';
 import JsonLd from '@/components/JsonLd';
 
 function renderInline(text: string) {
@@ -118,7 +119,7 @@ export default function BlogDetail() {
           </Link>
 
           <article className="mt-8 overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-sand-200/60">
-            <img src={post.image} alt={post.title} className="h-80 w-full object-cover" />
+            <img src={responsiveImage(post.image, { sizes: '100vw', baseWidth: 1600, widths: [640, 1200, 1600] }).src} srcSet={responsiveImage(post.image, { sizes: '100vw', baseWidth: 1600, widths: [640, 1200, 1600] }).srcSet} sizes="100vw" alt={post.title} className="h-80 w-full object-cover" />
             <div className="p-6 md:p-10">
               <div className="flex flex-wrap gap-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-sand-600">
                 <span>{post.category}</span>
