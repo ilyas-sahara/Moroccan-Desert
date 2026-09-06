@@ -302,41 +302,41 @@ export const de: LocaleDict = {
   'seo.tourOverrides.private-bespoke-desert.title': 'Private Sahara-Wüstentour ab Marrakesch – Maßgeschneidert',
   'seo.tourOverrides.private-bespoke-desert.description':
     'Ihre eigene private Sahara-Wüstentour ab Marrakesch: flexible 3-Tage-Route zu den Erg-Chebbi-Dünen mit Kameltrek und privatem Camp. Ab 1.200 €.',
-  'seo.tourOverrides.sahara-vibe-2-day-trekking.title': '2-Tage-Kameltrekking Marokko – Sahara-Wüstenwanderung',
-  'seo.tourOverrides.sahara-vibe-2-day-trekking.description':
+  'seo.tourOverrides.2-day-trekking.title': '2-Tage-Kameltrekking Marokko – Sahara-Wüstenwanderung',
+  'seo.tourOverrides.2-day-trekking.description':
     "2-tägiges Kameltrekking in der marokkanischen Sahara ab M'Hamid: gehen Sie über goldene Dünen, die Kamele tragen Ihr Gepäck, Schlafen unter Sternen. Ab 149 €.",
-  'seo.tourOverrides.sahara-vibe-3-day-trekking.title': "3-Tage-Kameltrekking Marokko – Sahara-Karawane ab M'Hamid",
-  'seo.tourOverrides.sahara-vibe-3-day-trekking.description':
+  'seo.tourOverrides.3-day-trekking.title': "3-Tage-Kameltrekking Marokko – Sahara-Karawane ab M'Hamid",
+  'seo.tourOverrides.3-day-trekking.description':
     "3-tägiges Kameltrekking in der marokkanischen Sahara ab M'Hamid: goldene Dünen, nomadische Führer und im Sand gebackenes Brot.",
-  'seo.tourOverrides.sahara-vibe-4-day-trekking.title': '4-Tage-Kameltrekking Marokko – Sahara-Dünen mit Nomadenführern',
-  'seo.tourOverrides.sahara-vibe-4-day-trekking.description':
+  'seo.tourOverrides.4-day-trekking.title': '4-Tage-Kameltrekking Marokko – Sahara-Dünen mit Nomadenführern',
+  'seo.tourOverrides.4-day-trekking.description':
     "4-tägiges Kameltrekking in der marokkanischen Sahara: goldene Dünen, Nomadentage und Bivouacs rund um M'Hamid. Ab 485 €.",
-  'seo.tourOverrides.sahara-vibe-5-day-trekking.title': '5-Tage-Kameltrekking Marokko – Nomaden-Erlebnis in der Wüste',
-  'seo.tourOverrides.sahara-vibe-5-day-trekking.description':
+  'seo.tourOverrides.5-day-trekking.title': '5-Tage-Kameltrekking Marokko – Nomaden-Erlebnis in der Wüste',
+  'seo.tourOverrides.5-day-trekking.description':
     '5-tägiges Kameltrekking in der marokkanischen Sahara: abgelegene Dünen, Wüstenbivouacs und im Sand gebackenes Brot. Ab 575 €.',
-  'seo.tourOverrides.sahara-vibe-6-day-trekking.title': '6-Tage-Kameltrekking Zagora Sahara – Nomaden-Karawane',
-  'seo.tourOverrides.sahara-vibe-6-day-trekking.description':
+  'seo.tourOverrides.6-day-trekking.title': '6-Tage-Kameltrekking Zagora Sahara – Nomaden-Karawane',
+  'seo.tourOverrides.6-day-trekking.description':
     "6-tägiges Kameltrekking von Zagora in die Sahara von M'Hamid: Dünen, Oasen und Hammada mit nomadischen Kameltreibern. Ab 480 €.",
-  'seo.tourOverrides.sahara-vibe-7-day-trekking.title': '7-Tage-Kameltrekking Marokko – Tiefe Sahara-Karawanenreise',
-  'seo.tourOverrides.sahara-vibe-7-day-trekking.description':
+  'seo.tourOverrides.7-day-trekking.title': '7-Tage-Kameltrekking Marokko – Tiefe Sahara-Karawanenreise',
+  'seo.tourOverrides.7-day-trekking.description':
     "7-tägiges Kameltrekking in der marokkanischen Sahara ab M'Hamid: abgelegene Dünen und Nomadencamps mit Vollpension.",
-  'seo.tourOverrides.sahara-vibe-8-day-trekking.title': '8-Tage-Kameltrekking Marokko – Sahara-Karawanenabenteuer',
-  'seo.tourOverrides.sahara-vibe-8-day-trekking.description':
+  'seo.tourOverrides.8-day-trekking.title': '8-Tage-Kameltrekking Marokko – Sahara-Karawanenabenteuer',
+  'seo.tourOverrides.8-day-trekking.description':
     '8-tägiges Kameltrekking in der marokkanischen Sahara: Atlas-Überquerung, Draa-Tal und abgelegene Dünen mit lokalen Nomadenführern. Ab 750 €.',
-  'seo.tourOverrides.sahara-vibe-mhamid-erg-chigaga-3-day.title': "Wüstentour von M'Hamid nach Erg Chigaga – 3 Tage an wilden Dünen",
-  'seo.tourOverrides.sahara-vibe-mhamid-erg-chigaga-3-day.description':
+  'seo.tourOverrides.mhamid-erg-chigaga-3-day.title': "Wüstentour von M'Hamid nach Erg Chigaga – 3 Tage an wilden Dünen",
+  'seo.tourOverrides.mhamid-erg-chigaga-3-day.description':
     "3-tägige Wüstentour von M'Hamid nach Erg Chigaga: 4x4 zum Iriqui-See, Kamelritt bei Sonnenuntergang und Camp unter den Sternen.",
-  'seo.tourOverrides.sahara-vibe-marrakech-erg-chigaga-4-day.title': '4-Tage-Wüstentour von Marrakesch nach Erg Chigaga – Privates 4x4',
-  'seo.tourOverrides.sahara-vibe-marrakech-erg-chigaga-4-day.description':
+  'seo.tourOverrides.marrakech-erg-chigaga-4-day.title': '4-Tage-Wüstentour von Marrakesch nach Erg Chigaga – Privates 4x4',
+  'seo.tourOverrides.marrakech-erg-chigaga-4-day.description':
     'Private 4-Tage-Wüstentour von Marrakesch nach Erg Chigaga: Hoher Atlas, Aït Ben Haddou, Iriqui-Ebene und eine Nacht an den wilden Dünen. Ab 675 €.',
-  'seo.tourOverrides.sahara-vibe-ouarzazate-erg-chigaga-3-day.title': 'Erg-Chigaga-Wüstentour ab Ouarzazate – 3 Tage, 2 Nächte',
-  'seo.tourOverrides.sahara-vibe-ouarzazate-erg-chigaga-3-day.description':
+  'seo.tourOverrides.ouarzazate-erg-chigaga-3-day.title': 'Erg-Chigaga-Wüstentour ab Ouarzazate – 3 Tage, 2 Nächte',
+  'seo.tourOverrides.ouarzazate-erg-chigaga-3-day.description':
     '3-tägige Erg-Chigaga-Wüstentour ab Ouarzazate: Draa-Tal, Kamelritt bei Sonnenuntergang und Lagerfeuer-Nächte. Ab 435 €.',
-  'seo.tourOverrides.sahara-vibe-ouarzazate-erg-chigaga-2-day.title': '2-Tage-Erg-Chigaga-Wüstentour ab Ouarzazate – Saharanacht',
-  'seo.tourOverrides.sahara-vibe-ouarzazate-erg-chigaga-2-day.description':
+  'seo.tourOverrides.ouarzazate-erg-chigaga-2-day.title': '2-Tage-Erg-Chigaga-Wüstentour ab Ouarzazate – Saharanacht',
+  'seo.tourOverrides.ouarzazate-erg-chigaga-2-day.description':
     '2-tägige Erg-Chigaga-Wüstentour ab Ouarzazate: 4x4 zu den Dünen, Kamelritt bei Sonnenuntergang und eine Nacht in der Sahara. Ab 200 €.',
-  'seo.tourOverrides.sahara-vibe-agadir-erg-chegaga-5-day.title': '5-Tage-Wüstentour von Agadir nach Erg Chigaga | Dünen von Marokko',
-  'seo.tourOverrides.sahara-vibe-agadir-erg-chegaga-5-day.description':
+  'seo.tourOverrides.agadir-erg-chegaga-5-day.title': '5-Tage-Wüstentour von Agadir nach Erg Chigaga | Dünen von Marokko',
+  'seo.tourOverrides.agadir-erg-chegaga-5-day.description':
     '5-tägige Wüstentour von Agadir nach Erg Chigaga: Taroudant, Safran von Taliouine, Iriqui-See und Nächte im Sahara-Camp. Ab 600 €.',
   'lang.switchLabel': 'Sprache ändern',
   'lang.en': 'Englisch',
