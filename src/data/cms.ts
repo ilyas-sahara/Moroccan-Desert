@@ -108,16 +108,16 @@ const defaultSettings: SiteSettings = {
   phone: '+212 6 74 28 36 39',
   email: 'hello@saharavacation.com',
   address: 'Avenue Mohammed V, Merzouga, Errachidia, Morocco',
-  instagram_url: '#',
-  facebook_url: '#',
+  instagram_url: 'https://www.instagram.com/sahara_vacation/',
+  facebook_url: 'https://www.facebook.com/saharavacation',
 };
 
 const defaultFooter: FooterContent = {
   brand_name: 'Sahara Vacation',
   description:
     'Luxury desert journeys through the golden dunes of Merzouga and beyond. Small groups, local guides, and camps that leave nothing behind but footprints.',
-  instagram_url: '#',
-  facebook_url: '#',
+  instagram_url: 'https://www.instagram.com/sahara_vacation/',
+  facebook_url: 'https://www.facebook.com/saharavacation',
   explore_links: [
     { label: 'All Tours', to: '/tours' },
     { label: 'Experiences', to: '/experiences' },
