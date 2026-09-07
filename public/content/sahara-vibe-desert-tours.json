@@ -39,7 +39,7 @@
       "title": "2 Days Sahara Desert Trekking Morocco",
       "overview": "Experience an authentic 2-day Sahara Desert trekking adventure in southern Morocco, guided by a local nomadic guide and camel handlers who know the desert from generations of experience. Walk through the golden dunes at your own pace while camels carry your luggage, giving you the freedom to fully enjoy the peaceful landscapes.\n\nDiscover the silence and beauty of the Sahara, meet local nomadic communities, enjoy spectacular sunrises and sunsets, and experience traditional desert life. Along the way, your camel handlers prepare fresh Moroccan meals, traditional bread baked in the sand, and tea over the fire. At night, sleep in a desert camp or under the stars and enjoy the incredible atmosphere of the Sahara.\n\nThis 2-day Sahara trek is available from mid-September to mid-May and can start with just two participants. The itinerary is fully private, flexible, and customizable, allowing you to choose your preferred travel date and adapt the experience to your needs.\n\nWalk the Sahara, meet its people, and experience the desert the way it has been lived for generations.",
       "reviews": 4,
-"video": "/assets/images/sahara-camel-trek-video.mp4",
+      "video": "/assets/images/sahara-camel-trek-video.mp4",
       "image": "/assets/images/sahara-camel-trek-dunes-morocco.jpg",
       "difficulty": "Gentle",
       "included": [
@@ -609,7 +609,7 @@
         "https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "https://images.pexels.com/photos/28829638/pexels-photo-28829638.jpeg?auto=compress&cs=tinysrgb&w=1600"
       ],
-      "priceFrom": 0,
+      "priceFrom": 300,
       "duration": "3 days · 2 nights",
       "region": "M'Hamid El Ghizlane · Erg Chigaga",
       "days": 3,
