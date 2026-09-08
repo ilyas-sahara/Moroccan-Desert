@@ -35,12 +35,12 @@ export const en = {
     blogDropdown: {
       all: 'All Stories',
       allDesc: 'Travel notes and guides',
-      post1: 'Plan your first Sahara night',
-      post1Desc: 'A practical guide',
-      post2: 'Desert camp comfort',
-      post2Desc: 'What luxury really means',
-      post3: 'Beyond the dunes',
-      post3Desc: 'Culture, music, and people',
+      post1: 'How many days for a desert tour?',
+      post1Desc: 'Real drive times, honest advice',
+      post2: 'What to pack for the Sahara',
+      post2Desc: 'A packing list that works',
+      post3: 'Best time to visit the Sahara',
+      post3Desc: 'Month by month',
     },
   },
   common: {

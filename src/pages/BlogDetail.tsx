@@ -2,18 +2,22 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, CalendarDays, Clock3, UserRound } from 'lucide-react';
 import { BLOG_POSTS, type BlogPost } from '@/data/content';
-import { useLocale } from '@/i18n';
+import { useLocale, localePrefix, type Locale } from '@/i18n';
 import { useSeo, SITE_URL } from '@/hooks/useSeo';
 import { getCmsBlogPosts } from '@/data/cms';
 import { responsiveImage } from '@/utils/responsiveImage';
 import JsonLd from '@/components/JsonLd';
 
-function renderInline(text: string) {
+function localizeHref(href: string, locale: Locale): string {
+  return href.startsWith('/') ? `${localePrefix(locale)}${href}` : href;
+}
+
+function renderInline(text: string, locale: Locale) {
   const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
   return parts.map((part, i) => {
     const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     return match ? (
-      <a key={i} href={match[2]} className="font-semibold text-sand-700 underline underline-offset-2 hover:text-sand-900">
+      <a key={i} href={localizeHref(match[2], locale)} className="font-semibold text-sand-700 underline underline-offset-2 hover:text-sand-900">
         {match[1]}
       </a>
     ) : (
@@ -24,7 +28,7 @@ function renderInline(text: string) {
 
 export default function BlogDetail() {
   const { slug } = useParams();
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const [posts, setPosts] = useState<BlogPost[]>(BLOG_POSTS);
   const post = posts.find((item) => item.slug === slug);
 
@@ -38,10 +42,10 @@ export default function BlogDetail() {
 
   useEffect(() => {
     void (async () => {
-      const cmsPosts = await getCmsBlogPosts();
+      const cmsPosts = await getCmsBlogPosts(locale);
       setPosts(cmsPosts);
     })();
-  }, []);
+  }, [locale]);
 
   if (!post) {
     return (
@@ -144,21 +148,21 @@ export default function BlogDetail() {
                       case 'h2':
                         return (
                           <h2 key={i} className="mt-10 font-display text-2xl font-medium leading-snug text-ink-900">
-                            {renderInline(block.text)}
+                            {renderInline(block.text, locale)}
                           </h2>
                         );
                       case 'ul':
                         return (
                           <ul key={i} className="list-disc space-y-2 pl-5 marker:text-sand-600">
                             {block.items.map((item, j) => (
-                              <li key={j}>{renderInline(item)}</li>
+                              <li key={j}>{renderInline(item, locale)}</li>
                             ))}
                           </ul>
                         );
                       case 'quote':
                         return (
                           <blockquote key={i} className="border-l-4 border-sand-400 pl-4 italic text-ink-600">
-                            {renderInline(block.text)}
+{renderInline(block.text, locale)}
                           </blockquote>
                         );
                       case 'faq':
@@ -173,7 +177,7 @@ export default function BlogDetail() {
                           </div>
                         );
                       default:
-                        return <p key={i}>{renderInline(block.text)}</p>;
+                        return <p key={i}>{renderInline(block.text, locale)}</p>;
                     }
                   })
                 ) : (

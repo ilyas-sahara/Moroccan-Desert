@@ -44,9 +44,9 @@ const DROPDOWNS = [
     labelKey: 'nav.blog',
     items: [
       { labelKey: 'nav.blogDropdown.all', descKey: 'nav.blogDropdown.allDesc', to: '/blog' },
-      { labelKey: 'nav.blogDropdown.post1', descKey: 'nav.blogDropdown.post1Desc', to: '/blog/how-to-plan-a-first-sahara-night' },
-      { labelKey: 'nav.blogDropdown.post2', descKey: 'nav.blogDropdown.post2Desc', to: '/blog/what-makes-a-desert-camp-luxury' },
-      { labelKey: 'nav.blogDropdown.post3', descKey: 'nav.blogDropdown.post3Desc', to: '/blog/three-ways-to-see-the-sahara-beyond-the-dunes' },
+      { labelKey: 'nav.blogDropdown.post1', descKey: 'nav.blogDropdown.post1Desc', to: '/blog/how-many-days-morocco-desert-tour' },
+      { labelKey: 'nav.blogDropdown.post2', descKey: 'nav.blogDropdown.post2Desc', to: '/blog/what-to-pack-sahara-desert-camel-trek' },
+      { labelKey: 'nav.blogDropdown.post3', descKey: 'nav.blogDropdown.post3Desc', to: '/blog/best-time-to-visit-sahara-desert' },
     ],
   },
 ] as const;

@@ -8,7 +8,7 @@ import { getCmsBlogPosts } from '@/data/cms';
 import { responsiveImage } from '@/utils/responsiveImage';
 
 export default function Blog() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const [posts, setPosts] = useState<BlogPost[]>(BLOG_POSTS);
   const headerImg = responsiveImage('https://images.pexels.com/photos/33566021/pexels-photo-33566021.jpeg', {
     sizes: '100vw',
@@ -24,10 +24,10 @@ export default function Blog() {
 
   useEffect(() => {
     void (async () => {
-      const cmsPosts = await getCmsBlogPosts();
+      const cmsPosts = await getCmsBlogPosts(locale);
       setPosts(cmsPosts);
     })();
-  }, []);
+  }, [locale]);
 
   return (
     <main className="pt-20">

@@ -334,8 +334,8 @@ export async function getCmsExperiences(locale: Locale = 'en'): Promise<Array<{ 
   return loadLocalizedCollection(locale, '/content/experiences.json', EXPERIENCES);
 }
 
-export async function getCmsBlogPosts(): Promise<BlogPost[]> {
-  return loadCollection('/content/blog.json', BLOG_POSTS);
+export async function getCmsBlogPosts(locale: Locale = 'en'): Promise<BlogPost[]> {
+  return loadLocalizedCollection(locale, '/content/blog.json', BLOG_POSTS);
 }
 
 export async function getCmsTestimonials(): Promise<Array<{ name: string; country: string; text: string; tour: string; rating: number }>> {
