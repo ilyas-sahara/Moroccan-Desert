@@ -24,16 +24,6 @@ const MIME = {
   '.map': 'application/json',
 };
 
-function readCollection(path) {
-  try {
-    const data = JSON.parse(readFileSync(join(DIST, path), 'utf-8'));
-    const items = Array.isArray(data) ? data : data.items;
-    return Array.isArray(items) ? items : [];
-  } catch {
-    return [];
-  }
-}
-
 /**
  * The capture runs until networkidle, so the lazy Google Fonts stylesheet's
  * `onload` has already fired and serialized with `media="all"` (render-blocking
@@ -48,7 +38,9 @@ function normalizeLazyFonts(html) {
 
 const LOCALES = ['fr', 'es', 'de', 'it', 'en'];
 
-const CORE_ROUTES = [
+const SLUG_MAP = JSON.parse(readFileSync(resolve('src/data/slug-map.json'), 'utf-8'));
+
+const STATIC_PATHS = [
   '/',
   '/tours',
   '/experiences',
@@ -59,14 +51,14 @@ const CORE_ROUTES = [
   '/privacy',
   '/terms',
   '/responsible-travel',
-  ...readCollection('content/tours.json').map((tour) => `/tours/${tour.slug}`),
-  ...readCollection('content/sahara-vibe-desert-tours.json').map((tour) => `/tours/${tour.slug}`),
-  ...readCollection('content/blog.json').map((post) => `/blog/${post.slug}`),
 ];
 
-const routes = LOCALES.flatMap((code) =>
-  CORE_ROUTES.map((route) => (code === 'fr' ? route : `/${code}${route}`)),
-);
+const routes = LOCALES.flatMap((code) => {
+  const tourPaths = SLUG_MAP.tours.map((entry) => `/tours/${entry[code]}`);
+  const blogPaths = SLUG_MAP.blogs.map((entry) => `/blog/${entry[code]}`);
+  const localPaths = [...STATIC_PATHS, ...tourPaths, ...blogPaths];
+  return localPaths.map((route) => (code === 'fr' ? route : `/${code}${route}`));
+});
 
 function send(res, status, body, type) {
   res.writeHead(status, { 'Content-Type': type, 'Content-Length': Buffer.byteLength(body) });

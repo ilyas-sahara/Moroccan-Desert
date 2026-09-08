@@ -9,6 +9,7 @@ import { getCmsTours } from '@/data/cms';
 import { useReveal } from '@/hooks/useReveal';
 import { useSeo, SITE_URL } from '@/hooks/useSeo';
 import { useLocale, type Locale } from '@/i18n';
+import { tourAlternatePaths } from '@/data/slug-map';
 import { responsiveImage } from '@/utils/responsiveImage';
 import { DICTS } from '@/i18n/translations';
 import TourMarquee from '@/components/TourMarquee';
@@ -65,6 +66,7 @@ export default function TourDetail() {
   }, [galleryCount]);
 
   const tourMeta = tour ? tourOverrideMeta(locale, tour.slug) : null;
+  const tourAlternates = tour ? tourAlternatePaths(tour.slug) : undefined;
 
   useSeo(
     tour
@@ -74,6 +76,7 @@ export default function TourDetail() {
             description: tourMeta.description,
             path: `/tours/${tour.slug}`,
             image: tour.image,
+            alternatePaths: tourAlternates,
           }
         : tour.days > 0
           ? {
@@ -86,12 +89,14 @@ export default function TourDetail() {
               }),
               path: `/tours/${tour.slug}`,
               image: tour.image,
+              alternatePaths: tourAlternates,
             }
           : {
               title: t('seo.tourTitleBespoke', { name: tour.title, price: tour.priceFrom }),
               description: t('seo.tourDescriptionBespoke', { name: tour.title, price: tour.priceFrom }),
               path: `/tours/${tour.slug}`,
               image: tour.image,
+              alternatePaths: tourAlternates,
             }
       : {
           title: t('seo.notFoundTitle'),

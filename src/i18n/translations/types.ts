@@ -10,6 +10,9 @@ export type DeepKeyOf<T> = {
 
 export type Locale = 'en' | 'fr' | 'de' | 'es' | 'it';
 
-export type TranslationKey = DeepKeyOf<typeof en>;
+export type TranslationKey =
+  | DeepKeyOf<typeof en>
+  | `seo.tourOverrides.${string}.title`
+  | `seo.tourOverrides.${string}.description`;
 
 export type LocaleDict = Record<TranslationKey, string>;

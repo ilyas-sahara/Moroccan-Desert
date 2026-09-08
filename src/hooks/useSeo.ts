@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { DEFAULT_LOCALE, LANGS, localePrefix, useLocale } from '@/i18n';
+import { DEFAULT_LOCALE, LANGS, localePrefix, useLocale, type Locale } from '@/i18n';
 
 export const SITE_URL = 'https://www.saharavacation.com';
 
@@ -30,12 +30,14 @@ function upsertHreflang(hreflang: string, href: string) {
   el.setAttribute('href', href);
 }
 
-function upsertAlternateLinks(pathUrl: string) {
+function upsertAlternateLinks(pathUrl: string, alternatePaths?: Record<Locale, string>) {
   removeLinkAttrs('data-hreflang', 'hreflang-');
   for (const lang of LANGS) {
-    upsertHreflang(lang.code, `${SITE_URL}${localePrefix(lang.code)}${pathUrl}`);
+    const path = alternatePaths?.[lang.code] ?? pathUrl;
+    upsertHreflang(lang.code, `${SITE_URL}${localePrefix(lang.code)}${path}`);
   }
-  upsertHreflang('x-default', `${SITE_URL}${localePrefix(DEFAULT_LOCALE)}${pathUrl}`);
+  const defaultPath = alternatePaths?.[DEFAULT_LOCALE] ?? pathUrl;
+  upsertHreflang('x-default', `${SITE_URL}${localePrefix(DEFAULT_LOCALE)}${defaultPath}`);
 }
 
 export type SeoOptions = {
@@ -44,13 +46,14 @@ export type SeoOptions = {
   path: string;
   image?: string;
   type?: 'website' | 'article';
+  alternatePaths?: Record<Locale, string>;
 };
 
 /**
  * Keeps `<head>` in sync for the current page: title, meta description,
  * canonical URL, Open Graph / Twitter tags and robots directive.
  */
-export function useSeo({ title, description, path, image, type = 'website' }: SeoOptions) {
+export function useSeo({ title, description, path, image, type = 'website', alternatePaths }: SeoOptions) {
   const { locale } = useLocale();
 
   useEffect(() => {
@@ -74,7 +77,7 @@ export function useSeo({ title, description, path, image, type = 'website' }: Se
     }
     canonical.href = url;
 
-    upsertAlternateLinks(pathUrlSlash);
+    upsertAlternateLinks(pathUrlSlash, alternatePaths);
 
     upsertMeta('property', 'og:type', type);
     upsertMeta('property', 'og:site_name', siteName);
@@ -88,5 +91,5 @@ export function useSeo({ title, description, path, image, type = 'website' }: Se
     upsertMeta('name', 'twitter:title', title);
     upsertMeta('name', 'twitter:description', description);
     if (image) upsertMeta('name', 'twitter:image', image);
-  }, [title, description, path, image, type, locale]);
+  }, [title, description, path, image, type, locale, alternatePaths]);
 }

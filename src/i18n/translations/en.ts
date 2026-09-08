@@ -325,87 +325,87 @@ export const en = {
     notFoundTitle: 'Page Not Found — Sahara Vacation',
     notFoundDescription: 'This trail does not appear on our maps.',
     tourOverrides: {
-      'grande-traversee-sahara': {
+      'morocco-sahara-grand-tour-dunes-atlas': {
         title: '8-Day Morocco Desert Tour from Marrakech | Grand Morocco Tour',
         description:
           'An 8-day journey from Marrakech to the Sahara, Atlas Mountains and the imperial cities of Fès, Meknès, Rabat and Casablanca – from €890.',
       },
-      'atlas-au-sahara': {
+      'atlas-to-sahara': {
         title: '4-Day Desert Tour from Marrakech to Merzouga | Morocco Sahara',
         description:
           'Private 4-day Atlas Mountain and Sahara tour from Marrakech to Merzouga: Aït Ben Haddou, Todra Gorges, camel trek and desert camp. From €640.',
       },
-      'camp-nuit-etoiles': {
+      'stargazing-night-camp': {
         title: 'Zagora Desert Stargazing Tour – 2 Days, 1 Night in the Sahara',
         description:
           'Spend 2 days and 1 night in the Sahara from Zagora: sunset camel ride, stargazing at a private desert camp and a Sahara sunrise. From €180.',
       },
-      'immersion-nomade-berbere': {
+      'nomad-berber-immersion': {
         title: '4-Day Desert Tour from Fes to Marrakech | Nomad Experience',
         description:
           'Desert tour from Fes to Marrakech: sunset camel trek in Erg Chebbi, nomad villages, Todra Gorges, Dades Valley and Aït Ben Haddou. From €720.',
       },
-      'desert-prive-sur-mesure': {
+      'private-bespoke-desert': {
         title: 'Private Sahara Desert Tour from Marrakech, Tailor-Made',
         description:
           'Your own private Sahara desert tour from Marrakech: flexible 3-day route to the Erg Chebbi dunes with camel trek and private camp. From €1,200.',
       },
-      'trek-sahara-marocain-2-jours': {
+      '2-day-trekking': {
         title: '2-Day Camel Trek Morocco – Sahara Desert Walking with Caravan',
         description:
           "A 2-day camel trek in the Moroccan Sahara from M'Hamid: walk the golden dunes while camels carry your gear, sleep under the stars. From €149.",
       },
-      'trek-sahara-marocain-3-jours': {
+      '3-day-trekking': {
         title: "3-Day Camel Trek Morocco – Sahara Caravan from M'Hamid",
         description:
           "A 3-day camel trek in the Moroccan Sahara from M'Hamid: golden dunes, nomadic guides, bread baked in the sand and nights under the stars.",
       },
-      'trek-sahara-marocain-4-jours': {
+      '4-day-trekking': {
         title: '4-Day Camel Trek Morocco – Sahara Dunes with Nomadic Guides',
         description:
           "A 4-day camel trek in the Moroccan Sahara: cross golden dunes, meet nomads and sleep in desert bivouacs around M'Hamid. From €485.",
       },
-      'trek-sahara-marocain-5-jours': {
+      '5-day-trekking': {
         title: '5-Day Camel Trek Morocco – Nomadic Desert Experience',
         description:
           'A 5-day camel trek in the Moroccan Sahara: remote dunes, desert bivouacs, bread baked in the sand and a true nomadic pace. From €575.',
       },
-      'trek-dromadaire-zagora-6-jours': {
+      '6-day-trekking': {
         title: '6-Day Camel Trek Zagora Sahara – Nomadic Desert Caravan',
         description:
           "A 6-day camel trek from Zagora into the M'Hamid Sahara: dunes, oases and hammada with nomadic camel drivers. From €480.",
       },
-      'trek-sahara-marocain-7-jours': {
+      '7-day-trekking': {
         title: '7-Day Camel Trek Morocco – Deep Sahara Caravan Journey',
         description:
           "A 7-day camel trek in the Moroccan Sahara from M'Hamid: remote dunes, nomadic camps and full-board wilderness travel.",
       },
-      'trek-sahara-marocain-8-jours': {
+      '8-day-trekking': {
         title: '8-Day Camel Trek Morocco – Sahara Caravan Adventure',
         description:
           "An 8-day camel trek in the Moroccan Sahara: Atlas crossing, Drâa Valley and remote dunes with local nomadic guides. From €750.",
       },
-      'circuit-3-jours-mhamid-erg-chigaga': {
+      'mhamid-erg-chigaga-3-day': {
         title: "M'Hamid to Erg Chigaga Desert Tour – 3 Days at the Wild Dunes",
         description:
           "A 3-day desert tour from M'Hamid to Erg Chigaga: 4x4 across Iriqui Lake, sunset camel ride, nomad visit and a camp under the stars.",
       },
-      'circuit-4-jours-marrakech-erg-chigaga': {
+      'marrakech-erg-chigaga-4-day': {
         title: '4-Day Desert Tour from Marrakech to Erg Chigaga – Private 4x4',
         description:
           'A private 4-day desert tour from Marrakech to Erg Chigaga: High Atlas, Aït Ben Haddou, Iriqui plains and a night at wild dunes. From €675.',
       },
-      'circuit-3-jours-ouarzazate-erg-chigaga': {
+      'ouarzazate-erg-chigaga-3-day': {
         title: 'Erg Chigaga Desert Tour from Ouarzazate – 3 Days, 2 Nights',
         description:
           'A 3-day Erg Chigaga desert tour from Ouarzazate: Drâa Valley, sunset camel trek, golden dunes and campfire nights. From €435.',
       },
-      'circuit-2-jours-ouarzazate-erg-chigaga': {
+      'ouarzazate-erg-chigaga-2-day': {
         title: '2-Day Erg Chigaga Desert Tour from Ouarzazate – Sahara Overnight',
         description:
           "A 2-day Erg Chigaga desert tour from Ouarzazate: 4x4 to the dunes, sunset camel ride and one night in the Sahara near M'Hamid. From €200.",
       },
-      'circuit-5-jours-agadir-erg-chegaga': {
+      'agadir-erg-chegaga-5-day': {
         title: '5-Day Desert Tour from Agadir to Erg Chigaga – Morocco Dunes',
         description:
           'A 5-day desert tour from Agadir to Erg Chigaga: Taroudant, Taliouine saffron, Iriqui Lake and Sahara camp nights. From €600.',

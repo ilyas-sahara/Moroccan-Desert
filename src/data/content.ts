@@ -109,7 +109,7 @@ export const TOURS: Tour[] = [
     bestSeason: 'October — April',
   },
   {
-    slug: 'grande-traversee-sahara',
+    slug: 'morocco-sahara-grand-tour-dunes-atlas',
     title: 'Sahara Grand Crossing',
     subtitle: 'Five days deep into the dunes, from oasis to oasis',
     region: 'Erg Chebbi · Erg Znigui',
@@ -142,7 +142,7 @@ export const TOURS: Tour[] = [
     bestSeason: 'October — March',
   },
   {
-    slug: 'atlas-au-sahara',
+    slug: 'atlas-to-sahara',
     title: 'Atlas to Sahara',
     subtitle: 'From the High Atlas passes to the dunes of Erg Chebbi',
     region: 'Marrakech · Aït Ben Haddou · Merzouga',
@@ -174,7 +174,7 @@ export const TOURS: Tour[] = [
     bestSeason: 'September — May',
   },
   {
-    slug: 'camp-nuit-etoiles',
+    slug: 'stargazing-night-camp',
     title: 'Stargazing Night Camp',
     subtitle: 'One night, one camp, the whole sky',
     region: 'Erg Chebbi · Merzouga',
@@ -204,7 +204,7 @@ export const TOURS: Tour[] = [
     bestSeason: 'October — April',
   },
   {
-    slug: 'immersion-nomade-berbere',
+    slug: 'nomad-berber-immersion',
     title: 'Nomad & Berber Immersion',
     subtitle: 'Live with the people of the desert for four days',
     region: 'Erg Chebbi · Nomad Territory',
@@ -236,7 +236,7 @@ export const TOURS: Tour[] = [
     bestSeason: 'November — March',
   },
   {
-    slug: 'desert-prive-sur-mesure',
+    slug: 'private-bespoke-desert',
     title: 'Private Bespoke Desert',
     subtitle: 'Your own route, your own pace, your own Sahara',
     region: 'Tailored to you',
@@ -317,7 +317,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'To Erg Chebbi the road is tarmac the whole way, passing the Atlas mountains, Aït Ben Haddou, the Dades Gorges and the Todra Gorge — a scenic loop that fits perfectly into a [4-day Marrakech-to-Merzouga desert tour](/tours/atlas-au-sahara).',
+        text: 'To Erg Chebbi the road is tarmac the whole way, passing the Atlas mountains, Aït Ben Haddou, the Dades Gorges and the Todra Gorge — a scenic loop that fits perfectly into a [4-day Marrakech-to-Merzouga desert tour](/tours/atlas-to-sahara).',
       },
       {
         type: 'p',
@@ -346,12 +346,12 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'Both fields offer [stargazing camps](/tours/camp-nuit-etoiles), and both deserve a night or two — one night barely scratches the surface.',
+        text: 'Both fields offer [stargazing camps](/tours/stargazing-night-camp), and both deserve a night or two — one night barely scratches the surface.',
       },
       { type: 'h2', text: 'Price and tours' },
       {
         type: 'p',
-        text: 'Erg Chebbi tours are cheaper on average, thanks to shared departures and competition. A [4-day Atlas-to-Sahara tour](/tours/atlas-au-sahara) or our [8-day grand Sahara loop](/tours/grande-traversee-sahara) both spend a full day and nights at the dunes.',
+        text: 'Erg Chebbi tours are cheaper on average, thanks to shared departures and competition. A [4-day Atlas-to-Sahara tour](/tours/atlas-to-sahara) or our [8-day grand Sahara loop](/tours/morocco-sahara-grand-tour-dunes-atlas) both spend a full day and nights at the dunes.',
       },
       {
         type: 'p',
@@ -363,7 +363,7 @@ export const BLOG_POSTS: BlogPost[] = [
         items: [
           'Pick Erg Chebbi if: first trip · 2–4 days only in the desert · traveling with kids · you want the most comfortable camps · you\'re combining the desert with the Atlas/Todra loop.',
           'Pick Erg Chigaga if: you\'ve done the touristy stuff in Morocco · you want real remoteness · long camel trekking appeals · queues and crowds kill the magic for you.',
-          'Mix them: add a [stargazing camp](/tours/camp-nuit-etoiles) at Chebbi or Chigaga for an extra unforgettable night — the sky over both is genuinely among the darkest you can sleep under.',
+          'Mix them: add a [stargazing camp](/tours/stargazing-night-camp) at Chebbi or Chigaga for an extra unforgettable night — the sky over both is genuinely among the darkest you can sleep under.',
         ],
       },
       { type: 'h2', text: 'Can you visit both in one trip?' },

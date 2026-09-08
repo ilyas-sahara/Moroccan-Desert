@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Check, ChevronDown, Globe } from 'lucide-react';
 import { LANGS, isLocale, localePrefix, useLocale, type Locale } from '@/i18n';
+import { translatePath } from '@/data/slug-map';
 
 export default function LanguageSwitcher({ solid = true }: { solid?: boolean }) {
   const { locale, t } = useLocale();
@@ -13,7 +14,8 @@ export default function LanguageSwitcher({ solid = true }: { solid?: boolean }) 
     const stripped = isLocale(seg)
       ? pathname.replace(/^\/(?:en|fr|de|es|it)(?=\/|$)/, '') || '/'
       : pathname;
-    let target = origin + localePrefix(lang) + stripped + search + hash;
+    const localized = translatePath(stripped, lang);
+    let target = origin + localePrefix(lang) + localized + search + hash;
     if (target === origin) target = `${origin}/`;
     window.location.assign(target);
   }

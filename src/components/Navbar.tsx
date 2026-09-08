@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Menu, X, Compass, ChevronDown } from 'lucide-react';
 import { useScrolled } from '@/hooks/useReveal';
 import { useLocale } from '@/i18n';
+import { blogSlugFor } from '@/data/slug-map';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const LINKS = [
@@ -44,9 +45,9 @@ const DROPDOWNS = [
     labelKey: 'nav.blog',
     items: [
       { labelKey: 'nav.blogDropdown.all', descKey: 'nav.blogDropdown.allDesc', to: '/blog' },
-      { labelKey: 'nav.blogDropdown.post1', descKey: 'nav.blogDropdown.post1Desc', to: '/blog/how-many-days-morocco-desert-tour' },
-      { labelKey: 'nav.blogDropdown.post2', descKey: 'nav.blogDropdown.post2Desc', to: '/blog/what-to-pack-sahara-desert-camel-trek' },
-      { labelKey: 'nav.blogDropdown.post3', descKey: 'nav.blogDropdown.post3Desc', to: '/blog/best-time-to-visit-sahara-desert' },
+      { labelKey: 'nav.blogDropdown.post1', descKey: 'nav.blogDropdown.post1Desc', blog: 'how-many-days-morocco-desert-tour' },
+      { labelKey: 'nav.blogDropdown.post2', descKey: 'nav.blogDropdown.post2Desc', blog: 'what-to-pack-sahara-desert-camel-trek' },
+      { labelKey: 'nav.blogDropdown.post3', descKey: 'nav.blogDropdown.post3Desc', blog: 'best-time-to-visit-sahara-desert' },
     ],
   },
 ] as const;
@@ -56,7 +57,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const { pathname } = useLocation();
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
 
   useEffect(() => {
     setOpen(false);
@@ -156,12 +157,15 @@ export default function Navbar() {
                   </button>
                 </div>
                 <div className={`absolute left-1/2 top-full mt-4 w-72 -translate-x-1/2 rounded-2xl border border-sand-200/80 bg-white p-2 shadow-xl shadow-ink-950/15 transition-all duration-200 ${isOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-2 opacity-0'}`}>
-                  {dropdown.items.map((item) => (
-                    <Link key={item.to} to={item.to} className="block rounded-xl px-4 py-3 transition-colors hover:bg-sand-100">
-                      <span className="block text-sm font-semibold text-ink-900">{t(item.labelKey)}</span>
-                      <span className="mt-0.5 block text-xs text-sand-600">{t(item.descKey)}</span>
-                    </Link>
-                  ))}
+                  {dropdown.items.map((item) => {
+                    const itemTo = 'to' in item ? item.to : `/blog/${blogSlugFor(item.blog, locale)}`;
+                    return (
+                      <Link key={itemTo} to={itemTo} className="block rounded-xl px-4 py-3 transition-colors hover:bg-sand-100">
+                        <span className="block text-sm font-semibold text-ink-900">{t(item.labelKey)}</span>
+                        <span className="mt-0.5 block text-xs text-sand-600">{t(item.descKey)}</span>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             );

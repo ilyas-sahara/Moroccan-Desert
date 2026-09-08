@@ -1,6 +1,7 @@
 import { useId, useMemo } from 'react';
 import type { Tour } from '@/data/content';
 import { CITY_LABELS, MAP_STOPS, MOROCCO_PATH, TOUR_ROUTES } from '@/data/morocco-map';
+import { tourSlugEntry } from '@/data/slug-map';
 
 type Palette = {
   bg: string;
@@ -90,7 +91,8 @@ export default function TourMap({ tour, className = '' }: { tour: Tour; classNam
   const gradId = useId().replace(/:/g, '');
 
   const stops = useMemo(() => {
-    const ids = TOUR_ROUTES[tour.slug] ?? ['merzouga'];
+    const routeKey = tourSlugEntry(tour.slug)?.fr ?? tour.slug;
+    const ids = TOUR_ROUTES[routeKey] ?? ['merzouga'];
     return ids
       .map((id) => MAP_STOPS.find((stop) => stop.id === id))
       .filter((stop): stop is (typeof MAP_STOPS)[number] => Boolean(stop));

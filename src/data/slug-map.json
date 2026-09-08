@@ -1,0 +1,153 @@
+{
+  "tours": [
+    {
+      "fr": "grande-traversee-sahara",
+      "es": "gran-travesia-del-sahara",
+      "de": "grosse-sahara-uberquerung",
+      "it": "grande-traversata-del-sahara",
+      "en": "morocco-sahara-grand-tour-dunes-atlas"
+    },
+    {
+      "fr": "atlas-au-sahara",
+      "es": "del-atlas-al-sahara",
+      "de": "vom-atlas-zur-sahara",
+      "it": "dallatlante-al-sahara",
+      "en": "atlas-to-sahara"
+    },
+    {
+      "fr": "camp-nuit-etoiles",
+      "es": "campamento-nocturno-estrellas",
+      "de": "sternennacht-camp",
+      "it": "campo-notturno-stelle",
+      "en": "stargazing-night-camp"
+    },
+    {
+      "fr": "immersion-nomade-berbere",
+      "es": "inmersion-nomada-bereber",
+      "de": "nomaden-berber-immersion",
+      "it": "immersione-nomade-berbera",
+      "en": "nomad-berber-immersion"
+    },
+    {
+      "fr": "desert-prive-sur-mesure",
+      "es": "desierto-privado-medida",
+      "de": "privates-wuestenerlebnis",
+      "it": "deserto-privato-su-misura",
+      "en": "private-bespoke-desert"
+    },
+    {
+      "fr": "trek-sahara-marocain-2-jours",
+      "es": "trekking-sahara-2-dias",
+      "de": "sahara-trekking-marokko-2-tage",
+      "it": "trekking-sahara-2-giorni",
+      "en": "2-day-trekking"
+    },
+    {
+      "fr": "trek-sahara-marocain-3-jours",
+      "es": "trekking-sahara-3-dias",
+      "de": "sahara-trekking-marokko-3-tage",
+      "it": "trekking-sahara-3-giorni",
+      "en": "3-day-trekking"
+    },
+    {
+      "fr": "trek-sahara-marocain-4-jours",
+      "es": "trekking-sahara-4-dias",
+      "de": "sahara-trekking-marokko-4-tage",
+      "it": "trekking-sahara-4-giorni",
+      "en": "4-day-trekking"
+    },
+    {
+      "fr": "trek-sahara-marocain-5-jours",
+      "es": "trekking-sahara-5-dias",
+      "de": "sahara-trekking-marokko-5-tage",
+      "it": "trekking-sahara-5-giorni",
+      "en": "5-day-trekking"
+    },
+    {
+      "fr": "trek-dromadaire-zagora-6-jours",
+      "es": "trek-camello-zagora-6-dias",
+      "de": "kameltrek-zagora-6-tage",
+      "it": "trek-cammello-zagora-6-giorni",
+      "en": "6-day-trekking"
+    },
+    {
+      "fr": "trek-sahara-marocain-7-jours",
+      "es": "trekking-sahara-7-dias",
+      "de": "sahara-trekking-marokko-7-tage",
+      "it": "trekking-sahara-7-giorni",
+      "en": "7-day-trekking"
+    },
+    {
+      "fr": "trek-sahara-marocain-8-jours",
+      "es": "trekking-sahara-8-dias",
+      "de": "sahara-trekking-marokko-8-tage",
+      "it": "trekking-sahara-8-giorni",
+      "en": "8-day-trekking"
+    },
+    {
+      "fr": "circuit-3-jours-mhamid-erg-chigaga",
+      "es": "tour-3-dias-mhamid-erg-chigaga",
+      "de": "sahara-reise-mhamid-erg-chigaga-3-tage",
+      "it": "tour-deserto-3-giorni-mhamid-erg-chigaga",
+      "en": "mhamid-erg-chigaga-3-day"
+    },
+    {
+      "fr": "circuit-4-jours-marrakech-erg-chigaga",
+      "es": "tour-4-dias-marrakech-erg-chigaga",
+      "de": "wuestentour-marrakech-erg-chigaga-4-tage",
+      "it": "tour-deserto-4-giorni-marrakech-erg-chigaga",
+      "en": "marrakech-erg-chigaga-4-day"
+    },
+    {
+      "fr": "circuit-3-jours-ouarzazate-erg-chigaga",
+      "es": "tour-3-dias-ouarzazate-erg-chigaga",
+      "de": "wuestentour-ouarzazate-erg-chigaga-3-tage",
+      "it": "tour-deserto-3-giorni-ouarzazate-erg-chigaga",
+      "en": "ouarzazate-erg-chigaga-3-day"
+    },
+    {
+      "fr": "circuit-2-jours-ouarzazate-erg-chigaga",
+      "es": "tour-2-dias-ouarzazate-erg-chegaga",
+      "de": "wuestentour-ouarzazate-erg-chegaga-2-tage",
+      "it": "tour-deserto-2-giorni-ouarzazate-erg-chegaga",
+      "en": "ouarzazate-erg-chigaga-2-day"
+    },
+    {
+      "fr": "circuit-5-jours-agadir-erg-chegaga",
+      "es": "tour-5-dias-agadir-erg-chegaga",
+      "de": "wuestentour-agadir-erg-chegaga-5-tage",
+      "it": "tour-deserto-5-giorni-agadir-erg-chegaga",
+      "en": "agadir-erg-chegaga-5-day"
+    }
+  ],
+  "blogs": [
+    {
+      "fr": "erg-chigaga-ou-erg-chebbi",
+      "es": "erg-chigaga-o-erg-chebbi",
+      "de": "erg-chigaga-oder-erg-chebbi",
+      "it": "erg-chigaga-o-erg-chebbi",
+      "en": "erg-chigaga-vs-erg-chebbi"
+    },
+    {
+      "fr": "combien-de-jours-tour-desert-maroc",
+      "es": "cuantos-dias-ruta-desierto-marruecos",
+      "de": "wie-viele-tage-wuestentour-marokko",
+      "it": "quanti-giorni-tour-deserto-marocco",
+      "en": "how-many-days-morocco-desert-tour"
+    },
+    {
+      "fr": "quoi-prendre-pour-le-sahara",
+      "es": "que-llevar-para-el-sahara",
+      "de": "was-einpacken-sahara-kameltrek",
+      "it": "cosa-mettere-in-valigia-sahara-camello",
+      "en": "what-to-pack-sahara-desert-camel-trek"
+    },
+    {
+      "fr": "meilleure-periode-visiter-sahara-maroc",
+      "es": "mejor-epoca-visitar-sahara-marruecos",
+      "de": "beste-zeit-sahara-marokko",
+      "it": "periodo-migliore-visitare-sahara-marocco",
+      "en": "best-time-to-visit-sahara-desert"
+    }
+  ]
+}

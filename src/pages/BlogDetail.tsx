@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, CalendarDays, Clock3, UserRound } from 'lucide-react';
 import { BLOG_POSTS, type BlogPost } from '@/data/content';
 import { useLocale, localePrefix, type Locale } from '@/i18n';
+import { blogAlternatePaths } from '@/data/slug-map';
 import { useSeo, SITE_URL } from '@/hooks/useSeo';
 import { getCmsBlogPosts } from '@/data/cms';
 import { responsiveImage } from '@/utils/responsiveImage';
@@ -38,6 +39,7 @@ export default function BlogDetail() {
     path: post ? `/blog/${post.slug}` : '/blog',
     image: post?.image,
     type: 'article',
+    ...(post ? { alternatePaths: blogAlternatePaths(post.slug) } : {}),
   });
 
   useEffect(() => {
