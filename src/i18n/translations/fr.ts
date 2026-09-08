@@ -287,56 +287,56 @@ export const fr: LocaleDict = {
     'Comment Sahara Vacation protège le Sahara : guides berbères locaux, camps sans trace, bien-être des dromadaires et respect culturel.',
   'seo.notFoundTitle': 'Page introuvable — Sahara Vacation',
   'seo.notFoundDescription': 'Ce sentier ne figure pas sur nos cartes.',
-  'seo.tourOverrides.morocco-sahara-grand-tour-dunes-atlas.title': 'Circuit de 8 jours au départ de Marrakech | Grand Tour du Maroc',
-  'seo.tourOverrides.morocco-sahara-grand-tour-dunes-atlas.description':
+  'seo.tourOverrides.grande-traversee-sahara.title': 'Circuit de 8 jours au départ de Marrakech | Grand Tour du Maroc',
+  'seo.tourOverrides.grande-traversee-sahara.description':
     'Un circuit de 8 jours de Marrakech au Sahara, à l’Atlas et aux villes impériales de Fès, Meknès, Rabat et Casablanca – à partir de 890 €.',
-  'seo.tourOverrides.atlas-to-sahara.title': 'Circuit de 4 jours de Marrakech à Merzouga | Désert du Maroc',
-  'seo.tourOverrides.atlas-to-sahara.description':
+  'seo.tourOverrides.atlas-au-sahara.title': 'Circuit de 4 jours de Marrakech à Merzouga | Désert du Maroc',
+  'seo.tourOverrides.atlas-au-sahara.description':
     'Circuit privé de 4 jours entre l’Atlas et le Sahara, de Marrakech à Merzouga : Aït Ben Haddou, gorges du Todra, dromadaire et camp dans le désert. À partir de 640 €.',
-  'seo.tourOverrides.stargazing-night-camp.title': 'Tour d’observation des étoiles à Zagora – 2 jours, 1 nuit au Sahara',
-  'seo.tourOverrides.stargazing-night-camp.description':
+  'seo.tourOverrides.camp-nuit-etoiles.title': 'Tour d’observation des étoiles à Zagora – 2 jours, 1 nuit au Sahara',
+  'seo.tourOverrides.camp-nuit-etoiles.description':
     '2 jours et 1 nuit au Sahara depuis Zagora : balade à dos de dromadaire au coucher du soleil, camp privé et observation des étoiles. À partir de 180 €.',
-  'seo.tourOverrides.nomad-berber-immersion.title': 'Circuit de 4 jours de Fès à Marrakech | Expérience nomade',
-  'seo.tourOverrides.nomad-berber-immersion.description':
+  'seo.tourOverrides.immersion-nomade-berbere.title': 'Circuit de 4 jours de Fès à Marrakech | Expérience nomade',
+  'seo.tourOverrides.immersion-nomade-berbere.description':
     'Circuit dans le désert de Fès à Marrakech : trek à dos de dromadaire à Erg Chebbi, villages nomades, gorges du Todra et Aït Ben Haddou. À partir de 720 €.',
-  'seo.tourOverrides.private-bespoke-desert.title': 'Tour privé dans le Sahara au départ de Marrakech – Sur mesure',
-  'seo.tourOverrides.private-bespoke-desert.description':
+  'seo.tourOverrides.desert-prive-sur-mesure.title': 'Tour privé dans le Sahara au départ de Marrakech – Sur mesure',
+  'seo.tourOverrides.desert-prive-sur-mesure.description':
     'Votre propre tour privé dans le Sahara depuis Marrakech : itinéraire flexible de 3 jours jusqu’aux dunes d’Erg Chebbi avec camp privé. À partir de 1 200 €.',
-  'seo.tourOverrides.2-day-trekking.title': 'Trek de 2 jours à dos de dromadaire au Maroc – Sahara',
-  'seo.tourOverrides.2-day-trekking.description':
+  'seo.tourOverrides.trek-sahara-marocain-2-jours.title': 'Trek de 2 jours à dos de dromadaire au Maroc – Sahara',
+  'seo.tourOverrides.trek-sahara-marocain-2-jours.description':
     'Trek de 2 jours à dos de dromadaire dans le Sahara marocain depuis M’Hamid : marchez sur les dunes dorées pendant que les dromadaires portent vos bagages. À partir de 149 €.',
-  'seo.tourOverrides.3-day-trekking.title': 'Trek de 3 jours à dos de dromadaire au Maroc – Caravane à M’Hamid',
-  'seo.tourOverrides.3-day-trekking.description':
+  'seo.tourOverrides.trek-sahara-marocain-3-jours.title': 'Trek de 3 jours à dos de dromadaire au Maroc – Caravane à M’Hamid',
+  'seo.tourOverrides.trek-sahara-marocain-3-jours.description':
     'Trek de 3 jours à dos de dromadaire dans le Sahara marocain depuis M’Hamid : dunes dorées, guides nomades et pain cuit dans le sable.',
-  'seo.tourOverrides.4-day-trekking.title': 'Trek de 4 jours à dos de dromadaire au Maroc – Dunes avec guides nomades',
-  'seo.tourOverrides.4-day-trekking.description':
+  'seo.tourOverrides.trek-sahara-marocain-4-jours.title': 'Trek de 4 jours à dos de dromadaire au Maroc – Dunes avec guides nomades',
+  'seo.tourOverrides.trek-sahara-marocain-4-jours.description':
     'Trek de 4 jours à dos de dromadaire dans le Sahara marocain : dunes dorées, rencontres nomades et bivouacs autour de M’Hamid. À partir de 485 €.',
-  'seo.tourOverrides.5-day-trekking.title': 'Trek de 5 jours à dos de dromadaire au Maroc – Expérience nomade',
-  'seo.tourOverrides.5-day-trekking.description':
+  'seo.tourOverrides.trek-sahara-marocain-5-jours.title': 'Trek de 5 jours à dos de dromadaire au Maroc – Expérience nomade',
+  'seo.tourOverrides.trek-sahara-marocain-5-jours.description':
     'Trek de 5 jours à dos de dromadaire dans le Sahara marocain : dunes reculées, bivouacs et pain cuit dans le sable. À partir de 575 €.',
-  'seo.tourOverrides.6-day-trekking.title': 'Trek de 6 jours à dos de dromadaire à Zagora – Caravane nomade',
-  'seo.tourOverrides.6-day-trekking.description':
+  'seo.tourOverrides.trek-dromadaire-zagora-6-jours.title': 'Trek de 6 jours à dos de dromadaire à Zagora – Caravane nomade',
+  'seo.tourOverrides.trek-dromadaire-zagora-6-jours.description':
     'Trek de 6 jours à dos de dromadaire de Zagora vers le Sahara de M’Hamid : dunes, oasis et hamada avec des chameliers nomades. À partir de 480 €.',
-  'seo.tourOverrides.7-day-trekking.title': 'Trek de 7 jours à dos de dromadaire au Maroc – Caravane au long cours',
-  'seo.tourOverrides.7-day-trekking.description':
+  'seo.tourOverrides.trek-sahara-marocain-7-jours.title': 'Trek de 7 jours à dos de dromadaire au Maroc – Caravane au long cours',
+  'seo.tourOverrides.trek-sahara-marocain-7-jours.description':
     'Trek de 7 jours à dos de dromadaire dans le Sahara marocain depuis M’Hamid : dunes lointaines et camps nomades en pension complète.',
-  'seo.tourOverrides.8-day-trekking.title': 'Trek de 8 jours à dos de dromadaire au Maroc – Aventure saharienne',
-  'seo.tourOverrides.8-day-trekking.description':
+  'seo.tourOverrides.trek-sahara-marocain-8-jours.title': 'Trek de 8 jours à dos de dromadaire au Maroc – Aventure saharienne',
+  'seo.tourOverrides.trek-sahara-marocain-8-jours.description':
     'Trek de 8 jours à dos de dromadaire dans le Sahara marocain : traversée de l’Atlas, vallée du Drâa et dunes avec guides nomades locaux. À partir de 750 €.',
-  'seo.tourOverrides.mhamid-erg-chigaga-3-day.title': 'Circuit désert de M’Hamid à Erg Chigaga – 3 jours dans les dunes',
-  'seo.tourOverrides.mhamid-erg-chigaga-3-day.description':
+  'seo.tourOverrides.circuit-3-jours-mhamid-erg-chigaga.title': 'Circuit désert de M’Hamid à Erg Chigaga – 3 jours dans les dunes',
+  'seo.tourOverrides.circuit-3-jours-mhamid-erg-chigaga.description':
     'Circuit de 3 jours de M’Hamid à Erg Chigaga : 4x4 à travers le lac Iriqui, dromadaire au coucher du soleil et camp sous les étoiles.',
-  'seo.tourOverrides.marrakech-erg-chigaga-4-day.title': 'Circuit de 4 jours de Marrakech à Erg Chigaga – 4x4 privé',
-  'seo.tourOverrides.marrakech-erg-chigaga-4-day.description':
+  'seo.tourOverrides.circuit-4-jours-marrakech-erg-chigaga.title': 'Circuit de 4 jours de Marrakech à Erg Chigaga – 4x4 privé',
+  'seo.tourOverrides.circuit-4-jours-marrakech-erg-chigaga.description':
     'Circuit privé de 4 jours de Marrakech à Erg Chigaga : Haut Atlas, Aït Ben Haddou, plaines d’Iriqui et nuit sur les dunes sauvages. À partir de 675 €.',
-  'seo.tourOverrides.ouarzazate-erg-chigaga-3-day.title': 'Circuit vers Erg Chigaga au départ d’Ouarzazate – 3 jours, 2 nuits',
-  'seo.tourOverrides.ouarzazate-erg-chigaga-3-day.description':
+  'seo.tourOverrides.circuit-3-jours-ouarzazate-erg-chigaga.title': 'Circuit vers Erg Chigaga au départ d’Ouarzazate – 3 jours, 2 nuits',
+  'seo.tourOverrides.circuit-3-jours-ouarzazate-erg-chigaga.description':
     'Circuit de 3 jours vers Erg Chigaga depuis Ouarzazate : vallée du Drâa, dromadaire au coucher du soleil et nuits autour du feu de camp. À partir de 435 €.',
-  'seo.tourOverrides.ouarzazate-erg-chigaga-2-day.title': 'Circuit de 2 jours vers Erg Chigaga au départ d’Ouarzazate – Nuit au Sahara',
-  'seo.tourOverrides.ouarzazate-erg-chigaga-2-day.description':
+  'seo.tourOverrides.circuit-2-jours-ouarzazate-erg-chigaga.title': 'Circuit de 2 jours vers Erg Chigaga au départ d’Ouarzazate – Nuit au Sahara',
+  'seo.tourOverrides.circuit-2-jours-ouarzazate-erg-chigaga.description':
     'Circuit de 2 jours vers Erg Chigaga depuis Ouarzazate : 4x4 jusqu’aux dunes, dromadaire au coucher du soleil et nuit au Sahara. À partir de 200 €.',
-  'seo.tourOverrides.agadir-erg-chegaga-5-day.title': 'Circuit de 5 jours d’Agadir à Erg Chigaga | Dunes du Maroc',
-  'seo.tourOverrides.agadir-erg-chegaga-5-day.description':
+  'seo.tourOverrides.circuit-5-jours-agadir-erg-chegaga.title': 'Circuit de 5 jours d’Agadir à Erg Chigaga | Dunes du Maroc',
+  'seo.tourOverrides.circuit-5-jours-agadir-erg-chegaga.description':
     'Circuit de 5 jours d’Agadir à Erg Chigaga : Taroudant, safran de Taliouine, lac Iriqui et nuits au camp saharien. À partir de 600 €.',
   'lang.switchLabel': 'Changer de langue',
   'lang.en': 'Anglais',

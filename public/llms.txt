@@ -18,10 +18,10 @@ Sahara Vacation is a boutique Moroccan desert tour operator based in Merzouga. W
 
 ## Tours
 
-- [Morocco Sahara Grand Tour - Atlas and Dunes](https://www.saharavacation.com/tours/morocco-sahara-grand-tour-dunes-atlas): 8-day journey from Marrakech across the Atlas mountains to Erg Chebbi.
-- [Stargazing Night Camp](https://www.saharavacation.com/tours/stargazing-night-camp): 2 days, 1 night of astronomy and desert camping near Zagora.
-- [Nomad Berber Immersion](https://www.saharavacation.com/tours/nomad-berber-immersion): live with a Berber family and experience nomadic traditions.
-- [Private Bespoke Desert](https://www.saharavacation.com/tours/private-bespoke-desert): fully custom private desert itinerary.
+- [Morocco Sahara Grand Tour - Atlas and Dunes](https://www.saharavacation.com/tours/grande-traversee-sahara): 8-day journey from Marrakech across the Atlas mountains to Erg Chebbi.
+- [Stargazing Night Camp](https://www.saharavacation.com/tours/camp-nuit-etoiles): 2 days, 1 night of astronomy and desert camping near Zagora.
+- [Nomad Berber Immersion](https://www.saharavacation.com/tours/immersion-nomade-berbere): live with a Berber family and experience nomadic traditions.
+- [Private Bespoke Desert](https://www.saharavacation.com/tours/desert-prive-sur-mesure): fully custom private desert itinerary.
 - [Sahara Vibe trekking tours](https://www.saharavacation.com/tours): 2 to 8-day camel and 4x4 trekking routes across Erg Chigaga and Erg Chebbi.
 
 ## Details

@@ -33,7 +33,7 @@
           "description": "Último amanecer, desayuno y traslado en 4x4 de vuelta a Merzouga."
         }
       ],
-      "slug": "sahara-grand-crossing",
+      "slug": "grande-traversee-sahara",
       "notIncluded": [
         "Transporte a Merzouga",
         "Funda de saco de dormir",
@@ -97,7 +97,7 @@
           "description": "Amanecer sobre las dunas, desayuno y paseo en camello de vuelta a Merzouga. Traslado en 4x4 de regreso a Marrakech."
         }
       ],
-      "slug": "atlas-to-sahara",
+      "slug": "atlas-au-sahara",
       "notIncluded": [
         "Almuerzos",
         "Bebidas",
@@ -150,7 +150,7 @@
           "description": "Temprano, caminata hasta una duna cercana para ver el amanecer. Desayuno en el campamento y paseo en camello de vuelta a Merzouga."
         }
       ],
-      "slug": "stargazing-night-camp",
+      "slug": "camp-nuit-etoiles",
       "notIncluded": [
         "Transporte a Merzouga",
         "Almuerzo",
@@ -213,7 +213,7 @@
           "description": "Amanecer, desayuno y paseo en camello de vuelta a Merzouga."
         }
       ],
-      "slug": "nomad-berber-immersion",
+      "slug": "immersion-nomade-berbere",
       "notIncluded": [
         "Transporte a Merzouga",
         "Bebidas",
@@ -271,7 +271,7 @@
           "description": "Todo está organizado. Llegas y el desierto hace el resto."
         }
       ],
-      "slug": "private-bespoke-desert",
+      "slug": "desert-prive-sur-mesure",
       "notIncluded": [
         "Vuelos internacionales",
         "Seguro de viaje",
