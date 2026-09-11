@@ -5,8 +5,9 @@ import { BLOG_POSTS, type BlogPost } from '@/data/content';
 import { useLocale, localePrefix, type Locale } from '@/i18n';
 import { blogAlternatePaths } from '@/data/slug-map';
 import { useSeo, SITE_URL } from '@/hooks/useSeo';
-import { getCmsBlogPosts } from '@/data/cms';
+import { getCmsBlogPosts, bundledCmsPosts } from '@/data/cms';
 import { responsiveImage } from '@/utils/responsiveImage';
+import PageLoader from '@/components/PageLoader';
 import JsonLd from '@/components/JsonLd';
 
 function localizeHref(href: string, locale: Locale): string {
@@ -30,24 +31,38 @@ function renderInline(text: string, locale: Locale) {
 export default function BlogDetail() {
   const { slug } = useParams();
   const { t, locale } = useLocale();
-  const [posts, setPosts] = useState<BlogPost[]>(BLOG_POSTS);
+  const [posts, setPosts] = useState<BlogPost[]>(() => bundledCmsPosts() ?? BLOG_POSTS);
+  const [dataReady, setDataReady] = useState<boolean>(() => bundledCmsPosts() !== undefined);
   const post = posts.find((item) => item.slug === slug);
 
-  useSeo({
-    title: post ? t('seo.articleTitle', { title: post.title }) : t('seo.notFoundTitle'),
-    description: post ? t('seo.articleDescription', { excerpt: post.excerpt }) : t('seo.notFoundDescription'),
-    path: post ? `/blog/${post.slug}` : '/blog',
-    image: post?.image,
-    type: 'article',
-    ...(post ? { alternatePaths: blogAlternatePaths(post.slug) } : {}),
-  });
+  useSeo(
+    post
+      ? {
+          title: t('seo.articleTitle', { title: post.title }),
+          description: t('seo.articleDescription', { excerpt: post.excerpt }),
+          path: `/blog/${post.slug}`,
+          image: post.image,
+          type: 'article',
+          alternatePaths: blogAlternatePaths(post.slug),
+        }
+      : dataReady
+        ? {
+            title: t('seo.notFoundTitle'),
+            description: t('seo.notFoundDescription'),
+            path: '/blog',
+          }
+        : null,
+  );
 
   useEffect(() => {
     void (async () => {
       const cmsPosts = await getCmsBlogPosts(locale);
       setPosts(cmsPosts);
+      setDataReady(true);
     })();
   }, [locale]);
+
+  if (!dataReady && !post) return <PageLoader />;
 
   if (!post) {
     return (

@@ -140,7 +140,20 @@ async function prerender() {
         continue;
       }
       await new Promise((r) => setTimeout(r, 400));
-      const html = normalizeLazyFonts(await page.content());
+      const cmsData = await page
+        .evaluate(() => {
+          const globals = globalThis;
+          const data = globals.__SVC_CMS__;
+          return data && (Array.isArray(data.tours) || Array.isArray(data.posts)) ? JSON.stringify(data) : null;
+        })
+        .catch(() => null);
+      let html = normalizeLazyFonts(await page.content());
+      if (cmsData) {
+        // Inline the page's own CMS collection so the client can hydrate with it
+        // synchronously — avoids the "page introuvable" flash while JSON loads.
+        const safe = cmsData.replace(/</g, '\\u003c');
+        html = html.replace('<head>', `<head><script id="cms-data" type="application/json">${safe}</script>`);
+      }
       const outFile = route === '/' ? join(DIST, 'index.html') : join(DIST, route, 'index.html');
       mkdirSync(dirname(outFile), { recursive: true });
       writeFileSync(outFile, html, 'utf-8');

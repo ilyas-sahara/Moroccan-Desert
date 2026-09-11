@@ -52,11 +52,21 @@ export type SeoOptions = {
 /**
  * Keeps `<head>` in sync for the current page: title, meta description,
  * canonical URL, Open Graph / Twitter tags and robots directive.
+ * Pass `null` to leave the document head untouched (e.g. while data loads),
+ * so the prerendered/prerevious title is never replaced by a flash.
  */
-export function useSeo({ title, description, path, image, type = 'website', alternatePaths }: SeoOptions) {
+export function useSeo(options: SeoOptions | null) {
   const { locale } = useLocale();
+  const enabled = options !== null;
+  const title = options?.title;
+  const description = options?.description;
+  const path = options?.path;
+  const image = options?.image;
+  const type = options?.type ?? 'website';
+  const alternatePaths = options?.alternatePaths;
 
   useEffect(() => {
+    if (!enabled || !title) return;
     document.title = title;
 
     const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -66,7 +76,7 @@ export function useSeo({ title, description, path, image, type = 'website', alte
     const ogLocale = locale === 'en' ? 'en_US' : `${locale}_${locale.toUpperCase()}`;
     const siteName = 'Sahara Vacation';
 
-    upsertMeta('name', 'description', description);
+    upsertMeta('name', 'description', description ?? '');
     upsertMeta('name', 'robots', 'index, follow');
 
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
@@ -82,14 +92,14 @@ export function useSeo({ title, description, path, image, type = 'website', alte
     upsertMeta('property', 'og:type', type);
     upsertMeta('property', 'og:site_name', siteName);
     upsertMeta('property', 'og:title', title);
-    upsertMeta('property', 'og:description', description);
+    upsertMeta('property', 'og:description', description ?? '');
     upsertMeta('property', 'og:url', url);
     upsertMeta('property', 'og:locale', ogLocale);
     if (image) upsertMeta('property', 'og:image', image);
 
     upsertMeta('name', 'twitter:card', 'summary_large_image');
     upsertMeta('name', 'twitter:title', title);
-    upsertMeta('name', 'twitter:description', description);
+    upsertMeta('name', 'twitter:description', description ?? '');
     if (image) upsertMeta('name', 'twitter:image', image);
-  }, [title, description, path, image, type, locale, alternatePaths]);
+  }, [enabled, title, description, path, image, type, locale, alternatePaths]);
 }

@@ -217,6 +217,58 @@ const defaultExperiencesPage: ExperiencesPageContent = {
   cta_image: IMAGES.sunrise,
 };
 
+const CMS_DATA_ID = 'cms-data';
+
+let bundledCache: { data: Partial<BundledCmsData> | null } | undefined;
+
+/**
+ * Reads the CMS collection baked into the prerendered page (`#cms-data`), so the
+ * very first client render of tour/blog detail pages already has the correct
+ * localized data — no "page introuvable" flash while the JSON fetch resolves.
+ */
+function readBundledCmsData(): Partial<BundledCmsData> | null {
+  if (bundledCache) return bundledCache.data;
+  if (typeof document === 'undefined') return null;
+  try {
+    const el = document.getElementById(CMS_DATA_ID);
+    if (!el) {
+      bundledCache = { data: null };
+      return null;
+    }
+    const parsed = JSON.parse(el.textContent ?? '');
+    const ok =
+      parsed &&
+      ((Array.isArray(parsed.tours) && parsed.tours.length > 0) ||
+        (Array.isArray(parsed.posts) && parsed.posts.length > 0));
+    bundledCache = { data: ok ? parsed : null };
+    return bundledCache.data;
+  } catch {
+    bundledCache = { data: null };
+    return null;
+  }
+}
+
+type BundledCmsData = { tours: Tour[]; posts: BlogPost[] };
+
+/** Synchronous access to the CMS collection baked into the prerendered page. */
+export function bundledCmsTours(): Tour[] | undefined {
+  return readBundledCmsData()?.tours;
+}
+
+export function bundledCmsPosts(): BlogPost[] | undefined {
+  return readBundledCmsData()?.posts;
+}
+
+/** Exposes freshly fetched collections to the prerender step for `#cms-data` injection. */
+function publishCmsData(patch: Partial<BundledCmsData>) {
+  try {
+    const w = window as unknown as { __SVC_CMS__?: Partial<BundledCmsData> };
+    w.__SVC_CMS__ = { ...(w.__SVC_CMS__ ?? {}), ...patch };
+  } catch {
+    // ignore — only needed by the prerender capture
+  }
+}
+
 const jsonCache = new Map<string, Promise<unknown>>();
 
 async function loadJson<T>(path: string, fallback: T): Promise<T> {
@@ -307,12 +359,17 @@ export async function getExperiencesPageContent(locale: Locale = 'en'): Promise<
 }
 
 export async function getCmsTours(locale: Locale = 'en'): Promise<Tour[]> {
+  const bundled = readBundledCmsData();
+  if (bundled?.tours) return bundled.tours;
   const [primaryTours, importedTours] = await Promise.all([
     loadLocalizedCollection(locale, '/content/tours.json', TOURS),
     loadLocalizedCollection<Tour>(locale, '/content/sahara-vibe-desert-tours.json', []),
   ]);
-  return [...primaryTours, ...importedTours.filter((tour) => !primaryTours.some((existing) => existing.slug === tour.slug))]
-    .map((tour) => ({ ...tour, experiences: tour.experiences?.length ? tour.experiences : inferTourExperiences(tour) }));
+  const tours = [...primaryTours, ...importedTours.filter((tour) => !primaryTours.some((existing) => existing.slug === tour.slug))].map(
+    (tour) => ({ ...tour, experiences: tour.experiences?.length ? tour.experiences : inferTourExperiences(tour) }),
+  );
+  publishCmsData({ tours });
+  return tours;
 }
 
 function inferTourExperiences(tour: Tour): string[] {
@@ -335,7 +392,11 @@ export async function getCmsExperiences(locale: Locale = 'en'): Promise<Array<{ 
 }
 
 export async function getCmsBlogPosts(locale: Locale = 'en'): Promise<BlogPost[]> {
-  return loadLocalizedCollection(locale, '/content/blog.json', BLOG_POSTS);
+  const bundled = readBundledCmsData();
+  if (bundled?.posts) return bundled.posts;
+  const posts = await loadLocalizedCollection(locale, '/content/blog.json', BLOG_POSTS);
+  publishCmsData({ posts });
+  return posts;
 }
 
 export async function getCmsTestimonials(): Promise<Array<{ name: string; country: string; text: string; tour: string; rating: number }>> {

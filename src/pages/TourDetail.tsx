@@ -5,13 +5,14 @@ import {
   MapPin, Compass, ChevronLeft, ChevronRight,
 } from 'lucide-react';
 import { TOURS, type Tour } from '@/data/content';
-import { getCmsTours } from '@/data/cms';
+import { getCmsTours, bundledCmsTours } from '@/data/cms';
 import { useReveal } from '@/hooks/useReveal';
 import { useSeo, SITE_URL } from '@/hooks/useSeo';
 import { useLocale, type Locale } from '@/i18n';
 import { tourAlternatePaths } from '@/data/slug-map';
 import { responsiveImage } from '@/utils/responsiveImage';
 import { DICTS } from '@/i18n/translations';
+import PageLoader from '@/components/PageLoader';
 import TourMarquee from '@/components/TourMarquee';
 import TourMap from '@/components/TourMap';
 import VideoPlayer from '@/components/VideoPlayer';
@@ -30,7 +31,8 @@ function tourOverrideMeta(locale: Locale, slug: string): { title: string; descri
 export default function TourDetail() {
   const { slug } = useParams();
   const { locale, t } = useLocale();
-  const [tours, setTours] = useState<Tour[]>(TOURS);
+  const [tours, setTours] = useState<Tour[]>(() => bundledCmsTours() ?? TOURS);
+  const [dataReady, setDataReady] = useState<boolean>(() => bundledCmsTours() !== undefined);
   const tour = tours.find((t) => t.slug === slug) as Tour | undefined;
   const [activeImg, setActiveImg] = useState(0);
   const ref = useReveal<HTMLOListElement>();
@@ -39,6 +41,7 @@ export default function TourDetail() {
     void (async () => {
       const cmsTours = await getCmsTours(locale);
       setTours(cmsTours);
+      setDataReady(true);
     })();
   }, [locale]);
 
@@ -98,12 +101,16 @@ export default function TourDetail() {
               image: tour.image,
               alternatePaths: tourAlternates,
             }
-      : {
-          title: t('seo.notFoundTitle'),
-          description: t('seo.notFoundDescription'),
-          path: '/tours',
-        },
+      : dataReady
+        ? {
+            title: t('seo.notFoundTitle'),
+            description: t('seo.notFoundDescription'),
+            path: '/tours',
+          }
+        : null,
   );
+
+  if (!dataReady && !tour) return <PageLoader />;
 
   if (!tour) {
     return (
