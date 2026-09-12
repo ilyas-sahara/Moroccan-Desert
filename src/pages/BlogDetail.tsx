@@ -31,8 +31,8 @@ function renderInline(text: string, locale: Locale) {
 export default function BlogDetail() {
   const { slug } = useParams();
   const { t, locale } = useLocale();
-  const [posts, setPosts] = useState<BlogPost[]>(() => bundledCmsPosts() ?? BLOG_POSTS);
-  const [dataReady, setDataReady] = useState<boolean>(() => bundledCmsPosts() !== undefined);
+  const [posts, setPosts] = useState<BlogPost[]>(() => bundledCmsPosts(locale) ?? BLOG_POSTS);
+  const [dataReady, setDataReady] = useState<boolean>(() => bundledCmsPosts(locale) !== undefined);
   const post = posts.find((item) => item.slug === slug);
 
   useSeo(

@@ -7,6 +7,11 @@ const PORT = process.env.PRERENDER_PORT ? Number(process.env.PRERENDER_PORT) : 9
 const DIST = resolve('dist');
 const BASE_PATH = '';
 
+// Captured before any route overwrites dist/index.html, so the SPA fallback
+// served to every extension-less route stays clean — the "page introuvable"
+// flash fix must never leak the first route's CMS data into other locales.
+const PRISTINE_INDEX = readFileSync(join(DIST, 'index.html'), 'utf-8');
+
 const MIME = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'application/javascript',
@@ -73,7 +78,7 @@ const server = createServer((req, res) => {
 
   const ext = extname(pathname);
   if (!ext) {
-    return send(res, 200, readFileSync(join(DIST, 'index.html')), MIME['.html']);
+    return send(res, 200, PRISTINE_INDEX, MIME['.html']);
   }
 
   const file = pathname.endsWith('/') ? `${pathname}index.html` : pathname;
@@ -122,7 +127,7 @@ async function prerender() {
     else req.continue();
   });
 
-  const indexHtml = readFileSync(join(DIST, 'index.html'), 'utf-8');
+  const indexHtml = PRISTINE_INDEX;
   let rendered = 0;
   let skipped = 0;
 

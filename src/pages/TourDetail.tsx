@@ -31,8 +31,8 @@ function tourOverrideMeta(locale: Locale, slug: string): { title: string; descri
 export default function TourDetail() {
   const { slug } = useParams();
   const { locale, t } = useLocale();
-  const [tours, setTours] = useState<Tour[]>(() => bundledCmsTours() ?? TOURS);
-  const [dataReady, setDataReady] = useState<boolean>(() => bundledCmsTours() !== undefined);
+  const [tours, setTours] = useState<Tour[]>(() => bundledCmsTours(locale) ?? TOURS);
+  const [dataReady, setDataReady] = useState<boolean>(() => bundledCmsTours(locale) !== undefined);
   const tour = tours.find((t) => t.slug === slug) as Tour | undefined;
   const [activeImg, setActiveImg] = useState(0);
   const ref = useReveal<HTMLOListElement>();

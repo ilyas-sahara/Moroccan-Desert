@@ -238,6 +238,7 @@ function readBundledCmsData(): Partial<BundledCmsData> | null {
     const parsed = JSON.parse(el.textContent ?? '');
     const ok =
       parsed &&
+      typeof parsed.locale === 'string' &&
       ((Array.isArray(parsed.tours) && parsed.tours.length > 0) ||
         (Array.isArray(parsed.posts) && parsed.posts.length > 0));
     bundledCache = { data: ok ? parsed : null };
@@ -248,22 +249,28 @@ function readBundledCmsData(): Partial<BundledCmsData> | null {
   }
 }
 
-type BundledCmsData = { tours: Tour[]; posts: BlogPost[] };
+type BundledCmsData = { locale: Locale; tours: Tour[]; posts: BlogPost[] };
 
-/** Synchronous access to the CMS collection baked into the prerendered page. */
-export function bundledCmsTours(): Tour[] | undefined {
-  return readBundledCmsData()?.tours;
+/**
+ * Synchronous access to the CMS collection baked into the prerendered page.
+ * The data is only honored when it was baked for the given locale, so the
+ * "page introuvable" flash fix can never feed the wrong language's data.
+ */
+export function bundledCmsTours(locale: Locale): Tour[] | undefined {
+  const data = readBundledCmsData();
+  return data && data.locale === locale ? data.tours : undefined;
 }
 
-export function bundledCmsPosts(): BlogPost[] | undefined {
-  return readBundledCmsData()?.posts;
+export function bundledCmsPosts(locale: Locale): BlogPost[] | undefined {
+  const data = readBundledCmsData();
+  return data && data.locale === locale ? data.posts : undefined;
 }
 
 /** Exposes freshly fetched collections to the prerender step for `#cms-data` injection. */
-function publishCmsData(patch: Partial<BundledCmsData>) {
+function publishCmsData(locale: Locale, patch: Partial<BundledCmsData>) {
   try {
     const w = window as unknown as { __SVC_CMS__?: Partial<BundledCmsData> };
-    w.__SVC_CMS__ = { ...(w.__SVC_CMS__ ?? {}), ...patch };
+    w.__SVC_CMS__ = { locale, ...(w.__SVC_CMS__ ?? {}), ...patch };
   } catch {
     // ignore — only needed by the prerender capture
   }
@@ -360,7 +367,9 @@ export async function getExperiencesPageContent(locale: Locale = 'en'): Promise<
 
 export async function getCmsTours(locale: Locale = 'en'): Promise<Tour[]> {
   const bundled = readBundledCmsData();
-  if (bundled?.tours) return bundled.tours;
+  if (bundled && bundled.locale === locale && bundled.tours) {
+    return bundled.tours;
+  }
   const [primaryTours, importedTours] = await Promise.all([
     loadLocalizedCollection(locale, '/content/tours.json', TOURS),
     loadLocalizedCollection<Tour>(locale, '/content/sahara-vibe-desert-tours.json', []),
@@ -368,7 +377,7 @@ export async function getCmsTours(locale: Locale = 'en'): Promise<Tour[]> {
   const tours = [...primaryTours, ...importedTours.filter((tour) => !primaryTours.some((existing) => existing.slug === tour.slug))].map(
     (tour) => ({ ...tour, experiences: tour.experiences?.length ? tour.experiences : inferTourExperiences(tour) }),
   );
-  publishCmsData({ tours });
+  publishCmsData(locale, { tours });
   return tours;
 }
 
@@ -393,9 +402,11 @@ export async function getCmsExperiences(locale: Locale = 'en'): Promise<Array<{ 
 
 export async function getCmsBlogPosts(locale: Locale = 'en'): Promise<BlogPost[]> {
   const bundled = readBundledCmsData();
-  if (bundled?.posts) return bundled.posts;
+  if (bundled && bundled.locale === locale && bundled.posts) {
+    return bundled.posts;
+  }
   const posts = await loadLocalizedCollection(locale, '/content/blog.json', BLOG_POSTS);
-  publishCmsData({ posts });
+  publishCmsData(locale, { posts });
   return posts;
 }
 
