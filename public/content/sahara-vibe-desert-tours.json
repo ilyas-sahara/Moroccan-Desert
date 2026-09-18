@@ -29,7 +29,8 @@
         "https://images.pexels.com/photos/29107898/pexels-photo-29107898.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "https://images.pexels.com/photos/37818882/pexels-photo-37818882.jpeg?_gl=1*187yktw*_ga*MTY3NjQzNjc4MS4xNzg1NzU3MDEw*_ga_8JE65Q40S6*czE3ODU3NTcwMDkkbzEkZzEkdDE3ODU3NTcwMjgkajQxJGwwJGgw",
         "/assets/images/sahara-desert-landscape-morocco.jpg",
-        "/assets/images/sahara-camel-trek-dunes-morocco.jpg"
+        "/assets/images/sahara-camel-trek-dunes-morocco.jpg",
+        "/assets/images/ex.jpg"
       ],
       "priceFrom": 149,
       "duration": "2 days · 1 night",
@@ -91,7 +92,7 @@
         "https://images.pexels.com/photos/33566021/pexels-photo-33566021.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "https://images.pexels.com/photos/35901289/pexels-photo-35901289.jpeg?auto=compress&cs=tinysrgb&w=1600"
       ],
-      "priceFrom":300,
+      "priceFrom": 300,
       "duration": "3 days · 2 nights",
       "region": "M'Hamid El Ghizlane · Sahara",
       "days": 3,
@@ -418,7 +419,7 @@
         "https://images.pexels.com/photos/35548672/pexels-photo-35548672.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "https://images.pexels.com/photos/14809603/pexels-photo-14809603.jpeg?auto=compress&cs=tinysrgb&w=1600"
       ],
-      "priceFrom":614,
+      "priceFrom": 614,
       "duration": "7 days · 6 nights",
       "region": "M'Hamid El Ghizlane · Sahara",
       "days": 7,
