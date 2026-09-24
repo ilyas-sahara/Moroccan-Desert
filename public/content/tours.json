@@ -467,6 +467,83 @@
         "spectacular landscapes",
         "private journey from Marrakech"
       ]
+    },
+    {
+      "groupSize": "6",
+      "bestSeason": "October to May",
+      "experiences": [
+        "4x4-desert-routes",
+        "4x4-desert-routes"
+      ],
+      "itinerary": [
+        {
+          "title": " Marrakech – High Atlas Mountains – Ait Ben Haddou – Draa Valley – Zagora",
+          "day": 1,
+          "description": "Depart Marrakech and cross the High Atlas Mountains via Tizi n’Tichka Pass. Visit the UNESCO-listed Ait Ben Haddou, continue through Ouarzazate and the scenic Draa Valley, then arrive in Zagora. Enjoy a sunset camel ride, sandboarding, dinner, and Berber music at your desert camp. Overnight in a private desert tent.\n\nDay 2: Zagora – Draa Valley – Telouet – High Atlas Mountains – Marrakech\nWake up early for the desert sunrise, then enjoy breakfast before returning through the Draa Valley. Visit the historic Telouet Kasbah and enjoy the mountain scenery before crossing the Atlas Mountains back to Marrakech. Arrival in Marrakech in the late afternoon or early evening."
+        },
+        {
+          "day": 2,
+          "title": "Zagora – Draa Valley – Telouet – High Atlas Mountains – Marrakech",
+          "description": "Wake up early for the desert sunrise, then enjoy breakfast before returning through the Draa Valley. Visit the historic Telouet Kasbah and enjoy the mountain scenery before crossing the Atlas Mountains back to Marrakech. Arrival in Marrakech in the late afternoon or early evening."
+        }
+      ],
+      "slug": "2-day-marrakech-to-zagora-desert-tour",
+      "notIncluded": [
+        "Drinks",
+        "personal expenses",
+        "travel insurance",
+        "tips",
+        "additional activities or services not mentioned in the itinerary"
+      ],
+      "gallery": [
+        "/assets/images/morocco-gnawa-tours-yoga-8.jpg",
+        "/assets/images/img-20220727-wa0037.jpg",
+        "/assets/images/image-array-1-66b44efcae7d53a0ef58e1a0.png",
+        "/assets/images/20251122_231448-1-2-.jpg"
+      ],
+      "priceFrom": 295,
+      "duration": "2 Days / 1 Night",
+      "region": "Marrakech,Morocco ",
+      "days": 2,
+      "subtitle": "A 2-Day Journey Through the Atlas Mountains, Ait Ben Haddou, Draa Valley & Zagora Desert",
+      "title": "2-Day Marrakech to Zagora Desert Tour",
+      "overview": "Escape Marrakech for an unforgettable 2-day journey to the Zagora Desert. Travel across the spectacular High Atlas Mountains, discover the UNESCO-listed Ait Ben Haddou, explore the palm-filled Draa Valley, and experience the landscapes and traditions of southern Morocco.\n\nThe adventure continues in Zagora with a sunset camel ride, sandboarding, and an overnight stay in a comfortable private desert tent. Enjoy a traditional Moroccan dinner around the campfire accompanied by Berber music and drumming beneath the stars.\n\nOn the return to Marrakech, discover more of Morocco history and scenery, including the Draa Valley and the historic Telouet Kasbah. This short desert escape is ideal for travelers who want to experience Morocco’s mountains, culture, kasbahs, and Sahara atmosphere in just two days.",
+      "image": "/assets/images/image-array-27-66b44efcae7d53a0ef58e1a0.png",
+      "difficulty": "Adventurous",
+      "included": [
+        "Private transportation",
+        "hotel or riad pick-up and drop-off in Marrakech",
+        "experienced English-speaking driver/guide",
+        "1 night in a private desert tent",
+        "private bathroom and shower",
+        "sunset camel ride",
+        "sandboarding",
+        "breakfast",
+        "lunch",
+        "dinner",
+        "traditional Moroccan dinner",
+        "Berber music and drumming",
+        "local guides and entrance fees",
+        "tea and coffee at the desert camp",
+        "free time for photography and exploring",
+        "vegetarian and vegan meal options"
+      ],
+      "highlights": [
+        "Highlights: High Atlas Mountains",
+        "Tizi n’Tichka Pass",
+        "Ait Ben Haddou Kasbah",
+        "Ouarzazate",
+        "Draa Valley",
+        "Berber Villages",
+        "Zagora Desert",
+        "Sunset Camel Ride",
+        "Sandboarding",
+        "Desert Camp",
+        "Berber Music & Drumming",
+        "Desert Sunrise",
+        "Telouet Kasbah",
+        "Moroccan Cuisine"
+      ]
     }
   ]
 }
