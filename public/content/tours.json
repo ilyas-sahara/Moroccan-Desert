@@ -544,6 +544,86 @@
         "Telouet Kasbah",
         "Moroccan Cuisine"
       ]
+    },
+    {
+      "groupSize": "6",
+      "bestSeason": "October to May",
+      "experiences": [
+        "4x4-desert-routes"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Marrakech – High Atlas Mountains – Ait Ben Haddou – Taznakht – Foum Zguid",
+          "description": "Your adventure starts in the morning with a pick-up from your hotel or riad in Marrakech.\n\nWe leave the city behind and drive towards the High Atlas Mountains, crossing the spectacular Tizi n’Tichka Pass. Along the way, we stop at scenic viewpoints to enjoy the mountain landscapes and traditional Berber villages.\n\nWe then continue south to the famous Ait Ben Haddou Kasbah, a UNESCO World Heritage Site. Explore the ancient fortified village, walk through its narrow streets and discover its traditional earthen architecture.\n\nAfter the visit, we continue toward Taznakht, a town known for its Berber carpets and traditional crafts, where we stop for lunch.\n\nIn the afternoon, the landscape gradually changes from mountains to the dry desert scenery of the Anti-Atlas. We continue to Foum Zguid, one of the main gateways to Erg Chigaga.\n\nAfter arriving, enjoy a relaxing evening and traditional Moroccan dinner.\n\nOvernight: Foum Zguid\nMeals: Dinner"
+        },
+        {
+          "day": 2,
+          "title": " Foum Zguid – Lake Iriqui – Erg Chigaga – Camel Ride & Desert Camp",
+          "description": "After breakfast, the real desert adventure begins.\n\nWe leave Foum Zguid in a 4x4 vehicle and leave the paved road behind as we enter the desert tracks.\n\nOur route takes us across the spectacular landscapes of Lake Iriqui, a vast dry lake surrounded by desert plains and dramatic scenery.\n\nAlong the way, enjoy photo stops and discover the changing landscapes of the Sahara. Your local driver-guide will introduce you to the desert environment and the traditional way of life of the region.\n\nWe continue deeper into the desert until the magnificent Erg Chigaga dunes appear on the horizon.\n\nErg Chigaga Desert\n\nArrive at your desert camp and take some time to relax and enjoy the peaceful surroundings.\n\nIn the afternoon, climb onto your camel for a memorable sunset camel ride across the dunes.\n\nFor those looking for more adventure, try sandboarding on the golden dunes.\n\nAs the sun sets, return to the camp and enjoy a traditional Moroccan dinner.\n\nAfter dinner, gather around the campfire for Berber music, traditional drumming and storytelling under the stars.\n\nSpend the night in your comfortable private desert tent.\n\nOvernight: Erg Chigaga Desert Camp\nMeals: Breakfast & Dinner"
+        },
+        {
+          "day": 3,
+          "title": "Erg Chigaga – Desert Sunrise – Foum Zguid – Taznakht – Marrakech",
+          "description": "Wake up early to experience the peaceful sunrise over the Erg Chigaga dunes.\n\nAfter breakfast, we leave the camp by 4x4 and begin our journey back through the desert.\n\nEnjoy the changing scenery as we cross the desert tracks toward Foum Zguid and return to the paved road.\n\nWe continue through Taznakht and the Anti-Atlas before beginning the journey north toward the High Atlas Mountains.\n\nAfter crossing the Tizi n’Tichka Pass, we continue toward Marrakech.\n\nWe arrive in Marrakech in the late afternoon or early evening, where your Erg Chigaga desert adventure comes to an end.\n\nMeals: Breakfast & Lunch"
+        }
+      ],
+      "slug": "3-day-marrakech-erg-chigaga-desert-tour",
+      "notIncluded": [
+        "Drinks",
+        "personal expenses",
+        "travel insurance",
+        "tips",
+        "local guide at Ait Ben Haddou if required",
+        "additional activities or services not mentioned in the itinerary"
+      ],
+      "gallery": [
+        "/assets/images/moroccan-tea-ceremonies.png",
+        "/assets/images/images-15-.jpg",
+        "/assets/images/images-16-.jpg",
+        "/assets/images/ait-ben-haddou-ksar-perfect-reflection-in-water-marrakech-to-merzouga-3-day-desert-tour-1024x683.jpg"
+      ],
+      "priceFrom": 443,
+      "duration": "3 Days / 2 Nights",
+      "region": "October to May",
+      "days": 3,
+      "subtitle": "A 3-Day Sahara Adventure Through the Atlas Mountains, Ait Ben Haddou, Lake Iriqui & Erg Chigaga",
+      "title": "Marrakech, Morocco",
+      "overview": "Discover the wild beauty of southern Morocco on a 3-day private desert adventure from Marrakech to Erg Chigaga, one of Morocco’s most remote and spectacular dune areas.\n\nYour journey begins by crossing the High Atlas Mountains and visiting the famous Ait Ben Haddou Kasbah. Continue south through the landscapes of Taznakht and Foum Zguid before leaving the paved road behind and entering the Sahara by 4x4.\n\nCross the vast landscapes of Lake Iriqui and the desert plains before reaching the impressive Erg Chigaga dunes. Here, enjoy a sunset camel ride, sandboarding, a traditional Moroccan dinner, Berber music around the campfire, and a peaceful night beneath the stars.\n\nOn the final day, enjoy the desert sunrise before beginning your scenic return journey to Marrakech.\n\nThis tour is ideal for travelers looking for a short but authentic Sahara experience, combining Morocco’s mountains, history, desert landscapes and local culture in one unforgettable journey.",
+      "image": "/assets/images/fb_img_1696781055238.jpg",
+      "difficulty": "Adventurous",
+      "included": [
+        "Private transportation",
+        "hotel or riad pick-up and drop-off in Marrakech",
+        "English-speaking driver/guide",
+        "1 night in Foum Zguid",
+        "1 night in a private desert camp",
+        "breakfast",
+        "lunches",
+        "dinners",
+        "4x4 desert excursion",
+        "sunset camel ride",
+        "sandboarding",
+        "Berber music and drumming",
+        "tea at the desert camp",
+        "entrance fees for included visits",
+        "vegetarian and vegan meal options"
+      ],
+      "highlights": [
+        "High Atlas Mountains",
+        "Tizi n’Tichka Pass",
+        "Ait Ben Haddou",
+        "Taznakht",
+        "Foum Zguid",
+        "Lake Iriqui",
+        "Erg Chigaga Dunes",
+        "4x4 Desert Adventure",
+        "Sunset Camel Ride",
+        "Sandboarding",
+        "Desert Camp",
+        "Desert Sunrise",
+        "Berber Music & Drumming"
+      ]
     }
   ]
 }
