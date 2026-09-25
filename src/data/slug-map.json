@@ -118,6 +118,20 @@
       "de": "wuestentour-agadir-erg-chegaga-5-tage",
       "it": "tour-deserto-5-giorni-agadir-erg-chegaga",
       "en": "agadir-erg-chegaga-5-day"
+    },
+    {
+      "fr": "circuit-2-jours-marrakech-zagora",
+      "es": "tour-2-dias-marrakech-zagora",
+      "de": "wuestentour-marrakech-zagora-2-tage",
+      "it": "tour-deserto-2-giorni-marrakech-zagora",
+      "en": "2-day-marrakech-to-zagora-desert-tour"
+    },
+    {
+      "fr": "circuit-3-jours-marrakech-erg-chigaga",
+      "es": "tour-3-dias-marrakech-erg-chigaga",
+      "de": "wuestentour-marrakech-erg-chigaga-3-tage",
+      "it": "tour-deserto-3-giorni-marrakech-erg-chigaga",
+      "en": "3-day-marrakech-erg-chigaga-desert-tour"
     }
   ],
   "blogs": [

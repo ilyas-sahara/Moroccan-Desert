@@ -307,6 +307,162 @@
         "Opzioni incentrate sulla fotografia",
         "Trasferimenti in elicottero o 4x4 disponibili"
       ]
+    },
+    {
+      "groupSize": "Fino a 6 viaggiatori",
+      "bestSeason": "Ottobre — Maggio",
+      "experiences": [
+        "4x4-desert-routes"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Marrakech – Alto Atlante – Ait Ben Haddou – Valle del Draa – Zagora",
+          "description": "Partenza da Marrakech e attraversamento dell'Alto Atlante via passo Tizi n'Tichka. Visita Ait Ben Haddou, patrimonio dell'UNESCO, prosegui per Ouarzazate e la pittoresca valle del Draa, quindi arriva a Zagora. Goditi un giro in cammello al tramonto, sandboarding e una cena marocchina con musica berbera all'accampamento. Notte in una tenda privata in mezzo al deserto."
+        },
+        {
+          "day": 2,
+          "title": "Zagora – Valle del Draa – Telouet – Alto Atlante – Marrakech",
+          "description": "Alzati presto per ammirare l'alba nel deserto, fai colazione e riprendi il viaggio attraverso la valle del Draa. Visita la kasbah storica di Telouet, goditi i paesaggi di montagna e attraversa l'Atlante per tornare a Marrakech. Arrivo a Marrakech nel tardo pomeriggio o in prima serata."
+        }
+      ],
+      "slug": "tour-deserto-2-giorni-marrakech-zagora",
+      "notIncluded": [
+        "Bevande",
+        "Spese personali",
+        "Assicurazione di viaggio",
+        "Mance",
+        "Attività o servizi aggiuntivi non menzionati nell'itinerario"
+      ],
+      "gallery": [
+        "/assets/images/morocco-gnawa-tours-yoga-8.jpg",
+        "/assets/images/img-20220727-wa0037.jpg",
+        "/assets/images/image-array-1-66b44efcae7d53a0ef58e1a0.png",
+        "/assets/images/20251122_231448-1-2-.jpg"
+      ],
+      "priceFrom": 295,
+      "duration": "2 giorni / 1 notte",
+      "region": "Marrakech & Zagora",
+      "days": 2,
+      "subtitle": "2 giorni attraverso l'Alto Atlante, Ait Ben Haddou, la valle del Draa e il deserto di Zagora",
+      "title": "Tour del deserto di 2 giorni da Marrakech a Zagora",
+      "overview": "Fuggi da Marrakech per un viaggio indimenticabile di 2 giorni nel deserto di Zagora. Attraversa lo spettacolare Alto Atlante, scopri Ait Ben Haddou, patrimonio dell'UNESCO, esplora la valle del Draa punteggiata di palme e vivi i paesaggi e le tradizioni del sud del Marocco.\\n\\nL'avventura continua a Zagora con un giro in cammello al tramonto, sandboarding e una notte in una confortevole tenda privata nel deserto. Goditi una cena marocchina tradizionale intorno al fuoco, con musica e tamburi berberi sotto le stelle.\\n\\nDurante il ritorno a Marrakech, scopri altri scorci di storia e paesaggi del Marocco, tra cui la valle del Draa e la kasbah storica di Telouet. Questa breve fuga indimenticabile è perfetta per chi vuole vivere montagne, cultura, kasbah e atmosfera del deserto in poco tempo.",
+      "image": "/assets/images/morocco-gnawa-tours-yoga-8.jpg",
+      "difficulty": "Adventurous",
+      "included": [
+        "Trasporto privato",
+        "Prelievo e rientro in hotel o riad a Marrakech",
+        "Autista/guida esperto",
+        "1 notte in una tenda privata nel deserto",
+        "Doccia e bagno privati",
+        "Giro in cammello al tramonto",
+        "Sandboarding",
+        "Colazione",
+        "Pranzo",
+        "Cena",
+        "Cena tradizionale marocchina",
+        "Musica e tamburi berberi",
+        "Guide locali e biglietti d'ingresso",
+        "Tè e caffè all'accampamento nel deserto",
+        "Tempo libero per fotografie ed esplorazioni",
+        "Opzioni vegetariane e vegane"
+      ],
+      "highlights": [
+        "Alto Atlante",
+        "Passo Tizi n'Tichka",
+        "Kasbah di Ait Ben Haddou",
+        "Ouarzazate",
+        "Valle del Draa",
+        "Villaggi berberi",
+        "Deserto di Zagora",
+        "Giro in cammello al tramonto",
+        "Sandboarding",
+        "Accampamento nel deserto",
+        "Musica e tamburi berberi",
+        "Alba nel deserto",
+        "Kasbah di Telouet",
+        "Cucina marocchina"
+      ]
+    },
+    {
+      "groupSize": "Fino a 6 viaggiatori",
+      "bestSeason": "Ottobre — Maggio",
+      "experiences": [
+        "4x4-desert-routes"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Marrakech – Alto Atlante – Ait Ben Haddou – Taznakht – Foum Zguid",
+          "description": "La tua avventura inizia al mattino con il prelievo dal tuo hotel o riad a Marrakech.\\n\\nLasciamo la città e ci dirigiamo verso l'Alto Atlante, attraversando lo spettacolare passo Tizi n'Tichka. Lungo la strada ci fermiamo ai belvedere per ammirare i paesaggi di montagna e i tradizionali villaggi berberi.\\n\\nProseguiamo poi verso sud fino alla famosa kasbah di Ait Ben Haddou, patrimonio dell'UNESCO. Esplora questo villaggio fortificato, percorri i suoi vicoli stretti e scopri l'architettura tradizionale in terra cruda.\\n\\nDopo la visita, continuiamo verso Taznakht, una città rinomata per i suoi tappeti berberi e l'artigianato, dove ci fermiamo per il pranzo.\\n\\nNel pomeriggio il paesaggio cambia gradualmente: le montagne lasciano il posto agli scenari aridi dell'Anti-Atlante. Proseguiamo verso Foum Zguid, una delle principali porte di accesso a Erg Chigaga.\\n\\nAll'arrivo, goditi una serata di relax e una cena marocchina tradizionale.\\n\\nNotte: Foum Zguid\\nPasti: Cena"
+        },
+        {
+          "day": 2,
+          "title": "Foum Zguid – Lago Iriqui – Erg Chigaga – Giro in cammello e accampamento nel deserto",
+          "description": "Dopo la colazione inizia la vera avventura.\\n\\nLasciamo Foum Zguid in 4x4 e ci addentriamo nelle piste del deserto, abbandonando l'asfalto.\\n\\nIl nostro percorso attraversa gli spettacolari paesaggi del lago Iriqui, un vasto lago prosciugato circondato da pianure desertiche e scenari mozzafiato.\\n\\nLungo il tragitto, fermate per foto e scoperte dei paesaggi mutevoli del Sahara. La tua guida-autista locale ti racconterà l'ambiente desertico e lo stile di vita tradizionale della regione.\\n\\nCi addentriamo sempre più nel deserto finché le magnifiche dune di Erg Chigaga appaiono all'orizzonte.\\n\\nArrivo al campo: prenditi del tempo per rilassarti e goderti la quiete che ti circonda.\\n\\nNel pomeriggio, sali sul tuo cammello per un giro indimenticabile al tramonto tra le dune.\\n\\nPer i più avventurosi: sandboarding sulle dune dorate.\\n\\nAl tramonto, rientra al campo e goditi una cena marocchina tradizionale.\\n\\nDopo cena, riunisciti intorno al fuoco per musica berbera, tamburi tradizionali e storie sotto le stelle.\\n\\nDormirai nella tua comoda tenda privata.\\n\\nNotte: accampamento nel deserto di Erg Chigaga\\nPasti: Colazione e cena"
+        },
+        {
+          "day": 3,
+          "title": "Erg Chigaga – Alba – Foum Zguid – Taznakht – Marrakech",
+          "description": "Alzati presto per vivere la pacifica alba sulle dune di Erg Chigaga.\\n\\nDopo la colazione, lasciamo il campo in 4x4 e iniziamo il viaggio di ritorno attraverso il deserto.\\n\\nGoditi i paesaggi mutevoli mentre percorriamo le piste verso Foum Zguid, prima di tornare sull'asfalto.\\n\\nContinuiamo per Taznakht e l'Anti-Atlante, prima di risalire verso l'Alto Atlante.\\n\\nDopo il passo Tizi n'Tichka proseguiamo verso Marrakech.\\n\\nArriviamo a Marrakech nel tardo pomeriggio o in prima serata, dove la tua avventura a Erg Chigaga si conclude.\\n\\nPasti: Colazione e pranzo"
+        }
+      ],
+      "slug": "tour-deserto-3-giorni-marrakech-erg-chigaga",
+      "notIncluded": [
+        "Bevande",
+        "Spese personali",
+        "Assicurazione di viaggio",
+        "Mance",
+        "Guida locale ad Ait Ben Haddou se richiesta",
+        "Attività o servizi aggiuntivi non menzionati nell'itinerario"
+      ],
+      "gallery": [
+        "/assets/images/moroccan-tea-ceremonies.png",
+        "/assets/images/images-15-.jpg",
+        "/assets/images/images-16-.jpg",
+        "/assets/images/ait-ben-haddou-ksar-perfect-reflection-in-water-marrakech-to-merzouga-3-day-desert-tour-1024x683.jpg"
+      ],
+      "priceFrom": 443,
+      "duration": "3 giorni / 2 notti",
+      "region": "Marrakech & Erg Chigaga",
+      "days": 3,
+      "subtitle": "3 giorni di avventura nel Sahara attraverso l'Alto Atlante, Ait Ben Haddou, il lago Iriqui ed Erg Chigaga",
+      "title": "Tour del deserto di 3 giorni da Marrakech a Erg Chigaga",
+      "overview": "Scopri la bellezza selvaggia del sud del Marocco in un'avventura privata di 3 giorni da Marrakech a Erg Chigaga, una delle zone di dune più remote e spettacolari del Marocco.\\n\\nIl tuo viaggio inizia attraversando l'Alto Atlante e visitando la kasbah di Ait Ben Haddou. Continua verso sud attraverso i paesaggi di Taznakht e Foum Zguid, prima di lasciare l'asfalto ed entrare nel Sahara in 4x4.\\n\\nAttraversa le vaste distese del lago Iriqui e delle pianure desertiche fino a raggiungere le impressionanti dune di Erg Chigaga. Qui ti aspettano un giro in cammello al tramonto, sandboarding, una cena marocchina tradizionale, musica berbera intorno al fuoco e una notte tranquilla sotto le stelle.\\n\\nNell'ultimo giorno, goditi l'alba sul deserto prima di intraprendere il meraviglioso viaggio di ritorno verso Marrakech.\\n\\nQuesto tour è ideale per chi cerca un'esperienza breve e autentica del Sahara, unendo montagne, storia, paesaggi desertici e cultura locale in un'unica avventura indimenticabile.",
+      "image": "/assets/images/moroccan-tea-ceremonies.png",
+      "difficulty": "Adventurous",
+      "included": [
+        "Trasporto privato",
+        "Prelievo e rientro in hotel o riad a Marrakech",
+        "Autista/guida esperto",
+        "1 notte a Foum Zguid",
+        "1 notte in un accampamento privato nel deserto",
+        "Colazione",
+        "Pranzi",
+        "Cene",
+        "Escursione in 4x4 nel deserto",
+        "Giro in cammello al tramonto",
+        "Sandboarding",
+        "Musica e tamburi berberi",
+        "Tè all'accampamento nel deserto",
+        "Biglietti d'ingresso alle visite incluse",
+        "Opzioni vegetariane e vegane"
+      ],
+      "highlights": [
+        "Alto Atlante",
+        "Passo Tizi n'Tichka",
+        "Ait Ben Haddou",
+        "Taznakht",
+        "Foum Zguid",
+        "Lago Iriqui",
+        "Dune di Erg Chigaga",
+        "Avventura in 4x4 nel deserto",
+        "Giro in cammello al tramonto",
+        "Sandboarding",
+        "Accampamento nel deserto",
+        "Alba nel deserto",
+        "Musica e tamburi berberi"
+      ]
     }
   ]
 }
