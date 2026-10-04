@@ -370,12 +370,20 @@ export async function getCmsTours(locale: Locale = 'en'): Promise<Tour[]> {
   if (bundled && bundled.locale === locale && bundled.tours) {
     return bundled.tours;
   }
-  const [primaryTours, importedTours] = await Promise.all([
-    loadLocalizedCollection(locale, '/content/tours.json', TOURS),
+  const [localizedTours, englishTours, importedTours] = await Promise.all([
+    loadCollection<Tour>(localizedPath(locale, '/content/tours.json'), []),
+    loadCollection<Tour>('/content/tours.json', TOURS),
     loadLocalizedCollection<Tour>(locale, '/content/sahara-vibe-desert-tours.json', []),
   ]);
+  const primaryTours = localizedTours.length
+    ? [...localizedTours, ...englishTours.filter((tour) => !localizedTours.some((existing) => existing.slug === tour.slug))]
+    : englishTours;
   const tours = [...primaryTours, ...importedTours.filter((tour) => !primaryTours.some((existing) => existing.slug === tour.slug))].map(
-    (tour) => ({ ...tour, experiences: tour.experiences?.length ? tour.experiences : inferTourExperiences(tour) }),
+    (tour) => ({
+      ...tour,
+      image: tour.image ?? IMAGES.heroAerial,
+      experiences: tour.experiences?.length ? tour.experiences : inferTourExperiences(tour),
+    }),
   );
   publishCmsData(locale, { tours });
   return tours;
