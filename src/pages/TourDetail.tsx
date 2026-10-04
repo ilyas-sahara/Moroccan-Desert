@@ -8,7 +8,7 @@ import { TOURS, type Tour } from '@/data/content';
 import { getCmsTours, bundledCmsTours } from '@/data/cms';
 import { useReveal } from '@/hooks/useReveal';
 import { useSeo, SITE_URL } from '@/hooks/useSeo';
-import { useLocale, type Locale } from '@/i18n';
+import { useLocale, localePrefix, type Locale } from '@/i18n';
 import { tourAlternatePaths } from '@/data/slug-map';
 import { responsiveImage } from '@/utils/responsiveImage';
 import { DICTS } from '@/i18n/translations';
@@ -141,6 +141,13 @@ export default function TourDetail() {
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
       url: tourUrl,
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'MA',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        merchantReturnDays: 30,
+        url: `${SITE_URL}${localePrefix(locale)}/terms/`,
+      },
     },
     ...(tour.days ? { duration: `P${tour.days}D` } : {}),
     ...(tour.rating > 0 && tour.reviews > 0
