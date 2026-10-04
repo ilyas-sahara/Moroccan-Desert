@@ -946,6 +946,25 @@
         "Stargazing under the desert sky",
         "Peaceful and authentic Moroccan experience"
       ]
+    },
+    {
+      "groupSize": "5",
+      "bestSeason": "winter",
+      "experiences": [],
+      "itinerary": [],
+      "slug": "testing-add-tour",
+      "notIncluded": [],
+      "gallery": [],
+      "priceFrom": 5000,
+      "duration": "5",
+      "region": "ZAGORA",
+      "days": 6,
+      "subtitle": "testing add tour",
+      "title": "testing add tour",
+      "overview": "-------------------------------------gggggggggggggggggggggggggghhhhhhhhhhhhhhhhhhhhhhhhh-----------------------------",
+      "difficulty": "Moderate",
+      "included": [],
+      "highlights": []
     }
   ]
 }
