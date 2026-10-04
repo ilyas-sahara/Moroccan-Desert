@@ -624,30 +624,6 @@
         "Desert Sunrise",
         "Berber Music & Drumming"
       ]
-    },
-    {
-      "groupSize": "14",
-      "bestSeason": "summer",
-      "experiences": [],
-      "itinerary": [],
-      "slug": "test-tour",
-      "notIncluded": [],
-      "gallery": [
-        "/assets/images/20251120_201429-1-.jpg"
-      ],
-      "priceFrom": 500,
-      "duration": "3 Days",
-      "region": "Zagora",
-      "days": 3,
-      "subtitle": "testing tour testing tour testing tour",
-      "title": "testing tour",
-      "overview": "------------------------------------------------------------------- ghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhghggghghhghgghghghghghggg----------------------------------------------------------",
-      "image": "/assets/images/ait-ben-haddou-ksar-perfect-reflection-in-water-marrakech-to-merzouga-3-day-desert-tour-1024x683.jpg",
-      "difficulty": "Gentle",
-      "included": [],
-      "highlights": [
-        "go go go"
-      ]
     }
   ]
 }
