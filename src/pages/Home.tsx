@@ -4,14 +4,15 @@ import { ArrowRight, Compass, Tent, Star, Coffee, Users, Mountain } from 'lucide
 import Hero from '@/components/Hero';
 import SectionHeading from '@/components/SectionHeading';
 import TourCard from '@/components/TourCard';
+import TrustpilotReviews from '@/components/TrustpilotReviews';
 import JsonLd from '@/components/JsonLd';
 import { useReveal } from '@/hooks/useReveal';
 import { useSeo, SITE_URL } from '@/hooks/useSeo';
-import { TOURS, EXPERIENCES, TESTIMONIALS, type Tour } from '@/data/content';
+import { TOURS, EXPERIENCES, type Tour } from '@/data/content';
 import { useLocale } from '@/i18n';
 import { responsiveImage } from '@/utils/responsiveImage';
 import {
-  getCmsTours, getCmsExperiences, getCmsTestimonials, getHomePageContent,
+  getCmsTours, getCmsExperiences, getHomePageContent,
   getSiteSettings, type HomePageContent, type SiteSettings,
 } from '@/data/cms';
 
@@ -57,13 +58,11 @@ export default function Home() {
   const expRef = useReveal<HTMLDivElement>();
   const storyRef = useReveal<HTMLDivElement>();
   const galleryRef = useReveal<HTMLDivElement>();
-  const testimonialsRef = useReveal<HTMLDivElement>();
   const ctaRef = useReveal<HTMLDivElement>();
   const [homeContent, setHomeContent] = useState<HomePageContent>(DEFAULT_HOME);
   const [settings, setSettings] = useState<SiteSettings>(DEFAULT_SETTINGS);
   const [tours, setTours] = useState<Tour[]>(TOURS);
   const [experiences, setExperiences] = useState(EXPERIENCES);
-  const [testimonials, setTestimonials] = useState(TESTIMONIALS);
   const { locale, t } = useLocale();
 
   const seoImage = homeContent.hero_frames[0]?.image;
@@ -76,18 +75,16 @@ export default function Home() {
 
   useEffect(() => {
     void (async () => {
-      const [pageContent, cmsTours, cmsExperiences, cmsTestimonials, siteSettings] = await Promise.all([
+      const [pageContent, cmsTours, cmsExperiences, siteSettings] = await Promise.all([
         getHomePageContent(locale),
         getCmsTours(locale),
         getCmsExperiences(locale),
-        getCmsTestimonials(),
         getSiteSettings(),
       ]);
       setHomeContent(pageContent);
       setSettings(siteSettings);
       setTours(cmsTours);
       setExperiences(cmsExperiences);
-      setTestimonials(cmsTestimonials);
     })();
   }, [locale]);
 
@@ -111,15 +108,6 @@ export default function Home() {
     priceRange: 'â‚¬â‚¬',
     areaServed: 'Morocco',
     foundingDate: '2009',
-    ...(testimonials.length > 0
-      ? {
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: Math.round((testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length) * 10) / 10,
-            reviewCount: testimonials.length,
-          },
-        }
-      : {}),
   };
 
   return (
@@ -277,27 +265,7 @@ export default function Home() {
             eyebrow={t('home.travelersWords')}
             title={t('home.guestsTitle')}
           />
-          <div ref={testimonialsRef} className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <figure
-                key={t.name}
-                className={`reveal reveal-delay-${(i % 3) + 1} flex flex-col rounded-2xl bg-white p-7 shadow-sm ring-1 ring-sand-200/50`}
-              >
-                <div className="flex items-center gap-1 text-sand-500">
-                  {[...Array(t.rating)].map((_, j) => (
-                    <Star key={j} className="h-4 w-4 fill-sand-400 text-sand-400" />
-                  ))}
-                </div>
-                <blockquote className="mt-4 flex-1 font-display text-lg italic leading-relaxed text-ink-800">
-                  â€œ{t.text}â€
-                </blockquote>
-                <figcaption className="mt-6 border-t border-sand-100 pt-4">
-                  <p className="font-semibold text-ink-900">{t.name}</p>
-                  <p className="text-xs uppercase tracking-[0.16em] text-sand-600">{t.country} Â· {t.tour}</p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+          <TrustpilotReviews />
         </div>
       </section>
 
