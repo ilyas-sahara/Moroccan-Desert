@@ -28,10 +28,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Add IndexNow key file
-        if: ${{ secrets.INDEXNOW_KEY != '' }}
         env:
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
-        run: printf '%s' "$INDEXNOW_KEY" > "public/${INDEXNOW_KEY}.txt"
+        run: |
+          if [ -n "$INDEXNOW_KEY" ]; then
+            printf '%s' "$INDEXNOW_KEY" > "public/${INDEXNOW_KEY}.txt"
+            echo "indexnow key file created"
+          else
+            echo "::warning::INDEXNOW_KEY not set - skipping key file"
+          fi
       - name: Build
         run: npm run build
       - name: Setup Pages
@@ -60,7 +65,6 @@ jobs:
       - name: Generate sitemap
         run: node scripts/gen-sitemap.mjs
       - name: Submit URLs to IndexNow
-        if: ${{ secrets.INDEXNOW_KEY != '' }}
         continue-on-error: true
         env:
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
