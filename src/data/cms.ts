@@ -1,5 +1,6 @@
 ﻿import { BLOG_POSTS, TOURS, EXPERIENCES, TESTIMONIALS, FAQS, IMAGES, type BlogPost, type Tour } from '@/data/content';
 import type { Locale } from '@/i18n';
+import { tourSlugEntry } from '@/data/slug-map';
 
 export type SiteSettings = {
   brand_name: string;
@@ -370,21 +371,51 @@ export async function getCmsTours(locale: Locale = 'en'): Promise<Tour[]> {
   if (bundled && bundled.locale === locale && bundled.tours) {
     return bundled.tours;
   }
-  const [localizedTours, englishTours, importedTours] = await Promise.all([
+  const [localizedTours, englishTours, localizedSahara, englishSahara] = await Promise.all([
     loadCollection<Tour>(localizedPath(locale, '/content/tours.json'), []),
     loadCollection<Tour>('/content/tours.json', TOURS),
     loadLocalizedCollection<Tour>(locale, '/content/sahara-vibe-desert-tours.json', []),
+    loadCollection<Tour>('/content/sahara-vibe-desert-tours.json', []),
   ]);
-  const primaryTours = localizedTours.length
-    ? [...localizedTours, ...englishTours.filter((tour) => !localizedTours.some((existing) => existing.slug === tour.slug))]
-    : englishTours;
-  const tours = [...primaryTours, ...importedTours.filter((tour) => !primaryTours.some((existing) => existing.slug === tour.slug))].map(
-    (tour) => ({
-      ...tour,
-      image: tour.image ?? IMAGES.heroAerial,
-      experiences: tour.experiences?.length ? tour.experiences : inferTourExperiences(tour),
-    }),
-  );
+  const enBySlug = new Map<string, Tour>();
+  for (const tour of [...englishTours, ...englishSahara]) {
+    enBySlug.set(tour.slug, tour);
+  }
+  // Localized tours use a different slug per language (see slug-map), so the
+  // English copy of the same product must be matched through its locale slug,
+  // never by comparing slugs directly. Missing localizations fall back to the
+  // English content, so CMS tours added only in English still appear everywhere.
+  const mergeLocalizedWithEnglish = (localized: Tour[], english: Tour[]): Tour[] => {
+    if (!localized.length) return english;
+    return [
+      ...localized,
+      ...english.filter((tour) => {
+        const localeTwin = tourSlugEntry(tour.slug)?.[locale] ?? tour.slug;
+        return !localized.some((existing) => existing.slug === localeTwin);
+      }),
+    ];
+  };
+  const merged = [
+    ...mergeLocalizedWithEnglish(localizedTours, englishTours),
+    ...mergeLocalizedWithEnglish(localizedSahara, englishSahara).filter(
+      (tour) => !localizedTours.some((existing) => existing.slug === tour.slug),
+    ),
+  ];
+  const tours = merged.map((tour) => {
+    const explicit = tour.experiences?.length ? tour.experiences : undefined;
+    if (explicit) {
+      return { ...tour, image: tour.image ?? IMAGES.heroAerial, experiences: explicit };
+    }
+    // The English source is the canonical experience definition: keyword
+    // inference and hand-written `experiences` both only live on it. Inheriting
+    // it keeps the filter results identical in every language.
+    const enSlug = locale === 'en' ? tour.slug : tourSlugEntry(tour.slug)?.en ?? tour.slug;
+    const source = enBySlug.get(enSlug);
+    const experiences = source?.experiences?.length
+      ? source.experiences
+      : inferTourExperiences(source ?? tour);
+    return { ...tour, image: tour.image ?? IMAGES.heroAerial, experiences };
+  });
   publishCmsData(locale, { tours });
   return tours;
 }
