@@ -6,6 +6,7 @@ import { useLocale } from '@/i18n';
 import { useSeo } from '@/hooks/useSeo';
 import { getCustomJourneyPageContent, type CustomJourneyPageContent } from '@/data/cms';
 import { responsiveImage } from '@/utils/responsiveImage';
+import { getLeadMeta } from '@/utils/leadMeta';
 
 const STOPS = [
   { id: 'marrakech', name: 'Marrakech', x: 44.13, y: 51.45 },
@@ -102,6 +103,7 @@ export default function CustomJourney() {
       email: String(data.get('email') ?? ''),
       subject: t('custom.emailBody.subject'),
       labels,
+      ...getLeadMeta(),
     };
 
     setSubmitting(true);

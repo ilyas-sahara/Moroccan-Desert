@@ -9,6 +9,7 @@ import { TOURS, FAQS } from '@/data/content';
 import { useLocale } from '@/i18n';
 import { getContactPageContent, getCmsFaqs, getCmsTours } from '@/data/cms';
 import { responsiveImage } from '@/utils/responsiveImage';
+import { getLeadMeta } from '@/utils/leadMeta';
 
 export default function Contact() {
   const ref = useReveal<HTMLDivElement>();
@@ -71,6 +72,7 @@ export default function Contact() {
       group: formData.get('group') || '',
       date: formData.get('date') || '',
       message: formData.get('message') || '',
+      ...getLeadMeta(),
     };
 
     setSubmitting(true);

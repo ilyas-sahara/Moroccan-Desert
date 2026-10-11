@@ -173,7 +173,6 @@ export const en = {
     notIncluded: 'Not included',
     bookThisJourney: 'Book this Journey',
     askQuestion: 'Ask a Question',
-    freeCancellation: 'Free cancellation up to 7 days before departure',
     keepExploring: 'Keep Exploring',
     youMayAlsoLike: 'You may also like',
   },

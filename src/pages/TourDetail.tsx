@@ -424,9 +424,6 @@ export default function TourDetail() {
               <Link to={`/contact?tour=${encodeURIComponent(tour.title)}`} className="btn-ghost mt-3 w-full">
                 {t('tours.askQuestion')}
               </Link>
-              <p className="mt-5 text-center text-xs text-sand-500">
-                {t('tours.freeCancellation')}
-              </p>
             </div>
           </aside>
         </div>

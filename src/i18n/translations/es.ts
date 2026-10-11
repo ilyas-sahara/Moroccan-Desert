@@ -153,7 +153,6 @@ export const es: LocaleDict = {
   'tours.notIncluded': 'Qué no incluye',
   'tours.bookThisJourney': 'Reservar este viaje',
   'tours.askQuestion': 'Hacer una pregunta',
-  'tours.freeCancellation': 'Cancelación gratuita hasta 7 días antes de la salida',
   'tours.keepExploring': 'Seguir explorando',
   'tours.youMayAlsoLike': 'También te puede gustar',
   'experiences.findTours': 'Ver circuitos con esta experiencia',

@@ -137,65 +137,65 @@
   "experiences": [
     {
       "fr": "trek-camel-mhamid-erg-chigaga",
-      "es": "camel-trek-mhamid-erg-chigaga",
-      "de": "camel-trek-mhamid-erg-chigaga",
-      "it": "camel-trek-mhamid-erg-chigaga",
+      "es": "trek-camello-mhamid-erg-chigaga",
+      "de": "kameltrek-mhamid-erg-chigaga",
+      "it": "trek-cammello-mhamid-erg-chigaga",
       "en": "camel-trek-mhamid-erg-chigaga"
     },
     {
       "fr": "sandboard-erg-chebbi",
-      "es": "sandboarding-erg-chebbi",
+      "es": "sandboard-erg-chebbi",
       "de": "sandboarding-erg-chebbi",
-      "it": "sandboarding-erg-chebbi",
+      "it": "sandboard-erg-chebbi",
       "en": "sandboarding-erg-chebbi"
     },
     {
       "fr": "excursion-4x4-erg-chigaga",
-      "es": "4x4-erg-chigaga-exploration",
-      "de": "4x4-erg-chigaga-exploration",
-      "it": "4x4-erg-chigaga-exploration",
+      "es": "excursion-4x4-erg-chigaga",
+      "de": "4x4-erg-chigaga-erkundung",
+      "it": "escursione-4x4-erg-chigaga",
       "en": "4x4-erg-chigaga-exploration"
     },
     {
       "fr": "festival-taragalte",
-      "es": "taragalte-festival-package",
-      "de": "taragalte-festival-package",
-      "it": "taragalte-festival-package",
+      "es": "festival-taragalte",
+      "de": "taragalte-festival",
+      "it": "festival-taragalte",
       "en": "taragalte-festival-package"
     },
     {
       "fr": "festival-des-nomades-mhamid",
-      "es": "nomads-festival-mhamid",
-      "de": "nomads-festival-mhamid",
-      "it": "nomads-festival-mhamid",
+      "es": "festival-internacional-de-los-nomadas",
+      "de": "nomadenfestival-mhamid",
+      "it": "festival-internazionale-dei-nomadi",
       "en": "nomads-festival-mhamid"
     },
     {
       "fr": "marathon-des-sables-spectateur",
-      "es": "marathon-des-sables-spectator",
-      "de": "marathon-des-sables-spectator",
-      "it": "marathon-des-sables-spectator",
+      "es": "marathon-des-sables-espectador",
+      "de": "marathon-des-sables-zuschauer",
+      "it": "marathon-des-sables-spettatore",
       "en": "marathon-des-sables-spectator"
     },
     {
       "fr": "retraite-yoga-desert",
-      "es": "desert-yoga-retreat",
-      "de": "desert-yoga-retreat",
-      "it": "desert-yoga-retreat",
+      "es": "retiro-de-yoga-en-el-desierto",
+      "de": "wuesten-yoga-retreat",
+      "it": "ritiro-yoga-deserto",
       "en": "desert-yoga-retreat"
     },
     {
       "fr": "retraite-astronomie-sahara",
-      "es": "sahara-astronomy-retreat",
-      "de": "sahara-astronomy-retreat",
-      "it": "sahara-astronomy-retreat",
+      "es": "retiro-de-astronomia-en-el-sahara",
+      "de": "sahara-astronomie-retreat",
+      "it": "ritiro-astronomia-sahara",
       "en": "sahara-astronomy-retreat"
     },
     {
       "fr": "retraite-bien-etre-nomade",
-      "es": "nomad-wellness-retreat",
-      "de": "nomad-wellness-retreat",
-      "it": "nomad-wellness-retreat",
+      "es": "retiro-bienestar-nomada",
+      "de": "nomaden-wellness-retreat",
+      "it": "ritiro-benessere-nomade",
       "en": "nomad-wellness-retreat"
     }
   ],

@@ -54,16 +54,17 @@ export default function ExperienceCard({ item, index = 0 }: { item: ExperienceIt
 
         <div className="mt-5 flex items-end justify-between border-t border-sand-100 pt-5">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.16em] text-sand-500">
-              {item.priceFrom ? t('common.from') : t('experiences.priceOnRequest')}
-            </p>
-            <p className="font-display text-2xl font-semibold text-ink-900">
-              {item.priceFrom ? (
-                <>€{item.priceFrom}<span className="ml-1 text-xs font-normal text-ink-400">{t('common.perPerson')}</span></>
-              ) : (
-                <span className="text-lg">{t('experiences.bookOnRequest')}</span>
-              )}
-            </p>
+            {item.priceFrom ? (
+              <>
+                <p className="text-[11px] uppercase tracking-[0.16em] text-sand-500">{t('common.from')}</p>
+                <p className="font-display text-2xl font-semibold text-ink-900">
+                  €{item.priceFrom}
+                  <span className="ml-1 text-xs font-normal text-ink-400">{t('common.perPerson')}</span>
+                </p>
+              </>
+            ) : (
+              <p className="font-display text-lg font-semibold text-ink-900">{t('experiences.priceOnRequest')}</p>
+            )}
           </div>
           <span className="flex items-center gap-1 text-sm font-semibold text-sand-700 transition-colors group-hover:text-sand-800">
             {t('experiences.bookOnRequest')}

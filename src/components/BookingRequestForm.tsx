@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Send, Check } from 'lucide-react';
 import { useLocale } from '@/i18n';
+import { getLeadMeta } from '@/utils/leadMeta';
 
 export default function BookingRequestForm({
   itemTitle,
@@ -41,6 +42,7 @@ export default function BookingRequestForm({
       email,
       subject: `${t('booking.subject')}: ${itemTitle}`,
       labels,
+      ...getLeadMeta(),
     };
 
     setSubmitting(true);

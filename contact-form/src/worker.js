@@ -6,6 +6,38 @@ const SMTP_PORT = 465;
 const encoder = new TextEncoder();
 const decoder = new TextDecoder();
 
+const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+
+const COUNTRY_NAMES = {
+  MA: 'Morocco',
+  FR: 'France',
+  ES: 'Spain',
+  DE: 'Germany',
+  IT: 'Italy',
+  BE: 'Belgium',
+  CH: 'Switzerland',
+  AT: 'Austria',
+  NL: 'Netherlands',
+  LU: 'Luxembourg',
+  GB: 'United Kingdom',
+  IE: 'Ireland',
+  US: 'United States',
+  CA: 'Canada',
+  PT: 'Portugal',
+  AE: 'United Arab Emirates',
+  SA: 'Saudi Arabia',
+  QA: 'Qatar',
+  KW: 'Kuwait',
+  BH: 'Bahrain',
+  OM: 'Oman',
+  TR: 'Turkey',
+  IL: 'Israel',
+  IN: 'India',
+  CN: 'China',
+  JP: 'Japan',
+  AU: 'Australia',
+};
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -59,7 +91,8 @@ export default {
     }
 
     const notifyTo = env.NOTIFY_TO || 'bouzyanilyas@gmail.com';
-    const { subject, html, text } = buildContent({ data, name, email, labels });
+    const meta = collectMeta(request, data);
+    const { subject, html, text } = buildContent({ data, name, email, labels, meta });
 
     try {
       await sendSmtp({ user, pass, to: notifyTo, replyTo: email, subject, text, html });
@@ -72,7 +105,33 @@ export default {
   },
 };
 
-function buildContent({ data, name, email, labels }) {
+function collectMeta(request, data) {
+  const countryCode = String(request.headers.get('CF-IPCountry') || '').toUpperCase();
+  const utm = {};
+  for (const key of UTM_KEYS) {
+    const value = String(data[key] || '').trim();
+    if (value) utm[key.replace('utm_', '')] = value;
+  }
+  return {
+    country: countryCode ? COUNTRY_NAMES[countryCode] || countryCode : '',
+    page: String(data.page || '').trim(),
+    referrer: String(data.referrer || '').trim(),
+    utm,
+  };
+}
+
+function leadRows(meta) {
+  const rows = [];
+  if (meta.country) rows.push(['Visitor country', meta.country]);
+  if (meta.page) rows.push(['Submitted from', meta.page]);
+  if (meta.referrer) rows.push(['Referring site', meta.referrer]);
+  for (const key of Object.keys(meta.utm)) {
+    rows.push([`UTM ${key}`, meta.utm[key]]);
+  }
+  return rows;
+}
+
+function buildContent({ data, name, email, labels, meta = {} }) {
   const rawSubject = String(data.subject || '').trim();
   const subject = rawSubject
     ? `[Sahara Vacation] ${rawSubject}`
@@ -84,17 +143,23 @@ function buildContent({ data, name, email, labels }) {
       const safeValue = escapeHtml(String(value)).replace(/\n/g, '<br>');
       return `<tr><td valign="top"><b>${escapeHtml(label)}</b></td><td>${safeValue}</td></tr>`;
     });
+    const lead = leadRows(meta).map(([label, value]) =>
+      `<tr><td valign="top"><b>${escapeHtml(label)}</b></td><td>${escapeHtml(value)}</td></tr>`,
+    );
     const html = [
       `<h2>${escapeHtml(name)} — custom journey request from saharavacation.com</h2>`,
       '<table cellpadding="6" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px">',
       ...rows,
+      '<tr><td colspan="2"><i>Lead details</i></td></tr>',
+      ...lead,
       '</table>',
       `<p>Reply to: <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>`,
     ].join('\n');
     const text = [
       `${name} — custom journey request from saharavacation.com`,
-      '',
       ...entries.map(([label, value]) => `${label}: ${String(value)}`),
+      '',
+      ...leadRows(meta).map(([label, value]) => `${label}: ${value}`),
       '',
       `Reply to: ${email}`,
     ].join('\n');
@@ -122,6 +187,10 @@ function buildContent({ data, name, email, labels }) {
     message
       ? `<tr><td valign="top"><b>Message</b></td><td>${escapeHtml(message).replace(/\n/g, '<br>')}</td></tr>`
       : '',
+    '<tr><td colspan="2"><i>Lead details</i></td></tr>',
+    ...leadRows(meta).map(
+      ([label, value]) => `<tr><td valign="top"><b>${escapeHtml(label)}</b></td><td>${escapeHtml(value)}</td></tr>`,
+    ),
     '</table>',
     `<p>Reply to: <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>`,
   ]
@@ -139,6 +208,8 @@ function buildContent({ data, name, email, labels }) {
     group ? `Group size: ${group}` : null,
     date ? `Preferred date: ${date}` : null,
     message ? `Message:\n${message}` : null,
+    '',
+    ...leadRows(meta).map(([label, value]) => `${label}: ${value}`),
     '',
     `Reply to: ${email}`,
   ]
