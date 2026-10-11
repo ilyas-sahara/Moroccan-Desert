@@ -134,6 +134,71 @@
       "en": "3-day-marrakech-erg-chigaga-desert-tour"
     }
   ],
+  "experiences": [
+    {
+      "fr": "trek-camel-mhamid-erg-chigaga",
+      "es": "camel-trek-mhamid-erg-chigaga",
+      "de": "camel-trek-mhamid-erg-chigaga",
+      "it": "camel-trek-mhamid-erg-chigaga",
+      "en": "camel-trek-mhamid-erg-chigaga"
+    },
+    {
+      "fr": "sandboard-erg-chebbi",
+      "es": "sandboarding-erg-chebbi",
+      "de": "sandboarding-erg-chebbi",
+      "it": "sandboarding-erg-chebbi",
+      "en": "sandboarding-erg-chebbi"
+    },
+    {
+      "fr": "excursion-4x4-erg-chigaga",
+      "es": "4x4-erg-chigaga-exploration",
+      "de": "4x4-erg-chigaga-exploration",
+      "it": "4x4-erg-chigaga-exploration",
+      "en": "4x4-erg-chigaga-exploration"
+    },
+    {
+      "fr": "festival-taragalte",
+      "es": "taragalte-festival-package",
+      "de": "taragalte-festival-package",
+      "it": "taragalte-festival-package",
+      "en": "taragalte-festival-package"
+    },
+    {
+      "fr": "festival-des-nomades-mhamid",
+      "es": "nomads-festival-mhamid",
+      "de": "nomads-festival-mhamid",
+      "it": "nomads-festival-mhamid",
+      "en": "nomads-festival-mhamid"
+    },
+    {
+      "fr": "marathon-des-sables-spectateur",
+      "es": "marathon-des-sables-spectator",
+      "de": "marathon-des-sables-spectator",
+      "it": "marathon-des-sables-spectator",
+      "en": "marathon-des-sables-spectator"
+    },
+    {
+      "fr": "retraite-yoga-desert",
+      "es": "desert-yoga-retreat",
+      "de": "desert-yoga-retreat",
+      "it": "desert-yoga-retreat",
+      "en": "desert-yoga-retreat"
+    },
+    {
+      "fr": "retraite-astronomie-sahara",
+      "es": "sahara-astronomy-retreat",
+      "de": "sahara-astronomy-retreat",
+      "it": "sahara-astronomy-retreat",
+      "en": "sahara-astronomy-retreat"
+    },
+    {
+      "fr": "retraite-bien-etre-nomade",
+      "es": "nomad-wellness-retreat",
+      "de": "nomad-wellness-retreat",
+      "it": "nomad-wellness-retreat",
+      "en": "nomad-wellness-retreat"
+    }
+  ],
   "blogs": [
     {
       "fr": "erg-chigaga-ou-erg-chebbi",

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Menu, X, Compass, ChevronDown } from 'lucide-react';
 import { useScrolled } from '@/hooks/useReveal';
 import { useLocale } from '@/i18n';
-import { blogSlugFor } from '@/data/slug-map';
+import { blogSlugFor, experienceSlugFor } from '@/data/slug-map';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const LINKS = [
@@ -37,6 +37,8 @@ const DROPDOWNS = [
       { labelKey: 'nav.expDropdown.nomad', descKey: 'nav.expDropdown.nomadDesc', to: '/tours?experience=nomadic-culture' },
       { labelKey: 'nav.expDropdown.stargazing', descKey: 'nav.expDropdown.stargazingDesc', to: '/tours?experience=stargazing' },
       { labelKey: 'nav.expDropdown.kasbahs', descKey: 'nav.expDropdown.kasbahsDesc', to: '/tours?experience=kasbahs-and-oases' },
+      { labelKey: 'nav.expDropdown.festivals', descKey: 'nav.expDropdown.festivalsDesc', experience: 'taragalte-festival-package' },
+      { labelKey: 'nav.expDropdown.retreats', descKey: 'nav.expDropdown.retreatsDesc', experience: 'desert-yoga-retreat' },
     ],
   },
   {
@@ -158,7 +160,12 @@ export default function Navbar() {
                 </div>
                 <div className={`absolute left-1/2 top-full mt-4 w-72 -translate-x-1/2 rounded-2xl border border-sand-200/80 bg-white p-2 shadow-xl shadow-ink-950/15 transition-all duration-200 ${isOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-2 opacity-0'}`}>
                   {dropdown.items.map((item) => {
-                    const itemTo = 'to' in item ? item.to : `/blog/${blogSlugFor(item.blog, locale)}`;
+                    const itemTo =
+                      'to' in item
+                        ? item.to
+                        : 'blog' in item
+                          ? `/blog/${blogSlugFor(item.blog, locale)}`
+                          : `/experiences/${experienceSlugFor(item.experience, locale)}`;
                     return (
                       <Link key={itemTo} to={itemTo} className="block rounded-xl px-4 py-3 transition-colors hover:bg-sand-100">
                         <span className="block text-sm font-semibold text-ink-900">{t(item.labelKey)}</span>

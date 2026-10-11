@@ -10,6 +10,7 @@ import Home from '@/pages/Home';
 const Tours = lazy(() => import('@/pages/Tours'));
 const TourDetail = lazy(() => import('@/pages/TourDetail'));
 const Experiences = lazy(() => import('@/pages/Experiences'));
+const ExperienceDetail = lazy(() => import('@/pages/ExperienceDetail'));
 const Blog = lazy(() => import('@/pages/Blog'));
 const BlogDetail = lazy(() => import('@/pages/BlogDetail'));
 const About = lazy(() => import('@/pages/About'));
@@ -82,6 +83,7 @@ export default function App() {
                 <Route path="/tours" element={<Tours />} />
                 <Route path="/tours/:slug" element={<TourDetail />} />
                 <Route path="/experiences" element={<Experiences />} />
+                <Route path="/experiences/:slug" element={<ExperienceDetail />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogDetail />} />
                 <Route path="/about" element={<About />} />

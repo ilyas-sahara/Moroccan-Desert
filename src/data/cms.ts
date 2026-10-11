@@ -1,4 +1,4 @@
-﻿import { BLOG_POSTS, TOURS, EXPERIENCES, TESTIMONIALS, FAQS, IMAGES, type BlogPost, type Tour } from '@/data/content';
+﻿import { BLOG_POSTS, TOURS, EXPERIENCES, EXPERIENCE_ITEMS, TESTIMONIALS, FAQS, IMAGES, type BlogPost, type Tour, type ExperienceItem } from '@/data/content';
 import type { Locale } from '@/i18n';
 import { tourSlugEntry } from '@/data/slug-map';
 
@@ -241,7 +241,8 @@ function readBundledCmsData(): Partial<BundledCmsData> | null {
       parsed &&
       typeof parsed.locale === 'string' &&
       ((Array.isArray(parsed.tours) && parsed.tours.length > 0) ||
-        (Array.isArray(parsed.posts) && parsed.posts.length > 0));
+        (Array.isArray(parsed.posts) && parsed.posts.length > 0) ||
+        (Array.isArray(parsed.experiences) && parsed.experiences.length > 0));
     bundledCache = { data: ok ? parsed : null };
     return bundledCache.data;
   } catch {
@@ -250,7 +251,7 @@ function readBundledCmsData(): Partial<BundledCmsData> | null {
   }
 }
 
-type BundledCmsData = { locale: Locale; tours: Tour[]; posts: BlogPost[] };
+type BundledCmsData = { locale: Locale; tours: Tour[]; posts: BlogPost[]; experiences: ExperienceItem[] };
 
 /**
  * Synchronous access to the CMS collection baked into the prerendered page.
@@ -265,6 +266,11 @@ export function bundledCmsTours(locale: Locale): Tour[] | undefined {
 export function bundledCmsPosts(locale: Locale): BlogPost[] | undefined {
   const data = readBundledCmsData();
   return data && data.locale === locale ? data.posts : undefined;
+}
+
+export function bundledCmsExperiences(locale: Locale): ExperienceItem[] | undefined {
+  const data = readBundledCmsData();
+  return data && data.locale === locale ? data.experiences : undefined;
 }
 
 /** Exposes freshly fetched collections to the prerender step for `#cms-data` injection. */
@@ -437,6 +443,16 @@ function inferTourExperiences(tour: Tour): string[] {
 
 export async function getCmsExperiences(locale: Locale = 'en'): Promise<Array<{ slug: string; title: string; description: string; image: string; icon: string }>> {
   return loadLocalizedCollection(locale, '/content/experiences.json', EXPERIENCES);
+}
+
+export async function getCmsExperienceItems(locale: Locale = 'en'): Promise<ExperienceItem[]> {
+  const bundled = readBundledCmsData();
+  if (bundled && bundled.locale === locale && bundled.experiences) {
+    return bundled.experiences;
+  }
+  const items = await loadLocalizedCollection(locale, '/content/experiences-items.json', EXPERIENCE_ITEMS);
+  publishCmsData(locale, { experiences: items });
+  return items;
 }
 
 export async function getCmsBlogPosts(locale: Locale = 'en'): Promise<BlogPost[]> {

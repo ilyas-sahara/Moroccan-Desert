@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Compass, Tent, Star, Coffee, Users, Mountain, ArrowRight } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
+import ExperienceCard from '@/components/ExperienceCard';
 import { useReveal } from '@/hooks/useReveal';
 import { useSeo } from '@/hooks/useSeo';
-import { EXPERIENCES } from '@/data/content';
+import { EXPERIENCES, EXPERIENCE_ITEMS, type ExperienceItem } from '@/data/content';
 import { useLocale } from '@/i18n';
-import { getCmsExperiences, getExperiencesPageContent, type ExperiencesPageContent } from '@/data/cms';
+import { getCmsExperiences, getCmsExperienceItems, getExperiencesPageContent, type ExperiencesPageContent } from '@/data/cms';
 import { responsiveImage } from '@/utils/responsiveImage';
 
 const ICONS: Record<string, typeof Compass> = {
@@ -27,8 +28,10 @@ const DEFAULT_PAGE: ExperiencesPageContent = {
 
 export default function Experiences() {
   const ref = useReveal<HTMLDivElement>();
+  const itemsRef = useReveal<HTMLDivElement>();
   const { locale, t } = useLocale();
   const [experiences, setExperiences] = useState(EXPERIENCES);
+  const [items, setItems] = useState<ExperienceItem[]>(EXPERIENCE_ITEMS);
   const [pageContent, setPageContent] = useState<ExperiencesPageContent>(DEFAULT_PAGE);
 
   useSeo({
@@ -39,8 +42,13 @@ export default function Experiences() {
 
   useEffect(() => {
     void (async () => {
-      const [cmsExperiences, page] = await Promise.all([getCmsExperiences(locale), getExperiencesPageContent(locale)]);
+      const [cmsExperiences, cmsItems, page] = await Promise.all([
+        getCmsExperiences(locale),
+        getCmsExperienceItems(locale),
+        getExperiencesPageContent(locale),
+      ]);
       setExperiences(cmsExperiences);
+      setItems(cmsItems);
       setPageContent(page);
     })();
   }, [locale]);
@@ -89,6 +97,21 @@ export default function Experiences() {
                 </article>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-sand-50 py-20 lg:py-28">
+        <div className="container-x">
+          <SectionHeading
+            eyebrow={t('experiences.bookableEyebrow')}
+            title={t('experiences.bookableTitle')}
+            subtitle={t('experiences.bookableSubtitle')}
+          />
+          <div ref={itemsRef} className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+            {items.map((item, i) => (
+              <ExperienceCard key={item.slug} item={item} index={i} />
+            ))}
           </div>
         </div>
       </section>

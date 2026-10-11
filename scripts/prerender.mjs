@@ -61,7 +61,8 @@ const STATIC_PATHS = [
 const routes = LOCALES.flatMap((code) => {
   const tourPaths = SLUG_MAP.tours.map((entry) => `/tours/${entry[code]}`);
   const blogPaths = SLUG_MAP.blogs.map((entry) => `/blog/${entry[code]}`);
-  const localPaths = [...STATIC_PATHS, ...tourPaths, ...blogPaths];
+  const experiencePaths = SLUG_MAP.experiences.map((entry) => `/experiences/${entry[code]}`);
+  const localPaths = [...STATIC_PATHS, ...tourPaths, ...blogPaths, ...experiencePaths];
   return localPaths.map((route) => (code === 'fr' ? route : `/${code}${route}`));
 });
 
@@ -149,7 +150,7 @@ async function prerender() {
         .evaluate(() => {
           const globals = globalThis;
           const data = globals.__SVC_CMS__;
-          return data && (Array.isArray(data.tours) || Array.isArray(data.posts)) ? JSON.stringify(data) : null;
+          return data && (Array.isArray(data.tours) || Array.isArray(data.posts) || Array.isArray(data.experiences)) ? JSON.stringify(data) : null;
         })
         .catch(() => null);
       let html = normalizeLazyFonts(await page.content());

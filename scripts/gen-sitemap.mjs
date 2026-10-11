@@ -32,7 +32,13 @@ const BLOG_ENTRIES = slugMap.blogs.map((entry) => ({
   freq: 'monthly',
 }));
 
-const ENTRIES = [...STATIC_ENTRIES, ...TOUR_ENTRIES, ...BLOG_ENTRIES];
+const EXPERIENCE_ENTRIES = slugMap.experiences.map((entry) => ({
+  paths: Object.fromEntries(LOCALES.map((c) => [c, `/experiences/${entry[c]}`])),
+  prio: '0.7',
+  freq: 'monthly',
+}));
+
+const ENTRIES = [...STATIC_ENTRIES, ...TOUR_ENTRIES, ...BLOG_ENTRIES, ...EXPERIENCE_ENTRIES];
 
 const lastmod = new Date().toISOString().slice(0, 10);
 const trail = (p) => (p === '/' || p.endsWith('/') ? p : `${p}/`);

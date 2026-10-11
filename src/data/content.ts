@@ -21,6 +21,26 @@ export type Tour = {
   experiences?: string[];
 };
 
+export type ExperienceKind = 'activity' | 'festival' | 'retreat';
+
+export type ExperienceItem = {
+  slug: string;
+  kind: ExperienceKind;
+  title: string;
+  subtitle: string;
+  region: string;
+  duration: string;
+  groupSize: string;
+  priceFrom?: number;
+  image: string;
+  gallery: string[];
+  overview: string;
+  highlights: string[];
+  includes: string[];
+  bestSeason: string;
+  scheduleNote?: string;
+};
+
 export type BlogBlock =
   | { type: 'p'; text: string }
   | { type: 'h2'; text: string }
@@ -435,6 +455,261 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Planning',
     image: IMAGES.sunrise,
     readTime: '7 min read',
+  },
+];
+
+export const EXPERIENCE_ITEMS: ExperienceItem[] = [
+  {
+    slug: 'camel-trek-mhamid-erg-chigaga',
+    kind: 'activity',
+    title: 'Camel Trek to Erg Chigaga',
+    subtitle: "A multi-day caravan from M'Hamid to the highest wild dunes in Morocco, camped far from any road.",
+    region: "M'Hamid · Erg Chigaga",
+    duration: '2 – 5 days',
+    groupSize: '2 – 8 travelers',
+    image: IMAGES.camelCaravan,
+    gallery: [IMAGES.camelCaravan, IMAGES.campBerber2, IMAGES.sunrise],
+    overview:
+      "The classic Saharan crossing, done the way nomads still do it. From the last village of M'Hamid you walk beside a camel caravan across the open hamada toward Erg Chigaga, a dune field that rises out of the emptiness west of the road. Each day ends at a quiet bivouac under a sky with no light pollution for hundreds of kilometers. No phone signal, no schedule — just the tread of camels, tea on the fire, and the feel of a pace that has not changed in centuries.",
+    highlights: [
+      'Sunset and sunrise on the great dunes of Erg Chigaga',
+      'Bread baked in the sand, cooking on the fire, mint tea at every camp',
+      'A full day walking with the caravan through open desert',
+      'Camping far from roads, with the Milky Way overhead',
+      'Led by Berber camel guides born around M’Hamid',
+    ],
+    includes: [
+      'Camel caravan with saddles and dromedary handlers',
+      'All meals cooked in camp, tea and water included',
+      'Tents, foam mattresses and blankets',
+      'Local Berber guides throughout',
+      'Desert toilet tents and leaving-no-trace camping',
+    ],
+    bestSeason: 'October – March',
+  },
+  {
+    slug: 'sandboarding-erg-chebbi',
+    kind: 'activity',
+    title: 'Sandboarding on Erg Chebbi',
+    subtitle: 'Climb the great golden dune at Merzouga and ride down on a sandboard at sunset.',
+    region: 'Merzouga · Erg Chebbi',
+    duration: 'Half day',
+    groupSize: '2 – 12 travelers',
+    priceFrom: 45,
+    image: IMAGES.duneRipples,
+    gallery: [IMAGES.duneRipples, IMAGES.merzouga, IMAGES.sunrise],
+    overview:
+      "A light-hearted afternoon on the tallest dunes of Morocco. Your guide drives you to the foot of Erg Chebbi where you wax up a sandboard and climb the ridge above the Merzouga village. The downhill run is fast and forgiving — sand is soft, crashes are gentle, and beginners are carving in two tries. We finish the session at the top of the dune with the sunset turning the sand pink, then return for mint tea.",
+    highlights: [
+      'Sandboards, wax and instruction included',
+      'Enough runs to get confident before sunset',
+      'Sunset from the top of the dune',
+      'Photos from the ridge with the desert behind you',
+      'Round-trip transfer from your Merzouga riad',
+    ],
+    includes: [
+      'Sandboards and wax',
+      'Local sandboarding guide',
+      'Transfers to the dunes and back',
+      'Mint tea at the end of the session',
+    ],
+    bestSeason: 'October – May',
+  },
+  {
+    slug: '4x4-erg-chigaga-exploration',
+    kind: 'activity',
+    title: '4x4 Exploration of Erg Chigaga',
+    subtitle: "Leave the road behind and cross Lac Iriqui's salt flats to the remote dunes of Erg Chigaga.",
+    region: "M'Hamid · Erg Chigaga",
+    duration: '1 – 2 days',
+    groupSize: '1 – 6 travelers',
+    image: IMAGES.heroAerial,
+    gallery: [IMAGES.heroAerial, IMAGES.campIsolated, IMAGES.campfire],
+    overview:
+      "Beyond M'Hamid the paved road ends. In a private Land Cruiser you cross the dry bed of Lac Iriqui, where mirages shimmer over salt crust in the morning light, then descend into the dune field of Erg Chigaga. Visit a nomad family in their tent settlement, climb the great dune for sunset, and — on the overnight version — sleep in a camp with no light for a hundred kilometers. Full of wildlife, silence and horizon.",
+    highlights: [
+      'Driving across the cracked salt flats of Lac Iriqui',
+      'Meeting a nomad family in their seasonal camp',
+      'Climbing the high dune of Erg Chigaga at sunset',
+      'Optional overnight in a simple bivouac under the stars',
+      'Private 4x4 with a driver-guide from M’Hamid',
+    ],
+    includes: [
+      'Private 4x4 with driver-guide',
+      'Fuel and vehicle costs',
+      'Nomad family visit',
+      'Mint tea and meals depending on the itinerary',
+      'Overnight camp on the two-day option',
+    ],
+    bestSeason: 'October – March',
+  },
+  {
+    slug: 'taragalte-festival-package',
+    kind: 'festival',
+    title: 'Taragalte Festival — Sahara Crossroads',
+    subtitle: "Three nights of desert music, treks and encounters at the foot of Erg Chigaga, with your camp and access included.",
+    region: "M'Hamid · Erg Chigaga",
+    duration: '3 days · late October',
+    groupSize: '2 – 20 travelers',
+    scheduleNote: 'October 30 – November 1, 2026',
+    image: IMAGES.campfire,
+    gallery: [IMAGES.campfire, IMAGES.campBerber2, IMAGES.stars],
+    overview:
+      "The Taragalte Festival gathers musicians from across the Sahara in a bowl of dunes near M'Hamid for three nights of gnawa, desert rock and Tuareg guitar. Our package wraps the concerts into a proper desert trip: festival access, a camp with tents and blankets tucked at the foot of the dunes, local meals, and a camel ride out to the concerts each evening. A rare chance to hear music that travels by memory, under a sky made for it.",
+    highlights: [
+      'Festival access for all three evenings',
+      'A private camp at the foot of the dunes near the site',
+      'Evening camel rides to and from the concerts',
+      'Gnawa, Tuareg and Amazigh musicians on stage',
+      'All meals in camp, tea and water included',
+    ],
+    includes: [
+      'Taragalte Festival tickets',
+      'Desert camp with tent, blankets and campfire',
+      'Full board meals and mint tea',
+      'Local guides and camel transfers to the festival site',
+      'Meet-and-greet in M’Hamid',
+    ],
+    bestSeason: 'Late October',
+  },
+  {
+    slug: 'nomads-festival-mhamid',
+    kind: 'festival',
+    title: 'International Nomads Festival',
+    subtitle: "Celebrate the living culture of the nomads in M'Hamid — camel races, music and poetry in the desert.",
+    region: "M'Hamid",
+    duration: '3 days · early April',
+    groupSize: '2 – 20 travelers',
+    scheduleNote: 'April 3 – 5, 2026',
+    image: IMAGES.campNomad,
+    gallery: [IMAGES.campNomad, IMAGES.camelTrek, IMAGES.mintTea],
+    overview:
+      "Every spring the village of M'Hamid welcomes nomad families from the deep desert for a festival that is equal parts celebration and reunion. There are camel races across the gravel flat, Amazigh music late into the night, poetry and storytelling, and markets where nomads trade dates, wool and silver. Our package places you in the middle of it with a camp, meals, and a guide who knows the families taking part.",
+    highlights: [
+      'Camel races at the edge of the desert',
+      'Amazigh music, storytellers and poetry sessions',
+      'Meeting nomad families who come up from the deep desert',
+      'A camp with full board right next to the festival ground',
+      'Guided walks through the M’Hamid palm grove',
+    ],
+    includes: [
+      'Festival access on all three days',
+      'Desert camp with tent, blankets and full board',
+      'Local Amazigh guide',
+      'Mint tea, water and all meals in camp',
+    ],
+    bestSeason: 'Early April',
+  },
+  {
+    slug: 'marathon-des-sables-spectator',
+    kind: 'festival',
+    title: 'Marathon des Sables — Support Week',
+    subtitle: "Follow the world's toughest footrace across the southern desert from near Ouarzazate, with 4x4 access to checkpoints.",
+    region: 'South of Ouarzazate',
+    duration: '7 days · April',
+    groupSize: '2 – 10 travelers',
+    scheduleNote: 'April 2026 — exact dates confirmed about six weeks before the race',
+    image: IMAGES.loneTraveler,
+    gallery: [IMAGES.loneTraveler, IMAGES.duneRipples, IMAGES.sunrise],
+    overview:
+      "The Marathon des Sables puts runners across 250 kilometers of the Sahara in full self-sufficiency. As a spectator you skip the suffering: our 4x4 with a desert driver follows the race across the bivouac, bringing you to the camps where the international field sleeps, eats and re-stocks. You meet runners at the finish of each stage, watch helicopters ferry gear between camps, and carry your own small support stash for the athletes you know.",
+    highlights: [
+      '4x4 access to the race bivouac and stage finishes',
+      'Meeting the international runners and their teams',
+      'Your own desert camp with full board every night',
+      'Remote dunes, sunrise starts and the race-energy of the Sahara',
+    ],
+    includes: [
+      'Seven days of 4x4 support with desert driver',
+      'All nights in a private camp with full board',
+      'Access to the race bivouac as a spectator',
+      'Local guide throughout',
+      'Water and tea on the road',
+    ],
+    bestSeason: 'April',
+  },
+  {
+    slug: 'desert-yoga-retreat',
+    kind: 'retreat',
+    title: 'Desert Yoga & Silence Retreat',
+    subtitle: 'Mornings of yoga, afternoons of silence and a sky full of stars in a private camp near Erg Chigaga.',
+    region: 'Erg Chigaga',
+    duration: '4 days · 3 nights',
+    groupSize: '4 – 12 travelers',
+    image: IMAGES.sunrise,
+    gallery: [IMAGES.sunrise, IMAGES.campBerber, IMAGES.stars],
+    overview:
+      "A retreat without marketing or crowds. You practice on carpets laid out on the sand at sunrise, when the light is clean and the air is still, and again at dusk before dinner. The days between sessions belong to you — dune walks, a nomad visit, tea under the awning, or simply sitting in the quiet. Evenings finish with candlelight dinner and long looks at a sky where the Milky Way is a visible band of light.",
+    highlights: [
+      'Two yoga sessions per day on the sand',
+      'A certified instructor traveling with the group',
+      'Dune walks and a visit to a nomad tent',
+      'Fully serviced private camp with proper beds',
+      'Almost total silence two hours from the nearest road',
+    ],
+    includes: [
+      'Yoga instruction, mats and props',
+      'All nights in the private desert camp',
+      'Full board meals with a vegetarian option',
+      'Transfers from Ouarzazate or Zagora',
+      'Tea and filtered water',
+    ],
+    bestSeason: 'October – April',
+  },
+  {
+    slug: 'sahara-astronomy-retreat',
+    kind: 'retreat',
+    title: 'Sahara Astronomy Retreat',
+    subtitle: 'Three nights of guided stargazing with telescopes in one of the darkest skies on earth.',
+    region: 'Erg Chebbi · Merzouga',
+    duration: '3 days · 2 nights',
+    groupSize: '4 – 10 travelers',
+    image: IMAGES.stars,
+    gallery: [IMAGES.stars, IMAGES.starsMerzouga, IMAGES.campfire],
+    overview:
+      "The Sahara is one of the last places where the night sky still looks like a photograph. Over three nights a guide with a telescope walks you through the constellations of both hemispheres, the bright planets of the season, and the deep-sky objects that hide from city skies — the Andromeda galaxy, the Orion nebula, the heart of the Milky Way. Sessions run late, so the camp schedule is built around them.",
+    highlights: [
+      'A telescope session every clear night',
+      'Bare-eye sky tour, planets and deep-sky objects',
+      'The Milky Way from a camp with zero light pollution',
+      'Photography tips for the night sky',
+      'Daylight: dunes, a nomad visit and the Merzouga lake',
+    ],
+    includes: [
+      'Telescope and tripod with a stargazing guide',
+      'Two nights in the desert camp with full board',
+      'Transfers from Merzouga or Erfoud',
+      'Sky almanac printed for your dates',
+    ],
+    bestSeason: 'October – February (new moon nights)',
+  },
+  {
+    slug: 'nomad-wellness-retreat',
+    kind: 'retreat',
+    title: 'Nomad Wellness Immersion',
+    subtitle: "Live the nomad rhythm for five days — tea, walking, cooking, sleep, and stillness at the edge of Erg Chigaga.",
+    region: "M'Hamid · Erg Chigaga",
+    duration: '5 days · 4 nights',
+    groupSize: '4 – 10 travelers',
+    image: IMAGES.mintTeaCarpet,
+    gallery: [IMAGES.mintTeaCarpet, IMAGES.campNomad, IMAGES.starsLone],
+    overview:
+      "Wellness without the spa: five days spent the way desert families live. Mornings begin with bread baked in the sand and tea; the day moves between walking, cooking, resting in the shade and sitting with nomads whose calendar is the season. There are optional stretches at dawn, hammam visits in M'Hamid, and no schedule at all after dark. Guests say they sleep deeper here than anywhere they have ever traveled.",
+    highlights: [
+      'A rhythm built on walking, cooking and rest — not checklists',
+      'Bread baked in the sand, meals with a nomad family',
+      'Hamman and tea ceremony in M’Hamid',
+      'Optional dawn stretching and dune walks',
+      'A private camp with real beds and warm blankets',
+    ],
+    includes: [
+      'Four nights in the private desert camp',
+      'All meals, tea and filtered water',
+      'Activity program with local guides',
+      'Hamman visit in M’Hamid',
+      'Transfers from Zagora or Ouarzazate',
+    ],
+    bestSeason: 'October – March',
   },
 ];
 
