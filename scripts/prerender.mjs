@@ -146,13 +146,29 @@ async function prerender() {
         continue;
       }
       await new Promise((r) => setTimeout(r, 400));
-      const cmsData = await page
+      let cmsData = await page
         .evaluate(() => {
           const globals = globalThis;
           const data = globals.__SVC_CMS__;
           return data && (Array.isArray(data.tours) || Array.isArray(data.posts) || Array.isArray(data.experiences)) ? JSON.stringify(data) : null;
         })
         .catch(() => null);
+      // Only detail deep links need a synchronous collection to avoid the
+      // "page introuvable" flash. Baking the (large) collections into every
+      // listing/home page wasted ~44 kB of HTML per page, so filter what gets
+      // inlined to the collection that route actually renders.
+      const detailKind = (route.match(/^(?:\/[a-z]{2})?\/(tours|experiences|blog)\/[^/]+/) || [])[1];
+      if (cmsData && detailKind) {
+        const parsed = JSON.parse(cmsData);
+        const wanted = detailKind === 'tours' ? 'tours' : detailKind === 'experiences' ? 'experiences' : 'posts';
+        if (Array.isArray(parsed[wanted]) && parsed[wanted].length > 0) {
+          cmsData = JSON.stringify({ locale: parsed.locale, [wanted]: parsed[wanted] });
+        } else {
+          cmsData = null;
+        }
+      } else {
+        cmsData = null;
+      }
       let html = normalizeLazyFonts(await page.content());
       if (cmsData) {
         // Inline the page's own CMS collection so the client can hydrate with it
