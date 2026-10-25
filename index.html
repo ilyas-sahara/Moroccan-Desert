@@ -1,14 +1,29 @@
 ﻿<!doctype html>
 <html lang="fr">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ENLXX1H3XW"></script>
+    <!-- Google tag (gtag.js) — deferred: stub queues events, library loads on idle so it stays off the LCP critical path -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-ENLXX1H3XW');
+      (function () {
+        var gaLoaded = false;
+        function loadGA() {
+          if (gaLoaded) return;
+          gaLoaded = true;
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ENLXX1H3XW';
+          document.head.appendChild(s);
+        }
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(loadGA, { timeout: 4000 });
+        } else {
+          window.addEventListener('load', function () { setTimeout(loadGA, 1500); });
+        }
+      })();
     </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />

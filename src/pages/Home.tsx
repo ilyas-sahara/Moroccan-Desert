@@ -141,8 +141,8 @@ export default function Home() {
             </div>
             <div className="lg:col-span-6">
               <div className="grid grid-cols-2 gap-4">
-                <img src={responsiveImage(homeContent.intro_image_a, { sizes: '(min-width:1024px) 40vw, 92vw' }).src} srcSet={responsiveImage(homeContent.intro_image_a, { sizes: '(min-width:1024px) 40vw, 92vw' }).srcSet} alt={t('home.introImageAltA')} loading="lazy" className="aspect-[3/4] w-full rounded-2xl object-cover shadow-lg" />
-                <img src={responsiveImage(homeContent.intro_image_b, { sizes: '(min-width:1024px) 40vw, 92vw' }).src} srcSet={responsiveImage(homeContent.intro_image_b, { sizes: '(min-width:1024px) 40vw, 92vw' }).srcSet} alt={t('home.introImageAltB')} loading="lazy" className="mt-8 aspect-[3/4] w-full rounded-2xl object-cover shadow-lg" />
+                <img src={responsiveImage(homeContent.intro_image_a, { sizes: '(min-width:1024px) 40vw, 92vw' }).src} srcSet={responsiveImage(homeContent.intro_image_a, { sizes: '(min-width:1024px) 40vw, 92vw' }).srcSet} sizes="(min-width:1024px) 40vw, 92vw" alt={t('home.introImageAltA')} loading="lazy" className="aspect-[3/4] w-full rounded-2xl object-cover shadow-lg" />
+                <img src={responsiveImage(homeContent.intro_image_b, { sizes: '(min-width:1024px) 40vw, 92vw' }).src} srcSet={responsiveImage(homeContent.intro_image_b, { sizes: '(min-width:1024px) 40vw, 92vw' }).srcSet} sizes="(min-width:1024px) 40vw, 92vw" alt={t('home.introImageAltB')} loading="lazy" className="mt-8 aspect-[3/4] w-full rounded-2xl object-cover shadow-lg" />
               </div>
             </div>
           </div>
@@ -189,7 +189,7 @@ export default function Home() {
                   className={`reveal reveal-delay-${(i % 3) + 1} group relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-sand-200/50 card-lift`}
                 >
                   <div className="relative aspect-[5/3] overflow-hidden">
-                    <img src={responsiveImage(exp.image, { sizes: '(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw' }).src} srcSet={responsiveImage(exp.image, { sizes: '(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw' }).srcSet} alt={exp.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <img src={responsiveImage(exp.image, { sizes: '(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw' }).src} srcSet={responsiveImage(exp.image, { sizes: '(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw' }).srcSet} sizes="(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw" alt={exp.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink-950/55 to-transparent" />
                     <div className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-sand-50/95 text-sand-700">
                       <Icon className="h-5 w-5" strokeWidth={1.5} />
@@ -246,12 +246,12 @@ export default function Home() {
         <div ref={galleryRef} className="reveal mt-14 flex gap-4 overflow-hidden mask-fade-b">
           <div className="flex shrink-0 animate-marquee gap-4">
             {homeContent.gallery.map((src, i) => (
-              <img key={i} src={responsiveImage(src, { sizes: '25vw', widths: [300, 600, 900], baseWidth: 600 }).src} srcSet={responsiveImage(src, { sizes: '25vw', widths: [300, 600, 900], baseWidth: 600 }).srcSet} alt="" loading="lazy" className="h-72 w-96 shrink-0 rounded-2xl object-cover" />
+              <img key={i} src={responsiveImage(src, { sizes: '25vw', widths: [300, 600, 900], baseWidth: 600 }).src} srcSet={responsiveImage(src, { sizes: '25vw', widths: [300, 600, 900], baseWidth: 600 }).srcSet} sizes="25vw" alt="" loading="lazy" className="h-72 w-96 shrink-0 rounded-2xl object-cover" />
             ))}
           </div>
           <div className="flex shrink-0 animate-marquee gap-4" aria-hidden>
             {homeContent.gallery.map((src, i) => (
-              <img key={`b-${i}`} src={responsiveImage(src, { sizes: '25vw', widths: [300, 600, 900], baseWidth: 600 }).src} srcSet={responsiveImage(src, { sizes: '25vw', widths: [300, 600, 900], baseWidth: 600 }).srcSet} alt="" loading="lazy" className="h-72 w-96 shrink-0 rounded-2xl object-cover" />
+              <img key={`b-${i}`} src={responsiveImage(src, { sizes: '25vw', widths: [300, 600, 900], baseWidth: 600 }).src} srcSet={responsiveImage(src, { sizes: '25vw', widths: [300, 600, 900], baseWidth: 600 }).srcSet} sizes="25vw" alt="" loading="lazy" className="h-72 w-96 shrink-0 rounded-2xl object-cover" />
             ))}
           </div>
         </div>

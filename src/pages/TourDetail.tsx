@@ -279,7 +279,7 @@ export default function TourDetail() {
                       </span>
                     </div>
                   ) : (
-                    <img src={responsiveImage(src, { sizes: '12vw', widths: [200, 400, 800], baseWidth: 400 }).src} srcSet={responsiveImage(src, { sizes: '12vw', widths: [200, 400, 800], baseWidth: 400 }).srcSet} alt="" loading="lazy" className="h-full w-full object-cover" />
+                    <img src={responsiveImage(src, { sizes: '12vw', widths: [200, 400, 800], baseWidth: 400 }).src} srcSet={responsiveImage(src, { sizes: '12vw', widths: [200, 400, 800], baseWidth: 400 }).srcSet} sizes="12vw" alt="" loading="lazy" className="h-full w-full object-cover" />
                   )}
                 </button>
               ))}

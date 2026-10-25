@@ -81,7 +81,7 @@ export default function Experiences() {
                   className={`reveal reveal-delay-${(i % 3) + 1} group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-sand-200/50 card-lift`}
                 >
                   <div className="relative aspect-[5/3] overflow-hidden">
-                    <img src={responsiveImage(exp.image, { sizes: '(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw' }).src} srcSet={responsiveImage(exp.image, { sizes: '(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw' }).srcSet} alt={exp.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <img src={responsiveImage(exp.image, { sizes: '(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw' }).src} srcSet={responsiveImage(exp.image, { sizes: '(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw' }).srcSet} sizes="(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw" alt={exp.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink-950/55 to-transparent" />
                     <div className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-sand-50/95 text-sand-700">
                       <Icon className="h-5 w-5" strokeWidth={1.5} />

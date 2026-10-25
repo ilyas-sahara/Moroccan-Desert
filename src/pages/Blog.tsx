@@ -56,7 +56,7 @@ export default function Blog() {
         <div className="container-x grid gap-7 md:grid-cols-2 xl:grid-cols-3">
           {posts.map((post) => (
             <article key={post.slug} className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-sand-200/60">
-              <img src={responsiveImage(post.image, { sizes: '(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw' }).src} srcSet={responsiveImage(post.image, { sizes: '(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw' }).srcSet} alt={post.title} className="h-56 w-full object-cover" />
+              <img src={responsiveImage(post.image, { sizes: '(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw' }).src} srcSet={responsiveImage(post.image, { sizes: '(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw' }).srcSet} sizes="(min-width:1280px) 30vw, (min-width:640px) 45vw, 92vw" alt={post.title} className="h-56 w-full object-cover" />
               <div className="p-6">
                 <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-sand-600">
                   <span>{post.category}</span>

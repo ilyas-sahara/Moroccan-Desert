@@ -70,7 +70,7 @@ export default function About() {
       <section className="bg-sand-50 py-20 lg:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-6">
-            <img src={responsiveImage(aboutContent.intro_image, { sizes: '(min-width:1024px) 45vw, 92vw' }).src} srcSet={responsiveImage(aboutContent.intro_image, { sizes: '(min-width:1024px) 45vw, 92vw' }).srcSet} alt={t('about.nomadCampAlt')} loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-lg" />
+            <img src={responsiveImage(aboutContent.intro_image, { sizes: '(min-width:1024px) 45vw, 92vw' }).src} srcSet={responsiveImage(aboutContent.intro_image, { sizes: '(min-width:1024px) 45vw, 92vw' }).srcSet} sizes="(min-width:1024px) 45vw, 92vw" alt={t('about.nomadCampAlt')} loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-lg" />
           </div>
           <div className="lg:col-span-6">
             <SectionHeading

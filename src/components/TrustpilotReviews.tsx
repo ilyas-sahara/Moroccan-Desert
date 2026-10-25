@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { useLocale, localeFromPath, isLocale } from '@/i18n';
+import { useEffect, useRef, useState } from 'react';
+import { useLocale } from '@/i18n';
 import type { Locale } from '@/i18n';
 
 const WIDGET_UNIQ = '51';
@@ -12,11 +12,41 @@ const WIDGET_LANGS: Record<Locale, string> = {
   en: 'en_US',
 };
 
+/**
+ * TripAdvisor reviews widget.
+ * Loaded lazily: the widget's script chain (~1.7 s of third-party requests)
+ * only starts once the section approaches the viewport, so it stays out of
+ * the initial-page-load critical path.
+ */
 export default function TrustpilotReviews() {
   const ref = useRef<HTMLDivElement>(null);
   const { locale } = useLocale();
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    const host = ref.current;
+    if (!host) return;
+    // If the section is already in/near the viewport when mounted, load immediately.
+    const rect = host.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 600) {
+      setVisible(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          io.disconnect();
+          setVisible(true);
+        }
+      },
+      { rootMargin: '400px 0px' },
+    );
+    io.observe(host);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!visible) return;
     const host = ref.current;
     if (!host) return;
 
@@ -43,7 +73,7 @@ export default function TrustpilotReviews() {
     return () => {
       host.innerHTML = '';
     };
-  }, [locale]);
+  }, [visible, locale]);
 
   return <div ref={ref} className="mt-14 flex justify-center" />;
 }
