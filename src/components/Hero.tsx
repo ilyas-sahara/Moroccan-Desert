@@ -80,10 +80,10 @@ export default function Hero({
       {/* Content */}
       <div className="container-x relative z-10 flex h-full flex-col justify-end pb-24 pt-32 sm:pb-28 lg:pb-32">
         <div className="max-w-3xl">
-          <p
-            className="eyebrow text-sand-200 opacity-0"
-            style={{ animation: 'fade-up 0.9s ease-out 0.2s forwards' }}
-          >
+          {/* LCP element - keep this statically visible so it paints with the
+              first render. Animating it would keep re-painting the text and
+              push LCP out to the end of the entrance animation. */}
+          <p className="eyebrow text-sand-200">
             <span className="h-px w-8 bg-sand-300" /> {kicker}
           </p>
           <h1
