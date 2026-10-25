@@ -112,6 +112,13 @@ async function prerender() {
     return;
   }
 
+  // Inline site.css (read once) instead of shipping a render-blocking request.
+  // One fixed round trip to first paint; identical CSS on every route.
+  const siteCssPath = join(DIST, 'assets', 'site.css');
+  const siteCssInline = existsSync(siteCssPath)
+    ? '<style data-inline-site-css>' + readFileSync(siteCssPath, 'utf8') + '</style>'
+    : null;
+
   await new Promise((resolveListen) => server.listen(PORT, resolveListen));
   console.log(`[prerender] serving ${DIST} at http://localhost:${PORT}${BASE_PATH}`);
 
@@ -170,6 +177,13 @@ async function prerender() {
         cmsData = null;
       }
       let html = normalizeLazyFonts(await page.content());
+      // Inline the render-blocking stylesheet (PSI: ~600 ms of estimated savings)
+      if (siteCssInline) {
+        html = html.replace(
+          '<link rel="stylesheet" crossorigin="" href="/assets/site.css">',
+          () => siteCssInline,
+        );
+      }
       if (cmsData) {
         // Inline the page's own CMS collection so the client can hydrate with it
         // synchronously — avoids the "page introuvable" flash while JSON loads.
