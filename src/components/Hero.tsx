@@ -92,10 +92,9 @@ export default function Hero({
           >
             {heading}
           </h1>
-          <p
-            className="mt-5 max-w-xl text-lg leading-relaxed text-sand-100/90 opacity-0 sm:text-xl"
-            style={{ animation: 'fade-up 0.9s ease-out 0.6s forwards' }}
-          >
+          {/* Static like the eyebrow - this paragraph is the LCP element and
+              its fade-in was pushing LCP out to the end of the animation. */}
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-sand-100/90 sm:text-xl">
             {lead}
           </p>
           <div
