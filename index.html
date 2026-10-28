@@ -50,11 +50,13 @@
     <meta name="twitter:title" content="Sahara Vacation — Voyages de luxe au cœur du désert marocain" />
     <meta name="twitter:description" content="Voyages de luxe à travers les dunes dorées de Merzouga. Randonnées à dos de dromadaire, camps berbères, nuits sous les étoiles et aventures marocaines sur mesure." />
     <meta name="twitter:image" content="https://images.pexels.com/photos/30710158/pexels-photo-30710158.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" />
-    <!-- Self-hosted fonts (woff2, latin subset) — no cross-origin stylesheet chain -->
+    <!-- Self-hosted fonts (woff2, latin subset) — no cross-origin stylesheet chain.
+         Only the faces used by the immediate hero text are preloaded (Jakarta-400
+         for the body copy, Cormorant-500 for the h1). The n600 faces load from
+         CSS when reached, keeping ~64 KB less off the first-paint bandwidth
+         budget on throttled connections. -->
     <link rel="preload" href="/fonts/cormorant-garamond-n500.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/cormorant-garamond-n600.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/plus-jakarta-sans-n400.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/plus-jakarta-sans-n600.woff2" as="font" type="font/woff2" crossorigin />
     <noscript>
       <link rel="preload" href="/fonts/cormorant-garamond-n400.woff2" as="font" type="font/woff2" crossorigin />
     </noscript>
