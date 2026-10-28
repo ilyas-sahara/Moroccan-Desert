@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
-import { DICTS } from './translations';
+import { DICTS, loadLocaleDict } from './translations';
 import type { Locale, TranslationKey } from './translations';
 
 export type { Locale, TranslationKey } from './translations';
@@ -60,6 +60,24 @@ function localeFromUrlOrQuery(): Locale | null {
   }
 }
 
+/**
+ * The locale the app boots with, resolved exactly like LocaleProvider will
+ * resolve it (url path -> ?lang= -> localStorage -> default). Called before
+ * first render so the matching dictionary chunk can load first.
+ */
+export function getInitialLocale(): Locale {
+  if (typeof window === 'undefined') return DEFAULT_LOCALE;
+  const fromUrl = localeFromUrlOrQuery();
+  if (fromUrl) return fromUrl;
+  try {
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    if (isLocale(stored)) return stored;
+  } catch {
+    // ignore storage failures
+  }
+  return DEFAULT_LOCALE;
+}
+
 export function LocaleProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(() => {
     if (typeof window === 'undefined') return DEFAULT_LOCALE;
@@ -71,6 +89,8 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next);
+    // Make sure the dictionary chunk for a lazy locale is on its way.
+    loadLocaleDict(next).catch(() => undefined);
     try {
       window.localStorage.setItem(STORAGE_KEY, next);
     } catch {
@@ -94,9 +114,13 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   const t = useCallback(
     (key: TranslationKey, vars?: Vars) => {
-      const dict = DICTS[locale];
+      // The dictionary for a lazy-loaded locale is always present in practice
+      // (main.tsx awaits it before render); this guard only matters if some
+      // code path renders before boot finished, in which case en is closer
+      // than a raw key.
+      const dict = DICTS[locale] ?? DICTS.en ?? {};
       let template = dict[key];
-      if (template === undefined) template = DICTS.en[key] ?? key;
+      if (template === undefined) template = DICTS.en?.[key] ?? key;
       return interpolate(template, vars);
     },
     [locale],
